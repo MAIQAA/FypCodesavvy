@@ -1,0 +1,42 @@
+[
+      {
+        "question": "Create a function that adds two numbers and returns the result.",
+        "solution": "# Function definition\n\ndef add_numbers(a, b):\n    return a + b\n\n# Example usage\nprint(add_numbers(5, 3))  # Output: 8"
+      },
+      {
+        "question": "Write a program to check if a number is prime or not.",
+        "solution": "# Function definition\n\ndef is_prime(num):\n    if num <= 1:\n        return False\n    for i in range(2, int(num ** 0.5) + 1):\n        if num % i == 0:\n            return False\n    return True\n\n# Example usage\nprint(is_prime(17))  # Output: True"
+      },
+      {
+        "question": "Create a function that reverses a string.",
+        "solution": "# Function definition\n\ndef reverse_string(s):\n    return s[::-1]\n\n# Example usage\nprint(reverse_string('hello'))  # Output: 'olleh'"
+      },
+      {
+        "question": "Write a program to find the factorial of a number.",
+        "solution": "# Function definition\n\ndef factorial(num):\n    if num == 0 or num == 1:\n        return 1\n    result = 1\n    for i in range(2, num + 1):\n        result *= i\n    return result\n\n# Example usage\nprint(factorial(5))  # Output: 120"
+      },
+      {
+        "question": "Create a program to calculate the Fibonacci sequence up to a certain number of terms.",
+        "solution": "# Function definition\n\ndef fibonacci(num):\n    a, b = 0, 1\n    for _ in range(num):\n        print(a)\n        a, b = b, a + b\n\n# Example usage\nfibonacci(10)  # Output: Prints Fibonacci sequence up to 10 terms"
+      },
+      {
+        "question": "Write a function to find the largest element in an array.",
+        "solution": "# Function definition\n\ndef find_largest(arr):\n    if not arr:\n        return None\n    largest = arr[0]\n    for num in arr:\n        if num > largest:\n            largest = num\n    return largest\n\n# Example usage\nprint(find_largest([3, 7, 2, 9, 1]))  # Output: 9"
+      },
+      {
+        "question": "Create a program to count the number of vowels in a string.",
+        "solution": "# Function definition\n\ndef count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for char in s:\n        if char in vowels:\n            count += 1\n    return count\n\n# Example usage\nprint(count_vowels('Hello World'))  # Output: 3"
+      },
+      {
+        "question": "Write a function that checks if a string is a palindrome.",
+        "solution": "# Function definition\n\ndef is_palindrome(s):\n    return s == s[::-1]\n\n# Example usage\nprint(is_palindrome('madam'))  # Output: True"
+      },
+      {
+        "question": "Create a program to find the sum of all elements in an array.",
+        "solution": "# Function definition\n\ndef sum_array(arr):\n    return sum(arr)\n\n# Example usage\nprint(sum_array([1, 2, 3, 4, 5]))  # Output: 15"
+      },
+      {
+        "question": "Write a function to check if a number is a perfect square.",
+        "solution": "# Function definition\n\ndef is_perfect_square(num):\n    if num < 0:\n        return False\n    sqrt_num = int(num ** 0.5)\n    return sqrt_num * sqrt_num == num\n\n# Example usage\nprint(is_perfect_square(16))  # Output: True"
+      }
+    ]

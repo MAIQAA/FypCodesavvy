@@ -1,0 +1,86 @@
+[
+      {
+        "question": "Create a variable in Sass and assign it a color value.",
+        "solution": "// SCSS syntax\n$primary-color: #3498db;"
+      },
+      {
+        "question": "Write a Sass mixin to apply a box-shadow with given parameters.",
+        "solution": "// SCSS syntax\n@mixin box-shadow($x, $y, $blur, $color) {\n  box-shadow: $x $y $blur $color;\n}"
+      },
+      {
+        "question": "Create a Sass function to convert pixels to ems.",
+        "solution": "// SCSS syntax\n@function px-to-em($px, $base-font-size: 16px) {\n  @return #{$px / $base-font-size}em;\n}"
+      },
+      {
+        "question": "Write a Sass mixin to create a responsive grid system.",
+        "solution": "// SCSS syntax\n@mixin grid($columns: 12, $gap: 20px) {\n  display: grid;\n  grid-template-columns: repeat($columns, 1fr);\n  gap: $gap;\n}"
+      },
+      {
+        "question": "Create a Sass variable for font stack and use it in a CSS rule.",
+        "solution": "// SCSS syntax\n$font-stack: 'Roboto', Arial, sans-serif;\n\nbody {\n  font-family: $font-stack;\n}"
+      },
+      {
+        "question": "Write a Sass mixin for responsive typography based on screen size.",
+        "solution": "// SCSS syntax\n@mixin responsive-font-size($min-font-size, $max-font-size, $min-screen-size, $max-screen-size) {\n  font-size: $min-font-size;\n  @media screen and (min-width: $min-screen-size) {\n    font-size: calc(#{$min-font-size} + #{($max-font-size - $min-font-size)} * ((100vw - #{$min-screen-size}) / #{($max-screen-size - $min-screen-size)}));\n  }\n  @media screen and (min-width: $max-screen-size) {\n    font-size: $max-font-size;\n  }\n}"
+      },
+      {
+        "question": "Create a Sass placeholder selector for a button style and use it in a CSS rule.",
+        "solution": "// SCSS syntax\n%button-style {\n  padding: 10px 20px;\n  border: none;\n  background-color: #3498db;\n  color: white;\n  cursor: pointer;\n}\n\n.button {\n  @extend %button-style;\n}"
+      },
+      {
+        "question": "Write a Sass function to calculate the contrast color of a given background color.",
+        "solution": "// SCSS syntax\n@function contrast-color($background-color) {\n  // Convert hex to RGB values\n  $red: red($background-color);\n  $green: green($background-color);\n  $blue: blue($background-color);\n  // Calculate luminance\n  $luminance: 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;\n  // Return contrasting color based on luminance\n  @if ($luminance > 128) {\n    @return #000000; // Light background, return black\n  } @else {\n    @return #ffffff; // Dark background, return white\n  }\n}"
+      },
+      {
+        "question": "Create a Sass mixin for flexbox layout with support for direction, align-items, and justify-content.",
+        "solution": "// SCSS syntax\n@mixin flexbox($direction: row, $align: center, $justify: center) {\n  display: flex;\n  flex-direction: $direction;\n  align-items: $align;\n  justify-content: $justify;\n}"
+      },
+      {
+        "question": "Write a Sass mixin to create a CSS triangle.",
+        "solution": "// SCSS syntax\n@mixin triangle($size, $color) {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 0 $size $size $size;\n  border-color: transparent transparent $color transparent;\n}"
+      },
+      {
+        "question": "Create a Sass function to generate a random number within a specified range.",
+        "solution": "// SCSS syntax\n@function random($min, $max) {\n  @return random() * ($max - $min) + $min;\n}"
+      },
+      {
+        "question": "Write a Sass mixin to create a CSS animation with keyframes.",
+        "solution": "// SCSS syntax\n@mixin bounce($distance, $duration) {\n  animation: bounce-animation $duration infinite;\n\n  @keyframes bounce-animation {\n    0%, 100% {\n      transform: translateY(0);\n    }\n    50% {\n      transform: translateY(-$distance);\n    }\n  }\n}"
+      },
+      {
+        "question": "Create a Sass variable for breakpoint sizes and use it in a media query.",
+        "solution": "// SCSS syntax\n$breakpoint-medium: 768px;\n\n@media screen and (min-width: $breakpoint-medium) {\n  /* Styles for medium screens */\n}"
+      },
+      {
+        "question": "Write a Sass mixin to create a CSS gradient background.",
+        "solution": "// SCSS syntax\n@mixin gradient-background($color1, $color2) {\n  background: linear-gradient(to right, $color1, $color2);\n}"
+      },
+      {
+        "question": "Create a Sass function to convert RGB color values to hexadecimal.",
+        "solution": "// SCSS syntax\n@function rgb-to-hex($red, $green, $blue) {\n  $hex-red: str-slice(#{(100 + $red) * 255 / 256}, 2);\n  $hex-green: str-slice(#{(100 + $green) * 255 / 256}, 2);\n  $hex-blue: str-slice(#{(100 + $blue) * 255 / 256}, 2);\n  @return ##{$hex-red}#{$hex-green}#{$hex-blue};\n}"
+      },
+      {
+        "question": "Write a Sass mixin for a responsive CSS grid layout with equal column widths.",
+        "solution": "// SCSS syntax\n@mixin responsive-grid($columns, $gap) {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));\n  gap: $gap;\n}"
+      },
+      {
+        "question": "Create a Sass function to calculate the nth Fibonacci number.",
+        "solution": "// SCSS syntax\n@function fibonacci($n) {\n  $a: 0;\n  $b: 1;\n  @for $i from 1 through $n {\n    $temp: $b;\n    $b: $a + $b;\n    $a: $temp;\n  }\n  @return $a;\n}"
+      },
+      {
+        "question": "Write a Sass mixin to create a responsive navigation bar.",
+        "solution": "// SCSS syntax\n@mixin responsive-navbar($bg-color, $text-color, $hover-bg-color) {\n  background-color: $bg-color;\n  color: $text-color;\n  a {\n    color: $text-color;\n    &:hover {\n      background-color: $hover-bg-color;\n    }\n  }\n}"
+      },
+      {
+        "question": "Create a Sass mixin to create a CSS transition for a given property.",
+        "solution": "// SCSS syntax\n@mixin transition($property, $duration) {\n  transition: $property $duration;\n}"
+      },
+      {
+        "question": "Write a Sass function to check if a number is even or odd.",
+        "solution": "// SCSS syntax\n@function is-even($number) {\n  @return $number % 2 == 0;\n}"
+      },
+      {
+        "question": "Create a Sass mixin for a CSS card component.",
+        "solution": "// SCSS syntax\n@mixin card($bg-color, $text-color, $border-radius) {\n  background-color: $bg-color;\n  color: $text-color;\n  border-radius: $border-radius;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}"
+      }
+    ]

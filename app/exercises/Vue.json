@@ -1,0 +1,66 @@
+[
+      {
+        "question": "Create a Vue component that displays 'Hello, World!'",
+        "solution": "<template>\n  <div>\n    <p>{{ message }}</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      message: 'Hello, World!'\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to display a list of items using v-for directive.",
+        "solution": "<template>\n  <div>\n    <ul>\n      <li v-for='(item, index) in items' :key='index'>{{ item }}</li>\n    </ul>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      items: ['Item 1', 'Item 2', 'Item 3']\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component to handle user input with v-model directive.",
+        "solution": "<template>\n  <div>\n    <input v-model='message'>\n    <p>{{ message }}</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      message: ''\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to toggle visibility of an element with v-if directive.",
+        "solution": "<template>\n  <div>\n    <button @click='isVisible = !isVisible'>Toggle Element</button>\n    <p v-if='isVisible'>Toggleable Element</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      isVisible: false\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component that computes and displays the sum of two numbers entered by the user.",
+        "solution": "<template>\n  <div>\n    <input v-model.number='num1' type='number'>\n    <input v-model.number='num2' type='number'>\n    <p>Sum: {{ num1 + num2 }}</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      num1: 0,\n      num2: 0\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to fetch and display data from an API using axios.",
+        "solution": "<template>\n  <div>\n    <ul>\n      <li v-for='user in users' :key='user.id'>{{ user.name }}</li>\n    </ul>\n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  data() {\n    return {\n      users: []\n    };\n  },\n  mounted() {\n    axios\n      .get('https://jsonplaceholder.typicode.com/users')\n      .then(response => {\n        this.users = response.data;\n      })\n      .catch(error => {\n        console.error('Error fetching data: ', error);\n      });\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component that emits an event when a button is clicked and the parent component listens for that event.",
+        "solution": "<template>\n  <div>\n    <button @click='onClick'>Click me!</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  methods: {\n    onClick() {\n      this.$emit('button-clicked');\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to filter a list of items based on user input.",
+        "solution": "<template>\n  <div>\n    <input v-model='searchText'>\n    <ul>\n      <li v-for='item in filteredItems' :key='item.id'>{{ item.name }}</li>\n    </ul>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      items: [\n        { id: 1, name: 'Item 1' },\n        { id: 2, name: 'Item 2' },\n        { id: 3, name: 'Another Item' }\n      ],\n      searchText: ''\n    };\n  },\n  computed: {\n    filteredItems() {\n      return this.items.filter(item => item.name.toLowerCase().includes(this.searchText.toLowerCase()));\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component to handle form submission and display validation errors.",
+        "solution": "<template>\n  <div>\n    <form @submit.prevent='submitForm'>\n      <input v-model='name' type='text' placeholder='Enter your name'>\n      <span v-if='!nameValid'>Name is required.</span>\n      <input v-model.number='age' type='number' placeholder='Enter your age'>\n      <span v-if='!ageValid'>Age must be a number.</span>\n      <button type='submit'>Submit</button>\n    </form>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      name: '',\n      age: '',\n      nameValid: true,\n      ageValid: true\n    };\n  },\n  methods: {\n    submitForm() {\n      this.nameValid = !!this.name;\n      this.ageValid = !isNaN(this.age);\n      if (this.nameValid && this.ageValid) {\n        // Handle form submission\n      }\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to implement a simple counter with increment and decrement buttons.",
+        "solution": "<template>\n  <div>\n    <button @click='increment'>+</button>\n    <span>{{ count }}</span>\n    <button @click='decrement'>-</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      count: 0\n    };\n  },\n  methods: {\n    increment() {\n      this.count++;\n    },\n    decrement() {\n      this.count--;\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component to implement a simple todo list with add, delete, and mark as complete functionalities.",
+        "solution": "<template>\n  <div>\n    <input v-model='newTodo' @keyup.enter='addTodo'>\n    <ul>\n      <li v-for='(todo, index) in todos' :key='index'>\n        {{ todo.text }}\n        <button @click='deleteTodo(index)'>Delete</button>\n        <button @click='toggleComplete(index)'>{{ todo.completed ? 'Undo' : 'Complete' }}</button>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      todos: [],\n      newTodo: ''\n    };\n  },\n  methods: {\n    addTodo() {\n      if (this.newTodo.trim()) {\n        this.todos.push({ text: this.newTodo, completed: false });\n        this.newTodo = '';\n      }\n    },\n    deleteTodo(index) {\n      this.todos.splice(index, 1);\n    },\n    toggleComplete(index) {\n      this.todos[index].completed = !this.todos[index].completed;\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component that implements a simple timer which starts on button click and stops on another button click.",
+        "solution": "<template>\n  <div>\n    <p v-if='running'>Timer: {{ seconds }} seconds</p>\n    <button v-if='!running' @click='startTimer'>Start Timer</button>\n    <button v-if='running' @click='stopTimer'>Stop Timer</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      running: false,\n      seconds: 0,\n      timer: null\n    };\n  },\n  methods: {\n    startTimer() {\n      this.running = true;\n      this.timer = setInterval(() => {\n        this.seconds++;\n      }, 1000);\n    },\n    stopTimer() {\n      this.running = false;\n      clearInterval(this.timer);\n      this.seconds = 0;\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to display a modal (dialog box) when a button is clicked.",
+        "solution": "<template>\n  <div>\n    <button @click='showModal = true'>Show Modal</button>\n    <div v-if='showModal' class='modal'>\n      <div class='modal-content'>\n        <span class='close' @click='showModal = false'>&times;</span>\n        <p>Modal content goes here.</p>\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n.modal {\n  display: block;\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgba(0,0,0,0.4);\n}\n\n.modal-content {\n  background-color: white;\n  margin: 15% auto;\n  padding: 20px;\n  border: 1px solid #888;\n  width: 80%;\n}\n\n.close {\n  color: #aaa;\n  float: right;\n  font-size: 28px;\n  font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n</style>\n\n<script>\nexport default {\n  data() {\n    return {\n      showModal: false\n    };\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component that implements a basic pagination system for a list of items.",
+        "solution": "<template>\n  <div>\n    <ul>\n      <li v-for='page in pages' :key='page'>\n        <button @click='currentPage = page'>{{ page }}</button>\n      </li>\n    </ul>\n    <ul>\n      <li v-for='item in paginatedItems' :key='item.id'>{{ item.name }}</li>\n    </ul>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      items: [\n        { id: 1, name: 'Item 1' },\n        { id: 2, name: 'Item 2' },\n        { id: 3, name: 'Item 3' },\n        { id: 4, name: 'Item 4' },\n        { id: 5, name: 'Item 5' },\n        { id: 6, name: 'Item 6' }\n      ],\n      currentPage: 1,\n      itemsPerPage: 2\n    };\n  },\n  computed: {\n    paginatedItems() {\n      const startIndex = (this.currentPage - 1) * this.itemsPerPage;\n      const endIndex = startIndex + this.itemsPerPage;\n      return this.items.slice(startIndex, endIndex);\n    },\n    pages() {\n      return Math.ceil(this.items.length / this.itemsPerPage);\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Write a Vue component to implement a simple image slider with previous and next buttons.",
+        "solution": "<template>\n  <div>\n    <button @click='previousImage'>Previous</button>\n    <img :src='currentImage' alt='Slider Image'>\n    <button @click='nextImage'>Next</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      images: [\n        'image1.jpg',\n        'image2.jpg',\n        'image3.jpg'\n      ],\n      currentIndex: 0\n    };\n  },\n  computed: {\n    currentImage() {\n      return this.images[this.currentIndex];\n    }\n  },\n  methods: {\n    nextImage() {\n      this.currentIndex = (this.currentIndex + 1) % this.images.length;\n    },\n    previousImage() {\n      this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;\n    }\n  }\n}\n</script>"
+      },
+      {
+        "question": "Create a Vue component to show a random quote fetched from an API on button click.",
+        "solution": "<template>\n  <div>\n    <button @click='fetchQuote'>Get Quote</button>\n    <p>{{ quote }}</p>\n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  data() {\n    return {\n      quote: ''\n    };\n  },\n  methods: {\n    fetchQuote() {\n      axios\n        .get('https://api.quotable.io/random')\n        .then(response => {\n          this.quote = response.data.content;\n        })\n        .catch(error => {\n          console.error('Error fetching quote: ', error);\n        });\n    }\n  }\n}\n</script>"
+      }
+    ]

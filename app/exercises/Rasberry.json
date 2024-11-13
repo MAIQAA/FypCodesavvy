@@ -1,0 +1,62 @@
+ [
+      {
+        "question": "Write a Python script to blink an LED connected to GPIO pin 17.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\nLED_PIN = 17\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(LED_PIN, GPIO.OUT)\n\ntry:\n    while True:\n        GPIO.output(LED_PIN, GPIO.HIGH)\n        time.sleep(1)\n        GPIO.output(LED_PIN, GPIO.LOW)\n        time.sleep(1)\nexcept KeyboardInterrupt:\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Create a Python program to read a temperature sensor (e.g., DS18B20) connected to Raspberry Pi.",
+        "solution": "import os\nimport glob\nimport time\n\nos.system('modprobe w1-gpio')\nos.system('modprobe w1-therm')\n\nbase_dir = '/sys/bus/w1/devices/'\ndevice_folder = glob.glob(base_dir + '28*')[0]\ndevice_file = device_folder + '/w1_slave'\n\ndef read_temp_raw():\n    f = open(device_file, 'r')\n    lines = f.readlines()\n    f.close()\n    return lines\n\ndef read_temp():\n    lines = read_temp_raw()\n    while lines[0].strip()[-3:] != 'YES':\n        time.sleep(0.2)\n        lines = read_temp_raw()\n    equals_pos = lines[1].find('t=')\n    if equals_pos != -1:\n        temp_string = lines[1][equals_pos + 2:]\n        temp_c = float(temp_string) / 1000.0\n        return temp_c\n\nwhile True:\n    print('Temperature: {:.1f} C'.format(read_temp()))\n    time.sleep(1)\n"
+      },
+      {
+        "question": "Write a Python script to control a servo motor using PWM on Raspberry Pi.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\nSERVO_PIN = 18\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(SERVO_PIN, GPIO.OUT)\n\npwm = GPIO.PWM(SERVO_PIN, 50)\npwm.start(0)\n\ntry:\n    while True:\n        pwm.ChangeDutyCycle(7.5)  # Neutral position\n        time.sleep(1)\n        pwm.ChangeDutyCycle(12.5)  # 180 degree position\n        time.sleep(1)\nexcept KeyboardInterrupt:\n    pwm.stop()\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Create a Python program to capture an image using the Raspberry Pi camera module.",
+        "solution": "from picamera import PiCamera\nimport time\n\ncamera = PiCamera()\n\ntry:\n    camera.start_preview()\n    time.sleep(5)\n    camera.capture('/home/pi/image.jpg')\n    camera.stop_preview()\nfinally:\n    camera.close()\n"
+      },
+      {
+        "question": "Write a Python script to log sensor data (e.g., temperature) to a file on Raspberry Pi.",
+        "solution": "import os\nimport glob\nimport time\n\nos.system('modprobe w1-gpio')\nos.system('modprobe w1-therm')\n\nbase_dir = '/sys/bus/w1/devices/'\ndevice_folder = glob.glob(base_dir + '28*')[0]\ndevice_file = device_folder + '/w1_slave'\n\nlog_file = '/home/pi/sensor_log.txt'\n\ndef read_temp_raw():\n    f = open(device_file, 'r')\n    lines = f.readlines()\n    f.close()\n    return lines\n\ndef read_temp():\n    lines = read_temp_raw()\n    while lines[0].strip()[-3:] != 'YES':\n        time.sleep(0.2)\n        lines = read_temp_raw()\n    equals_pos = lines[1].find('t=')\n    if equals_pos != -1:\n        temp_string = lines[1][equals_pos + 2:]\n        temp_c = float(temp_string) / 1000.0\n        return temp_c\n\ntry:\n    while True:\n        temp = read_temp()\n        with open(log_file, 'a') as f:\n            f.write(f'Temperature: {temp} C - {time.strftime('%Y-%m-%d %H:%M:%S')}\n')\n        time.sleep(60)\nexcept KeyboardInterrupt:\n    pass\n"
+      },
+      {
+        "question": "Create a Python script to control an RGB LED connected to Raspberry Pi.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\nRED_PIN = 17\nGREEN_PIN = 18\nBLUE_PIN = 27\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(RED_PIN, GPIO.OUT)\nGPIO.setup(GREEN_PIN, GPIO.OUT)\nGPIO.setup(BLUE_PIN, GPIO.OUT)\n\ndef set_color(red, green, blue):\n    GPIO.output(RED_PIN, red)\n    GPIO.output(GREEN_PIN, green)\n    GPIO.output(BLUE_PIN, blue)\n\ntry:\n    while True:\n        set_color(1, 0, 0)  # Red\n        time.sleep(1)\n        set_color(0, 1, 0)  # Green\n        time.sleep(1)\n        set_color(0, 0, 1)  # Blue\n        time.sleep(1)\nexcept KeyboardInterrupt:\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Write a Python program to read data from an ultrasonic sensor and calculate distance on Raspberry Pi.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\nTRIG_PIN = 23\nECHO_PIN = 24\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(TRIG_PIN, GPIO.OUT)\nGPIO.setup(ECHO_PIN, GPIO.IN)\n\ntry:\n    while True:\n        GPIO.output(TRIG_PIN, False)\n        time.sleep(0.5)\n\n        GPIO.output(TRIG_PIN, True)\n        time.sleep(0.00001)\n        GPIO.output(TRIG_PIN, False)\n\n        while GPIO.input(ECHO_PIN) == 0:\n            pulse_start = time.time()\n\n        while GPIO.input(ECHO_PIN) == 1:\n            pulse_end = time.time()\n\n        pulse_duration = pulse_end - pulse_start\n        distance = pulse_duration * 17150\n        distance = round(distance, 2)\n\n        print(f'Distance: {distance} cm')\n        time.sleep(1)\nexcept KeyboardInterrupt:\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Create a Python program to send an email notification from Raspberry Pi using smtplib.",
+        "solution": "import smtplib\nfrom email.mime.text import MIMEText\nfrom email.mime.multipart import MIMEMultipart\n\nSMTP_SERVER = 'smtp.gmail.com'\nSMTP_PORT = 587\nEMAIL = 'your_email@gmail.com'\nPASSWORD = 'your_password'\nRECEIVER_EMAIL = 'recipient_email@gmail.com'\n\nmessage = MIMEMultipart()\nmessage['From'] = EMAIL\nmessage['To'] = RECEIVER_EMAIL\nmessage['Subject'] = 'Raspberry Pi Notification'\n\nbody = 'This is a test email from Raspberry Pi'\nmessage.attach(MIMEText(body, 'plain'))\n\ntry:\n    server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)\n    server.starttls()\n    server.login(EMAIL, PASSWORD)\n    text = message.as_string()\n    server.sendmail(EMAIL, RECEIVER_EMAIL, text)\n    print('Email sent successfully')\nexcept Exception as e:\n    print(f'Error sending email: {e}')\nfinally:\n    server.quit()\n"
+      },
+      {
+        "question": "Write a Python script to play a sound file on Raspberry Pi using pygame.",
+        "solution": "import pygame\n\npygame.mixer.init()\npygame.mixer.music.load('/home/pi/sound.mp3')\n\ntry:\n    pygame.mixer.music.play()\n    while pygame.mixer.music.get_busy():\n        pygame.time.Clock().tick(10)\nexcept KeyboardInterrupt:\n    pygame.mixer.music.stop()\n    pygame.mixer.quit()\n"
+      },
+      {
+        "question": "Create a Python program to read data from a DHT11 or DHT22 sensor and display temperature and humidity on Raspberry Pi.",
+        "solution": "import Adafruit_DHT\nimport time\n\nSENSOR = Adafruit_DHT.DHT11\nPIN = 4\n\ntry:\n    while True:\n        humidity, temperature = Adafruit_DHT.read_retry(SENSOR, PIN)\n        if humidity is not None and temperature is not None:\n            print(f'Temperature: {temperature:.1f} C, Humidity: {humidity:.1f} %')\n        else:\n            print('Failed to retrieve data from sensor')\n        time.sleep(2)\nexcept KeyboardInterrupt:\n    pass\n"
+      },
+      {
+        "question": "Create a Python program to interface with a 16x2 LCD display using I2C on Raspberry Pi.",
+        "solution": "import time\nimport Adafruit_CharLCD as LCD\n\n# Raspberry Pi pin configuration:\nlcd_rs        = 25  # Note this might need to be changed to 21 for older revision Pi's.\nlcd_en        = 24\nd4, d5, d6, d7 = 23, 17, 18, 22\nlcd_backlight = 2\n\n# Define LCD column and row size for 16x2 LCD.\nlcd_columns = 16\nlcd_rows    = 2\n\n# Initialize the LCD using the pins above.\nlcd = LCD.Adafruit_CharLCD(lcd_rs, lcd_en, d4, d5, d6, d7,\n                           lcd_columns, lcd_rows, lcd_backlight)\n\ntry:\n    lcd.message('Hello, Raspberry\nPi!')\n    time.sleep(2)\n    lcd.clear()\n    lcd.message('LCD Display\nInterfacing')\n    time.sleep(2)\n    lcd.clear()\nfinally:\n    lcd.clear()\n"
+      },
+      {
+        "question": "Write a Python program to control a DC motor using L293D motor driver with Raspberry Pi.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\nGPIO.setmode(GPIO.BCM)\n\n# Motor 1\nenable_pin = 17\ninput1_pin = 18\ninput2_pin = 27\n\nGPIO.setup(enable_pin, GPIO.OUT)\nGPIO.setup(input1_pin, GPIO.OUT)\nGPIO.setup(input2_pin, GPIO.OUT)\n\npwm = GPIO.PWM(enable_pin, 100)\npwm.start(0)\n\ndef motor_forward():\n    GPIO.output(input1_pin, GPIO.HIGH)\n    GPIO.output(input2_pin, GPIO.LOW)\n\ntry:\n    motor_forward()\n    pwm.ChangeDutyCycle(50)\n    time.sleep(2)\nexcept KeyboardInterrupt:\n    pwm.stop()\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Create a Python program to read data from an MPU-6050 accelerometer and gyroscope module using Raspberry Pi.",
+        "solution": "import smbus\nimport math\nimport time\n\n# MPU-6050 Registers\nDEVICE_ADDRESS = 0x68\n\nPWR_MGMT_1 = 0x6B\nSMPLRT_DIV = 0x19\nCONFIG = 0x1A\nGYRO_CONFIG = 0x1B\nINT_ENABLE = 0x38\nACCEL_XOUT = 0x3B\nACCEL_YOUT = 0x3D\nACCEL_ZOUT = 0x3F\nGYRO_XOUT = 0x43\nGYRO_YOUT = 0x45\nGYRO_ZOUT = 0x47\n\nbus = smbus.SMBus(1)  # or 0 for older version Pi\n\ndef MPU_Init():\n    bus.write_byte_data(DEVICE_ADDRESS, SMPLRT_DIV, 7)\n    bus.write_byte_data(DEVICE_ADDRESS, PWR_MGMT_1, 1)\n    bus.write_byte_data(DEVICE_ADDRESS, CONFIG, 0)\n    bus.write_byte_data(DEVICE_ADDRESS, GYRO_CONFIG, 24)\n    bus.write_byte_data(DEVICE_ADDRESS, INT_ENABLE, 1)\n\ndef read_raw_data(addr):\n    high = bus.read_byte_data(DEVICE_ADDRESS, addr)\n    low = bus.read_byte_data(DEVICE_ADDRESS, addr + 1)\n    value = ((high << 8) | low)\n    if (value > 32768):\n        value = value - 65536\n    return value\n\nMPU_Init()\n\ntime.sleep(1)\n\ntry:\n    while True:\n        accel_x = read_raw_data(ACCEL_XOUT) / 16384.0\n        accel_y = read_raw_data(ACCEL_YOUT) / 16384.0\n        accel_z = read_raw_data(ACCEL_ZOUT) / 16384.0\n        gyro_x = read_raw_data(GYRO_XOUT) / 131.0\n        gyro_y = read_raw_data(GYRO_YOUT) / 131.0\n        gyro_z = read_raw_data(GYRO_ZOUT) / 131.0\n        print(f'Accel X: {accel_x:.2f}, Y: {accel_y:.2f}, Z: {accel_z:.2f} | Gyro X: {gyro_x:.2f}, Y: {gyro_y:.2f}, Z: {gyro_z:.2f}')\n        time.sleep(1)\nexcept KeyboardInterrupt:\n    pass\n"
+      },
+      {
+        "question": "Write a Python program to control a stepper motor using the ULN2003 driver board with Raspberry Pi.",
+        "solution": "import RPi.GPIO as GPIO\nimport time\n\n# Define GPIO pins for ULN2003\nIN1 = 26\nIN2 = 19\nIN3 = 13\nIN4 = 6\n\n# Define sequence\nStepCount = 8\nSeq = list(range(0, StepCount))\nSeq[0] = [1, 0, 0, 0]\nSeq[1] = [1, 1, 0, 0]\nSeq[2] = [0, 1, 0, 0]\nSeq[3] = [0, 1, 1, 0]\nSeq[4] = [0, 0, 1, 0]\nSeq[5] = [0, 0, 1, 1]\nSeq[6] = [0, 0, 0, 1]\nSeq[7] = [1, 0, 0, 1]\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(IN1, GPIO.OUT)\nGPIO.setup(IN2, GPIO.OUT)\nGPIO.setup(IN3, GPIO.OUT)\nGPIO.setup(IN4, GPIO.OUT)\n\ndef setStep(w1, w2, w3, w4):\n    GPIO.output(IN1, w1)\n    GPIO.output(IN2, w2)\n    GPIO.output(IN3, w3)\n    GPIO.output(IN4, w4)\n\ntry:\n    while True:\n        for i in range(StepCount):\n            setStep(Seq[i][0], Seq[i][1], Seq[i][2], Seq[i][3])\n            time.sleep(0.01)\n        for i in range(StepCount - 1, -1, -1):\n            setStep(Seq[i][0], Seq[i][1], Seq[i][2], Seq[i][3])\n            time.sleep(0.01)\nexcept KeyboardInterrupt:\n    GPIO.cleanup()\n"
+      },
+      {
+        "question": "Create a Python program to monitor and control GPIO pins using the Flask web framework on Raspberry Pi.",
+        "solution": "from flask import Flask, render_template, request\nimport RPi.GPIO as GPIO\n\napp = Flask(__name__)\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(17, GPIO.OUT)\nGPIO.output(17, GPIO.LOW)\n\n@app.route('/')\ndef index():\n    return render_template('index.html')\n\n@app.route('/on')\ndef on():\n    GPIO.output(17, GPIO.HIGH)\n    return 'LED is on'\n\n@app.route('/off')\ndef off():\n    GPIO.output(17, GPIO.LOW)\n    return 'LED is off'\n\nif __name__ == '__main__':\n    app.run(debug=True, host='0.0.0.0')\n"
+      }
+    ]

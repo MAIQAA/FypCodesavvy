@@ -1,0 +1,46 @@
+[
+      {
+        "question": "Create a jQuery script that changes the text of a paragraph to 'Hello, jQuery!' when a button is clicked.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#changeText').click(function() {\n        $('p').text('Hello, jQuery!');\n      });\n    });\n  </script>\n</head>\n<body>\n  <p>This is a paragraph.</p>\n  <button id='changeText'>Change Text</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Write a jQuery script to show and hide a div element when clicking a button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#toggleDiv').click(function() {\n        $('#myDiv').toggle();\n      });\n    });\n  </script>\n</head>\n<body>\n  <div id='myDiv' style='display: none;'>This is a div element.</div>\n  <button id='toggleDiv'>Toggle Div</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a jQuery script to change the background color of a paragraph when hovering over it.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('p').hover(function() {\n        $(this).css('background-color', 'lightblue');\n      }, function() {\n        $(this).css('background-color', 'white');\n      });\n    });\n  </script>\n</head>\n<body>\n  <p>This is a paragraph.</p>\n</body>\n</html>"
+      },
+      {
+        "question": "Write a jQuery script to append a new list item to an unordered list when a button is clicked.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#addItem').click(function() {\n        $('ul').append('<li>New Item</li>');\n      });\n    });\n  </script>\n</head>\n<body>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n    <li>Item 3</li>\n  </ul>\n  <button id='addItem'>Add Item</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a jQuery script to fade in and fade out a paragraph when clicking a button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#fadeButton').click(function() {\n        $('p').fadeToggle();\n      });\n    });\n  </script>\n</head>\n<body>\n  <p>This is a paragraph.</p>\n  <button id='fadeButton'>Fade Toggle</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Write a jQuery script to get the value of an input field when a form is submitted.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#myForm').submit(function(event) {\n        event.preventDefault();\n        var inputValue = $('#myInput').val();\n        alert('Input Value: ' + inputValue);\n      });\n    });\n  </script>\n</head>\n<body>\n  <form id='myForm'>\n    <input type='text' id='myInput'>\n    <input type='submit' value='Submit'>\n  </form>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a jQuery script to slide up and slide down a div element when clicking a button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#toggleSlide').click(function() {\n        $('#myDiv').slideToggle();\n      });\n    });\n  </script>\n</head>\n<body>\n  <div id='myDiv' style='height: 100px; background-color: lightblue;'>This is a div element.</div>\n  <button id='toggleSlide'>Toggle Slide</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Write a jQuery script to add a CSS class to an element when clicking a button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#addClass').click(function() {\n        $('p').addClass('myClass');\n      });\n    });\n  </script>\n  <style>\n    .myClass {\n      font-weight: bold;\n      color: blue;\n    }\n  </style>\n</head>\n<body>\n  <p>This is a paragraph.</p>\n  <button id='addClass'>Add Class</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a jQuery script to validate an email input field when a form is submitted.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#myForm').submit(function(event) {\n        event.preventDefault();\n        var email = $('#email').val();\n        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;\n        if (emailPattern.test(email)) {\n          alert('Valid Email: ' + email);\n        } else {\n          alert('Invalid Email');\n        }\n      });\n    });\n  </script>\n</head>\n<body>\n  <form id='myForm'>\n    Email: <input type='text' id='email'>\n    <input type='submit' value='Submit'>\n  </form>\n</body>\n</html>"
+      },
+      {
+        "question": "Write a jQuery script to perform an AJAX GET request and display the response data.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('#getData').click(function() {\n        $.get('https://jsonplaceholder.typicode.com/posts/1', function(data) {\n          $('#result').html('<p>Title: ' + data.title + '</p><p>Body: ' + data.body + '</p>');\n        });\n      });\n    });\n  </script>\n</head>\n<body>\n  <button id='getData'>Get Data</button>\n  <div id='result'></div>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a jQuery script to iterate over a list and change each list item's text color.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script>\n    $(document).ready(function() {\n      $('li').each(function() {\n        $(this).css('color', 'blue');\n      });\n    });\n  </script>\n</head>\n<body>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n    <li>Item 3</li>\n  </ul>\n</body>\n</html>"
+      }
+    ]

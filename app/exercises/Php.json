@@ -1,0 +1,30 @@
+[
+      {
+        "question": "Create a PHP script that prints 'Hello, World!'",
+        "solution": "<?php\n  echo 'Hello, World!';\n?>"
+      },
+      {
+        "question": "Write a PHP script to add two numbers.",
+        "solution": "<?php\n  $num1 = 10;\n  $num2 = 5;\n  $sum = $num1 + $num2;\n  echo 'Sum: ' . $sum;\n?>"
+      },
+      {
+        "question": "Create a PHP function that calculates the factorial of a number.",
+        "solution": "<?php\n  function factorial($n) {\n    if ($n <= 1) {\n      return 1;\n    }\n    return $n * factorial($n - 1);\n  }\n\n  $number = 5;\n  echo 'Factorial of ' . $number . ' is ' . factorial($number);\n?>"
+      },
+      {
+        "question": "Write a PHP script to sort an array of numbers in ascending order.",
+        "solution": "<?php\n  $numbers = [5, 2, 8, 1, 9];\n  sort($numbers);\n  foreach ($numbers as $num) {\n    echo $num . ' ';\n  }\n?>"
+      },
+      {
+        "question": "Create a PHP script that reads a file and displays its content.",
+        "solution": "<?php\n  $filename = 'example.txt';\n  $content = file_get_contents($filename);\n  echo $content;\n?>"
+      },
+      {
+        "question": "Write a PHP script to handle form submission and validate user input.",
+        "solution": "<?php\n  $name = $_POST['name'];\n  $email = $_POST['email'];\n\n  if ($_SERVER['REQUEST_METHOD'] == 'POST') {\n    if (empty($name) || empty($email)) {\n      echo 'Please fill all fields.';\n    } else {\n      echo 'Hello ' . $name . '! Your email is ' . $email;\n    }\n  }\n?>\n\n<form method='post' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>'>\n  Name: <input type='text' name='name'><br>\n  Email: <input type='text' name='email'><br>\n  <input type='submit' value='Submit'>\n</form>"
+      },
+      {
+        "question": "Create a PHP script to connect to a MySQL database and fetch data.",
+        "solution": "<?php\n  $servername = 'localhost';\n  $username = 'username';\n  $password = 'password';\n  $dbname = 'myDB';\n\n  // Create connection\n  $conn = new mysqli($servername, $username, $password, $dbname);\n\n  // Check connection\n  if ($conn->connect_error) {\n    die('Connection failed: ' . $conn->connect_error);\n  }\n\n  $sql = 'SELECT id, firstname, lastname FROM MyGuests';\n  $result = $conn->query($sql);\n\n  if ($result->num_rows > 0) {\n    while($row = $result->fetch_assoc()) {\n      echo 'id: ' . $row['id'] . ' - Name: ' . $row['firstname'] . ' ' . $row['lastname'] . '<br>';\n    }\n  } else {\n    echo '0 results';\n  }\n\n  $conn->close();\n?>"
+      }
+    ]

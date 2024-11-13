@@ -1,0 +1,91 @@
+[
+    {
+      "question": "How would you create a responsive layout that adjusts the number of columns based on the screen size using CSS?",
+      "solution": "You can use CSS Grid and media queries to create a responsive layout. Here's an example:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n\n@media (max-width: 768px) {\n  .container {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n@media (max-width: 480px) {\n  .container {\n    grid-template-columns: 1fr;\n  }\n}\n```"
+    },
+    {
+      "question": "Write a CSS rule to make images responsive, so they scale according to the container's size.",
+      "solution": "You can use the following CSS rule to make images responsive:\n\n```css\nimg {\n  max-width: 100%;\n  height: auto;\n}\n```"
+    },
+    {
+      "question": "How can you create a mobile-first layout using Flexbox?",
+      "solution": "In a mobile-first approach, you start with a single-column layout and then use media queries to adjust the layout for larger screens. Example:\n\n```css\n.container {\n  display: flex;\n  flex-direction: column;\n}\n\n@media (min-width: 768px) {\n  .container {\n    flex-direction: row;\n  }\n}\n```"
+    },
+    {
+      "question": "How do you use media queries to hide a sidebar on mobile devices?",
+      "solution": "You can use media queries to hide the sidebar on screens smaller than 768px. Example:\n\n```css\n@media (max-width: 768px) {\n  .sidebar {\n    display: none;\n  }\n}```"
+    },
+    {
+      "question": "Write a CSS rule to center a block element both horizontally and vertically in a container.",
+      "solution": "You can center a block element using Flexbox. Example:\n\n```css\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n```"
+    },
+    {
+      "question": "Create a responsive navigation menu using Flexbox that stacks vertically on smaller screens and horizontally on larger screens.",
+      "solution": "You can use Flexbox to create a responsive navigation menu. Example:\n\n```css\n.navbar {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n\n@media (max-width: 768px) {\n  .navbar {\n    flex-direction: column;\n  }\n}```"
+    },
+    {
+      "question": "How can you make a container's width 100% on small screens and 80% on larger screens?",
+      "solution": "You can use media queries to change the container width based on screen size. Example:\n\n```css\n.container {\n  width: 100%;\n}\n\n@media (min-width: 768px) {\n  .container {\n    width: 80%;\n  }\n}```"
+    },
+    {
+      "question": "Write a CSS rule to create a responsive footer that has three columns on larger screens and one column on smaller screens.",
+      "solution": "You can use CSS Grid to create a responsive footer. Example:\n\n```css\n.footer {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n\n@media (max-width: 768px) {\n  .footer {\n    grid-template-columns: 1fr;\n  }\n}```"
+    },
+    {
+      "question": "How would you make a container with a fixed height that adjusts its content to be scrollable on mobile devices?",
+      "solution": "You can set a fixed height and use `overflow-y: auto;` to make the content scrollable. Example:\n\n```css\n.container {\n  height: 400px;\n  overflow-y: auto;\n}```"
+    },
+    {
+      "question": "Write CSS to create a responsive background image that covers the entire viewport and adapts to different screen sizes.",
+      "solution": "You can use `background-size: cover` to make the background image cover the entire viewport. Example:\n\n```css\n.container {\n  background-image: url('image.jpg');\n  background-size: cover;\n  background-position: center;\n  height: 100vh;\n}```"
+    },
+    {
+      "question": "How can you use media queries to change font size based on the screen width?",
+      "solution": "You can use media queries to adjust the font size for different screen widths. Example:\n\n```css\nh1 {\n  font-size: 2rem;\n}\n\n@media (max-width: 768px) {\n  h1 {\n    font-size: 1.5rem;\n  }\n}\n```"
+    },
+    {
+      "question": "How do you create a responsive image gallery that adjusts the number of columns based on the screen size?",
+      "solution": "You can use CSS Grid to create a responsive image gallery. Example:\n\n```css\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n\n@media (max-width: 768px) {\n  .gallery {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n@media (max-width: 480px) {\n  .gallery {\n    grid-template-columns: 1fr;\n  }\n}```"
+    },
+    {
+      "question": "How can you create a sticky header that stays at the top of the page when scrolling?",
+      "solution": "You can use `position: sticky` to create a sticky header. Example:\n\n```css\nheader {\n  position: sticky;\n  top: 0;\n  background-color: white;\n  z-index: 1000;\n}```"
+    },
+    {
+      "question": "What CSS property would you use to make a button change size responsively based on the screen width?",
+      "solution": "You can use the `vw` (viewport width) unit to make a button responsive. Example:\n\n```css\nbutton {\n  width: 10vw;\n  height: 5vh;\n}```"
+    },
+    {
+      "question": "How would you make sure a website's content is legible on both small and large screens?",
+      "solution": "To ensure legibility on all screen sizes, you can use responsive font sizes. Example:\n\n```css\nbody {\n  font-size: 2vw;\n}\n\n@media (max-width: 768px) {\n  body {\n    font-size: 4vw;\n  }\n}```"
+    },
+    {
+      "question": "How can you make a grid-based layout responsive without using media queries?",
+      "solution": "You can use `grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));` to create a responsive grid that adjusts automatically based on the screen size. Example:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 10px;\n}```"
+    },
+    {
+      "question": "How would you make a text element responsive to different screen sizes?",
+      "solution": "You can use the `em` or `rem` units instead of pixels to make text responsive. Example:\n\n```css\nh1 {\n  font-size: 3rem;\n}\n\n@media (max-width: 768px) {\n  h1 {\n    font-size: 2rem;\n  }\n}```"
+    },
+    {
+      "question": "Write a CSS rule to make a button stretch to full width on small screens.",
+      "solution": "You can use media queries to make a button full-width on small screens. Example:\n\n```css\nbutton {\n  width: auto;\n}\n\n@media (max-width: 768px) {\n  button {\n    width: 100%;\n  }\n}```"
+    },
+    {
+      "question": "How can you ensure that text inside a container does not overflow when the viewport is resized?",
+      "solution": "You can use `word-wrap: break-word` and `overflow: hidden` to prevent text overflow. Example:\n\n```css\n.container {\n  word-wrap: break-word;\n  overflow: hidden;\n}```"
+    },
+    {
+      "question": "How would you create a responsive card layout that adjusts the number of cards displayed based on screen size?",
+      "solution": "You can use CSS Grid or Flexbox to create a responsive card layout. Example using Grid:\n\n```css\n.cards {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n\n@media (max-width: 768px) {\n  .cards {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n@media (max-width: 480px) {\n  .cards {\n    grid-template-columns: 1fr;\n  }\n}```"
+    },
+    {
+      "question": "How do you create a responsive table that scrolls horizontally on smaller screens?",
+      "solution": "You can use `overflow-x: auto` to make the table scroll horizontally on small screens. Example:\n\n```css\n.table-container {\n  overflow-x: auto;\n}\n\ntable {\n  width: 100%;\n  border-collapse: collapse;\n}```"
+    },
+    {
+      "question": "How can you make a column-based layout switch to a single column layout on smaller screens?",
+      "solution": "You can use CSS Flexbox or Grid along with media queries to switch between column layouts. Example with Flexbox:\n\n```css\n.container {\n  display: flex;\n  flex-direction: row;\n}\n\n@media (max-width: 768px) {\n  .container {\n    flex-direction: column;\n  }\n}```"
+    }
+  ]
+  

@@ -1,0 +1,82 @@
+ [
+      {
+        "question": "Create a basic APPML model with a 'Person' entity having 'name' and 'age' attributes.",
+        "solution": "// APPML Model\nentity Person {\n  attribute name: String;\n  attribute age: Integer;\n}"
+      },
+      {
+        "question": "Define a relationship in APPML between 'Person' and 'Address' entities.",
+        "solution": "// APPML Model\nentity Person {\n  attribute name: String;\n  attribute age: Integer;\n  relationship address: Address;\n}\n\nentity Address {\n  attribute street: String;\n  attribute city: String;\n  attribute zipCode: String;\n}"
+      },
+      {
+        "question": "Create an enumeration in APPML for 'Gender' with values 'Male', 'Female', and 'Other'.",
+        "solution": "// APPML Model\nenumeration Gender {\n  Male,\n  Female,\n  Other\n}"
+      },
+      {
+        "question": "Write an APPML model for a 'Book' entity with 'title', 'author', and 'publishedYear' attributes.",
+        "solution": "// APPML Model\nentity Book {\n  attribute title: String;\n  attribute author: String;\n  attribute publishedYear: Integer;\n}"
+      },
+      {
+        "question": "Create an inheritance hierarchy in APPML for 'Shape', 'Circle', and 'Rectangle' entities.",
+        "solution": "// APPML Model\nentity Shape {\n  attribute color: String;\n}\n\nentity Circle extends Shape {\n  attribute radius: Double;\n}\n\nentity Rectangle extends Shape {\n  attribute width: Double;\n  attribute height: Double;\n}"
+      },
+      {
+        "question": "Define a many-to-many relationship in APPML between 'Student' and 'Course' entities.",
+        "solution": "// APPML Model\nentity Student {\n  attribute name: String;\n  relationship courses: Course[*];\n}\n\nentity Course {\n  attribute name: String;\n  relationship students: Student[*];\n}"
+      },
+      {
+        "question": "Write an APPML model for a 'Product' entity with 'name', 'price', and 'description' attributes.",
+        "solution": "// APPML Model\nentity Product {\n  attribute name: String;\n  attribute price: Double;\n  attribute description: String;\n}"
+      },
+      {
+        "question": "Create a model in APPML for a 'Company' entity with 'name', 'location', and 'employees' attributes.",
+        "solution": "// APPML Model\nentity Company {\n  attribute name: String;\n  attribute location: String;\n  attribute employees: Integer;\n}"
+      },
+      {
+        "question": "Define an APPML model for 'Order' entity with 'orderId', 'orderDate', and 'totalAmount' attributes.",
+        "solution": "// APPML Model\nentity Order {\n  attribute orderId: String;\n  attribute orderDate: Date;\n  attribute totalAmount: Double;\n}"
+      },
+      {
+        "question": "Write an APPML model for 'Student' entity with 'name', 'dateOfBirth', and 'major' attributes.",
+        "solution": "// APPML Model\nentity Student {\n  attribute name: String;\n  attribute dateOfBirth: Date;\n  attribute major: String;\n}"
+      },
+      {
+        "question": "Create a model in APPML for 'Employee' entity with 'name', 'position', and 'salary' attributes.",
+        "solution": "// APPML Model\nentity Employee {\n  attribute name: String;\n  attribute position: String;\n  attribute salary: Double;\n}"
+      },
+      {
+        "question": "Define an enumeration in APPML for 'Status' with values 'Active', 'Inactive', and 'Pending'.",
+        "solution": "// APPML Model\nenumeration Status {\n  Active,\n  Inactive,\n  Pending\n}"
+      },
+      {
+        "question": "Write an APPML model for 'Project' entity with 'name', 'startDate', and 'endDate' attributes.",
+        "solution": "// APPML Model\nentity Project {\n  attribute name: String;\n  attribute startDate: Date;\n  attribute endDate: Date;\n}"
+      },
+      {
+        "question": "Create an APPML model for 'Customer' entity with 'name', 'email', and 'phone' attributes.",
+        "solution": "// APPML Model\nentity Customer {\n  attribute name: String;\n  attribute email: String;\n  attribute phone: String;\n}"
+      },
+      {
+        "question": "Define a one-to-many relationship in APPML between 'Department' and 'Employee' entities.",
+        "solution": "// APPML Model\nentity Department {\n  attribute name: String;\n  relationship employees: Employee[*];\n}\n\nentity Employee {\n  attribute name: String;\n}"
+      },
+      {
+        "question": "Write an APPML model for 'Event' entity with 'eventName', 'date', and 'location' attributes.",
+        "solution": "// APPML Model\nentity Event {\n  attribute eventName: String;\n  attribute date: Date;\n  attribute location: String;\n}"
+      },
+      {
+        "question": "Create an inheritance hierarchy in APPML for 'Animal', 'Dog', and 'Cat' entities.",
+        "solution": "// APPML Model\nentity Animal {\n  attribute type: String;\n}\n\nentity Dog extends Animal {\n  attribute breed: String;\n}\n\nentity Cat extends Animal {\n  attribute color: String;\n}"
+      },
+      {
+        "question": "Define an enumeration in APPML for 'Role' with values 'Admin', 'User', and 'Guest'.",
+        "solution": "// APPML Model\nenumeration Role {\n  Admin,\n  User,\n  Guest\n}"
+      },
+      {
+        "question": "Write an APPML model for 'Message' entity with 'sender', 'receiver', and 'content' attributes.",
+        "solution": "// APPML Model\nentity Message {\n  attribute sender: String;\n  attribute receiver: String;\n  attribute content: String;\n}"
+      },
+      {
+        "question": "Create a model in APPML for 'Review' entity with 'productId', 'rating', and 'comment' attributes.",
+        "solution": "// APPML Model\nentity Review {\n  attribute productId: String;\n  attribute rating: Integer;\n  attribute comment: String;\n}"
+      }
+    ]

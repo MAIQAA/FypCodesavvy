@@ -1,0 +1,50 @@
+ [
+      {
+        "question": "Write a C++ program to display 'Hello, World!'",
+        "solution": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\";\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to calculate the factorial of a number.",
+        "solution": "#include <iostream>\n\nint factorial(int n) {\n    if (n == 0)\n        return 1;\n    else\n        return n * factorial(n - 1);\n}\n\nint main() {\n    int num;\n    std::cout << \"Enter a number: \";\n    std::cin >> num;\n    std::cout << \"Factorial of \" << num << \" is \" << factorial(num);\n    return 0;\n}"
+      },
+      {
+        "question": "Write a program to find the sum of elements in an array.",
+        "solution": "#include <iostream>\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int sum = 0;\n    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {\n        sum += arr[i];\n    }\n    std::cout << \"Sum of array elements: \" << sum;\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to check if a number is prime or not.",
+        "solution": "#include <iostream>\n\nbool isPrime(int num) {\n    if (num <= 1)\n        return false;\n    for (int i = 2; i * i <= num; ++i) {\n        if (num % i == 0)\n            return false;\n    }\n    return true;\n}\n\nint main() {\n    int num;\n    std::cout << \"Enter a number: \";\n    std::cin >> num;\n    if (isPrime(num))\n        std::cout << num << \" is a prime number.\";\n    else\n        std::cout << num << \" is not a prime number.\";\n    return 0;\n}"
+      },
+      {
+        "question": "Write a program to reverse a string.",
+        "solution": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string str;\n    std::cout << \"Enter a string: \";\n    std::getline(std::cin, str);\n    std::string reversed = \"\";\n    for (int i = str.length() - 1; i >= 0; --i) {\n        reversed += str[i];\n    }\n    std::cout << \"Reversed string: \" << reversed;\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to find the Fibonacci series up to n terms.",
+        "solution": "#include <iostream>\n\nvoid fibonacci(int n) {\n    int first = 0, second = 1, next;\n    std::cout << \"Fibonacci Series up to \" << n << \" terms: \";\n    for (int i = 1; i <= n; ++i) {\n        std::cout << first << \" \";\n        next = first + second;\n        first = second;\n        second = next;\n    }\n}\n\nint main() {\n    int n;\n    std::cout << \"Enter the number of terms: \";\n    std::cin >> n;\n    fibonacci(n);\n    return 0;\n}"
+      },
+      {
+        "question": "Write a program to find the GCD (Greatest Common Divisor) of two numbers.",
+        "solution": "#include <iostream>\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nint main() {\n    int num1, num2;\n    std::cout << \"Enter two numbers: \";\n    std::cin >> num1 >> num2;\n    std::cout << \"GCD of \" << num1 << \" and \" << num2 << \" is \" << gcd(num1, num2);\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to check if a string is a palindrome.",
+        "solution": "#include <iostream>\n#include <string>\n\nbool isPalindrome(std::string str) {\n    int left = 0;\n    int right = str.length() - 1;\n    while (left < right) {\n        if (str[left] != str[right])\n            return false;\n        ++left;\n        --right;\n    }\n    return true;\n}\n\nint main() {\n    std::string str;\n    std::cout << \"Enter a string: \";\n    std::getline(std::cin, str);\n    if (isPalindrome(str))\n        std::cout << str << \" is a palindrome.\";\n    else\n        std::cout << str << \" is not a palindrome.\";\n    return 0;\n}"
+      },
+      {
+        "question": "Write a program to find the factorial of a number using recursion.",
+        "solution": "#include <iostream>\n\nint factorial(int n) {\n    if (n == 0)\n        return 1;\n    else\n        return n * factorial(n - 1);\n}\n\nint main() {\n    int num;\n    std::cout << \"Enter a number: \";\n    std::cin >> num;\n    std::cout << \"Factorial of \" << num << \" is \" << factorial(num);\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to find the sum of first n natural numbers.",
+        "solution": "#include <iostream>\n\nint sumOfNaturalNumbers(int n) {\n    return n * (n + 1) / 2;\n}\n\nint main() {\n    int n;\n    std::cout << \"Enter a number: \";\n    std::cin >> n;\n    std::cout << \"Sum of first \" << n << \" natural numbers is \" << sumOfNaturalNumbers(n);\n    return 0;\n}"
+      },
+      {
+        "question": "Write a program to check if a number is Armstrong number or not.",
+        "solution": "#include <iostream>\n#include <cmath>\n\nbool isArmstrong(int num) {\n    int sum = 0;\n    int temp = num;\n    int digits = (int) log10(num) + 1;\n    while (temp != 0) {\n        int remainder = temp % 10;\n        sum += pow(remainder, digits);\n        temp /= 10;\n    }\n    return sum == num;\n}\n\nint main() {\n    int num;\n    std::cout << \"Enter a number: \";\n    std::cin >> num;\n    if (isArmstrong(num))\n        std::cout << num << \" is an Armstrong number.\";\n    else\n        std::cout << num << \" is not an Armstrong number.\";\n    return 0;\n}"
+      },
+      {
+        "question": "Create a program to print all prime numbers between two given numbers.",
+        "solution": "#include <iostream>\n\nbool isPrime(int num) {\n    if (num <= 1)\n        return false;\n    for (int i = 2; i * i <= num; ++i) {\n        if (num % i == 0)\n            return false;\n    }\n    return true;\n}\n\nint main() {\n    int start, end;\n    std::cout << \"Enter two numbers (start and end): \";\n    std::cin >> start >> end;\n    std::cout << \"Prime numbers between \" << start << \" and \" << end << \" are: \";\n    for (int i = start; i <= end; ++i) {\n        if (isPrime(i))\n            std::cout << i << \" \";\n    }\n    return 0;\n}"
+      }
+    ]

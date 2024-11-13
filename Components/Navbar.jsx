@@ -25,6 +25,10 @@ const Navbar = () => {
     router.push("/learning");
   };
 
+  const handleExercises = () => {
+    router.push("/exercises");
+  };
+
   const handleLogout = () => {
     signOut();
   };
@@ -40,7 +44,7 @@ const Navbar = () => {
     <>
     <div className="absolute bg-transparent w-full top-0 self-start z-40 text-lg">
       <div className=" m-3 w-auto px-10 flex items-center justify-between">
-        <ul className="flex gap-7 items-center w-1/2">
+        <ul className="flex gap-7 items-center w-1/2 cursor-default">
           <li className="mr-40" onClick={handleHome}>
             <Image
               src={"/Logo.png"}
@@ -50,7 +54,7 @@ const Navbar = () => {
             />
           </li>
           <li onClick={handleLearn}>Learning</li>
-          <li>Exercises</li>
+          <li onClick={handleExercises}>Exercises</li>
           <li onClick={handleWorkspace}>Workspace</li>
         </ul>
 

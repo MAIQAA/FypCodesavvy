@@ -1,0 +1,82 @@
+ [
+      {
+        "question": "Create a basic HTML page with a heading and a paragraph.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Basic HTML Page</title>\n</head>\n<body>\n<h1>Hello, World!</h1>\n<p>This is a paragraph.</p>\n</body>\n</html>"
+      },
+      {
+        "question": "Add an image to the HTML page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Image Example</title>\n</head>\n<body>\n<img src='image.jpg' alt='Example Image'>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a hyperlink to another page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Link Example</title>\n</head>\n<body>\n<a href='https://www.example.com'>Visit Example.com</a>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ordered list with three items.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Ordered List</title>\n</head>\n<body>\n<ol>\n<li>First item</li>\n<li>Second item</li>\n<li>Third item</li>\n</ol>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an unordered list with three items.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Unordered List</title>\n</head>\n<body>\n<ul>\n<li>First item</li>\n<li>Second item</li>\n<li>Third item</li>\n</ul>\n</body>\n</html>"
+      },
+      {
+        "question": "Add a table with three rows and three columns.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Table Example</title>\n</head>\n<body>\n<table border='1'>\n<tr>\n<th>Header 1</th>\n<th>Header 2</th>\n<th>Header 3</th>\n</tr>\n<tr>\n<td>Row 1, Cell 1</td>\n<td>Row 1, Cell 2</td>\n<td>Row 1, Cell 3</td>\n</tr>\n<tr>\n<td>Row 2, Cell 1</td>\n<td>Row 2, Cell 2</td>\n<td>Row 2, Cell 3</td>\n</tr>\n</table>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a form with an input field and a submit button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Form Example</title>\n</head>\n<body>\n<form>\n<label for='name'>Name:</label>\n<input type='text' id='name' name='name'>\n<input type='submit' value='Submit'>\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Add a video to the HTML page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Video Example</title>\n</head>\n<body>\n<video width='320' height='240' controls>\n<source src='movie.mp4' type='video/mp4'>\nYour browser does not support the video tag.\n</video>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a dropdown menu.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Dropdown Example</title>\n</head>\n<body>\n<label for='cars'>Choose a car:</label>\n<select id='cars' name='cars'>\n<option value='volvo'>Volvo</option>\n<option value='saab'>Saab</option>\n<option value='fiat'>Fiat</option>\n<option value='audi'>Audi</option>\n</select>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a checkbox.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Checkbox Example</title>\n</head>\n<body>\n<form>\n<input type='checkbox' id='vehicle1' name='vehicle1' value='Bike'>\n<label for='vehicle1'> I have a bike</label><br>\n<input type='checkbox' id='vehicle2' name='vehicle2' value='Car'>\n<label for='vehicle2'> I have a car</label><br>\n<input type='submit' value='Submit'>\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a radio button group.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Radio Button Example</title>\n</head>\n<body>\n<form>\n<input type='radio' id='male' name='gender' value='male'>\n<label for='male'>Male</label><br>\n<input type='radio' id='female' name='gender' value='female'>\n<label for='female'>Female</label><br>\n<input type='submit' value='Submit'>\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Add an audio file to the HTML page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Audio Example</title>\n</head>\n<body>\n<audio controls>\n<source src='audio.mp3' type='audio/mpeg'>\nYour browser does not support the audio element.\n</audio>\n</body>\n</html>"
+      },
+      {
+        "question": "Embed a YouTube video in the HTML page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>YouTube Embed Example</title>\n</head>\n<body>\n<iframe width='560' height='315' src='https://www.youtube.com/embed/dQw4w9WgXcQ' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a navigation bar with links.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Navigation Bar</title>\n</head>\n<body>\n<nav>\n<a href='#home'>Home</a> |\n<a href='#news'>News</a> |\n<a href='#contact'>Contact</a> |\n<a href='#about'>About</a>\n</nav>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a div element with an ID and a class.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Div Element</title>\n</head>\n<body>\n<div id='myDiv' class='myClass'>This is a div element.</div>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a header element with a navigation bar.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Header Element</title>\n</head>\n<body>\n<header>\n<nav>\n<a href='#home'>Home</a> |\n<a href='#news'>News</a> |\n<a href='#contact'>Contact</a> |\n<a href='#about'>About</a>\n</nav>\n</header>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a footer element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Footer Element</title>\n</head>\n<body>\n<footer>\n<p>Footer content here.</p>\n</footer>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a section element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Section Element</title>\n</head>\n<body>\n<section>\n<h2>Section Title</h2>\n<p>Section content here.</p>\n</section>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an article element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Article Element</title>\n</head>\n<body>\n<article>\n<h2>Article Title</h2>\n<p>Article content here.</p>\n</article>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an aside element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<title>Aside Element</title>\n</head>\n<body>\n<aside>\n<h2>Aside Title</h2>\n<p>Aside content here.</p>\n</aside>\n</body>\n</html>"
+      }
+    ]

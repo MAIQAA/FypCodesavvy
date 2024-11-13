@@ -95,7 +95,7 @@ const Page = () => {
   return (
     <div className="relative flex flex-col min-h-screen mt-20">
       {/* Top Bar */}
-      <div className="bg-gray-800 text-white p-3 flex justify-start space-x-2 overflow-x-auto LearnTopbar">
+      <div className="bg-gray-800 text-white p-4 flex justify-start space-x-2 overflow-x-auto LearnTopbar">
         {Object.keys(files).slice(0, 50).map((fileName) => (
           <button
             key={fileName}

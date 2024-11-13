@@ -1,0 +1,86 @@
+[
+      {
+        "question": "Create a table named 'employees' with columns 'id', 'name', 'age', and 'salary'.",
+        "solution": "CREATE TABLE employees (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    name VARCHAR(100),\n    age INT,\n    salary DECIMAL(10, 2)\n);"
+      },
+      {
+        "question": "Insert 3 records into the 'employees' table.",
+        "solution": "INSERT INTO employees (name, age, salary) VALUES\n    ('John Doe', 30, 50000.00),\n    ('Jane Smith', 28, 45000.00),\n    ('Michael Johnson', 35, 60000.00);"
+      },
+      {
+        "question": "Write a query to fetch all employees whose age is greater than 30.",
+        "solution": "SELECT * FROM employees WHERE age > 30;"
+      },
+      {
+        "question": "Update the salary of employee with id 1 to 55000.00.",
+        "solution": "UPDATE employees SET salary = 55000.00 WHERE id = 1;"
+      },
+      {
+        "question": "Delete the employee with id 3 from the 'employees' table.",
+        "solution": "DELETE FROM employees WHERE id = 3;"
+      },
+      {
+        "question": "Write a query to fetch employees sorted by their salary in descending order.",
+        "solution": "SELECT * FROM employees ORDER BY salary DESC;"
+      },
+      {
+        "question": "Create a table 'departments' with columns 'dept_id' and 'dept_name'.",
+        "solution": "CREATE TABLE departments (\n    dept_id INT AUTO_INCREMENT PRIMARY KEY,\n    dept_name VARCHAR(100)\n);"
+      },
+      {
+        "question": "Insert 3 records into the 'departments' table.",
+        "solution": "INSERT INTO departments (dept_name) VALUES\n    ('IT'),\n    ('HR'),\n    ('Finance');"
+      },
+      {
+        "question": "Write a query to fetch all employees along with their department names.",
+        "solution": "SELECT e.name, e.salary, d.dept_name\nFROM employees e\nJOIN departments d ON e.dept_id = d.dept_id;"
+      },
+      {
+        "question": "Add a new column 'dept_id' to the 'employees' table and set default value to 1.",
+        "solution": "ALTER TABLE employees\nADD COLUMN dept_id INT DEFAULT 1;"
+      },
+      {
+        "question": "Write a query to calculate the average salary of all employees.",
+        "solution": "SELECT AVG(salary) AS average_salary FROM employees;"
+      },
+      {
+        "question": "Create a table 'projects' with columns 'project_id' and 'project_name'.",
+        "solution": "CREATE TABLE projects (\n    project_id INT AUTO_INCREMENT PRIMARY KEY,\n    project_name VARCHAR(100)\n);"
+      },
+      {
+        "question": "Insert 3 records into the 'projects' table.",
+        "solution": "INSERT INTO projects (project_name) VALUES\n    ('Project A'),\n    ('Project B'),\n    ('Project C');"
+      },
+      {
+        "question": "Write a query to assign employees to Project A.",
+        "solution": "INSERT INTO employee_projects (employee_id, project_id)\nSELECT id, (SELECT project_id FROM projects WHERE project_name = 'Project A')\nFROM employees;"
+      },
+      {
+        "question": "Create a table 'employee_projects' with columns 'employee_id' and 'project_id'.",
+        "solution": "CREATE TABLE employee_projects (\n    employee_id INT,\n    project_id INT,\n    PRIMARY KEY (employee_id, project_id),\n    FOREIGN KEY (employee_id) REFERENCES employees(id),\n    FOREIGN KEY (project_id) REFERENCES projects(project_id)\n);"
+      },
+      {
+        "question": "Write a query to count the number of employees in each department.",
+        "solution": "SELECT d.dept_name, COUNT(e.id) AS num_employees\nFROM departments d\nLEFT JOIN employees e ON d.dept_id = e.dept_id\nGROUP BY d.dept_name;"
+      },
+      {
+        "question": "Delete all records from the 'employees' table.",
+        "solution": "DELETE FROM employees;"
+      },
+      {
+        "question": "Drop the 'departments' table.",
+        "solution": "DROP TABLE departments;"
+      },
+      {
+        "question": "Write a query to find the highest salary among all employees.",
+        "solution": "SELECT MAX(salary) AS max_salary FROM employees;"
+      },
+      {
+        "question": "Create a table 'customers' with columns 'customer_id', 'name', and 'email'.",
+        "solution": "CREATE TABLE customers (\n    customer_id INT AUTO_INCREMENT PRIMARY KEY,\n    name VARCHAR(100),\n    email VARCHAR(100)\n);"
+      },
+      {
+        "question": "Insert 3 records into the 'customers' table.",
+        "solution": "INSERT INTO customers (name, email) VALUES\n    ('Alice Johnson', 'alice@example.com'),\n    ('Bob Smith', 'bob@example.com'),\n    ('Eve Brown', 'eve@example.com');"
+      }
+    ]

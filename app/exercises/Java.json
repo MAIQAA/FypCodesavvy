@@ -1,0 +1,54 @@
+ [
+      {
+        "question": "Write a Java program to print 'Hello, World!'",
+        "solution": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to calculate the sum of two integers.",
+        "solution": "public class SumCalculator {\n    public static void main(String[] args) {\n        int num1 = 5, num2 = 10, sum;\n        sum = num1 + num2;\n        System.out.println(\"Sum of \" + num1 + \" and \" + num2 + \" is: \" + sum);\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to find the factorial of a number.",
+        "solution": "public class FactorialCalculator {\n    public static void main(String[] args) {\n        int num = 5;\n        long factorial = 1;\n        for(int i = 1; i <= num; ++i) {\n            factorial *= i;\n        }\n        System.out.println(\"Factorial of \" + num + \" = \" + factorial);\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to check if a number is prime.",
+        "solution": "public class PrimeChecker {\n    public static void main(String[] args) {\n        int num = 29;\n        boolean isPrime = true;\n        for(int i = 2; i <= num/2; ++i) {\n            if(num % i == 0) {\n                isPrime = false;\n                break;\n            }\n        }\n        if(isPrime)\n            System.out.println(num + \" is a prime number.\");\n        else\n            System.out.println(num + \" is not a prime number.\");\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to reverse a string.",
+        "solution": "public class StringReversal {\n    public static void main(String[] args) {\n        String original = \"hello world\";\n        String reversed = \"\";\n        for(int i = original.length() - 1; i >= 0; i--) {\n            reversed += original.charAt(i);\n        }\n        System.out.println(\"Reversed string: \" + reversed);\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to calculate the Fibonacci series.",
+        "solution": "public class FibonacciSeries {\n    public static void main(String[] args) {\n        int n = 10, t1 = 0, t2 = 1;\n        System.out.print(\"Fibonacci Series: \");\n        for (int i = 1; i <= n; ++i) {\n            System.out.print(t1 + \" + \");\n            int sum = t1 + t2;\n            t1 = t2;\n            t2 = sum;\n        }\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to find the largest and smallest elements in an array.",
+        "solution": "public class ArrayMinMax {\n    public static void main(String[] args) {\n        int[] numbers = {5, 12, 3, 89, 23};\n        int min = numbers[0];\n        int max = numbers[0];\n        for (int i = 1; i < numbers.length; i++) {\n            if (numbers[i] < min) {\n                min = numbers[i];\n            }\n            if (numbers[i] > max) {\n                max = numbers[i];\n            }\n        }\n        System.out.println(\"Minimum: \" + min);\n        System.out.println(\"Maximum: \" + max);\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to count the number of vowels and consonants in a string.",
+        "solution": "public class VowelConsonantCounter {\n    public static void main(String[] args) {\n        String str = \"hello world\";\n        int vowels = 0, consonants = 0;\n        str = str.toLowerCase();\n        for(int i = 0; i < str.length(); ++i) {\n            char ch = str.charAt(i);\n            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {\n                ++vowels;\n            }\n            else if((ch >= 'a' && ch <= 'z')) {\n                ++consonants;\n            }\n        }\n        System.out.println(\"Vowels: \" + vowels);\n        System.out.println(\"Consonants: \" + consonants);\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to sort an array of integers in ascending order.",
+        "solution": "public class ArraySorting {\n    public static void main(String[] args) {\n        int[] numbers = {5, 12, 3, 89, 23};\n        for (int i = 0; i < numbers.length-1; i++) {\n            for (int j = i+1; j < numbers.length; j++) {\n                if (numbers[i] > numbers[j]) {\n                    int temp = numbers[i];\n                    numbers[i] = numbers[j];\n                    numbers[j] = temp;\n                }\n            }\n        }\n        System.out.print(\"Sorted Array: \");\n        for (int number : numbers) {\n            System.out.print(number + \" \");\n        }\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to find the GCD (Greatest Common Divisor) of two numbers.",
+        "solution": "public class GCD {\n    public static void main(String[] args) {\n        int num1 = 12, num2 = 30, gcd = 1;\n        for(int i = 1; i <= num1 && i <= num2; ++i) {\n            if(num1 % i == 0 && num2 % i == 0) {\n                gcd = i;\n            }\n        }\n        System.out.println(\"GCD of \" + num1 + \" and \" + num2 + \" is: \" + gcd);\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to check if a string is a palindrome.",
+        "solution": "public class PalindromeChecker {\n    public static void main(String[] args) {\n        String str = \"madam\";\n        boolean isPalindrome = true;\n        int length = str.length();\n        for(int i = 0; i < length / 2; i++) {\n            if(str.charAt(i) != str.charAt(length - i - 1)) {\n                isPalindrome = false;\n                break;\n            }\n        }\n        if(isPalindrome)\n            System.out.println(str + \" is a palindrome.\");\n        else\n            System.out.println(str + \" is not a palindrome.\");\n    }\n}"
+      },
+      {
+        "question": "Create a Java program to find the factorial of a number using recursion.",
+        "solution": "public class Factorial {\n    public static void main(String[] args) {\n        int num = 5;\n        long factorial = multiplyNumbers(num);\n        System.out.println(\"Factorial of \" + num + \" = \" + factorial);\n    }\n\n    public static long multiplyNumbers(int num) {\n        if (num >= 1)\n            return num * multiplyNumbers(num - 1);\n        else\n            return 1;\n    }\n}"
+      },
+      {
+        "question": "Write a Java program to check if a number is an Armstrong number or not.",
+        "solution": "public class ArmstrongNumber {\n    public static void main(String[] args) {\n        int num = 153, originalNumber, remainder, result = 0;\n        originalNumber = num;\n        while (originalNumber != 0) {\n            remainder = originalNumber % 10;\n            result += Math.pow(remainder, 3);\n            originalNumber /= 10;\n        }\n        if (result == num)\n            System.out.println(num + \" is an Armstrong number.\");\n        else\n            System.out.println(num + \" is not an Armstrong number.\");\n    }\n}"
+      }
+    ]

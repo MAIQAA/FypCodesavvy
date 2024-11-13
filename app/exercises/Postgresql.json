@@ -1,0 +1,86 @@
+ [
+      {
+        "question": "Create a table named 'employees' with columns id (integer), name (text), and salary (numeric).",
+        "solution": "CREATE TABLE employees (\n    id SERIAL PRIMARY KEY,\n    name TEXT,\n    salary NUMERIC\n);"
+      },
+      {
+        "question": "Insert a new employee into the 'employees' table with id=1, name='John Doe', and salary=50000.",
+        "solution": "INSERT INTO employees (id, name, salary) VALUES (1, 'John Doe', 50000);"
+      },
+      {
+        "question": "Write a query to select all employees from the 'employees' table.",
+        "solution": "SELECT * FROM employees;"
+      },
+      {
+        "question": "Update the salary of employee with id=1 to 60000.",
+        "solution": "UPDATE employees SET salary = 60000 WHERE id = 1;"
+      },
+      {
+        "question": "Delete the employee with id=1 from the 'employees' table.",
+        "solution": "DELETE FROM employees WHERE id = 1;"
+      },
+      {
+        "question": "Create a table named 'departments' with columns id (integer) and name (text).",
+        "solution": "CREATE TABLE departments (\n    id SERIAL PRIMARY KEY,\n    name TEXT\n);"
+      },
+      {
+        "question": "Insert a new department into the 'departments' table with id=1 and name='IT'.",
+        "solution": "INSERT INTO departments (id, name) VALUES (1, 'IT');"
+      },
+      {
+        "question": "Write a query to find employees whose salary is greater than 60000.",
+        "solution": "SELECT * FROM employees WHERE salary > 60000;"
+      },
+      {
+        "question": "Update the department name from 'IT' to 'HR' in the 'departments' table.",
+        "solution": "UPDATE departments SET name = 'HR' WHERE name = 'IT';"
+      },
+      {
+        "question": "Delete the department with id=1 from the 'departments' table.",
+        "solution": "DELETE FROM departments WHERE id = 1;"
+      },
+      {
+        "question": "Create a table named 'projects' with columns id (integer), name (text), and start_date (date).",
+        "solution": "CREATE TABLE projects (\n    id SERIAL PRIMARY KEY,\n    name TEXT,\n    start_date DATE\n);"
+      },
+      {
+        "question": "Insert a new project into the 'projects' table with id=1, name='Database Migration', and start_date='2024-01-01'.",
+        "solution": "INSERT INTO projects (id, name, start_date) VALUES (1, 'Database Migration', '2024-01-01');"
+      },
+      {
+        "question": "Write a query to find projects started after '2023-06-01'.",
+        "solution": "SELECT * FROM projects WHERE start_date > '2023-06-01';"
+      },
+      {
+        "question": "Update the start_date of project with id=1 to '2025-01-01'.",
+        "solution": "UPDATE projects SET start_date = '2025-01-01' WHERE id = 1;"
+      },
+      {
+        "question": "Delete the project with id=1 from the 'projects' table.",
+        "solution": "DELETE FROM projects WHERE id = 1;"
+      },
+      {
+        "question": "Create a table named 'orders' with columns id (integer), product_name (text), and quantity (integer).",
+        "solution": "CREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    product_name TEXT,\n    quantity INTEGER\n);"
+      },
+      {
+        "question": "Insert a new order into the 'orders' table with id=1, product_name='Laptop', and quantity=10.",
+        "solution": "INSERT INTO orders (id, product_name, quantity) VALUES (1, 'Laptop', 10);"
+      },
+      {
+        "question": "Write a query to find orders where quantity is less than 5.",
+        "solution": "SELECT * FROM orders WHERE quantity < 5;"
+      },
+      {
+        "question": "Update the product_name of order with id=1 to 'Desktop'.",
+        "solution": "UPDATE orders SET product_name = 'Desktop' WHERE id = 1;"
+      },
+      {
+        "question": "Delete the order with id=1 from the 'orders' table.",
+        "solution": "DELETE FROM orders WHERE id = 1;"
+      },
+      {
+        "question": "Create a table named 'customers' with columns id (integer), name (text), and email (text).",
+        "solution": "CREATE TABLE customers (\n    id SERIAL PRIMARY KEY,\n    name TEXT,\n    email TEXT\n);"
+      }
+    ]

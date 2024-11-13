@@ -1,0 +1,47 @@
+[
+      {
+        "question": "Center align text inside a div element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div>This text is centered.</div>\n</body>\n</html>"
+      },
+      {
+        "question": "Add a border around an image.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nimg {\n  border: 2px solid black;\n}\n</style>\n</head>\n<body>\n<img src='image.jpg' alt='Example Image'>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a three-column layout using CSS.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.column {\n  float: left;\n  width: 33.33%;\n}\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table;\n}\n</style>\n</head>\n<body>\n<div class='clearfix'>\n  <div class='column'>Column 1</div>\n  <div class='column'>Column 2</div>\n  <div class='column'>Column 3</div>\n</div>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a hover effect on a button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.button {\n  background-color: blue;\n  color: white;\n  padding: 10px;\n  transition: background-color 0.3s ease;\n}\n.button:hover {\n  background-color: darkblue;\n}\n</style>\n</head>\n<body>\n<button class='button'>Hover Me!</button>\n</body>\n</html>"
+      },
+      {
+        "question": "Style a list to have no bullets and each item in a new line.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nul {\n  list-style-type: none;\n  padding: 0;\n}\nli {\n  display: block;\n  margin-bottom: 10px;\n}\n</style>\n</head>\n<body>\n<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</ul>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a fixed navigation bar that sticks to the top of the page.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.navbar {\n  overflow: hidden;\n  background-color: #333;\n  position: fixed;\n  top: 0;\n  width: 100%;\n}\n.navbar a {\n  float: left;\n  display: block;\n  color: #f2f2f2;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n}\n</style>\n</head>\n<body>\n<div class='navbar'>\n  <a href='#home'>Home</a>\n  <a href='#about'>About</a>\n  <a href='#contact'>Contact</a>\n</div>\n<div style='padding: 20px; margin-top: 50px;'>\n  <p>Scroll to see the sticky effect.</p>\n  <p>Some text to represent the content..</p>\n</div>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a CSS animation that makes an element bounce.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n@keyframes bounce {\n  0%, 20%, 50%, 80%, 100% {\n    transform: translateY(0);\n  }\n  40% {\n    transform: translateY(-30px);\n  }\n  60% {\n    transform: translateY(-15px);\n  }\n}\ndiv {\n  animation: bounce 2s infinite;\n}\n</style>\n</head>\n<body>\n<div style='width: 100px; height: 100px; background-color: red;'></div>\n</body>\n</html>"
+      },
+      {
+        "question": "Style a form with input fields and a submit button.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nform {\n  display: flex;\n  flex-direction: column;\n  width: 300px;\n}\ninput[type='text'], input[type='password'] {\n  margin-bottom: 10px;\n  padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\nbutton[type='submit'] {\n  background-color: blue;\n  color: white;\n  padding: 10px;\n  border: none;\n  cursor: pointer;\n}\nbutton[type='submit']:hover {\n  background-color: darkblue;\n}\n</style>\n</head>\n<body>\n<form>\n  <input type='text' placeholder='Username' />\n  <input type='password' placeholder='Password' />\n  <button type='submit'>Submit</button>\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a CSS grid layout with 3 columns and 2 rows.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.grid-container {\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-template-rows: auto auto;\n  gap: 10px;\n  padding: 10px;\n}\n.grid-item {\n  background-color: lightblue;\n  padding: 20px;\n  font-size: 30px;\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div class='grid-container'>\n  <div class='grid-item'>Item 1</div>\n  <div class='grid-item'>Item 2</div>\n  <div class='grid-item'>Item 3</div>\n  <div class='grid-item'>Item 4</div>\n  <div class='grid-item'>Item 5</div>\n  <div class='grid-item'>Item 6</div>\n</div>\n</body>\n</html>"
+      },
+      {
+        "question": "Style a table with alternate row colors.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntable {\n  width: 100%;\n  border-collapse: collapse;\n}\nth, td {\n  border: 1px solid #ddd;\n  padding: 8px;\n  text-align: left;\n}\ntr:nth-child(even) {\n  background-color: #f2f2f2;\n}\n</style>\n</head>\n<body>\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Age</th>\n  </tr>\n  <tr>\n    <td>John</td>\n    <td>30</td>\n  </tr>\n  <tr>\n    <td>Jane</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>Jim</td>\n    <td>35</td>\n  </tr>\n</table>\n</body>\n</html>"
+      },
+      {
+        "question": "Create a CSS transition on hover.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  width: 100px;\n  height: 100px;\n  background-color: red;\n  transition: width 0.5s, height 0.5s, transform 0.5s;\n}\ndiv:hover {\n  width: 150px;\n  height: 150px;\n  transform: rotate(180deg);\n}\n</style>\n</head>\n<body>\n<div></div>\n</body>\n</html>"
+      }
+    ]
+  

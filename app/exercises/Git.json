@@ -1,0 +1,82 @@
+ [
+      {
+        "question": "Initialize a new Git repository.",
+        "solution": "# Initialize an empty Git repository\n$ git init"
+      },
+      {
+        "question": "Add a file to the staging area.",
+        "solution": "# Add a file to the staging area\n$ git add filename.ext"
+      },
+      {
+        "question": "Commit changes to the repository with a message.",
+        "solution": "# Commit changes with a message\n$ git commit -m \"Commit message\""
+      },
+      {
+        "question": "Check the status of the repository.",
+        "solution": "# Check repository status\n$ git status"
+      },
+      {
+        "question": "View the commit history of the repository.",
+        "solution": "# View commit history\n$ git log"
+      },
+      {
+        "question": "Create a new branch in the repository.",
+        "solution": "# Create a new branch\n$ git branch branchname"
+      },
+      {
+        "question": "Switch to a different branch.",
+        "solution": "# Switch to a branch\n$ git checkout branchname"
+      },
+      {
+        "question": "Merge changes from one branch into another.",
+        "solution": "# Merge branches\n$ git merge branchname"
+      },
+      {
+        "question": "Undo the last commit keeping changes in the working directory.",
+        "solution": "# Undo last commit, keep changes\n$ git reset HEAD^"
+      },
+      {
+        "question": "Discard changes in the working directory for a specific file.",
+        "solution": "# Discard changes for a file\n$ git checkout -- filename.ext"
+      },
+      {
+        "question": "View differences between the working directory and the staging area.",
+        "solution": "# View differences\n$ git diff"
+      },
+      {
+        "question": "Push changes to a remote repository.",
+        "solution": "# Push changes to remote\n$ git push origin branchname"
+      },
+      {
+        "question": "Pull changes from a remote repository.",
+        "solution": "# Pull changes from remote\n$ git pull origin branchname"
+      },
+      {
+        "question": "Create and apply a Git patch.",
+        "solution": "# Create a patch file\n$ git diff > patchfile.patch\n\n# Apply a patch file\n$ git apply patchfile.patch"
+      },
+      {
+        "question": "Remove a file from the Git repository.",
+        "solution": "# Remove a file from Git\n$ git rm filename.ext"
+      },
+      {
+        "question": "Configure Git username and email.",
+        "solution": "# Configure username and email\n$ git config --global user.name \"Your Name\"\n$ git config --global user.email \"your.email@example.com\""
+      },
+      {
+        "question": "Create a tag for a specific commit.",
+        "solution": "# Create a tag\n$ git tag tagname"
+      },
+      {
+        "question": "View tags in the repository.",
+        "solution": "# View tags\n$ git tag"
+      },
+      {
+        "question": "Stash changes temporarily.",
+        "solution": "# Stash changes\n$ git stash"
+      },
+      {
+        "question": "Apply stashed changes to the working directory.",
+        "solution": "# Apply stashed changes\n$ git stash apply"
+      }
+    ]

@@ -1,0 +1,47 @@
+ [
+      {
+        "question": "Create a function that adds two numbers and returns the result.",
+        "solution": "// Function definition\nfunction addNumbers(a, b) {\n  return a + b;\n}\n\n// Example usage\nconsole.log(addNumbers(5, 3)); // Output: 8"
+      },
+      {
+        "question": "Write a function that checks if a number is even or odd.",
+        "solution": "// Function definition\nfunction checkEvenOrOdd(num) {\n  if (num % 2 === 0) {\n    return 'Even';\n  } else {\n    return 'Odd';\n  }\n}\n\n// Example usage\nconsole.log(checkEvenOrOdd(7)); // Output: Odd"
+      },
+      {
+        "question": "Create a function that returns the factorial of a number.",
+        "solution": "// Function definition\nfunction factorial(num) {\n  if (num === 0 || num === 1)\n    return 1;\n  for (var i = num - 1; i >= 1; i--) {\n    num *= i;\n  }\n  return num;\n}\n\n// Example usage\nconsole.log(factorial(5)); // Output: 120"
+      },
+      {
+        "question": "Write a program to reverse a string.",
+        "solution": "// Function definition\nfunction reverseString(str) {\n  return str.split('').reverse().join('');\n}\n\n// Example usage\nconsole.log(reverseString('hello')); // Output: 'olleh'"
+      },
+      {
+        "question": "Create an array of numbers and sort it in descending order.",
+        "solution": "// Array definition\nlet numbers = [5, 2, 8, 1, 4];\n\n// Sorting in descending order\nnumbers.sort(function(a, b) {\n  return b - a;\n});\n\n// Example usage\nconsole.log(numbers); // Output: [8, 5, 4, 2, 1]"
+      },
+      {
+        "question": "Write a function that checks if a string is a palindrome.",
+        "solution": "// Function definition\nfunction isPalindrome(str) {\n  const reversed = str.split('').reverse().join('');\n  return str === reversed;\n}\n\n// Example usage\nconsole.log(isPalindrome('madam')); // Output: true"
+      },
+      {
+        "question": "Create a program that prints the Fibonacci sequence up to a certain number of terms.",
+        "solution": "// Function definition\nfunction fibonacci(num) {\n  let a = 0, b = 1, temp;\n  for (let i = 0; i < num; i++) {\n    console.log(a);\n    temp = a;\n    a = b;\n    b = temp + b;\n  }\n}\n\n// Example usage\nfibonacci(10); // Output: Prints Fibonacci sequence up to 10 terms"
+      },
+      {
+        "question": "Write a function that finds the largest element in an array.",
+        "solution": "// Function definition\nfunction findLargest(arr) {\n  let largest = arr[0];\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i] > largest) {\n      largest = arr[i];\n    }\n  }\n  return largest;\n}\n\n// Example usage\nconsole.log(findLargest([3, 7, 2, 9, 1])); // Output: 9"
+      },
+      {
+        "question": "Create a program that counts the number of vowels in a string.",
+        "solution": "// Function definition\nfunction countVowels(str) {\n  const vowels = 'aeiouAEIOU';\n  let count = 0;\n  for (let char of str) {\n    if (vowels.includes(char)) {\n      count++;\n    }\n  }\n  return count;\n}\n\n// Example usage\nconsole.log(countVowels('Hello World')); // Output: 3"
+      },
+      {
+        "question": "Write a function to calculate the power of a number.",
+        "solution": "// Function definition\nfunction power(base, exponent) {\n  return Math.pow(base, exponent);\n}\n\n// Example usage\nconsole.log(power(2, 3)); // Output: 8"
+      },
+      {
+        "question": "Create a function that removes duplicates from an array.",
+        "solution": "// Function definition\nfunction removeDuplicates(arr) {\n  return Array.from(new Set(arr));\n}\n\n// Example usage\nconsole.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]"
+      }
+    ]
+  

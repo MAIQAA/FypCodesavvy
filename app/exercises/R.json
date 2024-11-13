@@ -1,0 +1,74 @@
+[
+      {
+        "question": "Create a variable 'x' and assign it the value 5.",
+        "solution": "# Assigning value to a variable\nx <- 5\nprint(x)"
+      },
+      {
+        "question": "Write a program to calculate the factorial of a number.",
+        "solution": "# Function to calculate factorial\nfactorial <- function(n) {\n  if (n == 0)\n    return(1)\n  else\n    return(n * factorial(n-1))\n}\n\n# Example usage\nnum <- 5\nresult <- factorial(num)\nprint(paste('Factorial of', num, 'is', result))"
+      },
+      {
+        "question": "Create a vector 'numbers' containing elements from 1 to 10.",
+        "solution": "# Creating a vector\nnumbers <- 1:10\nprint(numbers)"
+      },
+      {
+        "question": "Write a program to find the sum of elements in a vector.",
+        "solution": "# Finding sum of elements in a vector\nnumbers <- c(1, 2, 3, 4, 5)\nsum <- sum(numbers)\nprint(paste('Sum of elements:', sum))"
+      },
+      {
+        "question": "Create a function to check if a number is prime or not.",
+        "solution": "# Function to check prime number\nis_prime <- function(num) {\n  if (num <= 1)\n    return(FALSE)\n  for (i in 2:(num-1)) {\n    if (num %% i == 0)\n      return(FALSE)\n  }\n  return(TRUE)\n}\n\n# Example usage\nnumber <- 13\nif (is_prime(number))\n  print(paste(number, 'is a prime number.'))\nelse\n  print(paste(number, 'is not a prime number.'))"
+      },
+      {
+        "question": "Write a program to reverse a string.",
+        "solution": "# Function to reverse a string\nreverse_string <- function(str) {\n  return(paste(rev(strsplit(str, '')[[1]]), collapse=''))\n}\n\n# Example usage\ninput_string <- 'Hello, World!'\nreversed <- reverse_string(input_string)\nprint(paste('Reversed string:', reversed))"
+      },
+      {
+        "question": "Create a program to calculate the mean of elements in a vector.",
+        "solution": "# Finding mean of elements in a vector\nnumbers <- c(1, 2, 3, 4, 5)\nmean_value <- mean(numbers)\nprint(paste('Mean of elements:', mean_value))"
+      },
+      {
+        "question": "Write a function to check if a string is a palindrome.",
+        "solution": "# Function to check palindrome\nis_palindrome <- function(str) {\n  str <- gsub('[[:punct:] ]', '', str)\n  str <- tolower(str)\n  return(str == rev(str))\n}\n\n# Example usage\ninput_str <- 'A man, a plan, a canal, Panama!'\nif (is_palindrome(input_str))\n  print(paste(input_str, 'is a palindrome.'))\nelse\n  print(paste(input_str, 'is not a palindrome.'))"
+      },
+      {
+        "question": "Create a program to calculate the Fibonacci series up to n terms.",
+        "solution": "# Function to generate Fibonacci series\nfibonacci <- function(n) {\n  fib <- numeric(n)\n  fib[1] <- 0\n  fib[2] <- 1\n  for (i in 3:n) {\n    fib[i] <- fib[i-1] + fib[i-2]\n  }\n  return(fib)\n}\n\n# Example usage\nnum_terms <- 10\nfib_series <- fibonacci(num_terms)\nprint(paste('Fibonacci series up to', num_terms, 'terms:', paste(fib_series, collapse=', ')))"
+      },
+      {
+        "question": "Write a program to find the maximum and minimum elements in a vector.",
+        "solution": "# Finding maximum and minimum elements in a vector\nnumbers <- c(12, 34, 56, 23, 89, 45)\nmax_value <- max(numbers)\nmin_value <- min(numbers)\nprint(paste('Maximum value:', max_value))\nprint(paste('Minimum value:', min_value))"
+      },
+      {
+        "question": "Create a program to calculate the factorial of a number using recursion.",
+        "solution": "# Function to calculate factorial using recursion\nfactorial <- function(n) {\n  if (n == 0)\n    return(1)\n  else\n    return(n * factorial(n-1))\n}\n\n# Example usage\nnum <- 5\nresult <- factorial(num)\nprint(paste('Factorial of', num, 'is', result))"
+      },
+      {
+        "question": "Write a program to count the number of words in a string.",
+        "solution": "# Function to count words in a string\ncount_words <- function(str) {\n  words <- strsplit(str, ' ')[[1]]\n  return(length(words))\n}\n\n# Example usage\ninput_str <- 'This is a sample sentence.'\nword_count <- count_words(input_str)\nprint(paste('Number of words:', word_count))"
+      },
+      {
+        "question": "Create a program to find the sum of first n natural numbers.",
+        "solution": "# Finding sum of first n natural numbers\nsum_of_natural_numbers <- function(n) {\n  return(n * (n + 1) / 2)\n}\n\n# Example usage\nnum <- 10\nsum <- sum_of_natural_numbers(num)\nprint(paste('Sum of first', num, 'natural numbers is', sum))"
+      },
+      {
+        "question": "Write a function to find the GCD (Greatest Common Divisor) of two numbers.",
+        "solution": "# Function to find GCD of two numbers\ngcd <- function(a, b) {\n  while (b != 0) {\n    temp <- b\n    b <- a %% b\n    a <- temp\n  }\n  return(a)\n}\n\n# Example usage\nnum1 <- 36\nnum2 <- 60\nresult <- gcd(num1, num2)\nprint(paste('GCD of', num1, 'and', num2, 'is', result))"
+      },
+      {
+        "question": "Create a program to find the Armstrong numbers between two given numbers.",
+        "solution": "# Function to check Armstrong number\nis_armstrong <- function(num) {\n  digits <- nchar(num)\n  sum <- sum(as.numeric(strsplit(as.character(num), '')[[1]])^digits)\n  return(sum == num)\n}\n\n# Finding Armstrong numbers between two numbers\nfind_armstrong_numbers <- function(start, end) {\n  armstrong_numbers <- c()\n  for (num in start:end) {\n    if (is_armstrong(num))\n      armstrong_numbers <- c(armstrong_numbers, num)\n  }\n  return(armstrong_numbers)\n}\n\n# Example usage\nstart_num <- 100\nend_num <- 1000\narmstrong_nums <- find_armstrong_numbers(start_num, end_num)\nprint(paste('Armstrong numbers between', start_num, 'and', end_num, 'are:', paste(armstrong_nums, collapse=', ')))"
+      },
+      {
+        "question": "Write a program to find the sum of digits of a number.",
+        "solution": "# Function to find sum of digits of a number\nsum_of_digits <- function(num) {\n  sum <- 0\n  while (num > 0) {\n    sum <- sum + (num %% 10)\n    num <- num %/% 10\n  }\n  return(sum)\n}\n\n# Example usage\nnumber <- 12345\nsum <- sum_of_digits(number)\nprint(paste('Sum of digits of', number, 'is', sum))"
+      },
+      {
+        "question": "Create a program to check if a number is perfect or not.",
+        "solution": "# Function to check perfect number\nis_perfect <- function(num) {\n  sum_divisors <- sum(which(num %% 1:num == 0)) - num\n  return(sum_divisors == num)\n}\n\n# Example usage\nnumber <- 28\nif (is_perfect(number))\n  print(paste(number, 'is a perfect number.'))\nelse\n  print(paste(number, 'is not a perfect number.'))"
+      },
+      {
+        "question": "Write a program to sort elements in an array in descending order.",
+        "solution": "# Function to sort elements in descending order\nsort_desc <- function(arr) {\n  return(sort(arr, decreasing = TRUE))\n}\n\n# Example usage\nnumbers <- c(5, 2, 8, 1, 6)\nsorted_numbers <- sort_desc(numbers)\nprint(paste('Sorted numbers in descending order:', paste(sorted_numbers, collapse=', ')))"
+      }
+    ]

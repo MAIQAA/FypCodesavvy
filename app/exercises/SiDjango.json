@@ -1,0 +1,119 @@
+[
+    {
+      "question": "How do you create a Django project and start a development server?",
+      "solution": "To create a new Django project, run the following commands:\n\n```bash\ndjango-admin startproject myproject\ncd myproject\npython manage.py runserver\n```"
+    },
+    {
+      "question": "How do you create a new Django app within a project?",
+      "solution": "To create a new app in Django, run the following command inside your project directory:\n\n```bash\ndjango-admin startapp myapp\n```"
+    },
+    {
+      "question": "How can you add a URL pattern in Django to connect a view with a URL?",
+      "solution": "In the `urls.py` file of your app or project, you can add a URL pattern like this:\n\n```python\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('home/', views.home, name='home'),\n]\n```"
+    },
+    {
+      "question": "How do you create a view in Django?",
+      "solution": "To create a view, define a function in your `views.py` file:\n\n```python\nfrom django.http import HttpResponse\n\ndef home(request):\n    return HttpResponse('Hello, world!')\n```"
+    },
+    {
+      "question": "What is the purpose of the `models.py` file in Django?",
+      "solution": "The `models.py` file is used to define the data models in Django, which represent tables in the database. Example:\n\n```python\nfrom django.db import models\n\nclass Post(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n```"
+    },
+    {
+      "question": "How do you create a model in Django?",
+      "solution": "To create a model in Django, define a class that inherits from `models.Model` in `models.py`. Example:\n\n```python\nclass Post(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n```"
+    },
+    {
+      "question": "How can you create a Django form to accept user input?",
+      "solution": "To create a form, use Django's `forms.ModelForm`. Example:\n\n```python\nfrom django import forms\nfrom .models import Post\n\nclass PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ['title', 'content']\n```"
+    },
+    {
+      "question": "How do you apply database migrations in Django?",
+      "solution": "To apply migrations in Django, use the following commands:\n\n```bash\npython manage.py makemigrations\npython manage.py migrate\n```"
+    },
+    {
+      "question": "How can you create a template in Django?",
+      "solution": "To create a template, create an HTML file inside a `templates` folder and use Django's templating syntax. Example:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head><title>My Page</title></head>\n  <body>\n    <h1>{{ title }}</h1>\n  </body>\n</html>\n```"
+    },
+    {
+      "question": "How do you render a template in a Django view?",
+      "solution": "To render a template, use `render` function in the view. Example:\n\n```python\nfrom django.shortcuts import render\n\ndef home(request):\n    return render(request, 'home.html', {'title': 'My Homepage'})\n```"
+    },
+    {
+      "question": "How can you redirect to a different URL in Django?",
+      "solution": "To redirect, use `HttpResponseRedirect` or `redirect()` function:\n\n```python\nfrom django.shortcuts import redirect\n\ndef my_view(request):\n    return redirect('/new-url/')\n```"
+    },
+    {
+      "question": "How can you use Django's admin to manage your models?",
+      "solution": "To use Django's admin interface, first, register the model in `admin.py`:\n\n```python\nfrom django.contrib import admin\nfrom .models import Post\n\nadmin.site.register(Post)\n```"
+    },
+    {
+      "question": "How can you filter objects from the database in Django?",
+      "solution": "To filter objects, use Django's `filter()` method on a model's manager:\n\n```python\nposts = Post.objects.filter(title__icontains='Django')\n```"
+    },
+    {
+      "question": "How do you order objects in Django?",
+      "solution": "To order objects, use `order_by()` method on the query set:\n\n```python\nposts = Post.objects.all().order_by('created_at')\n```"
+    },
+    {
+      "question": "How do you define a one-to-many relationship in Django?",
+      "solution": "To define a one-to-many relationship, use `ForeignKey` in the model. Example:\n\n```python\nclass Comment(models.Model):\n    post = models.ForeignKey(Post, on_delete=models.CASCADE)\n    content = models.TextField()\n```"
+    },
+    {
+      "question": "How do you implement authentication (login/logout) in Django?",
+      "solution": "Django provides built-in views for login and logout. Example for login:\n\n```python\nfrom django.contrib.auth.views import LoginView\n\nurlpatterns = [\n    path('login/', LoginView.as_view(), name='login'),\n]\n```"
+    },
+    {
+      "question": "How do you create a user in Django's admin panel?",
+      "solution": "To create a user, log in to Django's admin panel (`/admin`), go to the 'Users' section, and click 'Add User' to fill in the user's details."
+    },
+    {
+      "question": "How do you create a custom URL for a Django view?",
+      "solution": "To create a custom URL for a Django view, add the URL pattern to `urls.py`. Example:\n\n```python\nurlpatterns = [\n    path('custom/', views.custom_view, name='custom')\n]\n```"
+    },
+    {
+      "question": "How do you use Django's `reverse` function for URL resolution?",
+      "solution": "The `reverse()` function is used to resolve URLs from view names. Example:\n\n```python\nfrom django.urls import reverse\n\nurl = reverse('home')\n```"
+    },
+    {
+      "question": "How do you handle static files (CSS, JavaScript, images) in Django?",
+      "solution": "In `settings.py`, add `STATIC_URL = '/static/'` and use `{% load static %}` in templates. Example for linking a CSS file:\n\n```html\n<link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/styles.css' %}\">```"
+    },
+    {
+      "question": "How do you use Django's `get_object_or_404()` method?",
+      "solution": "The `get_object_or_404()` method retrieves an object from the database or raises a 404 error if not found. Example:\n\n```python\nfrom django.shortcuts import get_object_or_404\n\npost = get_object_or_404(Post, pk=1)\n```"
+    },
+    {
+      "question": "How do you create and use Django's custom management commands?",
+      "solution": "To create a custom management command, create a `management/commands` directory in your app and define a command class. Example:\n\n```python\nfrom django.core.management.base import BaseCommand\n\nclass Command(BaseCommand):\n    help = 'Custom command'\n    def handle(self, *args, **kwargs):\n        self.stdout.write('Command executed')\n```"
+    },
+    {
+      "question": "How do you use Django signals to execute code when certain events occur?",
+      "solution": "Django signals are used to perform actions when certain events occur, like saving a model instance. Example:\n\n```python\nfrom django.db.models.signals import post_save\nfrom django.dispatch import receiver\n\n@receiver(post_save, sender=Post)\ndef post_saved(sender, instance, created, **kwargs):\n    if created:\n        print(f'New post created: {instance.title}')\n```"
+    },
+    {
+      "question": "How can you implement a search functionality in Django?",
+      "solution": "You can implement a simple search using `filter()` method. Example:\n\n```python\nfrom django.shortcuts import render\nfrom .models import Post\n\ndef search(request):\n    query = request.GET.get('q')\n    posts = Post.objects.filter(title__icontains=query)\n    return render(request, 'search_results.html', {'posts': posts})\n```"
+    },
+    {
+      "question": "How can you protect a view from unauthorized access in Django?",
+      "solution": "You can use the `login_required` decorator to protect views from unauthorized access:\n\n```python\nfrom django.contrib.auth.decorators import login_required\n\n@login_required\ndef my_view(request):\n    return render(request, 'my_template.html')\n```"
+    },
+    {
+      "question": "How do you handle form submissions in Django?",
+      "solution": "In Django, you can handle form submissions using `POST` request. Example:\n\n```python\nfrom django.shortcuts import render, redirect\nfrom .forms import PostForm\n\ndef create_post(request):\n    if request.method == 'POST':\n        form = PostForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('home')\n    else:\n        form = PostForm()\n    return render(request, 'create_post.html', {'form': form})\n```"
+    },
+    {
+      "question": "How can you pass context to a Django template?",
+      "solution": "You can pass context using the third argument of the `render` function. Example:\n\n```python\ncontext = {'title': 'My Page'}\nreturn render(request, 'home.html', context)\n```"
+    },
+    {
+      "question": "What are Django's generic views?",
+      "solution": "Django's generic views provide pre-built views for common tasks. Example of using `ListView`:\n\n```python\nfrom django.views.generic import ListView\nfrom .models import Post\n\nclass PostListView(ListView):\n    model = Post\n    template_name = 'post_list.html'\n```"
+    },
+    {
+      "question": "How can you implement pagination in Django?",
+      "solution": "You can implement pagination using `Paginator` class. Example:\n\n```python\nfrom django.core.paginator import Paginator\n\ndef post_list(request):\n    posts = Post.objects.all()\n    paginator = Paginator(posts, 10)\n    page = request.GET.get('page')\n    posts_page = paginator.get_page(page)\n    return render(request, 'post_list.html', {'posts': posts_page})\n```"
+    }
+  ]
+  

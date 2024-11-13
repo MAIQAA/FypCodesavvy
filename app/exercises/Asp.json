@@ -1,0 +1,78 @@
+ [
+      {
+        "question": "Create a basic ASP page that displays 'Hello, World!'",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nResponse.Write \"Hello, World!\"\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to display the current date and time.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nResponse.Write \"Current date and time: \" & Now()\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page that accepts user input and displays it.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<form method=\"post\">\n  Enter your name: <input type=\"text\" name=\"name\">\n  <input type=\"submit\" value=\"Submit\">\n</form>\n<%\nIf Request.ServerVariables(\"REQUEST_METHOD\") = \"POST\" Then\n  Dim userName\n  userName = Request.Form(\"name\")\n  Response.Write \"Hello, \" & userName & \"!\"\nEnd If\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to calculate the factorial of a number.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nFunction factorial(n)\n  If n = 0 Then\n    factorial = 1\n  Else\n    factorial = n * factorial(n - 1)\n  End If\nEnd Function\nDim num, result\nnum = CInt(Request.QueryString(\"number\"))\nresult = factorial(num)\nResponse.Write \"Factorial of \" & num & \" is \" & result\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP script to validate a form with required fields.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<form method=\"post\">\n  Enter your name: <input type=\"text\" name=\"name\"><br>\n  Enter your email: <input type=\"email\" name=\"email\"><br>\n  <input type=\"submit\" value=\"Submit\">\n</form>\n<%\nIf Request.ServerVariables(\"REQUEST_METHOD\") = \"POST\" Then\n  Dim userName, userEmail\n  userName = Request.Form(\"name\")\n  userEmail = Request.Form(\"email\")\n  If userName = \"\" Or userEmail = \"\" Then\n    Response.Write \"Please fill in all fields\"\n  Else\n    Response.Write \"Form submitted successfully\"\n  End If\nEnd If\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to display all files in a directory.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim fso, folder, files, file\nSet fso = Server.CreateObject(\"Scripting.FileSystemObject\")\nSet folder = fso.GetFolder(Server.MapPath(\".\"))\nSet files = folder.Files\nFor Each file in files\n  Response.Write file.Name & \"<br>\"\nNext\nSet fso = Nothing\nSet folder = Nothing\nSet files = Nothing\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page to read and display content from a text file.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim fso, file, text\nSet fso = Server.CreateObject(\"Scripting.FileSystemObject\")\nSet file = fso.OpenTextFile(Server.MapPath(\"data.txt\"), 1)\ntext = file.ReadAll\nfile.Close\nResponse.Write text\nSet fso = Nothing\nSet file = Nothing\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to handle sessions to count the number of visits to a page.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim count\nIf Session(\"visits\") = \"\" Then\n  Session(\"visits\") = 1\nElse\n  count = CInt(Session(\"visits\"))\n  count = count + 1\n  Session(\"visits\") = count\nEnd If\nResponse.Write \"Number of visits: \" & Session(\"visits\")\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page that generates a random number between 1 and 100 on each refresh.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nRandomize\nDim randomNumber\nrandomNumber = Int((100 - 1 + 1) * Rnd + 1)\nResponse.Write \"Random number: \" & randomNumber\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to display an image with alternate text.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<img src=\"image.jpg\" alt=\"Example Image\">\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page to demonstrate session timeout handling.",
+        "solution": "<%@ Language=VBScript %>\n<%\nIf Session(\"start\") = \"\" Then\n  Session.Timeout = 1 ' session timeout in minutes\n  Session(\"start\") = Now()\n  Response.Write \"Session started\"\nElse\n  Dim startTime\n  startTime = CDate(Session(\"start\"))\n  Dim currentTime\n  currentTime = Now()\n  Dim elapsedMinutes\n  elapsedMinutes = DateDiff(\"n\", startTime, currentTime)\n  If elapsedMinutes >= Session.Timeout Then\n    Response.Write \"Session expired\"\n  Else\n    Response.Write \"Session active\"\n  End If\nEnd If\n%>"
+      },
+      {
+        "question": "Write an ASP script to handle errors and display a custom error message.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nOn Error Resume Next\nDim num1, num2, result\nnum1 = Request.Form(\"num1\")\nnum2 = Request.Form(\"num2\")\nresult = num1 / num2\nIf Err.Number <> 0 Then\n  Response.Write \"Error: Division by zero\"\n  Err.Clear\nElse\n  Response.Write \"Result: \" & result\nEnd If\n%>\n<form method=\"post\">\n  Enter number 1: <input type=\"text\" name=\"num1\"><br>\n  Enter number 2: <input type=\"text\" name=\"num2\"><br>\n  <input type=\"submit\" value=\"Calculate\">\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP script to upload a file and save it on the server.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim objFSO, objFile, strFile, strDirectory\nstrDirectory = Server.MapPath(\".\") & \"\\uploads\\\"\nSet objFSO = Server.CreateObject(\"Scripting.FileSystemObject\")\nIf Not objFSO.FolderExists(strDirectory) Then\n  objFSO.CreateFolder(strDirectory)\nEnd If\nSet objFile = objFSO.GetFile(Request.Files(\"file\").Item)\nstrFile = objFile.Name\nIf strFile <> \"\" Then\n  Request.Files(\"file\").SaveAs strDirectory & strFile\n  Response.Write \"File uploaded successfully: \" & strFile\nElse\n  Response.Write \"No file selected\"\nEnd If\nSet objFile = Nothing\nSet objFSO = Nothing\n%>\n<form method=\"post\" enctype=\"multipart/form-data\">\n  Select file to upload: <input type=\"file\" name=\"file\"><br>\n  <input type=\"submit\" value=\"Upload File\">\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to create a simple login form with authentication.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nIf Request.ServerVariables(\"REQUEST_METHOD\") = \"POST\" Then\n  Dim username, password\n  username = Request.Form(\"username\")\n  password = Request.Form(\"password\")\n  If username = \"admin\" And password = \"password\" Then\n    Response.Write \"Login successful\"\n  Else\n    Response.Write \"Invalid username or password\"\n  End If\nEnd If\n%>\n<form method=\"post\">\n  Username: <input type=\"text\" name=\"username\"><br>\n  Password: <input type=\"password\" name=\"password\"><br>\n  <input type=\"submit\" value=\"Login\">\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to create a simple shopping cart.",
+        "solution": "<%@ Language=VBScript %>\n<%\nIf Request.ServerVariables(\"REQUEST_METHOD\") = \"POST\" Then\n  Dim item, price, quantity\n  item = Request.Form(\"item\")\n  price = Request.Form(\"price\")\n  quantity = Request.Form(\"quantity\")\n  If item <> \"\" And IsNumeric(price) And IsNumeric(quantity) Then\n    Session(item) = Session(item) + quantity\n    Response.Write \"Item added to cart\"\n  Else\n    Response.Write \"Invalid input\"\n  End If\nEnd If\n%>\n<html>\n<body>\n<form method=\"post\">\n  Item: <input type=\"text\" name=\"item\"><br>\n  Price: <input type=\"text\" name=\"price\"><br>\n  Quantity: <input type=\"text\" name=\"quantity\"><br>\n  <input type=\"submit\" value=\"Add to Cart\">\n</form>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page to display a countdown timer.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<head>\n<script type=\"text/javascript\">\nvar count = 10;\nfunction countdown() {\n  document.getElementById('timer').innerHTML = count;\n  if (count === 0) {\n    clearInterval(timer);\n    alert('Time's up!');\n  } else {\n    count--;\n  }\n}\nvar timer = setInterval(countdown, 1000);\n</script>\n</head>\n<body>\n<div id=\"timer\"></div>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to display the list of databases on the server.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim adoConn, adoRS, strConnect, strSQL\nSet adoConn = Server.CreateObject(\"ADODB.Connection\")\nstrConnect = \"Provider=SQLOLEDB;Data Source=yourServer;User ID=yourUsername;Password=yourPassword;\"\nadoConn.Open strConnect\nstrSQL = \"SELECT name FROM master..sysdatabases\"\nSet adoRS = adoConn.Execute(strSQL)\nDo Until adoRS.EOF\n  Response.Write adoRS.Fields(\"name\").Value & \"<br>\"\n  adoRS.MoveNext\nLoop\nadoRS.Close\nSet adoRS = Nothing\nadoConn.Close\nSet adoConn = Nothing\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Create an ASP page to perform CRUD operations on a database table.",
+        "solution": "<%@ Language=VBScript %>\n<html>\n<body>\n<%\nDim adoConn, adoRS, strConnect, strSQL\nSet adoConn = Server.CreateObject(\"ADODB.Connection\")\nstrConnect = \"Provider=SQLOLEDB;Data Source=yourServer;User ID=yourUsername;Password=yourPassword;\"\nadoConn.Open strConnect\nstrSQL = \"SELECT * FROM yourTable\"\nSet adoRS = adoConn.Execute(strSQL)\nWhile Not adoRS.EOF\n  Response.Write adoRS.Fields(\"columnName\").Value & \"<br>\"\n  adoRS.MoveNext\nWend\nadoRS.Close\nSet adoRS = Nothing\nadoConn.Close\nSet adoConn = Nothing\n%>\n</body>\n</html>"
+      },
+      {
+        "question": "Write an ASP script to create a simple RSS feed.",
+        "solution": "<%@ Language=VBScript %>\n<%\nResponse.ContentType = \"text/xml\"\nResponse.Write \"<?xml version='1.0' encoding='UTF-8'?>\"\nResponse.Write \"<rss version='2.0'>\"\nResponse.Write \"<channel>\"\nResponse.Write \"<title>Your RSS Feed</title>\"\nResponse.Write \"<link>http://www.example.com</link>\"\nResponse.Write \"<description>Your RSS Feed Description</description>\"\nResponse.Write \"<item>\"\nResponse.Write \"<title>Item Title</title>\"\nResponse.Write \"<link>http://www.example.com/item1</link>\"\nResponse.Write \"<description>Item Description</description>\"\nResponse.Write \"</item>\"\nResponse.Write \"</channel>\"\nResponse.Write \"</rss>\"\n%>"
+      }
+    ]

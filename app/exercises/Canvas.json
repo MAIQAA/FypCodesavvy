@@ -1,0 +1,66 @@
+ [
+      {
+        "question": "Draw a red rectangle on a canvas with a width of 100px and height of 50px.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nctx.fillStyle = 'red';\nctx.fillRect(10, 10, 100, 50);\n</script>"
+      },
+      {
+        "question": "Create a blue circle with a radius of 30px on a canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nctx.beginPath();\nctx.arc(100, 100, 30, 0, 2 * Math.PI);\nctx.fillStyle = 'blue';\nctx.fill();\n</script>"
+      },
+      {
+        "question": "Draw a line from (50, 50) to (150, 100) on a canvas with a stroke color of green and a line width of 2px.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nctx.strokeStyle = 'green';\nctx.lineWidth = 2;\nctx.beginPath();\nctx.moveTo(50, 50);\nctx.lineTo(150, 100);\nctx.stroke();\n</script>"
+      },
+      {
+        "question": "Create a gradient (linear or radial) on a canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar gradient = ctx.createLinearGradient(0, 0, 200, 0);\ngradient.addColorStop(0, 'red');\ngradient.addColorStop(1, 'white');\nctx.fillStyle = gradient;\nctx.fillRect(0, 0, 200, 100);\n</script>"
+      },
+      {
+        "question": "Draw text 'Hello, Canvas!' in black color and font size 24px on a canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nctx.font = '24px Arial';\nctx.fillStyle = 'black';\nctx.fillText('Hello, Canvas!', 10, 50);\n</script>"
+      },
+      {
+        "question": "Draw a rounded rectangle with a corner radius of 10px on a canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar radius = 10;\nvar width = 200;\nvar height = 100;\nctx.beginPath();\nctx.moveTo(radius, 0);\nctx.lineTo(width - radius, 0);\nctx.quadraticCurveTo(width, 0, width, radius);\nctx.lineTo(width, height - radius);\nctx.quadraticCurveTo(width, height, width - radius, height);\nctx.lineTo(radius, height);\nctx.quadraticCurveTo(0, height, 0, height - radius);\nctx.lineTo(0, radius);\nctx.quadraticCurveTo(0, 0, radius, 0);\nctx.closePath();\nctx.strokeStyle = 'black';\nctx.stroke();\n</script>"
+      },
+      {
+        "question": "Create an animation of a moving square on a canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar x = 10;\nfunction drawSquare() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  ctx.fillStyle = 'red';\n  ctx.fillRect(x, 10, 50, 50);\n  x += 2;\n  requestAnimationFrame(drawSquare);\n}\ndrawSquare();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based drawing tool with different color options and line thickness.",
+        "solution": "<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #000000;\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar painting = false;\nfunction startPosition(e) {\n  painting = true;\n  draw(e);\n}\nfunction endPosition() {\n  painting = false;\n  ctx.beginPath();\n}\nfunction draw(e) {\n  if (!painting) return;\n  ctx.lineWidth = 5;\n  ctx.lineCap = 'round';\n  ctx.strokeStyle = 'blue';\n  ctx.lineTo(e.clientX, e.clientY - 60);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.moveTo(e.clientX, e.clientY - 60);\n}\ncanvas.addEventListener('mousedown', startPosition);\ncanvas.addEventListener('mouseup', endPosition);\ncanvas.addEventListener('mousemove', draw);\n</script>"
+      },
+      {
+        "question": "Create a canvas-based game with a moving object and collision detection.",
+        "solution": "<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #000000;\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar x = canvas.width / 2;\nvar y = canvas.height - 30;\nvar dx = 2;\nvar dy = -2;\nfunction drawBall() {\n  ctx.beginPath();\n  ctx.arc(x, y, 10, 0, Math.PI * 2);\n  ctx.fillStyle = 'red';\n  ctx.fill();\n  ctx.closePath();\n}\nfunction draw() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  drawBall();\n  x += dx;\n  y += dy;\n  requestAnimationFrame(draw);\n}\ndraw();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based clock showing current time.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\" style=\"border:1px solid #000000;\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nfunction drawClock() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  var now = new Date();\n  var hours = now.getHours();\n  var minutes = now.getMinutes();\n  var seconds = now.getSeconds();\n  ctx.beginPath();\n  ctx.arc(100, 100, 80, 0, 2 * Math.PI);\n  ctx.strokeStyle = 'black';\n  ctx.stroke();\n  ctx.font = '30px Arial';\n  ctx.textAlign = 'center';\n  ctx.fillText(hours + ':' + minutes + ':' + seconds, 100, 100);\n}\nsetInterval(drawClock, 1000);\n</script>"
+      },
+      {
+        "question": "Create a canvas-based animation of a bouncing ball.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar x = canvas.width / 2;\nvar y = canvas.height - 30;\nvar dx = 2;\nvar dy = -2;\nfunction drawBall() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  ctx.beginPath();\n  ctx.arc(x, y, 10, 0, Math.PI * 2);\n  ctx.fillStyle = 'red';\n  ctx.fill();\n  ctx.closePath();\n}\nfunction draw() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  drawBall();\n  if (x + dx > canvas.width - 10 || x + dx < 10) {\n    dx = -dx;\n  }\n  if (y + dy > canvas.height - 10 || y + dy < 10) {\n    dy = -dy;\n  }\n  x += dx;\n  y += dy;\n  requestAnimationFrame(draw);\n}\ndraw();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based animation of a rotating square.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar angle = 0;\nfunction drawSquare() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  ctx.save();\n  ctx.translate(100, 100);\n  ctx.rotate(angle * Math.PI / 180);\n  ctx.fillStyle = 'blue';\n  ctx.fillRect(-50, -50, 100, 100);\n  ctx.restore();\n  angle += 2;\n  requestAnimationFrame(drawSquare);\n}\ndrawSquare();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based animation of an expanding circle.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar radius = 10;\nfunction drawCircle() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  ctx.beginPath();\n  ctx.arc(100, 100, radius, 0, 2 * Math.PI);\n  ctx.fillStyle = 'green';\n  ctx.fill();\n  radius += 2;\n  requestAnimationFrame(drawCircle);\n}\ndrawCircle();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based animation of a bouncing square inside the canvas.",
+        "solution": "<canvas id=\"myCanvas\" width=\"200\" height=\"200\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar x = canvas.width / 2;\nvar y = canvas.height - 30;\nvar dx = 2;\nvar dy = -2;\nvar squareSize = 50;\nfunction drawSquare() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  ctx.fillStyle = 'red';\n  ctx.fillRect(x, y, squareSize, squareSize);\n  if (x + dx > canvas.width - squareSize || x + dx < 0) {\n    dx = -dx;\n  }\n  if (y + dy > canvas.height - squareSize || y + dy < 0) {\n    dy = -dy;\n  }\n  x += dx;\n  y += dy;\n  requestAnimationFrame(drawSquare);\n}\ndrawSquare();\n</script>"
+      },
+      {
+        "question": "Create a canvas-based drawing tool with an eraser functionality.",
+        "solution": "<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #000000;\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar painting = false;\nfunction startPosition(e) {\n  painting = true;\n  draw(e);\n}\nfunction endPosition() {\n  painting = false;\n  ctx.beginPath();\n}\nfunction draw(e) {\n  if (!painting) return;\n  ctx.lineWidth = 10;\n  ctx.lineCap = 'round';\n  if (e.ctrlKey) {\n    ctx.strokeStyle = 'white';\n  } else {\n    ctx.strokeStyle = 'black';\n  }\n  ctx.lineTo(e.clientX, e.clientY - 60);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.moveTo(e.clientX, e.clientY - 60);\n}\ncanvas.addEventListener('mousedown', startPosition);\ncanvas.addEventListener('mouseup', endPosition);\ncanvas.addEventListener('mousemove', draw);\n</script>"
+      },
+      {
+        "question": "Create a canvas-based animation of particles (small circles) moving randomly.",
+        "solution": "<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #000000;\"></canvas>\n<script>\nvar canvas = document.getElementById('myCanvas');\nvar ctx = canvas.getContext('2d');\nvar particles = [];\nfunction Particle(x, y, dx, dy, radius, color) {\n  this.x = x;\n  this.y = y;\n  this.dx = dx;\n  this.dy = dy;\n  this.radius = radius;\n  this.color = color;\n  this.draw = function() {\n    ctx.beginPath();\n    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);\n    ctx.fillStyle = this.color;\n    ctx.fill();\n    ctx.closePath();\n  }\n  this.update = function() {\n    this.x += this.dx;\n    this.y += this.dy;\n    this.draw();\n  }\n}\nfunction init() {\n  for (var i = 0; i < 100; i++) {\n    var radius = Math.random() * 5 + 1;\n    var x = Math.random() * (canvas.width - radius * 2) + radius;\n    var y = Math.random() * (canvas.height - radius * 2) + radius;\n    var dx = (Math.random() - 0.5) * 2;\n    var dy = (Math.random() - 0.5) * 2;\n    var color = 'blue';\n    particles.push(new Particle(x, y, dx, dy, radius, color));\n  }\n}\nfunction animate() {\n  requestAnimationFrame(animate);\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n  for (var i = 0; i < particles.length; i++) {\n    particles[i].update();\n  }\n}\ninit();\nanimate();\n</script>"
+      }
+    ]

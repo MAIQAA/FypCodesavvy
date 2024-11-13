@@ -1,0 +1,90 @@
+[
+      {
+        "question": "Create a TypeScript interface for a 'Car' with properties: make (string), model (string), year (number).",
+        "solution": "interface Car {\n    make: string;\n    model: string;\n    year: number;\n}\n\nconst myCar: Car = {\n    make: 'Toyota',\n    model: 'Camry',\n    year: 2020\n};"
+      },
+      {
+        "question": "Write a TypeScript function to calculate the area of a circle given its radius.",
+        "solution": "function calculateCircleArea(radius: number): number {\n    return Math.PI * radius * radius;\n}\n\nconst radius = 5;\nconsole.log(`Area of circle with radius ${radius} is: ${calculateCircleArea(radius)}`);"
+      },
+      {
+        "question": "Create a TypeScript class 'Rectangle' with properties length and width, and a method to calculate its area.",
+        "solution": "class Rectangle {\n    length: number;\n    width: number;\n\n    constructor(length: number, width: number) {\n        this.length = length;\n        this.width = width;\n    }\n\n    calculateArea(): number {\n        return this.length * this.width;\n    }\n}\n\nconst myRect = new Rectangle(4, 5);\nconsole.log(`Area of rectangle is: ${myRect.calculateArea()}`);"
+      },
+      {
+        "question": "Write a TypeScript function to check if a number is prime.",
+        "solution": "function isPrime(num: number): boolean {\n    if (num <= 1) return false;\n    if (num <= 3) return true;\n    if (num % 2 === 0 || num % 3 === 0) return false;\n    let i = 5;\n    while (i * i <= num) {\n        if (num % i === 0 || num % (i + 2) === 0) return false;\n        i += 6;\n    }\n    return true;\n}\n\nconst numberToCheck = 17;\nconsole.log(`${numberToCheck} is prime? ${isPrime(numberToCheck)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to merge two arrays of numbers.",
+        "solution": "function mergeArrays(arr1: number[], arr2: number[]): number[] {\n    return [...arr1, ...arr2];\n}\n\nconst array1 = [1, 2, 3];\nconst array2 = [4, 5, 6];\nconsole.log(`Merged array: ${mergeArrays(array1, array2)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to find the factorial of a number using recursion.",
+        "solution": "function factorial(num: number): number {\n    if (num === 0 || num === 1) return 1;\n    return num * factorial(num - 1);\n}\n\nconst num = 5;\nconsole.log(`Factorial of ${num} is: ${factorial(num)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to reverse a string.",
+        "solution": "function reverseString(str: string): string {\n    return str.split('').reverse().join('');\n}\n\nconst myString = 'Hello World';\nconsole.log(`Reversed string: ${reverseString(myString)}`);"
+      },
+      {
+        "question": "Write a TypeScript program to sort an array of numbers in ascending order.",
+        "solution": "function sortNumbersAscending(arr: number[]): number[] {\n    return arr.sort((a, b) => a - b);\n}\n\nconst unsortedArray = [5, 3, 8, 1, 4];\nconsole.log(`Sorted array: ${sortNumbersAscending(unsortedArray)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to check if a string is a palindrome.",
+        "solution": "function isPalindrome(str: string): boolean {\n    const cleanStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');\n    const reversedStr = cleanStr.split('').reverse().join('');\n    return cleanStr === reversedStr;\n}\n\nconst testString = 'A man, a plan, a canal, Panama!';\nconsole.log(`${testString} is palindrome? ${isPalindrome(testString)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to find the largest element in an array of numbers.",
+        "solution": "function findLargestElement(arr: number[]): number {\n    if (arr.length === 0) throw new Error('Array must not be empty');\n    return Math.max(...arr);\n}\n\nconst numbers = [10, 5, 25, 8, 15];\nconsole.log(`Largest element in array: ${findLargestElement(numbers)}`);"
+      },
+      {
+        "question": "Create a TypeScript program to find the Fibonacci series up to n terms.",
+        "solution": "function fibonacciSeries(n: number): number[] {\n    let fibSeries = [0, 1];\n    for (let i = 2; i < n; i++) {\n        fibSeries.push(fibSeries[i - 1] + fibSeries[i - 2]);\n    }\n    return fibSeries;\n}\n\nconst numOfTerms = 8;\nconsole.log(`Fibonacci series up to ${numOfTerms} terms: ${fibonacciSeries(numOfTerms)}`);"
+      },
+      {
+        "question": "Write a TypeScript program to check if a number is Armstrong number or not.",
+        "solution": "function isArmstrong(num: number): boolean {\n    const digits = num.toString().length;\n    let sum = 0;\n    let temp = num;\n    while (temp > 0) {\n        const digit = temp % 10;\n        sum += Math.pow(digit, digits);\n        temp = Math.floor(temp / 10);\n    }\n    return sum === num;\n}\n\nconst numberToCheck = 153;\nconsole.log(`${numberToCheck} is Armstrong number? ${isArmstrong(numberToCheck)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to count the number of vowels in a string.",
+        "solution": "function countVowels(str: string): number {\n    const vowels = ['a', 'e', 'i', 'o', 'u'];\n    let count = 0;\n    str = str.toLowerCase();\n    for (let char of str) {\n        if (vowels.includes(char)) {\n            count++;\n        }\n    }\n    return count;\n}\n\nconst testString = 'Hello World';\nconsole.log(`Number of vowels in '${testString}': ${countVowels(testString)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to check if a year is a leap year.",
+        "solution": "function isLeapYear(year: number): boolean {\n    if (year % 400 === 0) return true;\n    if (year % 100 === 0) return false;\n    return year % 4 === 0;\n}\n\nconst yearToCheck = 2024;\nconsole.log(`${yearToCheck} is leap year? ${isLeapYear(yearToCheck)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to check if a number is a perfect number.",
+        "solution": "function isPerfectNumber(num: number): boolean {\n    let sum = 0;\n    for (let i = 1; i < num; i++) {\n        if (num % i === 0) {\n            sum += i;\n        }\n    }\n    return sum === num;\n}\n\nconst numberToCheck = 28;\nconsole.log(`${numberToCheck} is perfect number? ${isPerfectNumber(numberToCheck)}`);"
+      },
+      {
+        "question": "Write a TypeScript program to find the factorial of a number without using recursion.",
+        "solution": "function factorial(num: number): number {\n    let result = 1;\n    for (let i = 2; i <= num; i++) {\n        result *= i;\n    }\n    return result;\n}\n\nconst num = 5;\nconsole.log(`Factorial of ${num} is: ${factorial(num)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to check if a string contains only digits.",
+        "solution": "function containsOnlyDigits(str: string): boolean {\n    return /^d+$/.test(str);\n}\n\nconst testString = '12345';\nconsole.log(`String '${testString}' contains only digits? ${containsOnlyDigits(testString)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to generate a random integer within a specified range [min, max].",
+        "solution": "function getRandomInt(min: number, max: number): number {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nconst min = 1, max = 100;\nconsole.log(`Random number between ${min} and ${max}: ${getRandomInt(min, max)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to remove all duplicates from an array of numbers.",
+        "solution": "function removeDuplicates(arr: number[]): number[] {\n    return arr.filter((value, index, self) => self.indexOf(value) === index);\n}\n\nconst numbers = [1, 2, 2, 3, 4, 4, 5];\nconsole.log(`Array after removing duplicates: ${removeDuplicates(numbers)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to find the sum of all elements in an array.",
+        "solution": "function sumArray(arr: number[]): number {\n    return arr.reduce((acc, curr) => acc + curr, 0);\n}\n\nconst numbers = [1, 2, 3, 4, 5];\nconsole.log(`Sum of array elements: ${sumArray(numbers)}`);"
+      },
+      {
+        "question": "Create a TypeScript function to find the longest word in a string.",
+        "solution": "function findLongestWord(str: string): string {\n    const words = str.split(' ');\n    let longestWord = '';\n    for (let word of words) {\n        if (word.length > longestWord.length) {\n            longestWord = word;\n        }\n    }\n    return longestWord;\n}\n\nconst testString = 'The quick brown fox jumped over the lazy dog';\nconsole.log(`Longest word in the string: ${findLongestWord(testString)}`);"
+      },
+      {
+        "question": "Write a TypeScript function to capitalize the first letter of each word in a sentence.",
+        "solution": "function capitalizeWords(str: string): string {\n    return str.replace(/\\b\\w/g, (char) => char.toUpperCase());\n}\n\nconst sentence = 'hello world from typescript';\nconsole.log(`Capitalized sentence: ${capitalizeWords(sentence)}`);"
+      }
+    ]

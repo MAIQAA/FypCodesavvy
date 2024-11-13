@@ -1,0 +1,70 @@
+[
+      {
+        "question": "Create a basic React component that renders 'Hello, World!'",
+        "solution": "import React from 'react';\n\nfunction HelloWorld() {\n    return (\n        <div>\n            <h1>Hello, World!</h1>\n        </div>\n    );\n}\n\nexport default HelloWorld;"
+      },
+      {
+        "question": "Write a React component that displays a list of items passed as props.",
+        "solution": "import React from 'react';\n\nfunction ItemList(props) {\n    return (\n        <ul>\n            {props.items.map((item, index) => (\n                <li key={index}>{item}</li>\n            ))}\n        </ul>\n    );\n}\n\nexport default ItemList;"
+      },
+      {
+        "question": "Create a React component with state that increments a counter on button click.",
+        "solution": "import React, { useState } from 'react';\n\nfunction Counter() {\n    const [count, setCount] = useState(0);\n\n    return (\n        <div>\n            <p>Count: {count}</p>\n            <button onClick={() => setCount(count + 1)}>Increment</button>\n        </div>\n    );\n}\n\nexport default Counter;"
+      },
+      {
+        "question": "Write a React component that fetches data from an API and displays it.",
+        "solution": "import React, { useState, useEffect } from 'react';\n\nfunction UserList() {\n    const [users, setUsers] = useState([]);\n\n    useEffect(() => {\n        fetch('https://jsonplaceholder.typicode.com/users')\n            .then(response => response.json())\n            .then(data => setUsers(data));\n    }, []);\n\n    return (\n        <div>\n            <h1>User List</h1>\n            <ul>\n                {users.map(user => (\n                    <li key={user.id}>{user.name}</li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default UserList;"
+      },
+      {
+        "question": "Create a React form component with controlled inputs.",
+        "solution": "import React, { useState } from 'react';\n\nfunction Form() {\n    const [formData, setFormData] = useState({\n        username: '',\n        email: ''\n    });\n\n    const handleChange = (e) => {\n        setFormData({\n            ...formData,\n            [e.target.name]: e.target.value\n        });\n    };\n\n    const handleSubmit = (e) => {\n        e.preventDefault();\n        // Handle form submission\n    };\n\n    return (\n        <form onSubmit={handleSubmit}>\n            <label>Username:\n                <input type='text' name='username' value={formData.username} onChange={handleChange} />\n            </label>\n            <label>Email:\n                <input type='email' name='email' value={formData.email} onChange={handleChange} />\n            </label>\n            <button type='submit'>Submit</button>\n        </form>\n    );\n}\n\nexport default Form;"
+      },
+      {
+        "question": "Write a React component that toggles visibility of content on button click.",
+        "solution": "import React, { useState } from 'react';\n\nfunction ToggleContent() {\n    const [isVisible, setIsVisible] = useState(false);\n\n    const toggleVisibility = () => {\n        setIsVisible(!isVisible);\n    };\n\n    return (\n        <div>\n            <button onClick={toggleVisibility}>Toggle Content</button>\n            {isVisible && <p>This content is toggled.</p>}\n        </div>\n    );\n}\n\nexport default ToggleContent;"
+      },
+      {
+        "question": "Create a React component that filters and displays a list of items based on user input.",
+        "solution": "import React, { useState } from 'react';\n\nfunction FilteredList({ items }) {\n    const [filter, setFilter] = useState('');\n\n    const filteredItems = items.filter(item =>\n        item.toLowerCase().includes(filter.toLowerCase())\n    );\n\n    return (\n        <div>\n            <input type='text' placeholder='Filter items...' value={filter} onChange={(e) => setFilter(e.target.value)} />\n            <ul>\n                {filteredItems.map((item, index) => (\n                    <li key={index}>{item}</li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default FilteredList;"
+      },
+      {
+        "question": "Write a React component that implements a simple counter with increment and decrement buttons.",
+        "solution": "import React, { useState } from 'react';\n\nfunction Counter() {\n    const [count, setCount] = useState(0);\n\n    const increment = () => {\n        setCount(count + 1);\n    };\n\n    const decrement = () => {\n        setCount(count - 1);\n    };\n\n    return (\n        <div>\n            <button onClick={decrement}>-</button>\n            <span>{count}</span>\n            <button onClick={increment}>+</button>\n        </div>\n    );\n}\n\nexport default Counter;"
+      },
+      {
+        "question": "Create a React component that renders a list of items with delete functionality.",
+        "solution": "import React, { useState } from 'react';\n\nfunction ItemList({ items }) {\n    const [itemList, setItemList] = useState(items);\n\n    const deleteItem = (index) => {\n        const updatedList = [...itemList];\n        updatedList.splice(index, 1);\n        setItemList(updatedList);\n    };\n\n    return (\n        <ul>\n            {itemList.map((item, index) => (\n                <li key={index}>\n                    {item} <button onClick={() => deleteItem(index)}>Delete</button>\n                </li>\n            ))}\n        </ul>\n    );\n}\n\nexport default ItemList;"
+      },
+      {
+        "question": "Write a React component that renders a simple todo list with add and delete functionality.",
+        "solution": "import React, { useState } from 'react';\n\nfunction TodoList() {\n    const [todos, setTodos] = useState([]);\n    const [inputValue, setInputValue] = useState('');\n\n    const addTodo = () => {\n        if (inputValue.trim() !== '') {\n            setTodos([...todos, inputValue]);\n            setInputValue('');\n        }\n    };\n\n    const deleteTodo = (index) => {\n        const updatedTodos = [...todos];\n        updatedTodos.splice(index, 1);\n        setTodos(updatedTodos);\n    };\n\n    return (\n        <div>\n            <input type='text' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />\n            <button onClick={addTodo}>Add Todo</button>\n            <ul>\n                {todos.map((todo, index) => (\n                    <li key={index}>\n                        {todo} <button onClick={() => deleteTodo(index)}>Delete</button>\n                    </li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default TodoList;"
+      },
+      {
+        "question": "Create a React component that uses props.children to render its children elements.",
+        "solution": "import React from 'react';\n\nfunction ParentComponent({ children }) {\n    return (\n        <div>\n            <h1>Parent Component</h1>\n            <div>{children}</div>\n        </div>\n    );\n}\n\nexport default ParentComponent;\n\n// Usage:\n// <ParentComponent>\n//    <ChildComponent1 />\n//    <ChildComponent2 />\n// </ParentComponent>"
+      },
+      {
+        "question": "Write a React component that uses useEffect to fetch data from an API and updates state.",
+        "solution": "import React, { useState, useEffect } from 'react';\n\nfunction UserList() {\n    const [users, setUsers] = useState([]);\n\n    useEffect(() => {\n        fetch('https://jsonplaceholder.typicode.com/users')\n            .then(response => response.json())\n            .then(data => setUsers(data));\n    }, []);\n\n    return (\n        <div>\n            <h1>User List</h1>\n            <ul>\n                {users.map(user => (\n                    <li key={user.id}>{user.name}</li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default UserList;"
+      },
+      {
+        "question": "Write a React component that implements a simple search filter.",
+        "solution": "import React, { useState } from 'react';\n\nfunction SearchFilter({ data }) {\n    const [query, setQuery] = useState('');\n\n    const filteredData = data.filter(item =>\n        item.toLowerCase().includes(query.toLowerCase())\n    );\n\n    return (\n        <div>\n            <input type='text' value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search...' />\n            <ul>\n                {filteredData.map((item, index) => (\n                    <li key={index}>{item}</li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default SearchFilter;"
+      },
+      {
+        "question": "Create a React component that renders a form with validation (e.g., required fields).",
+        "solution": "import React, { useState } from 'react';\n\nfunction FormWithValidation() {\n    const [formData, setFormData] = useState({\n        username: '',\n        email: ''\n    });\n    const [errors, setErrors] = useState({});\n\n    const handleChange = (e) => {\n        setFormData({\n            ...formData,\n            [e.target.name]: e.target.value\n        });\n        setErrors({\n            ...errors,\n            [e.target.name]: e.target.value.trim() === ''\n        });\n    };\n\n    const handleSubmit = (e) => {\n        e.preventDefault();\n        // Validate form\n        if (formData.username.trim() === '' || formData.email.trim() === '') {\n            alert('Please fill in all fields.');\n            return;\n        }\n        // Handle form submission\n    };\n\n    return (\n        <form onSubmit={handleSubmit}>\n            <label>Username:\n                <input type='text' name='username' value={formData.username} onChange={handleChange} />\n                {errors.username && <span style={{ color: 'red' }}>Username is required.</span>}\n            </label>\n            <label>Email:\n                <input type='email' name='email' value={formData.email} onChange={handleChange} />\n                {errors.email && <span style={{ color: 'red' }}>Email is required.</span>}\n            </label>\n            <button type='submit'>Submit</button>\n        </form>\n    );\n}\n\nexport default FormWithValidation;"
+      },
+      {
+        "question": "Write a React component that fetches and displays data using useEffect with loading and error states.",
+        "solution": "import React, { useState, useEffect } from 'react';\n\nfunction DataFetcher({ url }) {\n    const [data, setData] = useState(null);\n    const [loading, setLoading] = useState(true);\n    const [error, setError] = useState(null);\n\n    useEffect(() => {\n        fetch(url)\n            .then(response => {\n                if (!response.ok) {\n                    throw new Error('Network response was not ok');\n                }\n                return response.json();\n            })\n            .then(data => setData(data))\n            .catch(error => setError(error))\n            .finally(() => setLoading(false));\n    }, [url]);\n\n    if (loading) return <p>Loading...</p>;\n    if (error) return <p>Error: {error.message}</p>;\n    if (!data) return null;\n\n    return (\n        <div>\n            <h1>Data</h1>\n            <ul>\n                {data.map((item, index) => (\n                    <li key={index}>{item.title}</li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n\nexport default DataFetcher;"
+      },
+      {
+        "question": "Create a React component that uses useContext to manage global state.",
+        "solution": "import React, { createContext, useContext, useState } from 'react';\n\nconst AppContext = createContext();\n\nfunction App() {\n    const [count, setCount] = useState(0);\n\n    return (\n        <AppContext.Provider value={{ count, setCount }}>\n            <div>\n                <h1>Counter: {count}</h1>\n                <ChildComponent />\n            </div>\n        </AppContext.Provider>\n    );\n}\n\nfunction ChildComponent() {\n    const { count, setCount } = useContext(AppContext);\n\n    const increment = () => {\n        setCount(count + 1);\n    };\n\n    return (\n        <div>\n            <button onClick={increment}>Increment</button>\n        </div>\n    );\n}\n\nexport default App;"
+      },
+      {
+        "question": "Write a React component that implements a simple modal (popup) with open and close functionality.",
+        "solution": "import React, { useState } from 'react';\n\nfunction Modal() {\n    const [isOpen, setIsOpen] = useState(false);\n\n    const openModal = () => {\n        setIsOpen(true);\n    };\n\n    const closeModal = () => {\n        setIsOpen(false);\n    };\n\n    return (\n        <div>\n            <button onClick={openModal}>Open Modal</button>\n            {isOpen && (\n                <div className='modal'>\n                    <div className='modal-content'>\n                        <span className='close' onClick={closeModal}>&times;</span>\n                        <p>Modal content goes here.</p>\n                    </div>\n                </div>\n            )}\n        </div>\n    );\n}\n\nexport default Modal;"
+      }
+    ]

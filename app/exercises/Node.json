@@ -1,0 +1,70 @@
+ [
+      {
+        "question": "Create a Node.js server that listens on port 3000 and displays 'Hello, World!' when accessed through a web browser.",
+        "solution": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.statusCode = 200;\n  res.setHeader('Content-Type', 'text/plain');\n  res.end('Hello, World!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to read a file 'example.txt' and print its contents to the console.",
+        "solution": "const fs = require('fs');\n\nfs.readFile('example.txt', 'utf8', (err, data) => {\n  if (err) throw err;\n  console.log(data);\n});"
+      },
+      {
+        "question": "Create a Node.js program to handle GET requests and return 'Hello, World!' as response.",
+        "solution": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello, World!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to find the sum of numbers in an array.",
+        "solution": "const numbers = [1, 2, 3, 4, 5];\nconst sum = numbers.reduce((acc, curr) => acc + curr, 0);\nconsole.log('Sum of numbers:', sum);"
+      },
+      {
+        "question": "Create a Node.js program to perform CRUD operations on a MongoDB database.",
+        "solution": "const mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\nconst userSchema = new Schema({\n  name: String,\n  email: String,\n  age: Number\n});\n\nconst User = mongoose.model('User', userSchema);\n\n// Example of CRUD operations\n// Insert\nconst newUser = new User({ name: 'John Doe', email: 'john.doe@example.com', age: 30 });\nnewUser.save();\n\n// Find\nUser.find({}, (err, users) => {\n  if (err) throw err;\n  console.log(users);\n});\n\n// Update\nUser.updateOne({ name: 'John Doe' }, { age: 31 }, (err) => {\n  if (err) throw err;\n  console.log('User updated successfully');\n});\n\n// Delete\nUser.deleteOne({ name: 'John Doe' }, (err) => {\n  if (err) throw err;\n  console.log('User deleted successfully');\n});"
+      },
+      {
+        "question": "Write a Node.js program to handle POST requests and return the received data.",
+        "solution": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n  let body = '';\n  req.on('data', (chunk) => {\n    body += chunk.toString();\n  });\n  req.on('end', () => {\n    console.log('Received data:', body);\n    res.writeHead(200, { 'Content-Type': 'text/plain' });\n    res.end('Received data: ' + body);\n  });\n});\n\nserver.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Create a Node.js program to handle file uploads using multer middleware.",
+        "solution": "const express = require('express');\nconst multer = require('multer');\nconst upload = multer({ dest: 'uploads/' });\nconst app = express();\n\napp.post('/upload', upload.single('file'), (req, res) => {\n  res.send('File uploaded successfully');\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to implement basic authentication using middleware.",
+        "solution": "const express = require('express');\nconst app = express();\n\nconst basicAuth = require('express-basic-auth');\n\nconst users = {\n  'admin': 'password'\n};\n\napp.use(basicAuth({\n  users: users,\n  challenge: true,\n}));\n\napp.get('/', (req, res) => {\n  res.send('Authenticated!');\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Create a Node.js program to send emails using nodemailer library.",
+        "solution": "const nodemailer = require('nodemailer');\n\nlet transporter = nodemailer.createTransport({\n  service: 'gmail',\n  auth: {\n    user: 'your_email@gmail.com',\n    pass: 'your_password'\n  }\n});\n\nlet mailOptions = {\n  from: 'your_email@gmail.com',\n  to: 'recipient_email@example.com',\n  subject: 'Sending Email using Node.js',\n  text: 'Hello from Node.js!'\n};\n\ntransporter.sendMail(mailOptions, (error, info) => {\n  if (error) {\n    console.log(error);\n  } else {\n    console.log('Email sent: ' + info.response);\n  }\n});"
+      },
+      {
+        "question": "Write a Node.js program to handle form submissions using Express framework.",
+        "solution": "const express = require('express');\nconst bodyParser = require('body-parser');\nconst app = express();\n\napp.use(bodyParser.urlencoded({ extended: false }));\n\napp.post('/submit', (req, res) => {\n  const { name, email } = req.body;\n  res.send(`Form submitted: Name - ${name}, Email - ${email}`);\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Create a Node.js program to implement a RESTful API using Express.",
+        "solution": "const express = require('express');\nconst app = express();\n\nconst users = [\n  { id: 1, name: 'John Doe' },\n  { id: 2, name: 'Jane Smith' }\n];\n\napp.get('/api/users', (req, res) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req, res) => {\n  const newUser = { id: users.length + 1, name: req.body.name };\n  users.push(newUser);\n  res.json(newUser);\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to read and parse JSON data from a file.",
+        "solution": "const fs = require('fs');\n\nfs.readFile('data.json', 'utf8', (err, data) => {\n  if (err) throw err;\n  const jsonData = JSON.parse(data);\n  console.log(jsonData);\n});"
+      },
+      {
+        "question": "Write a Node.js program to implement a simple chat server using WebSocket.",
+        "solution": "const WebSocket = require('ws');\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', (ws) => {\n  ws.on('message', (message) => {\n    console.log('Received: %s', message);\n    ws.send(`You sent: ${message}`);\n  });\n  ws.send('Welcome to the WebSocket server!');\n});"
+      },
+      {
+        "question": "Create a Node.js program to implement a basic CRUD API for a 'users' collection using Express and MongoDB.",
+        "solution": "const express = require('express');\nconst mongoose = require('mongoose');\nconst app = express();\n\nmongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst User = mongoose.model('User', {\n  name: String,\n  email: String,\n  age: Number\n});\n\napp.use(express.json());\n\n// CRUD operations\napp.post('/users', async (req, res) => {\n  const newUser = new User(req.body);\n  await newUser.save();\n  res.json(newUser);\n});\n\napp.get('/users', async (req, res) => {\n  const users = await User.find();\n  res.json(users);\n});\n\napp.put('/users/:id', async (req, res) => {\n  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });\n  res.json(updatedUser);\n});\n\napp.delete('/users/:id', async (req, res) => {\n  const deletedUser = await User.findByIdAndDelete(req.params.id);\n  res.json(deletedUser);\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to handle errors using middleware in Express.",
+        "solution": "const express = require('express');\nconst app = express();\n\n// Middleware to handle errors\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).send('Something broke!');\n});\n\napp.get('/', (req, res) => {\n  throw new Error('Example error');\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Create a Node.js program to implement pagination for fetching data from MongoDB using Mongoose.",
+        "solution": "const express = require('express');\nconst mongoose = require('mongoose');\nconst app = express();\n\nmongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst User = mongoose.model('User', {\n  name: String,\n  email: String,\n  age: Number\n});\n\napp.get('/users', async (req, res) => {\n  const page = parseInt(req.query.page) || 1;\n  const limit = parseInt(req.query.limit) || 10;\n  const skip = (page - 1) * limit;\n\n  try {\n    const users = await User.find().skip(skip).limit(limit);\n    res.json(users);\n  } catch (err) {\n    res.status(500).json({ message: err.message });\n  }\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      },
+      {
+        "question": "Write a Node.js program to implement session-based authentication using express-session middleware.",
+        "solution": "const express = require('express');\nconst session = require('express-session');\nconst app = express();\n\napp.use(session({\n  secret: 'secret',\n  resave: false,\n  saveUninitialized: true,\n  cookie: { secure: false }\n}));\n\n// Middleware to check if user is authenticated\nconst checkAuth = (req, res, next) => {\n  if (req.session.authenticated) {\n    next();\n  } else {\n    res.status(401).send('Unauthorized');\n  }\n};\n\napp.post('/login', (req, res) => {\n  if (req.body.username === 'admin' && req.body.password === 'password') {\n    req.session.authenticated = true;\n    res.send('Login successful');\n  } else {\n    res.status(401).send('Invalid credentials');\n  }\n});\n\napp.get('/protected', checkAuth, (req, res) => {\n  res.send('Protected route');\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000/');\n});"
+      }
+    ]

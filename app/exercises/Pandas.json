@@ -1,0 +1,86 @@
+ [
+      {
+        "question": "Create a Pandas DataFrame from a dictionary of lists.",
+        "solution": "import pandas as pd\n\n# Sample data\ndata = {'Name': ['John', 'Anna', 'Peter'],\n        'Age': [28, 23, 32],\n        'City': ['New York', 'Paris', 'London']}\n\n# Create DataFrame\ndf = pd.DataFrame(data)\nprint(df)"
+      },
+      {
+        "question": "Select the first 5 rows of a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame\nfirst_five_rows = df.head()\nprint(first_five_rows)"
+      },
+      {
+        "question": "Find the number of rows and columns in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame\nnum_rows, num_cols = df.shape\nprint(f'Number of rows: {num_rows}, Number of columns: {num_cols}')"
+      },
+      {
+        "question": "Calculate the mean and median of a numerical column in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and 'Age' is the column\nmean_age = df['Age'].mean()\nmedian_age = df['Age'].median()\nprint(f'Mean Age: {mean_age}, Median Age: {median_age}')"
+      },
+      {
+        "question": "Filter rows in a DataFrame based on a condition (e.g., age > 30).",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame\nfiltered_df = df[df['Age'] > 30]\nprint(filtered_df)"
+      },
+      {
+        "question": "Sort a DataFrame based on a column in ascending order.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to sort by 'Age'\nsorted_df = df.sort_values(by='Age')\nprint(sorted_df)"
+      },
+      {
+        "question": "Group rows in a DataFrame by a categorical column and calculate the mean of another column.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame\nmean_age_by_city = df.groupby('City')['Age'].mean()\nprint(mean_age_by_city)"
+      },
+      {
+        "question": "Merge two DataFrames based on a common column.",
+        "solution": "import pandas as pd\n\n# Assuming df1 and df2 are your DataFrames, and you want to merge on 'ID'\nmerged_df = pd.merge(df1, df2, on='ID')\nprint(merged_df)"
+      },
+      {
+        "question": "Create a new column in a DataFrame based on existing columns (e.g., calculate BMI from height and weight).",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to calculate BMI\n# BMI = weight (kg) / (height (m) ^ 2)\ndf['BMI'] = df['Weight'] / (df['Height'] / 100) ** 2\nprint(df)"
+      },
+      {
+        "question": "Handle missing values (NaN) in a DataFrame by filling with a specific value or method.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to fill NaN values with 0\ndf_filled = df.fillna(0)\nprint(df_filled)"
+      },
+      {
+        "question": "Select rows and columns from a DataFrame using loc and iloc.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to select rows 0 to 5 and columns 'Name' and 'Age'\nselected_data = df.loc[0:5, ['Name', 'Age']]\nprint(selected_data)"
+      },
+      {
+        "question": "Calculate the correlation matrix of numerical columns in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame\ncorrelation_matrix = df.corr()\nprint(correlation_matrix)"
+      },
+      {
+        "question": "Reshape a DataFrame from wide to long format using melt.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to melt based on 'Name'\nmelted_df = pd.melt(df, id_vars=['Name'], var_name='Variable', value_name='Value')\nprint(melted_df)"
+      },
+      {
+        "question": "Create a pivot table from a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to create a pivot table\npivot_table = df.pivot_table(index='Name', columns='City', values='Age', aggfunc='mean')\nprint(pivot_table)"
+      },
+      {
+        "question": "Read data from a CSV file into a Pandas DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming 'data.csv' is your CSV file\nfile_path = 'data.csv'\ndf = pd.read_csv(file_path)\nprint(df)"
+      },
+      {
+        "question": "Write data from a Pandas DataFrame to a CSV file.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to write to 'output.csv'\noutput_file = 'output.csv'\ndf.to_csv(output_file, index=False)"
+      },
+      {
+        "question": "Rename columns in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to rename 'OldName' to 'NewName'\ndf.rename(columns={'OldName': 'NewName'}, inplace=True)\nprint(df)"
+      },
+      {
+        "question": "Drop rows or columns from a DataFrame based on a condition or labels.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to drop rows where 'Age' > 30\ndf_filtered = df[df['Age'] <= 30]\nprint(df_filtered)"
+      },
+      {
+        "question": "Apply a function to each element in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to apply a function to each element\n# Example: Double each value in 'Age'\ndf['Age'] = df['Age'].apply(lambda x: x * 2)\nprint(df)"
+      },
+      {
+        "question": "Calculate the cumulative sum of a column in a DataFrame.",
+        "solution": "import pandas as pd\n\n# Assuming df is your DataFrame and you want to calculate the cumulative sum of 'Sales'\ndf['Cumulative_Sales'] = df['Sales'].cumsum()\nprint(df)"
+      },
+      {
+        "question": "Normalize a numerical column in a DataFrame.",
+        "solution": "import pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\n\n# Assuming df is your DataFrame and you want to normalize 'Age'\nscaler = MinMaxScaler()\ndf['Normalized_Age'] = scaler.fit_transform(df[['Age']])\nprint(df)"
+      }
+    ]

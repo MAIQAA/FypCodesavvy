@@ -1,0 +1,54 @@
+ [
+      {
+        "question": "Create a simple AngularJS app to display 'Hello, World!'",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp'>\n  <h1>{{ message }}</h1>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.message = 'Hello, World!';\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create a program to filter a list of items based on user input using AngularJS.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <input type='text' ng-model='search' placeholder='Search...'>\n  <ul>\n    <li ng-repeat='item in items | filter:search'>{{ item }}</li>\n  </ul>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.items = ['Apple', 'Banana', 'Orange', 'Mango'];\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Write an AngularJS directive to display a custom tooltip when hovering over an element.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n  <style>\n    .tooltip {\n      position: relative;\n      display: inline-block;\n      border-bottom: 1px dotted black;\n    }\n    .tooltip .tooltiptext {\n      visibility: hidden;\n      width: 120px;\n      background-color: black;\n      color: white;\n      text-align: center;\n      padding: 5px 0;\n      border-radius: 6px;\n      position: absolute;\n      z-index: 1;\n    }\n    .tooltip:hover .tooltiptext {\n      visibility: visible;\n    }\n  </style>\n</head>\n<body>\n\n<div ng-app='myApp'>\n  <div class='tooltip'>Hover over me\n    <span class='tooltiptext'>Tooltip text</span>\n  </div>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.directive('tooltip', function() {\n  return {\n    restrict: 'C',\n    link: function(scope, element) {\n      element.on('mouseover', function() {\n        element.children('.tooltiptext').css('visibility', 'visible');\n      });\n      element.on('mouseout', function() {\n        element.children('.tooltiptext').css('visibility', 'hidden');\n      });\n    }\n  };\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS service to fetch data from a JSON API.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <ul>\n    <li ng-repeat='user in users'>{{ user.name }}</li>\n  </ul>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope, $http) {\n  $http.get('https://jsonplaceholder.typicode.com/users')\n    .then(function(response) {\n      $scope.users = response.data;\n    });\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Write an AngularJS program to perform two-way data binding using ng-model directive.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <input type='text' ng-model='message'>\n  <p>{{ message }}</p>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.message = 'Initial text';\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS program to show/hide content based on user interaction using ng-show and ng-hide directives.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <button ng-click='toggleContent()'>Toggle Content</button>\n  <div ng-show='showContent'>Content to show/hide</div>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.showContent = false;\n  $scope.toggleContent = function() {\n    $scope.showContent = !$scope.showContent;\n  };\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Write an AngularJS program to handle form validation using ng-model and ng-pattern directives.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n  <style>\n    .error {\n      color: red;\n    }\n  </style>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <form name='myForm'>\n    <label>Email:</label>\n    <input type='email' ng-model='email' name='email' ng-pattern='/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/'>\n    <span ng-show='myForm.email.$error.pattern' class='error'>Invalid email address</span>\n  </form>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.email = '';\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS program to sort a table of data using ng-repeat and orderBy filter.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <table>\n    <tr>\n      <th>Name</th>\n      <th>Age</th>\n    </tr>\n    <tr ng-repeat='person in people | orderBy:\"name\"'>\n      <td>{{ person.name }}</td>\n      <td>{{ person.age }}</td>\n    </tr>\n  </table>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.people = [\n    { name: 'John', age: 30 },\n    { name: 'Jane', age: 25 },\n    { name: 'Doe', age: 40 }\n  ];\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS program to implement routing between multiple views.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp'>\n  <a href='#/home'>Home</a>\n  <a href='#/about'>About</a>\n  <div ng-view></div>\n</div>\n\n<script>\nvar app = angular.module('myApp', ['ngRoute']);\napp.config(function($routeProvider) {\n  $routeProvider\n  .when('/home', {\n    template: '<h1>Home Page</h1>',\n  })\n  .when('/about', {\n    template: '<h1>About Page</h1>',\n  })\n  .otherwise({ redirectTo: '/home' });\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Write an AngularJS program to handle HTTP requests (GET, POST, PUT, DELETE) using $http service.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <ul>\n    <li ng-repeat='post in posts'>{{ post.title }}</li>\n  </ul>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope, $http) {\n  $http.get('https://jsonplaceholder.typicode.com/posts')\n    .then(function(response) {\n      $scope.posts = response.data;\n    });\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS program to implement form submission and handling using ng-submit directive.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <form ng-submit='submitForm()'>\n    <label>Name:</label>\n    <input type='text' ng-model='name' required>\n    <button type='submit'>Submit</button>\n  </form>\n  <p ng-show='submitted'>Submitted Successfully!</p>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.submitForm = function() {\n    // Handle form submission logic here\n    $scope.submitted = true;\n  };\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Write an AngularJS program to create a custom filter to format data in a desired way.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp' ng-controller='myCtrl'>\n  <ul>\n    <li ng-repeat='item in items | customFilter'>{{ item }}</li>\n  </ul>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  $scope.items = [10, 20, 30, 40, 50];\n});\napp.filter('customFilter', function() {\n  return function(input) {\n    var output = [];\n    for (var i = 0; i < input.length; i++) {\n      output.push(input[i] * 2);\n    }\n    return output;\n  };\n});\n</script>\n\n</body>\n</html>"
+      },
+      {
+        "question": "Create an AngularJS program to integrate with a third-party library (e.g., jQuery, D3.js) and use it within an AngularJS application.",
+        "solution": "<!DOCTYPE html>\n<html>\n<head>\n  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>\n  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>\n  <script src='https://d3js.org/d3.v7.min.js'></script>\n</head>\n<body>\n\n<div ng-app='myApp'>\n  <div id='chart'></div>\n</div>\n\n<script>\nvar app = angular.module('myApp', []);\napp.controller('myCtrl', function($scope) {\n  // Use jQuery or D3.js here to create charts, manipulate DOM, etc.\n  var data = [10, 20, 30, 40, 50];\n  var svg = d3.select('#chart').append('svg')\n              .attr('width', 400)\n              .attr('height', 200);\n  svg.selectAll('rect')\n     .data(data)\n     .enter()\n     .append('rect')\n     .attr('x', (d, i) => i * 70)\n     .attr('y', (d) => 200 - d * 2)\n     .attr('width', 65)\n     .attr('height', (d) => d * 2)\n     .attr('fill', 'green');\n});\n</script>\n\n</body>\n</html>"
+      }
+    ]

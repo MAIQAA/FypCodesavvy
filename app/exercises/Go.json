@@ -1,0 +1,70 @@
+ [
+      {
+        "question": "Write a Go program to print 'Hello, World!'",
+        "solution": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
+      },
+      {
+        "question": "Create a program to find the sum of two numbers in Go.",
+        "solution": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var num1, num2, sum int\n    fmt.Print(\"Enter two numbers: \")\n    fmt.Scanln(&num1, &num2)\n    sum = num1 + num2\n    fmt.Println(\"Sum:\", sum)\n}"
+      },
+      {
+        "question": "Write a program to check if a number is prime or not in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc isPrime(num int) bool {\n    if num <= 1 {\n        return false\n    }\n    limit := int(math.Sqrt(float64(num)))\n    for i := 2; i <= limit; i++ {\n        if num%i == 0 {\n            return false\n        }\n    }\n    return true\n}\n\nfunc main() {\n    var num int\n    fmt.Print(\"Enter a number: \")\n    fmt.Scanln(&num)\n    if isPrime(num) {\n        fmt.Println(num, \"is a prime number\")\n    } else {\n        fmt.Println(num, \"is not a prime number\")\n    }\n}"
+      },
+      {
+        "question": "Create a program to find the factorial of a number in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math/big\"\n)\n\nfunc factorial(n int) *big.Int {\n    if n < 0 {\n        return big.NewInt(1)\n    }\n    if n == 0 {\n        return big.NewInt(1)\n    }\n    bigN := big.NewInt(int64(n))\n    return bigN.Mul(bigN, factorial(n-1))\n}\n\nfunc main() {\n    var num int\n    fmt.Print(\"Enter a number: \")\n    fmt.Scanln(&num)\n    fmt.Println(\"Factorial:\", factorial(num))\n}"
+      },
+      {
+        "question": "Write a program to find the Fibonacci series up to n terms in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math/big\"\n)\n\nfunc fibonacci(n int) []*big.Int {\n    fibs := []*big.Int{big.NewInt(0), big.NewInt(1)}\n    for i := 2; i < n; i++ {\n        fib := big.NewInt(0)\n        fib.Add(fibs[i-1], fibs[i-2])\n        fibs = append(fibs, fib)\n    }\n    return fibs\n}\n\nfunc main() {\n    var num int\n    fmt.Print(\"Enter the number of terms: \")\n    fmt.Scanln(&num)\n    fmt.Println(\"Fibonacci Series up to\", num, \"terms:\", fibonacci(num))\n}"
+      },
+      {
+        "question": "Create a program to reverse a string in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"strings\"\n)\n\nfunc reverseString(str string) string {\n    runes := []rune(str)\n    for i, j := 0, len(runes)-1; i < len(runes)/2; i, j = i+1, j-1 {\n        runes[i], runes[j] = runes[j], runes[i]\n    }\n    return string(runes)\n}\n\nfunc main() {\n    var str string\n    fmt.Print(\"Enter a string: \")\n    fmt.Scanln(&str)\n    fmt.Println(\"Reversed string:\", reverseString(str))\n}"
+      },
+      {
+        "question": "Write a program to find the GCD (Greatest Common Divisor) of two numbers in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math/big\"\n)\n\nfunc gcd(num1, num2 int64) *big.Int {\n    a := big.NewInt(num1)\n    b := big.NewInt(num2)\n    return a.GCD(nil, nil, b)\n}\n\nfunc main() {\n    var num1, num2 int64\n    fmt.Print(\"Enter two numbers: \")\n    fmt.Scanln(&num1, &num2)\n    fmt.Println(\"GCD:\", gcd(num1, num2))\n}"
+      },
+      {
+        "question": "Create a program to find the sum of elements in an array in Go.",
+        "solution": "package main\n\nimport \"fmt\"\n\nfunc sumArray(arr []int) int {\n    sum := 0\n    for _, num := range arr {\n        sum += num\n    }\n    return sum\n}\n\nfunc main() {\n    arr := []int{1, 2, 3, 4, 5}\n    fmt.Println(\"Sum of array elements:\", sumArray(arr))\n}"
+      },
+      {
+        "question": "Write a program to check if a string is a palindrome in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"strings\"\n)\n\nfunc isPalindrome(str string) bool {\n    for i := 0; i < len(str)/2; i++ {\n        if str[i] != str[len(str)-1-i] {\n            return false\n        }\n    }\n    return true\n}\n\nfunc main() {\n    var str string\n    fmt.Print(\"Enter a string: \")\n    fmt.Scanln(&str)\n    if isPalindrome(str) {\n        fmt.Println(str, \"is a palindrome\")\n    } else {\n        fmt.Println(str, \"is not a palindrome\")\n    }\n}"
+      },
+      {
+        "question": "Create a program to print all prime numbers between two given numbers in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc isPrime(num int) bool {\n    if num <= 1 {\n        return false\n    }\n    limit := int(math.Sqrt(float64(num)))\n    for i := 2; i <= limit; i++ {\n        if num%i == 0 {\n            return false\n        }\n    }\n    return true\n}\n\nfunc main() {\n    var start, end int\n    fmt.Print(\"Enter two numbers (start and end): \")\n    fmt.Scanln(&start, &end)\n    fmt.Println(\"Prime numbers between\", start, \"and\", end, \"are:\")\n    for i := start; i <= end; i++ {\n        if isPrime(i) {\n            fmt.Print(i, \" \")\n        }\n    }\n}"
+      },
+      {
+        "question": "Write a program to find the sum of digits of a number in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n)\n\nfunc sumOfDigits(num int) int {\n    sum := 0\n    for num > 0 {\n        sum += num % 10\n        num /= 10\n    }\n    return sum\n}\n\nfunc main() {\n    var num int\n    fmt.Print(\"Enter a number: \")\n    fmt.Scanln(&num)\n    fmt.Println(\"Sum of digits of\", num, \"is\", sumOfDigits(num))\n}"
+      },
+      {
+        "question": "Create a program to check if a number is Armstrong number or not in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc isArmstrong(num int) bool {\n    var sum, original, remainder int\n    original = num\n    for {\n        remainder = num % 10\n        sum += int(math.Pow(float64(remainder), float64(3)))\n        num /= 10\n        if num == 0 {\n            break\n        }\n    }\n    return sum == original\n}\n\nfunc main() {\n    var num int\n    fmt.Print(\"Enter a number: \")\n    fmt.Scanln(&num)\n    if isArmstrong(num) {\n        fmt.Println(num, \"is an Armstrong number\")\n    } else {\n        fmt.Println(num, \"is not an Armstrong number\")\n    }\n}"
+      },
+      {
+        "question": "Create a program to count the number of vowels and consonants in a string in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"strings\"\n)\n\nfunc countVowelsConsonants(str string) (int, int) {\n    vowels := \"aeiouAEIOU\"\n    vowelCount, consonantCount := 0, 0\n\n    for _, char := range str {\n        if strings.ContainsRune(vowels, char) {\n            vowelCount++\n        } else if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') {\n            consonantCount++\n        }\n    }\n    return vowelCount, consonantCount\n}\n\nfunc main() {\n    var str string\n    fmt.Print(\"Enter a string: \")\n    fmt.Scanln(&str)\n    vowels, consonants := countVowelsConsonants(str)\n    fmt.Println(\"Number of vowels:\", vowels)\n    fmt.Println(\"Number of consonants:\", consonants)\n}"
+      },
+      {
+        "question": "Write a program to find the LCM (Least Common Multiple) of two numbers in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"math/big\"\n)\n\nfunc gcd(a, b int64) *big.Int {\n    bigA := big.NewInt(a)\n    bigB := big.NewInt(b)\n    return bigA.GCD(nil, nil, bigB)\n}\n\nfunc lcm(a, b int64) *big.Int {\n    gcd := gcd(a, b)\n    bigA := big.NewInt(a)\n    bigB := big.NewInt(b)\n    return bigA.Mul(bigA.Div(bigA, gcd), bigB)\n}\n\nfunc main() {\n    var num1, num2 int64\n    fmt.Print(\"Enter two numbers: \")\n    fmt.Scanln(&num1, &num2)\n    fmt.Println(\"LCM:\", lcm(num1, num2))\n}"
+      },
+      {
+        "question": "Create a program to print the Pascal's triangle in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n)\n\nfunc generatePascalsTriangle(numRows int) [][]int {\n    triangle := make([][]int, numRows)\n    for i := range triangle {\n        triangle[i] = make([]int, i+1)\n        triangle[i][0], triangle[i][i] = 1, 1\n        for j := 1; j < i; j++ {\n            triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j]\n        }\n    }\n    return triangle\n}\n\nfunc main() {\n    var numRows int\n    fmt.Print(\"Enter the number of rows for Pascal's triangle: \")\n    fmt.Scanln(&numRows)\n    triangle := generatePascalsTriangle(numRows)\n    fmt.Println(\"Pascal's Triangle upto\", numRows, \"rows:\")\n    for _, row := range triangle {\n        fmt.Println(row)\n    }\n}"
+      },
+      {
+        "question": "Write a program to sort elements of an array in ascending order using Bubble Sort in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n)\n\nfunc bubbleSort(arr []int) {\n    n := len(arr)\n    for i := 0; i < n-1; i++ {\n        for j := 0; j < n-i-1; j++ {\n            if arr[j] > arr[j+1] {\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n            }\n        }\n    }\n}\n\nfunc main() {\n    arr := []int{64, 25, 12, 22, 11}\n    fmt.Println(\"Unsorted array:\", arr)\n    bubbleSort(arr)\n    fmt.Println(\"Sorted array:\", arr)\n}"
+      },
+      {
+        "question": "Create a program to check if a string is an anagram of another string in Go.",
+        "solution": "package main\n\nimport (\n    \"fmt\"\n    \"sort\"\n    \"strings\"\n)\n\nfunc isAnagram(str1, str2 string) bool {\n    if len(str1) != len(str2) {\n        return false\n    }\n    str1Sorted := sortString(str1)\n    str2Sorted := sortString(str2)\n    return str1Sorted == str2Sorted\n}\n\nfunc sortString(str string) string {\n    chars := strings.Split(str, \"\")\n    sort.Strings(chars)\n    return strings.Join(chars, \"\")\n}\n\nfunc main() {\n    var str1, str2 string\n    fmt.Print(\"Enter first string: \")\n    fmt.Scanln(&str1)\n    fmt.Print(\"Enter second string: \")\n    fmt.Scanln(&str2)\n    if isAnagram(str1, str2) {\n        fmt.Println(\"\", str1, \"and\", str2, \"are anagrams\")\n    } else {\n        fmt.Println(\"\", str1, \"and\", str2, \"are not anagrams\")\n    }\n}"
+      }
+    ]

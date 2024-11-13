@@ -1,0 +1,94 @@
+[
+      {
+        "question": "Create a Django project named 'myproject'.",
+        "solution": "django-admin startproject myproject"
+      },
+      {
+        "question": "Create a Django app named 'myapp' inside the project.",
+        "solution": "python manage.py startapp myapp"
+      },
+      {
+        "question": "Define a model 'Post' with fields: title (CharField) and content (TextField).",
+        "solution": "from django.db import models\n\nclass Post(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n\n    def __str__(self):\n        return self.title"
+      },
+      {
+        "question": "Create a Django view to list all 'Post' objects.",
+        "solution": "from django.shortcuts import render\nfrom .models import Post\n\ndef post_list(request):\n    posts = Post.objects.all()\n    return render(request, 'post_list.html', {'posts': posts})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/' to the 'post_list' view.",
+        "solution": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.post_list, name='post_list'),\n    # other paths\n]"
+      },
+      {
+        "question": "Create a Django template 'post_list.html' to display all posts.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>Posts</h1>\n  <ul>\n    {% for post in posts %}\n      <li>{{ post.title }}</li>\n    {% endfor %}\n  </ul>\n{% endblock %}"
+      },
+      {
+        "question": "Write a Django form 'PostForm' to handle 'Post' model.",
+        "solution": "from django import forms\nfrom .models import Post\n\nclass PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ['title', 'content']"
+      },
+      {
+        "question": "Create a Django view 'post_create' to handle new post creation using 'PostForm'.",
+        "solution": "from django.shortcuts import render, redirect\nfrom .forms import PostForm\n\ndef post_create(request):\n    if request.method == 'POST':\n        form = PostForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('post_list')\n    else:\n        form = PostForm()\n    return render(request, 'post_form.html', {'form': form})"
+      },
+      {
+        "question": "Write a Django template 'post_form.html' to display and handle 'PostForm'.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>New Post</h1>\n  <form method=\"post\">\n    {% csrf_token %}\n    {{ form.as_p }}\n    <button type=\"submit\">Save</button>\n  </form>\n{% endblock %}"
+      },
+      {
+        "question": "Create a Django view 'post_detail' to display details of a single post.",
+        "solution": "from django.shortcuts import render, get_object_or_404\nfrom .models import Post\n\ndef post_detail(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    return render(request, 'post_detail.html', {'post': post})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/post/<int:pk>/' to 'post_detail' view.",
+        "solution": "urlpatterns = [\n    # other patterns\n    path('post/<int:pk>/', views.post_detail, name='post_detail'),\n]"
+      },
+      {
+        "question": "Create a Django template 'post_detail.html' to display details of a single post.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>{{ post.title }}</h1>\n  <p>{{ post.content }}</p>\n{% endblock %}"
+      },
+      {
+        "question": "Write a Django view 'post_update' to update an existing post using 'PostForm'.",
+        "solution": "from django.shortcuts import render, get_object_or_404, redirect\nfrom .forms import PostForm\nfrom .models import Post\n\ndef post_update(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == 'POST':\n        form = PostForm(request.POST, instance=post)\n        if form.is_valid():\n            form.save()\n            return redirect('post_detail', pk=pk)\n    else:\n        form = PostForm(instance=post)\n    return render(request, 'post_form.html', {'form': form})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/post/<int:pk>/update/' to 'post_update' view.",
+        "solution": "urlpatterns = [\n    # other patterns\n    path('post/<int:pk>/update/', views.post_update, name='post_update'),\n]"
+      },
+      {
+        "question": "Create a Django view 'post_delete' to delete an existing post.",
+        "solution": "from django.shortcuts import render, get_object_or_404, redirect\nfrom .models import Post\n\ndef post_delete(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == 'POST':\n        post.delete()\n        return redirect('post_list')\n    return render(request, 'post_confirm_delete.html', {'post': post})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/post/<int:pk>/delete/' to 'post_delete' view.",
+        "solution": "urlpatterns = [\n    # other patterns\n    path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),\n]"
+      },
+      {
+        "question": "Create a Django template 'post_confirm_delete.html' to confirm post deletion.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>Delete Post</h1>\n  <p>Are you sure you want to delete '{{ post.title }}'?</p>\n  <form method=\"post\">\n    {% csrf_token %}\n    <button type=\"submit\">Confirm</button>\n    <a href=\"{% url 'post_detail' pk=post.pk %}\">Cancel</a>\n  </form>\n{% endblock %}"
+      },
+      {
+        "question": "Write a Django view 'post_search' to search posts by title.",
+        "solution": "from django.shortcuts import render\nfrom .models import Post\n\ndef post_search(request):\n    query = request.GET.get('q')\n    posts = Post.objects.filter(title__icontains=query)\n    return render(request, 'post_search.html', {'posts': posts, 'query': query})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/search/' to 'post_search' view.",
+        "solution": "urlpatterns = [\n    # other patterns\n    path('search/', views.post_search, name='post_search'),\n]"
+      },
+      {
+        "question": "Create a Django template 'post_search.html' to display search results.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>Search Results</h1>\n  <p>Showing results for '{{ query }}'</p>\n  <ul>\n    {% for post in posts %}\n      <li>{{ post.title }}</li>\n    {% empty %}\n      <li>No results found.</li>\n    {% endfor %}\n  </ul>\n{% endblock %}"
+      },
+      {
+        "question": "Write a Django view 'post_tag' to filter posts by tags.",
+        "solution": "from django.shortcuts import render\nfrom .models import Post\n\ndef post_tag(request, tag):\n    posts = Post.objects.filter(tags__name__in=[tag])\n    return render(request, 'post_tag.html', {'posts': posts, 'tag': tag})"
+      },
+      {
+        "question": "Write a Django URL pattern to map '/tag/<tag>/' to 'post_tag' view.",
+        "solution": "urlpatterns = [\n    # other patterns\n    path('tag/<tag>/', views.post_tag, name='post_tag'),\n]"
+      },
+      {
+        "question": "Create a Django template 'post_tag.html' to display posts filtered by a tag.",
+        "solution": "{% extends 'base.html' %}\n\n{% block content %}\n  <h1>Posts tagged with '{{ tag }}'</h1>\n  <ul>\n    {% for post in posts %}\n      <li>{{ post.title }}</li>\n    {% empty %}\n      <li>No posts found for this tag.</li>\n    {% endfor %}\n  </ul>\n{% endblock %}"
+      }
+    ]

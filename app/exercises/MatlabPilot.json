@@ -1,0 +1,70 @@
+ [
+      {
+        "question": "Write a MATLAB script to calculate the sum of two numbers.",
+        "solution": "% Calculate the sum of two numbers\na = 5;\nb = 10;\nsum = a + b;\ndisp(['Sum of ' num2str(a) ' and ' num2str(b) ' is: ' num2str(sum)])"
+      },
+      {
+        "question": "Write a MATLAB script to plot a sine wave.",
+        "solution": "% Plotting a sine wave\nx = linspace(0, 2*pi, 100);\ny = sin(x);\nplot(x, y);\ntitle('Sine Wave');\nxlabel('Angle (radians)');\nylabel('sin(x)');\ngrid on;"
+      },
+      {
+        "question": "Create a MATLAB script to find the roots of a quadratic equation.",
+        "solution": "% Finding roots of a quadratic equation\na = 1;\nb = -3;\nc = 2;\n\n% Calculate roots\nroots = roots([a b c]);\n\n% Display roots\nif isreal(roots)\n    disp(['Roots are: ' num2str(roots)]);\nelse\n    disp('Roots are complex');\nend"
+      },
+      {
+        "question": "Write a MATLAB script to generate a random matrix and find its transpose.",
+        "solution": "% Generating a random matrix and finding its transpose\nmatrix = randi([1, 10], 3, 3);\ntransposeMatrix = matrix.';\n\n% Display matrices\ndisp('Original Matrix:');\ndisp(matrix);\ndisp('Transpose Matrix:');\ndisp(transposeMatrix);"
+      },
+      {
+        "question": "Create a MATLAB script to solve a system of linear equations.",
+        "solution": "% Solving a system of linear equations\nA = [2, 3; 4, 5];\nB = [5; 7];\n\n% Solve for X\nX = A \\ B;\n\n% Display solution\ndisp(['Solution X: ' num2str(X.')]);"
+      },
+      {
+        "question": "Write a MATLAB script to perform matrix multiplication.",
+        "solution": "% Performing matrix multiplication\nA = [1, 2; 3, 4];\nB = [5, 6; 7, 8];\n\n% Multiply matrices\nC = A * B;\n\n% Display result\ndisp('Result of matrix multiplication:');\ndisp(C);"
+      },
+      {
+        "question": "Create a MATLAB script to find the area of a circle given its radius.",
+        "solution": "% Finding the area of a circle\nradius = 5;\narea = pi * radius^2;\ndisp(['Area of circle with radius ' num2str(radius) ' is: ' num2str(area)]);"
+      },
+      {
+        "question": "Write a MATLAB script to compute the FFT (Fast Fourier Transform) of a signal.",
+        "solution": "% Computing FFT of a signal\nsignal = [1, 2, 3, 4];\nfftSignal = fft(signal);\n\n% Display FFT\ndisp('FFT of signal:');\ndisp(fftSignal);"
+      },
+      {
+        "question": "Create a MATLAB script to generate a 3D plot of a function.",
+        "solution": "% Generating a 3D plot\n[X, Y] = meshgrid(-2:0.1:2);\nZ = X.^2 + Y.^2;\n\n% Plotting\nfigure;\nsurf(X, Y, Z);\ntitle('3D Plot of X^2 + Y^2');\nxlabel('X');\nylabel('Y');\nzlabel('Z');\ngrid on;"
+      },
+      {
+        "question": "Write a MATLAB script to calculate the inverse of a matrix.",
+        "solution": "% Calculating the inverse of a matrix\nA = [2, 3; 4, 5];\n\n% Calculate inverse\ninverseA = inv(A);\n\n% Display inverse\nif ~isnan(inverseA)\n    disp('Inverse of matrix A:');\n    disp(inverseA);\nelse\n    disp('Inverse does not exist for matrix A');\nend"
+      },
+      {
+        "question": "Create a MATLAB script to generate a bar chart.",
+        "solution": "% Generating a bar chart\nx = [1, 2, 3, 4];\ny = [10, 15, 7, 22];\nbar(x, y);\ntitle('Bar Chart');\nxlabel('X-axis');\nylabel('Y-axis');\ngrid on;"
+      },
+      {
+        "question": "Write a MATLAB script to perform image processing (e.g., grayscale conversion, edge detection).",
+        "solution": "% Performing grayscale conversion and edge detection\nimg = imread('image.jpg');\ngrayscaleImg = rgb2gray(img);\nedgeImg = edge(grayscaleImg, 'canny');\n\n% Display original and processed images\nfigure;\nsubplot(1, 2, 1);\nimshow(img);\ntitle('Original Image');\nsubplot(1, 2, 2);\nimshow(edgeImg);\ntitle('Edge Detected Image');"
+      },
+      {
+        "question": "Write a MATLAB script to solve a system of nonlinear equations.",
+        "solution": "% Solving a system of nonlinear equations\nfun = @(x) [x(1)^2 + x(2)^2 - 4; x(1) * x(2) - 1];\nx0 = [1; 1];\noptions = optimset('Display', 'iter');\nx = fsolve(fun, x0, options);\n\n% Display solution\nif ~isempty(x)\n    disp(['Solution: x1 = ' num2str(x(1)) ', x2 = ' num2str(x(2))]);\nelse\n    disp('No solution found');\nend"
+      },
+      {
+        "question": "Create a MATLAB script to perform basic statistics on a dataset.",
+        "solution": "% Performing basic statistics on a dataset\ndata = [10, 20, 15, 25, 30];\nmeanValue = mean(data);\nmedianValue = median(data);\nstdDeviation = std(data);\n\n% Display statistics\nfprintf('Mean: %.2f\\nMedian: %.2f\\nStandard Deviation: %.2f\\n', meanValue, medianValue, stdDeviation);"
+      },
+      {
+        "question": "Write a MATLAB script to perform matrix decomposition (e.g., LU decomposition).",
+        "solution": "% Performing LU decomposition\nA = [4, 3; 6, 3];\n\n% Perform LU decomposition\n[L, U] = lu(A);\n\n% Display matrices\nfprintf('Matrix A:\\n');\ndisp(A);\nfprintf('Lower Triangular Matrix L:\\n');\ndisp(L);\nfprintf('Upper Triangular Matrix U:\\n');\ndisp(U);"
+      },
+      {
+        "question": "Create a MATLAB script to implement a simple neural network (e.g., perceptron).",
+        "solution": "% Implementing a simple neural network (perceptron)\ninputs = [0, 1, 1; 1, 0, 1];\nweights = [0.5; -0.5; 1];\nbias = 0.2;\n\n% Calculate output\noutput = heaviside(weights.' * inputs + bias);\n\n% Display output\nfprintf('Output of perceptron: %.2f, %.2f, %.2f\\n', output);"
+      },
+      {
+        "question": "Write a MATLAB script to perform interpolation on a dataset.",
+        "solution": "% Performing interpolation on a dataset\nx = [1, 2, 3, 4];\ny = [10, 15, 7, 22];\nxi = 1.5;\nmethod = 'linear';\n\n% Perform interpolation\nyi = interp1(x, y, xi, method);\n\n% Display interpolated value\nfprintf('Interpolated value at x=%.1f using %s interpolation: %.2f\\n', xi, method, yi);"
+      }
+    ]

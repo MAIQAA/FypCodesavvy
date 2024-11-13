@@ -1,0 +1,74 @@
+[
+      {
+        "question": "Write a Python program to calculate the determinant of a 3x3 matrix using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.linalg import det\n\nmatrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndeterminant = det(matrix)\nprint('Determinant of the matrix:')\nprint(determinant)"
+      },
+      {
+        "question": "Create a program to find the eigenvalues and eigenvectors of a square matrix using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.linalg import eig\n\nmatrix = np.array([[1, 2], [2, 3]])\neigenvalues, eigenvectors = eig(matrix)\nprint('Eigenvalues:')\nprint(eigenvalues)\nprint('Eigenvectors:')\nprint(eigenvectors)"
+      },
+      {
+        "question": "Write a Python program to perform linear regression using SciPy for a given set of data points.",
+        "solution": "import numpy as np\nfrom scipy.stats import linregress\n\nx = np.array([1, 2, 3, 4, 5])\ny = np.array([3, 5, 7, 9, 11])\nslope, intercept, r_value, p_value, std_err = linregress(x, y)\nprint('Slope and intercept of the regression line:')\nprint('Slope:', slope)\nprint('Intercept:', intercept)"
+      },
+      {
+        "question": "Create a program to calculate the Fourier Transform of a given signal using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.fft import fft\n\nsignal = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\nfourier_transform = fft(signal)\nprint('Fourier Transform of the signal:')\nprint(fourier_transform)"
+      },
+      {
+        "question": "Write a Python program to solve a system of linear equations using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.linalg import solve\n\ncoefficients = np.array([[3, 1], [1, 2]])\nconstants = np.array([9, 8])\nsolution = solve(coefficients, constants)\nprint('Solution of the system of equations:')\nprint(solution)"
+      },
+      {
+        "question": "Create a program to perform interpolation on a set of data points using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.interpolate import interp1d\n\nx = np.array([0, 1, 2, 3, 4])\ny = np.array([0, 2, 4, 6, 8])\nlinear_interp = interp1d(x, y, kind='linear')\nprint('Interpolated values at x=2.5:')\nprint(linear_interp(2.5))"
+      },
+      {
+        "question": "Write a Python program to calculate the inverse of a matrix using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.linalg import inv\n\nmatrix = np.array([[1, 2], [3, 4]])\ninverse_matrix = inv(matrix)\nprint('Inverse of the matrix:')\nprint(inverse_matrix)"
+      },
+      {
+        "question": "Create a program to perform numerical integration of a function using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.integrate import quad\n\ndef integrand(x):\n    return x ** 2\n\nresult, error = quad(integrand, 0, 1)\nprint('Numerical integration result:')\nprint(result)"
+      },
+      {
+        "question": "Write a Python program to calculate the roots of a polynomial using SciPy.",
+        "solution": "import numpy as np\nfrom scipy import roots\n\npolynomial_coefficients = np.array([1, -2, 1])\nroots = roots(polynomial_coefficients)\nprint('Roots of the polynomial:')\nprint(roots)"
+      },
+      {
+        "question": "Create a program to perform clustering analysis on a dataset using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.cluster.vq import kmeans, vq\n\ndata = np.array([[1, 2], [2, 3], [5, 6], [6, 7], [10, 11], [11, 12]])\nclusters, distortion = kmeans(data, 2)\nprint('Cluster centroids:')\nprint(clusters)"
+      },
+      {
+        "question": "Write a Python program to calculate the cumulative distribution function (CDF) of a random variable using SciPy.",
+        "solution": "from scipy.stats import norm\n\ndef cdf_of_normal_distribution(x):\n    return norm.cdf(x)\n\nx_value = 1.5\ncdf_value = cdf_of_normal_distribution(x_value)\nprint('CDF of the normal distribution at x=1.5:')\nprint(cdf_value)"
+      },
+      {
+        "question": "Create a program to perform sparse matrix operations using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.sparse import csr_matrix\n\nmatrix = np.array([[1, 0, 0], [0, 0, 2], [3, 0, 0]])\nsparse_matrix = csr_matrix(matrix)\nprint('Sparse matrix representation:')\nprint(sparse_matrix)"
+      },
+      {
+        "question": "Write a Python program to calculate the cumulative sum of elements in an array using SciPy.",
+        "solution": "import numpy as np\nfrom scipy import cumsum\n\narray = np.array([1, 2, 3, 4, 5])\ncumulative_sum = cumsum(array)\nprint('Cumulative sum of the array:')\nprint(cumulative_sum)"
+      },
+      {
+        "question": "Create a program to perform principal component analysis (PCA) on a dataset using SciPy.",
+        "solution": "import numpy as np\nfrom scipy import linalg\nfrom scipy.stats import zscore\n\ndata = np.array([[1, 2], [3, 4], [5, 6]])\ndata_normalized = zscore(data, axis=0)\nU, S, Vh = linalg.svd(data_normalized)\nprint('Principal components (Vh matrix):')\nprint(Vh)"
+      },
+      {
+        "question": "Write a Python program to find the B-spline representation of a given curve using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.interpolate import splev, splrep\n\nx = np.array([0, 1, 2, 3, 4, 5])\ny = np.array([0, 2, 4, 6, 8, 10])\nknots, coeffs, degree = splrep(x, y)\nprint('B-spline representation (knots and coefficients):')\nprint('Knots:', knots)\nprint('Coefficients:', coeffs)"
+      },
+      {
+        "question": "Create a program to perform curve fitting on a dataset using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.optimize import curve_fit\n\nx = np.array([1, 2, 3, 4, 5])\ny = np.array([3, 5, 7, 9, 11])\ndef linear_function(x, m, c):\n    return m * x + c\nparams, covariance = curve_fit(linear_function, x, y)\nprint('Parameters of the linear fit (m and c):')\nprint('Slope (m):', params[0])\nprint('Intercept (c):', params[1])"
+      },
+      {
+        "question": "Write a Python program to perform signal processing operations using SciPy.",
+        "solution": "import numpy as np\nfrom scipy import signal\n\nsignal_values = np.array([0, 1, 2, 3, 4, 5])\nconvolution_kernel = np.array([1, 2, 1])\nconvolution_result = signal.convolve(signal_values, convolution_kernel, mode='same')\nprint('Convolution result using a kernel:')\nprint(convolution_result)"
+      },
+      {
+        "question": "Create a program to calculate the distance between two points using SciPy.",
+        "solution": "import numpy as np\nfrom scipy.spatial.distance import euclidean\n\npoint1 = np.array([1, 2, 3])\npoint2 = np.array([4, 5, 6])\ndistance = euclidean(point1, point2)\nprint('Euclidean distance between two points:')\nprint(distance)"
+      }
+    ]

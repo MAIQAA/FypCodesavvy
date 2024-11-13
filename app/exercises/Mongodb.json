@@ -1,0 +1,82 @@
+[
+      {
+        "question": "Insert a document into a MongoDB collection named 'books'. Document should contain fields: title, author, and year.",
+        "solution": "use bookstore;\ndb.books.insertOne({\n  title: 'Sample Book',\n  author: 'John Doe',\n  year: 2023\n});"
+      },
+      {
+        "question": "Update a document in 'books' collection where title is 'Sample Book'. Set author field to 'Jane Smith'.",
+        "solution": "use bookstore;\ndb.books.updateOne(\n  { title: 'Sample Book' },\n  { $set: { author: 'Jane Smith' } }\n);"
+      },
+      {
+        "question": "Find all documents in 'books' collection.",
+        "solution": "use bookstore;\ndb.books.find();"
+      },
+      {
+        "question": "Find documents in 'books' collection where year is greater than 2010.",
+        "solution": "use bookstore;\ndb.books.find({ year: { $gt: 2010 } });"
+      },
+      {
+        "question": "Delete a document in 'books' collection where title is 'Sample Book'.",
+        "solution": "use bookstore;\ndb.books.deleteOne({ title: 'Sample Book' });"
+      },
+      {
+        "question": "Create an index on 'title' field in 'books' collection.",
+        "solution": "use bookstore;\ndb.books.createIndex({ title: 1 });"
+      },
+      {
+        "question": "Insert multiple documents into 'books' collection.",
+        "solution": "use bookstore;\ndb.books.insertMany([\n  { title: 'Book 1', author: 'Author A', year: 2021 },\n  { title: 'Book 2', author: 'Author B', year: 2022 },\n  { title: 'Book 3', author: 'Author C', year: 2023 }\n]);"
+      },
+      {
+        "question": "Find documents in 'books' collection where author starts with 'J'.",
+        "solution": "use bookstore;\ndb.books.find({ author: { $regex: '^J', $options: 'i' } });"
+      },
+      {
+        "question": "Update multiple documents in 'books' collection where year is less than 2010. Set year field to 2010.",
+        "solution": "use bookstore;\ndb.books.updateMany(\n  { year: { $lt: 2010 } },\n  { $set: { year: 2010 } }\n);"
+      },
+      {
+        "question": "Find distinct authors in 'books' collection.",
+        "solution": "use bookstore;\ndb.books.distinct('author');"
+      },
+      {
+        "question": "Delete all documents in 'books' collection.",
+        "solution": "use bookstore;\ndb.books.deleteMany({});"
+      },
+      {
+        "question": "Find documents in 'books' collection where title contains 'MongoDB' keyword.",
+        "solution": "use bookstore;\ndb.books.find({ title: { $regex: 'MongoDB', $options: 'i' } });"
+      },
+      {
+        "question": "Sort documents in 'books' collection by year in descending order.",
+        "solution": "use bookstore;\ndb.books.find().sort({ year: -1 });"
+      },
+      {
+        "question": "Count documents in 'books' collection.",
+        "solution": "use bookstore;\ndb.books.count();"
+      },
+      {
+        "question": "Find documents in 'books' collection where year is between 2010 and 2020.",
+        "solution": "use bookstore;\ndb.books.find({ year: { $gte: 2010, $lte: 2020 } });"
+      },
+      {
+        "question": "Find documents in 'books' collection where author is 'John Doe' and year is 2021.",
+        "solution": "use bookstore;\ndb.books.find({ author: 'John Doe', year: 2021 });"
+      },
+      {
+        "question": "Update a document in 'books' collection where title is 'Book 1'. Set year field to 2022.",
+        "solution": "use bookstore;\ndb.books.updateOne(\n  { title: 'Book 1' },\n  { $set: { year: 2022 } }\n);"
+      },
+      {
+        "question": "Find documents in 'books' collection where title starts with 'B' and year is greater than 2020.",
+        "solution": "use bookstore;\ndb.books.find({ title: { $regex: '^B', $options: 'i' }, year: { $gt: 2020 } });"
+      },
+      {
+        "question": "Delete a document in 'books' collection where author is 'Author A'.",
+        "solution": "use bookstore;\ndb.books.deleteOne({ author: 'Author A' });"
+      },
+      {
+        "question": "Find documents in 'books' collection where title is 'Book 2' or author is 'Author C'.",
+        "solution": "use bookstore;\ndb.books.find({ $or: [{ title: 'Book 2' }, { author: 'Author C' }] });"
+      }
+    ]
