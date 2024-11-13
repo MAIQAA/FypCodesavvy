@@ -1,0 +1,172 @@
+[
+    {
+      "title": "Introduction to APPML",
+      "content": "APPML (Application Modeling Language) is used to create data-driven web applications. It allows developers to define data models, user interfaces, and CRUD operations declaratively.",
+      "code_example": "<appml>\n  <data source=\"/api/data\">\n    <model>\n      <field name=\"id\" type=\"number\" />\n      <field name=\"name\" type=\"string\" />\n      <field name=\"age\" type=\"number\" />\n    </model>\n  </data>\n</appml>"
+    },
+    {
+      "title": "Defining a Data Model",
+      "content": "In APPML, data models are defined within the <model> element. Each field within the model represents a piece of data, including its name and type.",
+      "code_example": "<model>\n  <field name=\"id\" type=\"number\" />\n  <field name=\"name\" type=\"string\" />\n  <field name=\"age\" type=\"number\" />\n  <field name=\"email\" type=\"string\" />\n</model>"
+    },
+    {
+      "title": "Binding Data to Views",
+      "content": "Data binding in APPML allows you to bind data from your model to HTML elements. This enables dynamic updates to the UI when the data changes.",
+      "code_example": "<appml>\n  <data source=\"/api/users\">\n    <model>\n      <field name=\"username\" type=\"string\" />\n      <field name=\"email\" type=\"string\" />\n    </model>\n  </data>\n  <view>\n    <input type=\"text\" appml-bind=\"username\" />\n    <input type=\"email\" appml-bind=\"email\" />\n  </view>\n</appml>"
+    },
+    {
+      "title": "Creating a Simple Form",
+      "content": "APPML allows you to create forms that bind directly to your data model. This makes it easy to create forms for data input and editing.",
+      "code_example": "<appml>\n  <data source=\"/api/products\">\n    <model>\n      <field name=\"productName\" type=\"string\" />\n      <field name=\"price\" type=\"number\" />\n    </model>\n  </data>\n  <view>\n    <form>\n      <label>Product Name:</label>\n      <input type=\"text\" appml-bind=\"productName\" />\n      <label>Price:</label>\n      <input type=\"number\" appml-bind=\"price\" />\n      <button type=\"submit\">Save</button>\n    </form>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Handling CRUD Operations",
+      "content": "APPML provides built-in support for CRUD operations. You can define operations to create, read, update, and delete records directly in the model.",
+      "code_example": "<appml>\n  <data source=\"/api/items\">\n    <model>\n      <field name=\"itemName\" type=\"string\" />\n      <field name=\"quantity\" type=\"number\" />\n      <operation type=\"create\" />\n      <operation type=\"read\" />\n      <operation type=\"update\" />\n      <operation type=\"delete\" />\n    </model>\n  </data>\n  <view>\n    <button appml-create>Create</button>\n    <button appml-read>Read</button>\n    <button appml-update>Update</button>\n    <button appml-delete>Delete</button>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Using Conditional Statements",
+      "content": "Conditional statements in APPML allow you to show or hide elements based on the value of data fields.",
+      "code_example": "<view>\n  <div appml-if=\"status === 'active'\">\n    <p>User is active</p>\n  </div>\n  <div appml-if=\"status !== 'active'\">\n    <p>User is not active</p>\n  </div>\n</view>"
+    },
+    {
+      "title": "Looping Through Data",
+      "content": "APPML supports looping through data arrays with the appml-repeat directive, making it easy to generate lists or tables of data.",
+      "code_example": "<view>\n  <ul>\n    <li appml-repeat=\"item in items\">\n      {{ item.name }} - {{ item.value }}\n    </li>\n  </ul>\n</view>"
+    },
+    {
+      "title": "Handling Events",
+      "content": "You can handle user interactions in APPML using event directives such as appml-click, appml-change, etc.",
+      "code_example": "<view>\n  <button appml-click=\"submitForm\">Submit</button>\n</view>"
+    },
+    {
+      "title": "Defining Custom Functions",
+      "content": "Custom functions in APPML allow you to perform complex operations on your data. These functions can be defined and called from your views.",
+      "code_example": "<appml>\n  <data source=\"/api/data\">\n    <model>\n      <field name=\"value\" type=\"number\" />\n      <function name=\"incrementValue\">\n        this.value += 1;\n      </function>\n    </model>\n  </data>\n  <view>\n    <button appml-click=\"incrementValue\">Increment</button>\n    <p>{{ value }}</p>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Working with External APIs",
+      "content": "APPML makes it easy to integrate external APIs into your application by defining data sources and handling the data within your model.",
+      "code_example": "<appml>\n  <data source=\"https://api.example.com/data\">\n    <model>\n      <field name=\"id\" type=\"number\" />\n      <field name=\"title\" type=\"string\" />\n      <field name=\"description\" type=\"string\" />\n    </model>\n  </data>\n  <view>\n    <div appml-repeat=\"item in items\">\n      <h2>{{ item.title }}</h2>\n      <p>{{ item.description }}</p>\n    </div>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Styling with APPML",
+      "content": "APPML allows you to bind CSS classes to elements based on data values, making it easy to style your application dynamically.",
+      "code_example": "<view>\n  <div appml-bind-class=\"{'active': isActive}\">\n    <p>Content goes here...</p>\n  </div>\n</view>"
+    },
+    {
+      "title": "Form Validation",
+      "content": "APPML supports form validation, allowing you to specify validation rules for your fields directly in the model.",
+      "code_example": "<model>\n  <field name=\"email\" type=\"string\" validation=\"required|email\" />\n  <field name=\"password\" type=\"string\" validation=\"required|min:6\" />\n</model>\n\n<view>\n  <form>\n    <input type=\"email\" appml-bind=\"email\" />\n    <div appml-show=\"errors.email\">Invalid email address</div>\n    <input type=\"password\" appml-bind=\"password\" />\n    <div appml-show=\"errors.password\">Password must be at least 6 characters</div>\n    <button type=\"submit\">Submit</button>\n  </form>\n</view>"
+    },
+    {
+      "title": "Using Templates",
+      "content": "APPML allows you to define reusable templates that can be included in different parts of your application.",
+      "code_example": "<template id=\"itemTemplate\">\n  <div>\n    <h3>{{ title }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</template>\n\n<view>\n  <div appml-repeat=\"item in items\" appml-template=\"itemTemplate\"></div>\n</view>"
+    },
+    {
+      "title": "Error Handling",
+      "content": "APPML provides mechanisms for handling errors in your data operations, allowing you to display error messages and take appropriate actions.",
+      "code_example": "<data source=\"/api/data\">\n  <model>\n    <field name=\"name\" type=\"string\" />\n    <operation type=\"read\" onerror=\"handleError\" />\n  </model>\n</data>\n\n<function name=\"handleError\">\n  alert('An error occurred while fetching data.');\n</function>"
+    },
+    {
+      "title": "Pagination",
+      "content": "APPML supports pagination, allowing you to handle large datasets efficiently by loading and displaying data in pages.",
+      "code_example": "<data source=\"/api/data?page={{page}}\">\n  <model>\n    <field name=\"id\" type=\"number\" />\n    <field name=\"name\" type=\"string\" />\n  </model>\n</data>\n\n<view>\n  <ul>\n    <li appml-repeat=\"item in items\">\n      {{ item.name }}\n    </li>\n  </ul>\n  <button appml-click=\"prevPage\">Previous</button>\n  <button appml-click=\"nextPage\">Next</button>\n</view>\n\n<function name=\"prevPage\">\n  this.page = Math.max(this.page - 1, 1);\n</function>\n\n<function name=\"nextPage\">\n  this.page += 1;\n</function>"
+    },
+    {
+      "title": "Data Filtering",
+      "content": "APPML allows you to filter data based on criteria specified in your model, enabling you to display only the relevant data to the user.",
+      "code_example": "<view>\n  <input type=\"text\" appml-bind=\"search\" placeholder=\"Search...\" />\n  <ul>\n    <li appml-repeat=\"item in items | filter:search\">\n      {{ item.name }}\n    </li>\n  </ul>\n</view>"
+    },
+    {
+      "title": "Sorting Data",
+      "content": "You can sort data in APPML using the sort directive, allowing you to order data based on specified fields.",
+      "code_example": "<view>\n  <select appml-bind=\"sortField\">\n    <option value=\"name\">Name</option>\n    <option value=\"age\">Age</option>\n  </select>\n  <ul>\n    <li appml-repeat=\"item in items | sort:sortField\">\n      {{ item.name }} - {{ item.age }}\n    </li>\n  </ul>\n</view>"
+    },
+    {
+      "title": "Localization",
+      "content": "APPML supports localization, allowing you to display content in different languages based on user preferences.",
+      "code_example": "<data source=\"/api/locale/{{language}}\">\n  <model>\n    <field name=\"greeting\" type=\"string\" />\n  </model>\n</data>\n\n<view>\n  <select appml-bind=\"language\">\n    <option value=\"en\">English</option>\n    <option value=\"es\">Spanish</option>\n  </select>\n  <p>{{ greeting }}</p>\n</view>"
+    },
+    {
+      "title": "Debugging APPML Applications",
+      "content": "Debugging in APPML involves using built-in tools and browser developer tools to inspect and troubleshoot your application.",
+      "code_example": "<!-- Use the developer tools in your browser to inspect the elements and data bindings -->\n<view>\n  <div appml-repeat=\"item in items\">\n    <p>{{ item.name }}</p>\n  </div>\n</view>"
+    },
+    {
+      "title": "Authentication",
+      "content": "APPML supports authentication mechanisms to protect sensitive data and ensure only authorized users can access certain parts of the application.",
+      "code_example": "<appml>\n  <data source=\"/api/authenticate\" method=\"POST\">\n    <model>\n      <field name=\"username\" type=\"string\" />\n      <field name=\"password\" type=\"string\" />\n      <operation type=\"create\" />\n    </model>\n  </data>\n  <view>\n    <form>\n      <input type=\"text\" appml-bind=\"username\" placeholder=\"Username\" />\n      <input type=\"password\" appml-bind=\"password\" placeholder=\"Password\" />\n      <button type=\"submit\">Login</button>\n    </form>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Authorization",
+      "content": "In APPML, authorization ensures that users have appropriate permissions to perform actions. This can be managed within the application logic.",
+      "code_example": "<view>\n  <div appml-if=\"user.role === 'admin'\">\n    <button>Delete</button>\n  </div>\n</view>"
+    },
+    {
+      "title": "Nested Models",
+      "content": "APPML supports nested data models, allowing you to create complex data structures and manage related data.",
+      "code_example": "<model>\n  <field name=\"orderId\" type=\"number\" />\n  <field name=\"customer\">\n    <field name=\"name\" type=\"string\" />\n    <field name=\"address\" type=\"string\" />\n  </field>\n</model>"
+    },
+    {
+      "title": "File Uploads",
+      "content": "APPML can handle file uploads by binding file inputs to the model and sending the file data to the server.",
+      "code_example": "<data source=\"/api/upload\" method=\"POST\">\n  <model>\n    <field name=\"file\" type=\"file\" />\n    <operation type=\"create\" />\n  </model>\n</data>\n\n<view>\n  <form>\n    <input type=\"file\" appml-bind=\"file\" />\n    <button type=\"submit\">Upload</button>\n  </form>\n</view>"
+    },
+    {
+      "title": "Real-Time Data",
+      "content": "APPML can integrate with WebSockets or other real-time data sources to keep your application data up-to-date in real-time.",
+      "code_example": "<appml>\n  <data source=\"ws://example.com/socket\">\n    <model>\n      <field name=\"message\" type=\"string\" />\n    </model>\n  </data>\n  <view>\n    <div>\n      <p>{{ message }}</p>\n    </div>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Session Management",
+      "content": "Managing user sessions in APPML involves storing session data and ensuring user-specific data is handled correctly.",
+      "code_example": "<data source=\"/api/session\">\n  <model>\n    <field name=\"userId\" type=\"number\" />\n    <field name=\"token\" type=\"string\" />\n  </model>\n</data>\n\n<view>\n  <p>User ID: {{ userId }}</p>\n</view>"
+    },
+    {
+      "title": "Responsive Design",
+      "content": "APPML applications can be made responsive by using CSS and responsive design principles to ensure they work well on different devices.",
+      "code_example": "<view>\n  <div class=\"responsive-container\">\n    <p>Responsive content goes here...</p>\n  </div>\n</view>\n\n<style>\n  .responsive-container {\n    width: 100%;\n    max-width: 600px;\n    margin: auto;\n  }\n</style>"
+    },
+    {
+      "title": "Unit Testing",
+      "content": "Unit testing in APPML involves testing individual parts of your application to ensure they work as expected.",
+      "code_example": "<script>\n  function testFunction() {\n    let result = myFunction();\n    console.assert(result === expected, 'Test failed');\n  }\n</script>"
+    },
+    {
+      "title": "Performance Optimization",
+      "content": "Optimizing performance in APPML involves using best practices such as minimizing data requests and efficiently managing updates.",
+      "code_example": "<appml>\n  <data source=\"/api/data\" cache=\"true\">\n    <model>\n      <field name=\"id\" type=\"number\" />\n      <field name=\"value\" type=\"string\" />\n    </model>\n  </data>\n</appml>"
+    },
+    {
+      "title": "Security Best Practices",
+      "content": "Ensuring the security of APPML applications involves using secure data handling practices and protecting against common vulnerabilities.",
+      "code_example": "<appml>\n  <data source=\"/api/secure-data\">\n    <model>\n      <field name=\"secureInfo\" type=\"string\" />\n    </model>\n  </data>\n  <view>\n    <p>{{ secureInfo }}</p>\n  </view>\n</appml>"
+    },
+    {
+      "title": "Data Caching",
+      "content": "APPML can cache data to improve performance and reduce the need for repeated data fetching from the server.",
+      "code_example": "<data source=\"/api/cache-data\" cache=\"true\">\n  <model>\n    <field name=\"cachedValue\" type=\"string\" />\n  </model>\n</data>\n\n<view>\n  <p>{{ cachedValue }}</p>\n</view>"
+    },
+    {
+      "title": "Internationalization (i18n)",
+      "content": "Internationalization in APPML involves supporting multiple languages and cultures within your application.",
+      "code_example": "<data source=\"/api/i18n/{{language}}\">\n  <model>\n    <field name=\"greeting\" type=\"string\" />\n  </model>\n</data>\n\n<view>\n  <select appml-bind=\"language\">\n    <option value=\"en\">English</option>\n    <option value=\"fr\">French</option>\n  </select>\n  <p>{{ greeting }}</p>\n</view>"
+    },
+    {
+      "title": "Logging",
+      "content": "Logging in APPML can help you track and debug issues by recording application events and errors.",
+      "code_example": "<function name=\"logError\">\n  console.error('An error occurred');\n</function>\n\n<view>\n  <button appml-click=\"logError\">Log Error</button>\n</view>"
+    },
+    {
+      "title": "Data Aggregation",
+      "content": "APPML allows you to aggregate data from multiple sources and present it in a unified view.",
+      "code_example": "<data source=\"/api/data1\">\n  <model>\n    <field name=\"value1\" type=\"number\" />\n  </model>\n</data>\n<data source=\"/api/data2\">\n  <model>\n    <field name=\"value2\" type=\"number\" />\n  </model>\n</data>\n\n<view>\n  <p>Total: {{ value1 + value2 }}</p>\n</view>"
+    },
+    {
+      "title": "Custom Directives",
+      "content": "You can create custom directives in APPML to extend the functionality of the framework.",
+      "code_example": "<directive name=\"customDirective\">\n  <template>\n    <div>\n      <p>This is a custom directive.</p>\n    </div>\n  </template>\n</directive>\n\n<view>\n  <div custom-directive></div>\n</view>"
+    }
+  ]

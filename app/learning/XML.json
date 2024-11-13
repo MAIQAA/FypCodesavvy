@@ -1,0 +1,157 @@
+ [
+    {
+      "title": "Introduction to XML",
+      "content": "XML (eXtensible Markup Language) is a versatile and widely-used standard for storing and transmitting data. It provides a structured way to represent information in a human-readable format that is also machine-readable. XML uses tags to define data elements and their relationships within a document, similar to HTML but without predefined tags. This flexibility allows XML to be tailored to various data structures and applications, making it ideal for exchanging data between different systems and platforms. XML documents are hierarchical, with a root element containing nested elements that define the structure and content of the data. Its simplicity, coupled with powerful validation and transformation capabilities, has made XML a cornerstone in web services, data interchange formats, configuration files, and more.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Syntax",
+      "content": "XML documents are made up of elements structured in a tree-like hierarchy. Elements can have attributes and contain text, other elements, or both.",
+      "code_example": "<bookstore>\n  <book category=\"cooking\">\n    <title lang=\"en\">Everyday Italian</title>\n    <author>Giada De Laurentiis</author>\n    <year>2005</year>\n    <price>30.00</price>\n  </book>\n</bookstore>"
+    },
+    {
+      "title": "XML Elements and Attributes",
+      "content": "Elements are the building blocks of XML documents, representing data. Attributes provide additional information about elements.",
+      "code_example": "<book category=\"cooking\">\n  <title lang=\"en\">Everyday Italian</title>\n  <author>Giada De Laurentiis</author>\n</book>"
+    },
+    {
+      "title": "XML Validation",
+      "content": "XML documents can be validated against a schema or Document Type Definition (DTD) to ensure they conform to predefined rules.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Namespaces",
+      "content": "Namespaces in XML allow different XML vocabularies to coexist within the same document without naming conflicts.",
+      "code_example": "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <body>\n    <h1>Welcome to XML Tutorial</h1>\n  </body>\n</html>"
+    },
+    {
+      "title": "XPath",
+      "content": "XPath is a query language for selecting nodes from an XML document. It provides powerful ways to navigate and query XML data.",
+      "code_example": "//bookstore/book[price>35]/title"
+    },
+    {
+      "title": "XSLT (Extensible Stylesheet Language Transformations)",
+      "content": "XSLT is used to transform XML documents into other formats such as HTML, PDF, or plain text using stylesheets.",
+      "code_example": "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\n  <xsl:template match=\"/\">\n    <html>\n      <body>\n        <h2>My CD Collection</h2>\n        <xsl:apply-templates/>\n      </body>\n    </html>\n  </xsl:template>\n</xsl:stylesheet>"
+    },
+    {
+      "title": "XML Schema",
+      "content": "XML Schema Definition (XSD) is a recommendation by W3C to define the structure of an XML document. It specifies elements, attributes, data types, etc.",
+      "code_example": "<xs:element name=\"title\" type=\"xs:string\"/>"
+    },
+    {
+      "title": "XML Parsing",
+      "content": "Parsing XML involves reading an XML document and converting it into a structured format that can be used by applications.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Serialization",
+      "content": "Serialization converts data structures or objects into a format (such as XML) that can be easily stored or transmitted.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Comments",
+      "content": "Comments in XML provide information for humans reading the XML file. They are not processed by XML parsers.",
+      "code_example": "<!-- This is a comment in XML -->"
+    },
+    {
+      "title": "XML CDATA Sections",
+      "content": "CDATA (Character Data) sections in XML allow inclusion of blocks of text that should not be treated as markup.",
+      "code_example": "<![CDATA[<example>CDATA example text</example>]]>"
+    },
+    {
+      "title": "XML Processing Instructions",
+      "content": "Processing Instructions (PI) in XML provide information to applications processing the XML document.",
+      "code_example": "<?xml-stylesheet type=\"text/xsl\" href=\"style.xsl\"?>"
+    },
+    {
+      "title": "XML Entities",
+      "content": "Entities in XML represent special characters or symbols that have special meaning.",
+      "code_example": "&lt; represents <"
+    },
+    {
+      "title": "XML DTD (Document Type Definition)",
+      "content": "DTD defines the structure and legal elements and attributes of an XML document.",
+      "code_example": "<!DOCTYPE note [\n  <!ELEMENT note (to,from,heading,body)>\n  <!ELEMENT to (#PCDATA)>\n  <!ELEMENT from (#PCDATA)>\n  <!ELEMENT heading (#PCDATA)>\n  <!ELEMENT body (#PCDATA)>\n]>"
+    },
+    {
+      "title": "XML Namespaces Declaration",
+      "content": "Declaring XML namespaces allows XML documents to contain elements and attributes from different XML vocabularies.",
+      "code_example": "<root xmlns:ns=\"http://example.com/ns\">"
+    },
+    {
+      "title": "XML Validation using XSD",
+      "content": "XML Schema Definition (XSD) provides a way to formally describe the elements in an XML document.",
+      "code_example": "<xs:element name=\"title\" type=\"xs:string\"/>"
+    },
+    {
+      "title": "XML External Entities (XXE)",
+      "content": "External Entities in XML allow inclusion of external resources like files or URLs, which can pose security risks if not handled properly.",
+      "code_example": "<!ENTITY example SYSTEM \"file:///etc/passwd\">"
+    },
+    {
+      "title": "XML Pretty Printing",
+      "content": "Pretty printing XML formats the XML document in a human-readable way with proper indentation and line breaks.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Transformation with XSL-FO",
+      "content": "XSL-FO (XSL Formatting Objects) is used for formatting XML documents for print or PDF generation.",
+      "code_example": "<fo:table-cell padding=\"2pt\" border=\"solid black 1pt\">"
+    },
+    {
+      "title": "XML APIs: DOM vs SAX",
+      "content": "DOM (Document Object Model) and SAX (Simple API for XML) are APIs for XML parsing, with DOM representing the XML document as a tree structure and SAX providing an event-driven approach.",
+      "code_example": ""
+    },
+    {
+      "title": "XML Schema Simple Types",
+      "content": "XML Schema defines simple data types such as strings, numbers, dates, etc., used in XML documents.",
+      "code_example": "<xs:element name=\"age\" type=\"xs:integer\"/>"
+    },
+    {
+      "title": "XML Schema Complex Types",
+      "content": "XML Schema defines complex types that can contain other elements and attributes.",
+      "code_example": "<xs:complexType name=\"PersonType\">\n  <xs:sequence>\n    <xs:element name=\"name\" type=\"xs:string\"/>\n    <xs:element name=\"age\" type=\"xs:integer\"/>\n  </xs:sequence>\n</xs:complexType>"
+    },
+    {
+      "title": "XML Schema Attribute Declaration",
+      "content": "XML Schema defines attributes that can be associated with elements in an XML document.",
+      "code_example": "<xs:attribute name=\"id\" type=\"xs:string\"/>"
+    },
+    {
+      "title": "XML Schema Element Declaration",
+      "content": "XML Schema defines elements that can appear in an XML document, including their structure and constraints.",
+      "code_example": "<xs:element name=\"title\" type=\"xs:string\"/>"
+    },
+    {
+      "title": "XML Schema Constraints: Min/Max Occurrences",
+      "content": "XML Schema allows specifying minimum and maximum occurrences of elements within a sequence or choice.",
+      "code_example": "<xs:element name=\"item\" type=\"xs:string\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>"
+    },
+    {
+      "title": "XML Schema Constraints: Enumeration",
+      "content": "Enumeration in XML Schema restricts the values of an element or attribute to a specific set of values.",
+      "code_example": "<xs:element name=\"status\">\n  <xs:simpleType>\n    <xs:restriction base=\"xs:string\">\n      <xs:enumeration value=\"active\"/>\n      <xs:enumeration value=\"inactive\"/>\n    </xs:restriction>\n  </xs:simpleType>\n</xs:element>"
+    },
+    {
+      "title": "XML Schema Constraints: Pattern",
+      "content": "Pattern in XML Schema defines a regular expression pattern that the value of an element or attribute must match.",
+      "code_example": "<xs:element name=\"phone\">\n  <xs:simpleType>\n    <xs:restriction base=\"xs:string\">\n      <xs:pattern value=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\"/>\n    </xs:restriction>\n  </xs:simpleType>\n</xs:element>"
+    },
+    {
+      "title": "XML Schema Constraints: Unique Key",
+      "content": "XML Schema defines unique constraints to ensure that the values of a specified element or attribute are unique within the XML document.",
+      "code_example": "<xs:unique name=\"uniqueID\">\n  <xs:selector xpath=\"book\"/>\n  <xs:field xpath=\"@id\"/>\n</xs:unique>"
+    },
+    {
+      "title": "XML Schema Constraints: Key Reference",
+      "content": "Key reference in XML Schema establishes a relationship between elements based on matching values of specified attributes.",
+      "code_example": "<xs:keyref name=\"authorKeyRef\" refer=\"authorKey\">\n  <xs:selector xpath=\"book\"/>\n  <xs:field xpath=\"@author\"/>\n</xs:keyref>"
+    },
+    {
+      "title": "XML Namespaces: Default Namespace",
+      "content": "Default namespace in XML allows specifying a namespace that applies to all unqualified element and attribute names in the XML document.",
+      "code_example": "<root xmlns=\"http://example.com/ns\">"
+    }
+  ]

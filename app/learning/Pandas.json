@@ -1,0 +1,177 @@
+ [
+    {
+      "title": "Introduction to Pandas",
+      "content": "Pandas is a powerful data analysis and manipulation library for Python, designed to make working with structured data fast, easy, and expressive. It provides essential data structures like Series (one-dimensional labeled arrays) and DataFrame (two-dimensional labeled data structures with columns of potentially different types). With Pandas, users can load, filter, transform, and analyze data quickly, making it a cornerstone for data scientists, analysts, and developers working with tabular data in Python.",
+      "code_example": ""
+    },
+    {
+      "title": "Creating a Pandas Series",
+      "content": "Creating and working with Pandas Series, which are one-dimensional labeled arrays.",
+      "code_example": "import pandas as pd\n\n# Create a Pandas Series\ndata = [1, 2, 3, 4, 5]\nseries = pd.Series(data)\nprint(series)"
+    },
+    {
+      "title": "Creating a Pandas DataFrame",
+      "content": "Creating and working with Pandas DataFrame, which are two-dimensional labeled data structures.",
+      "code_example": "import pandas as pd\n\n# Create a Pandas DataFrame\ndata = {'Name': ['John', 'Jane', 'Joe'], 'Age': [28, 25, 32], 'City': ['New York', 'Seattle', 'Chicago']}\ndf = pd.DataFrame(data)\nprint(df)"
+    },
+    {
+      "title": "Reading Data into Pandas",
+      "content": "Reading data from various sources such as CSV files, Excel files, and databases into Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Read data from CSV file\ndf = pd.read_csv('data.csv')\nprint(df.head())"
+    },
+    {
+      "title": "Selecting and Filtering Data",
+      "content": "Selecting specific rows and columns, and filtering data based on conditions in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Selecting columns\nprint(df['Name'])\n\n# Filtering data\nfiltered_df = df[df['Age'] > 25]\nprint(filtered_df)"
+    },
+    {
+      "title": "Handling Missing Data",
+      "content": "Dealing with missing or NaN values in Pandas DataFrames, including methods for filling, dropping, or interpolating missing values.",
+      "code_example": "import pandas as pd\n\n# Handling missing data\nprint(df.fillna(0))\nprint(df.dropna())"
+    },
+    {
+      "title": "Grouping and Aggregating Data",
+      "content": "Grouping data based on one or more keys, and performing aggregation functions like sum, mean, and count.",
+      "code_example": "import pandas as pd\n\n# Grouping and aggregating data\nprint(df.groupby('City').mean())"
+    },
+    {
+      "title": "Merging and Concatenating DataFrames",
+      "content": "Combining multiple Pandas DataFrames either by concatenating or merging based on keys.",
+      "code_example": "import pandas as pd\n\n# Merging DataFrames\nmerged_df = pd.merge(df1, df2, on='key_column')\nprint(merged_df)"
+    },
+    {
+      "title": "Plotting with Pandas",
+      "content": "Visualizing data using built-in plotting capabilities of Pandas, including line plots, bar plots, and histograms.",
+      "code_example": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Plotting data\nplt.figure(figsize=(10, 6))\ndf['Age'].plot(kind='hist', bins=10)\nplt.xlabel('Age')\nplt.ylabel('Frequency')\nplt.title('Distribution of Ages')\nplt.show()"
+    },
+    {
+      "title": "Time Series Analysis with Pandas",
+      "content": "Handling and analyzing time series data using Pandas, including date/time indexing and resampling.",
+      "code_example": "import pandas as pd\n\n# Time series analysis\ntime_series = pd.Series([1, 2, 3], index=pd.date_range('2023-01-01', periods=3))\nprint(time_series)"
+    },
+    {
+      "title": "Advanced Data Manipulation with Pandas",
+      "content": "Advanced techniques in data manipulation such as pivot tables, stacking, melting, and reshaping data.",
+      "code_example": "import pandas as pd\n\n# Advanced data manipulation\npivot_table = pd.pivot_table(df, values='Value', index='Date', columns='Category', aggfunc='sum')\nprint(pivot_table)"
+    },
+    {
+      "title": "Data Cleaning with Pandas",
+      "content": "Techniques for cleaning data, including removing duplicates, handling outliers, and converting data types in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Data cleaning\nprint(df.drop_duplicates())\nprint(df.dropna())"
+    },
+    {
+      "title": "Sorting DataFrames",
+      "content": "Sorting rows in Pandas DataFrames based on column values, either in ascending or descending order.",
+      "code_example": "import pandas as pd\n\n# Sorting data\nprint(df.sort_values(by='Column', ascending=False))"
+    },
+    {
+      "title": "Handling Categorical Data",
+      "content": "Encoding categorical variables and performing operations on categorical data in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Handling categorical data\nprint(pd.get_dummies(df['Category']))"
+    },
+    {
+      "title": "Reshaping Data with Pandas",
+      "content": "Reshaping and transforming data, including pivot tables, melting, and stacking/unstacking operations.",
+      "code_example": "import pandas as pd\n\n# Reshaping data\nprint(pd.melt(df, id_vars=['ID'], value_vars=['Var1', 'Var2']))"
+    },
+    {
+      "title": "Handling DateTime Data",
+      "content": "Working with date and time data in Pandas DataFrames, including parsing, formatting, and extracting components.",
+      "code_example": "import pandas as pd\n\n# Handling datetime data\nprint(pd.to_datetime(df['Date']))"
+    },
+    {
+      "title": "Combining DataFrames",
+      "content": "Concatenating, appending, and joining multiple Pandas DataFrames based on row or column indexes.",
+      "code_example": "import pandas as pd\n\n# Combining dataframes\ncombined_df = pd.concat([df1, df2])\nprint(combined_df)"
+    },
+    {
+      "title": "Handling JSON Data with Pandas",
+      "content": "Loading and working with JSON data in Pandas DataFrames, including normalization and flattening nested JSON structures.",
+      "code_example": "import pandas as pd\nimport json\n\n# Handling JSON data\nwith open('data.json', 'r') as f:\n    data = json.load(f)\ndf = pd.json_normalize(data)"
+    },
+    {
+      "title": "Exporting Data from Pandas",
+      "content": "Exporting Pandas DataFrames to various formats such as CSV, Excel, JSON, and SQL databases.",
+      "code_example": "import pandas as pd\n\n# Exporting data\nprint(df.to_csv('data.csv', index=False))"
+    },
+    {
+      "title": "Handling Excel Files with Pandas",
+      "content": "Loading and manipulating Excel files in Pandas, including reading sheets, writing data, and handling formats.",
+      "code_example": "import pandas as pd\n\n# Handling Excel files\nxls = pd.ExcelFile('data.xlsx')\ndf = pd.read_excel(xls, 'Sheet1')"
+    },
+    {
+      "title": "Working with Big Data using Pandas",
+      "content": "Techniques for handling large datasets with Pandas, including chunking, memory optimization, and using Dask for parallel computing.",
+      "code_example": "import pandas as pd\n\n# Working with big data\nfor chunk in pd.read_csv('big_data.csv', chunksize=1000):\n    process_data(chunk)"
+    },
+    {
+      "title": "Data Visualization with Pandas",
+      "content": "Visualizing data directly from Pandas DataFrames using built-in plotting capabilities.",
+      "code_example": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Data visualization\nplt.figure(figsize=(10, 6))\ndf['Value'].plot(kind='line')\nplt.xlabel('Time')\nplt.ylabel('Value')\nplt.title('Line Plot')\nplt.show()"
+    },
+    {
+      "title": "Machine Learning with Pandas",
+      "content": "Integrating Pandas with machine learning libraries like Scikit-learn for data preprocessing and analysis.",
+      "code_example": "import pandas as pd\nfrom sklearn.model_selection import train_test_split\n\n# Machine learning with Pandas\ndata = pd.read_csv('data.csv')\nX = data.drop('target', axis=1)\ny = data['target']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)"
+    },
+    {
+      "title": "Data Analysis with Pandas",
+      "content": "Performing exploratory data analysis (EDA), statistical analysis, and descriptive statistics using Pandas.",
+      "code_example": "import pandas as pd\n\n# Data analysis\nprint(df.describe())\nprint(df.corr())"
+    },
+    {
+      "title": "Time Series Analysis with Pandas",
+      "content": "Analyzing time series data, including datetime indexing, resampling, and time zone handling.",
+      "code_example": "import pandas as pd\n\n# Time series analysis\nprint(df.set_index('Date').resample('M').mean())"
+    },
+    {
+      "title": "Grouping and Aggregating Data",
+      "content": "Grouping data in Pandas DataFrames based on one or more columns and applying aggregation functions.",
+      "code_example": "import pandas as pd\n\n# Grouping and aggregating data\nprint(df.groupby('Category')['Value'].mean())"
+    },
+    {
+      "title": "Handling Missing Data (NaN)",
+      "content": "Methods for identifying, handling, and imputing missing data (NaN) in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Handling missing data\nprint(df.dropna())\nprint(df.fillna(0))"
+    },
+    {
+      "title": "Text Data Processing with Pandas",
+      "content": "Working with text data in Pandas DataFrames, including string manipulation and regular expressions.",
+      "code_example": "import pandas as pd\n\n# Text data processing\nprint(df['Text'].str.lower())\nprint(df['Text'].str.contains('pattern'))"
+    },
+    {
+      "title": "MultiIndexing in Pandas",
+      "content": "Creating and manipulating DataFrames with hierarchical row and column indexing using MultiIndex in Pandas.",
+      "code_example": "import pandas as pd\n\n# MultiIndexing\nindex = pd.MultiIndex.from_product([[2019, 2020], ['Q1', 'Q2']], names=['Year', 'Quarter'])\ndata = pd.Series([10, 20, 30, 40], index=index)"
+    },
+    {
+      "title": "Working with Time Zones",
+      "content": "Handling time zone conversions and operations on datetime data in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Working with time zones\nprint(df['Date'].dt.tz_localize('UTC').dt.tz_convert('America/New_York'))"
+    },
+    {
+      "title": "Data Sampling and Resampling",
+      "content": "Sampling data from Pandas DataFrames and resampling time series data at different frequencies.",
+      "code_example": "import pandas as pd\n\n# Data sampling and resampling\nprint(df.sample(n=5))\nprint(df.resample('W').mean())"
+    },
+    {
+      "title": "Calculating Cumulative Statistics",
+      "content": "Calculating cumulative sum, mean, min, max, etc., over specified axis in Pandas DataFrames.",
+      "code_example": "import pandas as pd\n\n# Calculating cumulative statistics\nprint(df.cumsum())\nprint(df['Value'].cummax())"
+    },
+    {
+      "title": "Parallel Processing with Pandas",
+      "content": "Using Dask or other parallel processing libraries with Pandas for handling large datasets efficiently.",
+      "code_example": "import pandas as pd\nimport dask.dataframe as dd\n\n# Parallel processing\nddf = dd.from_pandas(df, npartitions=4)\nprint(ddf['Value'].mean().compute())"
+    },
+    {
+      "title": "Integration with SQL Databases",
+      "content": "Reading, writing, and manipulating SQL databases directly from Pandas DataFrames.",
+      "code_example": "import pandas as pd\nfrom sqlalchemy import create_engine\n\n# Integration with SQL databases\nengine = create_engine('sqlite:///data.db')\ndf = pd.read_sql_table('table_name', con=engine)"
+    },
+    {
+      "title": "Handling Large Text Files with Pandas",
+      "content": "Reading and processing large text files efficiently using chunking and memory management in Pandas.",
+      "code_example": "import pandas as pd\n\n# Handling large text files\nchunk_size = 1000000\nfor chunk in pd.read_csv('large_file.csv', chunksize=chunk_size):\n    process_data(chunk)"
+    }
+  ]

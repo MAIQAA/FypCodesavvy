@@ -1,0 +1,247 @@
+ [
+    {
+      "title": "Introduction to NumPy",
+      "content": "NumPy is a Python library for numerical computing, providing support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.",
+      "code_example": "import numpy as np\n\n# Create a NumPy array\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)"
+    },
+    {
+      "title": "Creating NumPy Arrays",
+      "content": "NumPy arrays can be created using Python lists or tuples. Arrays can have one or more dimensions (1D, 2D, etc.).",
+      "code_example": "import numpy as np\n\n# 1D array\narr1d = np.array([1, 2, 3])\n\n# 2D array\narr2d = np.array([[1, 2, 3], [4, 5, 6]])\n\nprint(arr1d)\nprint(arr2d)"
+    },
+    {
+      "title": "Array Operations",
+      "content": "NumPy provides various operations on arrays, including arithmetic, statistical, and logical operations.",
+      "code_example": "import numpy as np\n\n# Arithmetic operations\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\n\nprint(arr1 + arr2)\nprint(arr1 * 2)"
+    },
+    {
+      "title": "Indexing and Slicing",
+      "content": "Accessing elements of a NumPy array using indexing and slicing.",
+      "code_example": "import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\n\n# Indexing\nprint(arr[0])  # Output: 1\n\n# Slicing\nprint(arr[1:4])  # Output: [2 3 4]"
+    },
+    {
+      "title": "Broadcasting",
+      "content": "Broadcasting allows NumPy to perform arithmetic operations on arrays of different shapes.",
+      "code_example": "import numpy as np\n\narr1 = np.array([[1, 2, 3], [4, 5, 6]])\narr2 = np.array([10, 20, 30])\n\nprint(arr1 + arr2)"
+    },
+    {
+      "title": "NumPy Arrays vs Python Lists",
+      "content": "Compare NumPy arrays with Python lists, emphasizing the advantages of using NumPy arrays for numerical computations.",
+      "code_example": ""
+    },
+    {
+      "title": "Array Shape and Reshaping",
+      "content": "Understanding and manipulating array shapes using NumPy's shape attribute and reshape function.",
+      "code_example": "import numpy as np\n\n# Array shape\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr.shape)\n\n# Reshape array\nreshaped_arr = arr.reshape(3, 2)\nprint(reshaped_arr)"
+    },
+    {
+      "title": "Array Concatenation and Splitting",
+      "content": "Concatenating arrays and splitting arrays into smaller ones using NumPy functions.",
+      "code_example": "import numpy as np\n\n# Concatenate arrays\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nconcatenated_arr = np.concatenate((arr1, arr2))\nprint(concatenated_arr)\n\n# Split array\nsplit_arr = np.split(concatenated_arr, 2)\nprint(split_arr)"
+    },
+    {
+      "title": "Array Iteration",
+      "content": "Iterating over NumPy arrays using different methods such as nditer and using axis parameter.",
+      "code_example": "import numpy as np\n\n# Iterate over 2D array\narr = np.array([[1, 2], [3, 4]])\nfor x in np.nditer(arr):\n    print(x)"
+    },
+    {
+      "title": "Mathematical Functions",
+      "content": "Utilizing NumPy's mathematical functions for operations on arrays, such as mean, median, and standard deviation.",
+      "code_example": "import numpy as np\n\n# Mathematical functions\narr = np.array([1, 2, 3, 4, 5])\nprint(np.mean(arr))\nprint(np.median(arr))\nprint(np.std(arr))"
+    },
+    {
+      "title": "Random Number Generation",
+      "content": "Generating random numbers and random arrays using NumPy's random module.",
+      "code_example": "import numpy as np\n\n# Generate random array\nrandom_arr = np.random.randint(1, 100, size=(3, 3))\nprint(random_arr)"
+    },
+    {
+      "title": "File Operations",
+      "content": "Reading from and writing to files using NumPy functions for text and binary formats.",
+      "code_example": "import numpy as np\n\n# Save array to file\narr = np.array([1, 2, 3, 4, 5])\nnp.save('my_array.npy', arr)\n\n# Load array from file\nloaded_arr = np.load('my_array.npy')\nprint(loaded_arr)"
+    },
+    {
+      "title": "Linear Algebra Operations",
+      "content": "Performing linear algebra operations such as matrix multiplication and finding eigenvalues using NumPy.",
+      "code_example": "import numpy as np\n\n# Matrix multiplication\nmatrix1 = np.array([[1, 2], [3, 4]])\nmatrix2 = np.array([[5, 6], [7, 8]])\nresult = np.matmul(matrix1, matrix2)\nprint(result)"
+    },
+    {
+      "title": "Broadcasting",
+      "content": "Understanding NumPy's broadcasting rules and how it simplifies arithmetic operations on arrays with different shapes.",
+      "code_example": "import numpy as np\n\n# Broadcasting example\narr1 = np.array([[1, 2, 3], [4, 5, 6]])\narr2 = np.array([10, 20, 30])\nresult = arr1 + arr2\nprint(result)"
+    },
+    {
+      "title": "Masking and Boolean Indexing",
+      "content": "Using boolean arrays to filter and manipulate NumPy arrays based on conditions.",
+      "code_example": "import numpy as np\n\n# Boolean indexing\narr = np.array([1, 2, 3, 4, 5])\nmask = arr > 2\nprint(arr[mask])"
+    },
+    {
+      "title": "Broadcasting Rules",
+      "content": "Understanding NumPy's broadcasting rules and how it simplifies arithmetic operations on arrays with different shapes.",
+      "code_example": ""
+    },
+    {
+      "title": "Creating NumPy Arrays",
+      "content": "Different methods to create NumPy arrays, including np.array, np.zeros, np.ones, np.arange, and np.linspace.",
+      "code_example": "import numpy as np\n\n# Create array with np.array\narr1 = np.array([1, 2, 3])\n\n# Create array with np.zeros\narr2 = np.zeros((2, 3))\n\n# Create array with np.ones\narr3 = np.ones((3, 2))\n\n# Create array with np.arange\narr4 = np.arange(0, 10, 2)\n\n# Create array with np.linspace\narr5 = np.linspace(0, 1, 5)\n\nprint(arr1)\nprint(arr2)\nprint(arr3)\nprint(arr4)\nprint(arr5)"
+    },
+    {
+      "title": "Array Indexing and Slicing",
+      "content": "Accessing and modifying elements of NumPy arrays using indexing and slicing techniques.",
+      "code_example": "import numpy as np\n\n# Array indexing\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr[0, 1])  # Access element at row 0, column 1\n\n# Array slicing\nslice_arr = arr[:, 1:]  # Slice all rows, from column 1 onwards\nprint(slice_arr)"
+    },
+    {
+      "title": "Array Shape and Reshaping",
+      "content": "Understanding and manipulating array shapes using NumPy's shape attribute and reshape function.",
+      "code_example": "import numpy as np\n\n# Array shape\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr.shape)\n\n# Reshape array\nreshaped_arr = arr.reshape(3, 2)\nprint(reshaped_arr)"
+    },
+    {
+      "title": "Array Concatenation and Splitting",
+      "content": "Concatenating arrays and splitting arrays into smaller ones using NumPy functions.",
+      "code_example": "import numpy as np\n\n# Concatenate arrays\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nconcatenated_arr = np.concatenate((arr1, arr2))\nprint(concatenated_arr)\n\n# Split array\nsplit_arr = np.split(concatenated_arr, 2)\nprint(split_arr)"
+    },
+    {
+      "title": "Array Iteration",
+      "content": "Iterating over NumPy arrays using different methods such as nditer and using axis parameter.",
+      "code_example": "import numpy as np\n\n# Iterate over 2D array\narr = np.array([[1, 2], [3, 4]])\nfor x in np.nditer(arr):\n    print(x)"
+    },
+    {
+      "title": "Mathematical Functions",
+      "content": "Utilizing NumPy's mathematical functions for operations on arrays, such as mean, median, and standard deviation.",
+      "code_example": "import numpy as np\n\n# Mathematical functions\narr = np.array([1, 2, 3, 4, 5])\nprint(np.mean(arr))\nprint(np.median(arr))\nprint(np.std(arr))"
+    },
+    {
+      "title": "Random Number Generation",
+      "content": "Generating random numbers and random arrays using NumPy's random module.",
+      "code_example": "import numpy as np\n\n# Generate random array\nrandom_arr = np.random.randint(1, 100, size=(3, 3))\nprint(random_arr)"
+    },
+    {
+      "title": "File Operations",
+      "content": "Reading from and writing to files using NumPy functions for text and binary formats.",
+      "code_example": "import numpy as np\n\n# Save array to file\narr = np.array([1, 2, 3, 4, 5])\nnp.save('my_array.npy', arr)\n\n# Load array from file\nloaded_arr = np.load('my_array.npy')\nprint(loaded_arr)"
+    },
+    {
+      "title": "Linear Algebra Operations",
+      "content": "Performing linear algebra operations such as matrix multiplication and finding eigenvalues using NumPy.",
+      "code_example": "import numpy as np\n\n# Matrix multiplication\nmatrix1 = np.array([[1, 2], [3, 4]])\nmatrix2 = np.array([[5, 6], [7, 8]])\nresult = np.matmul(matrix1, matrix2)\nprint(result)"
+    },
+    {
+      "title": "Broadcasting",
+      "content": "Understanding NumPy's broadcasting rules and how it simplifies arithmetic operations on arrays with different shapes.",
+      "code_example": "import numpy as np\n\n# Broadcasting example\narr1 = np.array([[1, 2, 3], [4, 5, 6]])\narr2 = np.array([10, 20, 30])\nresult = arr1 + arr2\nprint(result)"
+    },
+    {
+      "title": "Masking and Boolean Indexing",
+      "content": "Using boolean arrays to filter and manipulate NumPy arrays based on conditions.",
+      "code_example": "import numpy as np\n\n# Boolean indexing\narr = np.array([1, 2, 3, 4, 5])\nmask = arr > 2\nprint(arr[mask])"
+    },
+    {
+      "title": "Broadcasting Rules",
+      "content": "Understanding NumPy's broadcasting rules and how it simplifies arithmetic operations on arrays with different shapes.",
+      "code_example": ""
+    },
+    {
+      "title": "Creating Identity Matrix",
+      "content": "Creating an identity matrix using NumPy's identity function.",
+      "code_example": "import numpy as np\n\n# Create identity matrix\nidentity_matrix = np.identity(3)\nprint(identity_matrix)"
+    },
+    {
+      "title": "Sorting Arrays",
+      "content": "Sorting NumPy arrays using np.sort and understanding different sorting algorithms.",
+      "code_example": "import numpy as np\n\n# Sorting array\narr = np.array([3, 1, 2])\nsorted_arr = np.sort(arr)\nprint(sorted_arr)"
+    },
+    {
+      "title": "Finding Unique Elements",
+      "content": "Finding unique elements in NumPy arrays using np.unique.",
+      "code_example": "import numpy as np\n\n# Find unique elements\narr = np.array([1, 2, 3, 1, 2, 4])\nunique_elements = np.unique(arr)\nprint(unique_elements)"
+    },
+    {
+      "title": "Vectorized Operations",
+      "content": "Performing vectorized operations on NumPy arrays to improve performance.",
+      "code_example": "import numpy as np\n\n# Vectorized operations\narr = np.array([1, 2, 3])\nresult = arr * 2\nprint(result)"
+    },
+    {
+      "title": "Matrix Inversion",
+      "content": "Finding the inverse of a matrix using NumPy's linalg.inv function.",
+      "code_example": "import numpy as np\n\n# Matrix inversion\nmatrix = np.array([[1, 2], [3, 4]])\ninverse_matrix = np.linalg.inv(matrix)\nprint(inverse_matrix)"
+    },
+    {
+      "title": "Polynomial Operations",
+      "content": "Performing polynomial operations using NumPy's poly1d class.",
+      "code_example": "import numpy as np\n\n# Polynomial operations\npoly = np.poly1d([1, 2, 3])\nroots = poly.roots\nprint(roots)"
+    },
+    {
+      "title": "Finding Eigenvalues and Eigenvectors",
+      "content": "Calculating eigenvalues and eigenvectors of a matrix using NumPy's linalg.eig function.",
+      "code_example": "import numpy as np\n\n# Eigenvalues and eigenvectors\nmatrix = np.array([[1, 2], [3, 4]])\neigenvalues, eigenvectors = np.linalg.eig(matrix)\nprint('Eigenvalues:', eigenvalues)\nprint('Eigenvectors:', eigenvectors)"
+    },
+    {
+      "title": "Sparse Matrix Operations",
+      "content": "Performing operations on sparse matrices using NumPy's sparse module.",
+      "code_example": "import numpy as np\nfrom scipy.sparse import csr_matrix\n\n# Create sparse matrix\nsparse_matrix = csr_matrix((3, 3), dtype=np.int8).toarray()\nprint(sparse_matrix)"
+    },
+    {
+      "title": "FFT (Fast Fourier Transform)",
+      "content": "Using NumPy's fft module to perform Fast Fourier Transform on arrays.",
+      "code_example": "import numpy as np\n\n# Fast Fourier Transform\narr = np.array([1, 2, 3, 4])\nfft_result = np.fft.fft(arr)\nprint(fft_result)"
+    },
+    {
+      "title": "Signal Processing with NumPy",
+      "content": "Applying signal processing techniques using NumPy.",
+      "code_example": ""
+    },
+    {
+      "title": "Linear Regression with NumPy",
+      "content": "Implementing linear regression using NumPy for predictive modeling.",
+      "code_example": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\n# Sample data\nX = np.array([[1], [2], [3]])\ny = np.array([3, 5, 7])\n\n# Create linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict using the model\nX_new = np.array([[4]])\npredicted_y = model.predict(X_new)\nprint('Predicted value:', predicted_y[0])"
+    },
+    {
+      "title": "K-means Clustering with NumPy",
+      "content": "Implementing the K-means clustering algorithm using NumPy.",
+      "code_example": "import numpy as np\nfrom sklearn.cluster import KMeans\n\n# Sample data\nX = np.array([[1, 2], [2, 3], [5, 6], [7, 8]])\n\n# Create K-means clustering model\nkmeans = KMeans(n_clusters=2, random_state=0)\nkmeans.fit(X)\n\n# Predict cluster labels\npredicted_labels = kmeans.predict(X)\nprint('Cluster labels:', predicted_labels)"
+    },
+    {
+      "title": "Singular Value Decomposition (SVD)",
+      "content": "Performing Singular Value Decomposition using NumPy's linalg.svd function.",
+      "code_example": "import numpy as np\n\n# Perform Singular Value Decomposition\nmatrix = np.array([[1, 2], [3, 4]])\nU, S, VT = np.linalg.svd(matrix)\n\nprint('U:', U)\nprint('S:', S)\nprint('VT:', VT)"
+    },
+    {
+      "title": "Broadcasting Rules",
+      "content": "Understanding NumPy's broadcasting rules and how it simplifies arithmetic operations on arrays with different shapes.",
+      "code_example": ""
+    },
+    {
+      "title": "Creating Identity Matrix",
+      "content": "Creating an identity matrix using NumPy's identity function.",
+      "code_example": "import numpy as np\n\n# Create identity matrix\nidentity_matrix = np.identity(3)\nprint(identity_matrix)"
+    },
+    {
+      "title": "Sorting Arrays",
+      "content": "Sorting NumPy arrays using np.sort and understanding different sorting algorithms.",
+      "code_example": "import numpy as np\n\n# Sorting array\narr = np.array([3, 1, 2])\nsorted_arr = np.sort(arr)\nprint(sorted_arr)"
+    },
+    {
+      "title": "Finding Unique Elements",
+      "content": "Finding unique elements in NumPy arrays using np.unique.",
+      "code_example": "import numpy as np\n\n# Find unique elements\narr = np.array([1, 2, 3, 1, 2, 4])\nunique_elements = np.unique(arr)\nprint(unique_elements)"
+    },
+    {
+      "title": "Vectorized Operations",
+      "content": "Performing vectorized operations on NumPy arrays to improve performance.",
+      "code_example": "import numpy as np\n\n# Vectorized operations\narr = np.array([1, 2, 3])\nresult = arr * 2\nprint(result)"
+    },
+    {
+      "title": "Matrix Inversion",
+      "content": "Finding the inverse of a matrix using NumPy's linalg.inv function.",
+      "code_example": "import numpy as np\n\n# Matrix inversion\nmatrix = np.array([[1, 2], [3, 4]])\ninverse_matrix = np.linalg.inv(matrix)\nprint(inverse_matrix)"
+    },
+    {
+      "title": "Polynomial Operations",
+      "content": "Performing polynomial operations using NumPy's poly1d class.",
+      "code_example": "import numpy as np\n\n# Polynomial operations\npoly = np.poly1d([1, 2, 3])\nroots = poly.roots\nprint(roots)"
+    },
+    {
+      "title": "Finding Eigenvalues and Eigenvectors",
+      "content": "Calculating eigenvalues and eigenvectors of a matrix using NumPy's linalg.eig function.",
+      "code_example": "import numpy as np\n\n# Eigenvalues and eigenvectors\nmatrix = np.array([[1, 2], [3, 4]])\neigenvalues, eigenvectors = np.linalg.eig(matrix)\nprint('Eigenvalues:', eigenvalues)\nprint('Eigenvectors:', eigenvectors)"
+    }
+  ]

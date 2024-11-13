@@ -15,4 +15,20 @@ p {
   font-family: "Pacifico" , cursive;
 }
 
+*::-webkit-scrollbar {
+  width: 7px;
+}
+.LearnSidebar::-webkit-scrollbar {
+  width: 4px;
+}
 
+
+.LearnTopbar::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+*::-webkit-scrollbar-thumb {
+  border: 0px solid;
+  border-radius: 10px;
+  background-color: #DDF345;
+}

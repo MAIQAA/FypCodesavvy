@@ -1,0 +1,277 @@
+[
+    {
+      "title": "Introduction to Git",
+      "content": "Git is a powerful, distributed version control system designed to manage and track changes in source code during software development. Created by Linus Torvalds in 2005, Git allows multiple developers to work on a project simultaneously without overwriting each other's contributions. It efficiently handles projects of any size with speed and supports non-linear workflows. Git's key features include branching, merging, and version history, making it essential for collaborative development. Whether working on small personal projects or large-scale enterprise applications, Git helps maintain a coherent and comprehensive history of changes, ensuring code integrity and facilitating team collaboration.",
+      "code_example": ""
+    },
+    {
+      "title": "Git Configuration",
+      "content": "After installing Git, you need to configure your username and email address.",
+      "code_example": "git config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\""
+    },
+    {
+      "title": "Initializing a Repository",
+      "content": "You can initialize a new Git repository using the git init command.",
+      "code_example": "git init"
+    },
+    {
+      "title": "Cloning a Repository",
+      "content": "You can clone an existing repository using the git clone command.",
+      "code_example": "git clone https://github.com/user/repo.git"
+    },
+    {
+      "title": "Checking Repository Status",
+      "content": "You can check the status of your repository using the git status command.",
+      "code_example": "git status"
+    },
+    {
+      "title": "Adding Files to Staging Area",
+      "content": "You can add files to the staging area using the git add command.",
+      "code_example": "git add filename\nor\ngit add ."
+    },
+    {
+      "title": "Committing Changes",
+      "content": "You can commit changes to the repository using the git commit command.",
+      "code_example": "git commit -m \"Commit message\""
+    },
+    {
+      "title": "Viewing Commit History",
+      "content": "You can view the commit history of the repository using the git log command.",
+      "code_example": "git log"
+    },
+    {
+      "title": "Branching in Git",
+      "content": "Branches are used to develop features separately from the main branch.",
+      "code_example": "git branch branch_name"
+    },
+    {
+      "title": "Switching Branches",
+      "content": "You can switch to a different branch using the git checkout command.",
+      "code_example": "git checkout branch_name"
+    },
+    {
+      "title": "Merging Branches",
+      "content": "You can merge branches using the git merge command.",
+      "code_example": "git merge branch_name"
+    },
+    {
+      "title": "Deleting a Branch",
+      "content": "You can delete a branch using the git branch -d command.",
+      "code_example": "git branch -d branch_name"
+    },
+    {
+      "title": "Fetching Changes",
+      "content": "You can fetch changes from a remote repository using the git fetch command.",
+      "code_example": "git fetch"
+    },
+    {
+      "title": "Pulling Changes",
+      "content": "You can pull changes from a remote repository using the git pull command.",
+      "code_example": "git pull"
+    },
+    {
+      "title": "Pushing Changes",
+      "content": "You can push changes to a remote repository using the git push command.",
+      "code_example": "git push"
+    },
+    {
+      "title": "Stashing Changes",
+      "content": "You can stash your changes using the git stash command.",
+      "code_example": "git stash"
+    },
+    {
+      "title": "Applying Stashes",
+      "content": "You can apply stashed changes using the git stash apply command.",
+      "code_example": "git stash apply"
+    },
+    {
+      "title": "Git Rebase",
+      "content": "Rebase is used to apply changes from one branch onto another.",
+      "code_example": "git rebase branch_name"
+    },
+    {
+      "title": "Git Reset",
+      "content": "Reset is used to undo changes.",
+      "code_example": "git reset --hard commit_id"
+    },
+    {
+      "title": "Git Revert",
+      "content": "Revert is used to create a new commit that undoes changes from a previous commit.",
+      "code_example": "git revert commit_id"
+    },
+    {
+      "title": "Viewing Commit Differences",
+      "content": "You can view differences between commits using the git diff command.",
+      "code_example": "git diff commit_id1 commit_id2"
+    },
+    {
+      "title": "Viewing Branch Differences",
+      "content": "You can view differences between branches using the git diff command.",
+      "code_example": "git diff branch_name1 branch_name2"
+    },
+    {
+      "title": "Git Tagging",
+      "content": "Tags are used to mark specific points in the repository’s history.",
+      "code_example": "git tag tag_name"
+    },
+    {
+      "title": "Pushing Tags",
+      "content": "You can push tags to a remote repository using the git push --tags command.",
+      "code_example": "git push --tags"
+    },
+    {
+      "title": "Deleting Tags",
+      "content": "You can delete tags using the git tag -d command.",
+      "code_example": "git tag -d tag_name"
+    },
+    {
+      "title": "Git Aliases",
+      "content": "Aliases are used to create shortcuts for Git commands.",
+      "code_example": "git config --global alias.co checkout"
+    },
+    {
+      "title": "Git Hooks",
+      "content": "Hooks are custom scripts that run before or after events such as commit, push, and receive.",
+      "code_example": ""
+    },
+    {
+      "title": "Viewing Remote Repositories",
+      "content": "You can view remote repositories using the git remote -v command.",
+      "code_example": "git remote -v"
+    },
+    {
+      "title": "Adding Remote Repositories",
+      "content": "You can add remote repositories using the git remote add command.",
+      "code_example": "git remote add origin https://github.com/user/repo.git"
+    },
+    {
+      "title": "Removing Remote Repositories",
+      "content": "You can remove remote repositories using the git remote remove command.",
+      "code_example": "git remote remove origin"
+    },
+    {
+      "title": "Renaming Remote Repositories",
+      "content": "You can rename remote repositories using the git remote rename command.",
+      "code_example": "git remote rename origin upstream"
+    },
+    {
+      "title": "Git Cherry-pick",
+      "content": "Cherry-pick is used to apply specific commits from one branch to another.",
+      "code_example": "git cherry-pick commit_id"
+    },
+    {
+      "title": "Git Blame",
+      "content": "Blame is used to view the last modification of each line in a file.",
+      "code_example": "git blame filename"
+    },
+    {
+      "title": "Git Archive",
+      "content": "Archive is used to create an archive file of the repository.",
+      "code_example": "git archive --format=tar HEAD | gzip > repo.tar.gz"
+    },
+    {
+      "title": "Git Bisect",
+      "content": "Bisect is used to find the commit that introduced a bug.",
+      "code_example": "git bisect start\n git bisect bad\n git bisect good commit_id"
+    },
+    {
+      "title": "Git Show",
+      "content": "Show is used to view various types of objects.",
+      "code_example": "git show commit_id"
+    },
+    {
+      "title": "Git Grep",
+      "content": "Grep is used to search for a specific string in the repository.",
+      "code_example": "git grep 'search_string'"
+    },
+    {
+      "title": "Git Clean",
+      "content": "Clean is used to remove untracked files from the working directory.",
+      "code_example": "git clean -f"
+    },
+    {
+      "title": "Git Shortlog",
+      "content": "Shortlog is used to summarize git log output.",
+      "code_example": "git shortlog"
+    },
+    {
+      "title": "Git Describe",
+      "content": "Describe is used to give a human-readable name to a commit.",
+      "code_example": "git describe"
+    },
+    {
+      "title": "Git Apply",
+      "content": "Apply is used to apply a patch to the working directory.",
+      "code_example": "git apply patch_file"
+    },
+    {
+      "title": "Git Format-patch",
+      "content": "Format-patch is used to prepare patches for email submission.",
+      "code_example": "git format-patch -1 commit_id"
+    },
+    {
+      "title": "Git Send-email",
+      "content": "Send-email is used to send patches via email.",
+      "code_example": "git send-email --to=recipient@example.com *.patch"
+    },
+    {
+      "title": "Git Reflog",
+      "content": "Reflog is used to record updates to the tip of branches.",
+      "code_example": "git reflog"
+    },
+    {
+      "title": "Git Prune",
+      "content": "Prune is used to remove unreachable objects from the object database.",
+      "code_example": "git prune"
+    },
+    {
+      "title": "Git GC",
+      "content": "GC (Garbage Collection) is used to optimize the repository.",
+      "code_example": "git gc"
+    },
+    {
+      "title": "Git FSCK",
+      "content": "FSCK is used to verify the connectivity and validity of objects in the repository.",
+      "code_example": "git fsck"
+    },
+    {
+      "title": "Git Filter-branch",
+      "content": "Filter-branch is used to rewrite branches.",
+      "code_example": "git filter-branch --tree-filter 'command' HEAD"
+    },
+    {
+      "title": "Git Instaweb",
+      "content": "Instaweb is used to start a web server to browse the repository.",
+      "code_example": "git instaweb"
+    },
+    {
+      "title": "Git Notes",
+      "content": "Notes are used to add or inspect object notes.",
+      "code_example": "git notes add -m 'note' commit_id"
+    },
+    {
+      "title": "Git Fast-export",
+      "content": "Fast-export is used to export Git objects.",
+      "code_example": "git fast-export master > repo.export"
+    },
+    {
+      "title": "Git Fast-import",
+      "content": "Fast-import is used to import Git objects.",
+      "code_example": "git fast-import < repo.export"
+    },
+    {
+      "title": "Git Remote Update",
+      "content": "Remote update is used to fetch changes from remote repositories.",
+      "code_example": "git remote update"
+    },
+    {
+      "title": "Git Submodule",
+      "content": "Submodules are used to keep a Git repository as a subdirectory of another Git repository.",
+      "code_example": "git submodule add https://github.com/user/repo.git\n git submodule update --init"
+    },
+    {
+      "title": "Git Worktree",
+      "content": "Worktree is used to manage multiple working trees attached to the same repository.",
+      "code_example": "git worktree add /path/to/new-worktree branch_name"
+    }
+  ]

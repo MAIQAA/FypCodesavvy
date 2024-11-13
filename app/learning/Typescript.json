@@ -1,0 +1,172 @@
+[
+    {
+      "title": "Introduction to TypeScript",
+      "content": "TypeScript is a statically typed language that builds on JavaScript by adding syntax for type declarations. It provides features like interfaces, classes, enums, and more, which aid in building robust software.",
+      "code_example": "// Example TypeScript code\nfunction greet(name: string) {\n    return `Hello, ${name}!`;\n}\n\nconsole.log(greet('TypeScript'));"
+    },
+    {
+      "title": "Installing TypeScript",
+      "content": "You can install TypeScript globally using npm (Node Package Manager).",
+      "code_example": "// Install TypeScript globally\nnpm install -g typescript"
+    },
+    {
+      "title": "Setting Up a TypeScript Project",
+      "content": "Initialize a new TypeScript project using npm or yarn. This creates a package.json file and installs TypeScript as a development dependency.",
+      "code_example": "// Initialize a TypeScript project\nmkdir myproject\ncd myproject\ntouch index.ts\nnpm init -y\nnpm install typescript --save-dev"
+    },
+    {
+      "title": "Compiling TypeScript",
+      "content": "TypeScript code (.ts files) needs to be compiled to JavaScript (.js files) before execution in the browser or Node.js runtime.",
+      "code_example": "// Compile TypeScript\n// Create tsconfig.json with compiler options\n{\n    \"compilerOptions\": {\n        \"target\": \"es5\",\n        \"outDir\": \"./dist\",\n        \"strict\": true\n    },\n    \"include\": [\"src/**/*.ts\"]\n}\n\ntsc"
+    },
+    {
+      "title": "Basic Types",
+      "content": "TypeScript includes several basic types such as boolean, number, string, array, tuple, enum, any, void, null, undefined, and never.",
+      "code_example": "// Basic types in TypeScript\nlet isDone: boolean = false;\nlet decimal: number = 6;\nlet color: string = 'blue';\nlet list: number[] = [1, 2, 3];\nlet x: [string, number] = ['hello', 10];"
+    },
+    {
+      "title": "Type Annotations",
+      "content": "Type annotations in TypeScript specify the type of a variable, function parameter, or return value. They help catch errors early in development.",
+      "code_example": "// Type annotations\nfunction add(x: number, y: number): number {\n    return x + y;\n}\n\nlet result: number = add(1, 2);\nconsole.log(result);"
+    },
+    {
+      "title": "Interfaces",
+      "content": "Interfaces in TypeScript define contracts for objects. They can include properties, methods, and optional members.",
+      "code_example": "// Interface example\ninterface Person {\n    name: string;\n    age: number;\n    greet(): void;\n}\n\nclass Student implements Person {\n    name: string;\n    age: number;\n    constructor(name: string, age: number) {\n        this.name = name;\n        this.age = age;\n    }\n    greet() {\n        console.log(`Hello, my name is ${this.name}`);\n    }\n}\n\nlet student = new Student('Alice', 25);\nstudent.greet();"
+    },
+    {
+      "title": "Classes",
+      "content": "Classes in TypeScript allow you to use object-oriented programming techniques, including inheritance, encapsulation, and polymorphism.",
+      "code_example": "// Class example\nclass Animal {\n    name: string;\n    constructor(name: string) {\n        this.name = name;\n    }\n    move(distance: number = 0) {\n        console.log(`${this.name} moved ${distance}m.`);\n    }\n}\n\nclass Dog extends Animal {\n    bark() {\n        console.log('Woof! Woof!');\n    }\n}\n\nlet dog = new Dog('Buddy');\ndog.move(10);\ndog.bark();"
+    },
+    {
+      "title": "Functions",
+      "content": "Functions in TypeScript can have optional parameters, default parameters, and rest parameters, allowing for flexible function signatures.",
+      "code_example": "// Function with optional and default parameters\nfunction greet(name: string, greeting: string = 'Hello') {\n    console.log(`${greeting}, ${name}!`);\n}\n\ngreet('Alice'); // Output: Hello, Alice!\ngreet('Bob', 'Hi'); // Output: Hi, Bob!"
+    },
+    {
+      "title": "Enums",
+      "content": "Enums in TypeScript allow you to define a set of named constants. They are helpful for documenting intent or creating a set of distinct cases.",
+      "code_example": "// Enum example\nenum Direction {\n    Up = 'UP',\n    Down = 'DOWN',\n    Left = 'LEFT',\n    Right = 'RIGHT'\n}\n\nlet playerDirection: Direction = Direction.Up;\nconsole.log(playerDirection);"
+    },
+    {
+      "title": "Generics",
+      "content": "Generics in TypeScript allow you to write reusable, type-safe functions and classes that work with any data type.",
+      "code_example": "// Generic function\nfunction identity<T>(arg: T): T {\n    return arg;\n}\n\nlet result = identity<string>('Hello TypeScript');\nconsole.log(result);"
+    },
+    {
+      "title": "Union Types",
+      "content": "Union types in TypeScript allow you to specify that a value can be one of several types.",
+      "code_example": "// Union types\nfunction printId(id: number | string) {\n    console.log(`ID is ${id}`);\n}\n\nprintId(1);\nprintId('abc');"
+    },
+    {
+      "title": "Type Guards",
+      "content": "Type guards in TypeScript allow you to narrow down the type of a variable within a conditional block.",
+      "code_example": "// Type guard\nfunction printPet(pet: Dog | Cat) {\n    if ('bark' in pet) {\n        console.log('Dog:', pet.bark());\n    } else {\n        console.log('Cat:', pet.meow());\n    }\n}"
+    },
+    {
+      "title": "Namespace and Modules",
+      "content": "Namespaces and modules in TypeScript provide a way to organize and encapsulate code. Modules use import and export keywords to control code visibility and reuse.",
+      "code_example": "// Module example\n// file: math.ts\nexport function sum(a: number, b: number): number {\n    return a + b;\n}\n\n// file: main.ts\nimport { sum } from './math';\n\nlet result = sum(1, 2);\nconsole.log(result);"
+    },
+    {
+      "title": "Decorators",
+      "content": "Decorators are a declarative way to add metadata to classes, methods, or properties in TypeScript.",
+      "code_example": "// Decorator example\nfunction logged(target: Function) {\n    console.log(`Class ${target.name} has been logged`);\n}\n\n@logged\nclass Calculator {\n    // class implementation\n}"
+    },
+    {
+      "title": "TypeScript with React",
+      "content": "TypeScript is widely used with React for building scalable and maintainable web applications. React components can be written using TypeScript syntax for enhanced type safety.",
+      "code_example": "// Example of a React component written in TypeScript\nimport React from 'react';\n\ninterface Props {\n    name: string;\n}\n\nconst Greeting: React.FC<Props> = ({ name }) => {\n    return <h1>Hello, {name}!</h1>;\n};\n\nexport default Greeting;"
+    },
+    {
+      "title": "TypeScript with Node.js",
+      "content": "TypeScript can be used with Node.js to write server-side applications. Node.js applications written in TypeScript benefit from type-checking and modern ECMAScript features.",
+      "code_example": "// Example of a Node.js server written in TypeScript\nimport express from 'express';\n\nconst app = express();\nconst port = 3000;\n\napp.get('/', (req, res) => {\n    res.send('Hello TypeScript!');\n});\n\napp.listen(port, () => {\n    console.log(`Server is running on http://localhost:${port}`);\n});"
+    },
+    {
+      "title": "TypeScript Compiler (tsc)",
+      "content": "The TypeScript compiler (tsc) converts TypeScript code into JavaScript code. It supports various compiler options for configuring output, module resolution, and more.",
+      "code_example": "// Compile TypeScript\n// Create tsconfig.json with compiler options\n{\n    \"compilerOptions\": {\n        \"target\": \"es5\",\n        \"outDir\": \"./dist\",\n        \"strict\": true\n    },\n    \"include\": [\"src/**/*.ts\"]\n}\n\ntsc"
+    },
+    {
+      "title": "Strict Mode",
+      "content": "Strict mode in TypeScript enables stricter type-checking rules to catch common errors and enforce best practices.",
+      "code_example": "// Enable strict mode in tsconfig.json\n{\n    \"compilerOptions\": {\n        \"strict\": true\n    }\n}"
+    },
+    {
+      "title": "Type Inference",
+      "content": "TypeScript's type inference automatically determines the type of a variable if it's not explicitly specified.",
+      "code_example": "// Type inference\nlet message = 'Hello TypeScript'; // TypeScript infers message is of type string\nconsole.log(message.toUpperCase());"
+    },
+    {
+      "title": "Type Assertion",
+      "content": "Type assertion in TypeScript allows you to assert the type of a variable when you know more about its type than TypeScript does.",
+      "code_example": "// Type assertion\nlet someValue: any = 'this is a string';\nlet strLength: number = (someValue as string).length;"
+    },
+    {
+      "title": "Declaration Files (.d.ts)",
+      "content": "Declaration files (.d.ts) provide type information for existing JavaScript libraries. They allow TypeScript to understand the types used in JavaScript code.",
+      "code_example": "// Example of a declaration file\n// filename: jQuery.d.ts\ndeclare var jQuery: (selector: string) => any;\n\n// Use jQuery in TypeScript code\njQuery('#myElement');"
+    },
+    {
+      "title": "Intersection Types",
+      "content": "Intersection types in TypeScript combine multiple types into one. An object of an intersection type will have all members of all combined types.",
+      "code_example": "// Intersection types\ninterface Printable {\n    print(): void;\n}\n\ninterface Loggable {\n    log(): void;\n}\n\n// Combined type\ntype Logger = Printable & Loggable;\n\nfunction createLogger(): Logger {\n    return { print() { console.log('print'); }, log() { console.log('log'); } };\n}"
+    },
+    {
+      "title": "Type Aliases",
+      "content": "Type aliases in TypeScript provide a way to create a name for any type. They are similar to interfaces but can name primitives, unions, tuples, and other types.",
+      "code_example": "// Type aliases\ntype Name = string;\ntype Age = number;\ntype Person = { name: Name, age: Age };\n\nfunction greet(person: Person): void {\n    console.log(`Hello, ${person.name}!`);\n}"
+    },
+    {
+      "title": "Enums with String Values",
+      "content": "Enums in TypeScript can also have string values instead of just numeric values.",
+      "code_example": "// Enum with string values\nenum Direction {\n    Up = 'UP',\n    Down = 'DOWN',\n    Left = 'LEFT',\n    Right = 'RIGHT'\n}\n\nlet playerDirection: Direction = Direction.Up;\nconsole.log(playerDirection);"
+    },
+    {
+      "title": "Mapped Types",
+      "content": "Mapped types in TypeScript allow you to create new types from existing types by mapping each property in the original type to a new property.",
+      "code_example": "// Mapped types\ninterface Person {\n    name: string;\n    age: number;\n}\n\n// ReadOnly mapped type\ntype ReadOnlyPerson = { readonly [K in keyof Person]: Person[K] };\n\nlet person: ReadOnlyPerson = { name: 'Alice', age: 30 };\n// person.age = 31; // Error: Cannot assign to 'age' because it is a read-only property."
+    },
+    {
+      "title": "Optional Chaining",
+      "content": "Optional chaining in TypeScript allows you to access deeply nested properties of an object without checking for the existence of each property.",
+      "code_example": "// Optional chaining\ninterface User {\n    id: number;\n    name?: string;\n    address?: {\n        city?: string;\n        postalCode?: string;\n    };\n}\n\nlet user: User = { id: 1 };\nlet city = user.address?.city;"
+    },
+    {
+      "title": "Nullish Coalescing Operator",
+      "content": "The nullish coalescing operator (??) in TypeScript provides a way to provide a default value when dealing with null or undefined values, but not for falsy values like empty strings or 0.",
+      "code_example": "// Nullish coalescing operator\nlet someValue = undefined;\nlet result = someValue ?? 'Default Value';\nconsole.log(result); // Output: 'Default Value'"
+    },
+    {
+      "title": "Async/Await",
+      "content": "Async functions and await expressions in TypeScript provide a simpler syntax to work with asynchronous code, replacing traditional Promise chaining.",
+      "code_example": "// Async function with await\nasync function fetchData(url: string): Promise<any> {\n    let response = await fetch(url);\n    let data = await response.json();\n    return data;\n}\n\nfetchData('https://api.example.com/data')\n    .then(data => console.log(data))\n    .catch(error => console.error(error));"
+    },
+    {
+      "title": "Generators",
+      "content": "Generators in TypeScript enable you to iterate over a series of values using the yield keyword. They provide a powerful way to define iterators with lazy computation.",
+      "code_example": "// Generator example\nfunction* generateSequence(start: number, end: number) {\n    for (let i = start; i <= end; i++) {\n        yield i;\n    }\n}\n\nlet generator = generateSequence(1, 5);\nconsole.log(generator.next()); // Output: { value: 1, done: false }"
+    },
+    {
+      "title": "Decorators for Class Factories",
+      "content": "Decorators in TypeScript can be used as class factories. They allow you to modify the behavior of a class constructor and its instances.",
+      "code_example": "// Decorator as a class factory\nfunction classLogger<T extends { new(...args: any[]): {} }>(constructor: T) {\n    return class extends constructor {\n        private instanceId: number = Math.random();\n        logInstance() {\n            console.log(`Instance ID: ${this.instanceId}`);\n        }\n    };\n}\n\n@classLogger\nclass User {\n    constructor(public name: string) {}\n}\n\nlet user = new User('Alice');\n(user as any).logInstance();"
+    },
+    {
+      "title": "TypeScript in VS Code",
+      "content": "Visual Studio Code (VS Code) provides excellent support for TypeScript with features like IntelliSense, debugging, and automatic type-checking.",
+      "code_example": "// Using TypeScript in VS Code\n// Install VS Code from https://code.visualstudio.com/\n// Install the TypeScript extension\n// Open a TypeScript file (.ts) in VS Code and start coding!"
+    },
+    {
+      "title": "TypeScript with Angular",
+      "content": "Angular, a popular frontend framework, uses TypeScript for building scalable web applications. TypeScript's strong typing helps in developing maintainable Angular applications.",
+      "code_example": "// Example Angular component written in TypeScript\nimport { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    template: '<h1>Hello, {{ name }}!</h1>'\n})\nexport class AppComponent {\n    name = 'Angular';\n}"
+    },
+    {
+      "title": "TypeScript with Vue.js",
+      "content": "Vue.js, a progressive JavaScript framework, supports TypeScript for building user interfaces. TypeScript enhances Vue.js applications with type-checking and IDE support.",
+      "code_example": "// Example Vue component written in TypeScript\nimport Vue from 'vue';\n\nexport default Vue.extend({\n    name: 'HelloWorld',\n    props: {\n        msg: String\n    },\n    created() {\n        console.log('Component created!');\n    }\n});"
+    }
+  ]

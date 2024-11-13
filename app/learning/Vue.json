@@ -1,0 +1,152 @@
+[
+    {
+      "title": "Introduction to Vue.js",
+      "content": "Vue.js is a progressive JavaScript framework used for building user interfaces (UIs) and single-page applications (SPAs). It is designed from the ground up to be incrementally adoptable, making it easy to integrate into existing projects. Vue.js emphasizes declarative rendering, component-based architecture, and straightforward integration with other libraries or existing projects.",
+      "code_example": ""
+    },
+    {
+      "title": "Downloading Vue.js",
+      "content": "Download Vue.js from the official website or include it via CDN in your HTML file:",
+      "code_example": "<script src=\"https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js\"></script>"
+    },
+    {
+      "title": "Setting Up Vue.js",
+      "content": "Include Vue.js in your HTML file and start using Vue directives in your application:",
+      "code_example": "<script src=\"https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js\"></script>\n<div id=\"app\">\n  {{ message }}\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      message: 'Hello Vue!'\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Instance",
+      "content": "Create a Vue instance to manage your application's data and behavior:",
+      "code_example": "var app = new Vue({\n  el: '#app',\n  data: {\n    message: 'Hello Vue!'\n  }\n});"
+    },
+    {
+      "title": "Vue Directives",
+      "content": "Directives are special HTML attributes that allow you to add dynamic behavior to HTML elements.",
+      "code_example": "<div id=\"app\">\n  <p v-if=\"seen\">Now you see me</p>\n  <button v-on:click=\"toggleSeen\">Toggle Visibility</button>\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      seen: true\n    },\n    methods: {\n      toggleSeen: function () {\n        this.seen = !this.seen;\n      }\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Components",
+      "content": "Components are reusable Vue instances with a name, template, and data. They allow you to build complex UIs with encapsulated functionality.",
+      "code_example": "<div id=\"app\">\n  <my-component></my-component>\n</div>\n<script>\n  Vue.component('my-component', {\n    template: '<div>A custom component!</div>'\n  });\n  var app = new Vue({\n    el: '#app'\n  });\n</script>"
+    },
+    {
+      "title": "Vue Router",
+      "content": "Vue Router is the official router for Vue.js. It deeply integrates with Vue.js core to provide declarative, client-side routing.",
+      "code_example": "const Foo = { template: '<div>Foo</div>' };\nconst routes = [\n  { path: '/foo', component: Foo }\n];\nconst router = new VueRouter({\n  routes\n});\nconst app = new Vue({\n  router\n}).$mount('#app');"
+    },
+    {
+      "title": "Vue Lifecycle Hooks",
+      "content": "Lifecycle hooks are key moments in the life of a Vue instance or component, where you can perform tasks or respond to changes.",
+      "code_example": "var app = new Vue({\n  el: '#app',\n  data: {\n    message: 'Hello Vue!'\n  },\n  beforeCreate: function () {\n    console.log('Before Create');\n  },\n  created: function () {\n    console.log('Created');\n  },\n  mounted: function () {\n    console.log('Mounted');\n  },\n  updated: function () {\n    console.log('Updated');\n  },\n  destroyed: function () {\n    console.log('Destroyed');\n  }\n});"
+    },
+    {
+      "title": "Vue Methods and Computed Properties",
+      "content": "Methods are functions defined in the `methods` option of a Vue component. Computed properties are cached based on their reactive dependencies.",
+      "code_example": "<div id=\"app\">\n  <p>{{ reversedMessage }}</p>\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      message: 'Hello Vue!'\n    },\n    computed: {\n      reversedMessage: function () {\n        return this.message.split('').reverse().join('');\n      }\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Events Handling",
+      "content": "Vue allows you to listen to DOM events and execute JavaScript when they are triggered.",
+      "code_example": "<div id=\"app\">\n  <button v-on:click=\"incrementCounter\">Increment Counter</button>\n  <p>Counter: {{ counter }}</p>\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      counter: 0\n    },\n    methods: {\n      incrementCounter: function () {\n        this.counter++;\n      }\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Forms Handling",
+      "content": "Vue provides directives and modifiers for handling form input bindings and validations.",
+      "code_example": "<div id=\"app\">\n  <input v-model=\"message\" placeholder=\"Enter your message\">\n  <p>Your message: {{ message }}</p>\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      message: ''\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Filters",
+      "content": "Filters are simple functions to apply text formatting. They can be used in mustache interpolations and `v-bind` expressions.",
+      "code_example": "<div id=\"app\">\n  <p>{{ message | capitalize }}</p>\n</div>\n<script>\n  Vue.filter('capitalize', function (value) {\n    if (!value) return '';\n    value = value.toString();\n    return value.charAt(0).toUpperCase() + value.slice(1);\n  });\n  var app = new Vue({\n    el: '#app',\n    data: {\n      message: 'hello vue!'\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Watchers",
+      "content": "Watchers are functions that watch for changes in data properties and perform asynchronous or expensive operations in response.",
+      "code_example": "<div id=\"app\">\n  <input v-model=\"message\" placeholder=\"Enter your message\">\n</div>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      message: ''\n    },\n    watch: {\n      message: function (newValue, oldValue) {\n        console.log('Message changed from ' + oldValue + ' to ' + newValue);\n      }\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Transitions and Animations",
+      "content": "Vue provides built-in transition effects and animations for adding visual appeal to your applications.",
+      "code_example": "<div id=\"app\">\n  <transition name=\"fade\">\n    <p v-if=\"show\">Hello Vue!</p>\n  </transition>\n  <button v-on:click=\"toggleShow\">Toggle Visibility</button>\n</div>\n<style>\n  .fade-enter-active, .fade-leave-active {\n    transition: opacity 0.5s ease;\n  }\n  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    opacity: 0;\n  }\n</style>\n<script>\n  var app = new Vue({\n    el: '#app',\n    data: {\n      show: true\n    },\n    methods: {\n      toggleShow: function () {\n        this.show = !this.show;\n      }\n    }\n  });\n</script>"
+    },
+    {
+      "title": "Vue Mixins",
+      "content": "Mixins allow you to reuse component options. They can contain any component options, including data, computed properties, methods, lifecycle hooks, and more.",
+      "code_example": "var myMixin = {\n  created: function () {\n    this.hello();\n  },\n  methods: {\n    hello: function () {\n      console.log('Hello from mixin!');\n    }\n  }\n};\n\nvar app = new Vue({\n  el: '#app',\n  mixins: [myMixin],\n  created: function () {\n    console.log('Component created!');\n  }\n});"
+    },
+    {
+      "title": "Vue Slots",
+      "content": "Slots are placeholders inside a component that allow you to compose components with flexible content distribution.",
+      "code_example": "<div id=\"app\">\n  <alert-box>\n    <template v-slot:title>Alert!</template>\n    Something bad happened.\n  </alert-box>\n</div>\n\n<script>\n  Vue.component('alert-box', {\n    template: '\n      <div class=\"alert\">\n        <slot name=\"title\"></slot>\n        <slot></slot>\n      </div>\n    '\n  });\n  var app = new Vue({\n    el: '#app'\n  });\n</script>"
+    },
+    {
+      "title": "Vue Scoped CSS",
+      "content": "Scoped CSS allows you to apply styles to a specific component without affecting other components or global styles.",
+      "code_example": "<style scoped>\n  .container {\n    border: 1px solid #ccc;\n    padding: 10px;\n  }\n</style>\n\n<template>\n  <div class=\"container\">\n    <p>This paragraph has scoped styles.</p>\n  </div>\n</template>\n\n<script>\n  export default {\n    name: 'ScopedStylesComponent'\n  };\n</script>"
+    },
+    {
+      "title": "Vue Plugins",
+      "content": "Plugins are reusable Vue.js components or libraries that provide additional functionalities to your Vue applications.",
+      "code_example": "const MyPlugin = {\n  install(Vue, options) {\n    Vue.prototype.$myMethod = function () {\n      console.log('MyPlugin method called!');\n    };\n  }\n};\n\nVue.use(MyPlugin);\n\nnew Vue({\n  created() {\n    this.$myMethod();\n  }\n});"
+    },
+    {
+      "title": "Vue Global Event Bus",
+      "content": "The global event bus allows you to communicate between components that are not directly related or nested within each other.",
+      "code_example": "// main.js\nimport Vue from 'vue';\nexport const EventBus = new Vue();\n\n// Component A\nEventBus.$emit('event', payload);\n\n// Component B\nEventBus.$on('event', (payload) => {\n  console.log('Event received:', payload);\n});"
+    },
+    {
+      "title": "Vue Vuex",
+      "content": "Vuex is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application.",
+      "code_example": "// store.js\nimport Vue from 'vue';\nimport Vuex from 'vuex';\n\nVue.use(Vuex);\n\nexport default new Vuex.Store({\n  state: {\n    count: 0\n  },\n  mutations: {\n    increment(state) {\n      state.count++;\n    }\n  },\n  actions: {\n    incrementAsync({ commit }) {\n      setTimeout(() => {\n        commit('increment');\n      }, 1000);\n    }\n  },\n  getters: {\n    getCount: state => state.count\n  }\n});\n\n// main.js\nimport Vue from 'vue';\nimport App from './App.vue';\nimport store from './store';\n\nnew Vue({\n  el: '#app',\n  store,\n  render: h => h(App)\n});"
+    },
+    {
+      "title": "Vue Router Navigation Guards",
+      "content": "Vue Router Navigation Guards allow you to control navigation behavior and access to routes in your Vue.js application.",
+      "code_example": "const router = new VueRouter({\n  routes: [...],\n});\n\nrouter.beforeEach((to, from, next) => {\n  // Check authentication and permissions\n  if (to.meta.requiresAuth && !isLoggedIn) {\n    next('/login');\n  } else {\n    next();\n  }\n});"
+    },
+    {
+      "title": "Vue.js Component Lifecycle",
+      "content": "Understand the lifecycle hooks of Vue.js components, such as created, mounted, updated, and destroyed.",
+      "code_example": "<script>\nexport default {\n  created() {\n    console.log('Component created');\n  },\n  mounted() {\n    console.log('Component mounted');\n  },\n  updated() {\n    console.log('Component updated');\n  },\n  destroyed() {\n    console.log('Component destroyed');\n  }\n}\n</script>"
+    },
+    {
+      "title": "Vue.js Routing with Vue Router",
+      "content": "Implement client-side routing in Vue.js applications using Vue Router for navigating between views and passing route parameters.",
+      "code_example": "<template>\n  <router-link to='/about'>About</router-link>\n  <router-view></router-view>\n</template>\n\n<script>\nimport VueRouter from 'vue-router';\n\nconst router = new VueRouter({\n  routes: [\n    { path: '/about', component: About }\n  ]\n});\n\nexport default {\n  router\n}\n</script>"
+    },
+    {
+      "title": "Vue.js State Management with Vuex",
+      "content": "Manage application-level state in Vue.js using Vuex, including state, getters, mutations, and actions.",
+      "code_example": "<template>\n  <div>\n    <p>Count: {{ count }}</p>\n    <button @click='increment'>Increment</button>\n  </div>\n</template>\n\n<script>\nimport { mapState, mapActions } from 'vuex';\n\nexport default {\n  computed: {\n    ...mapState(['count'])\n  },\n  methods: {\n    ...mapActions(['increment'])\n  }\n}\n</script>"
+    },
+    {
+      "title": "Vue.js Forms Handling",
+      "content": "Handle forms and form validation in Vue.js applications using v-model, validation libraries, and custom validation logic.",
+      "code_example": "<template>\n  <form @submit='submitForm'>\n    <input v-model='username' type='text' />\n    <input v-model='password' type='password' />\n    <button type='submit'>Submit</button>\n  </form>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      username: '',\n      password: ''\n    }\n  },\n  methods: {\n    submitForm() {\n      // Form submission logic\n    }\n  }\n}\n</script>"
+    },
+    {
+      "title": "Vue.js HTTP Requests with Axios",
+      "content": "Make HTTP requests in Vue.js applications using Axios to fetch data from RESTful APIs and handle responses.",
+      "code_example": "<template>\n  <div>\n    <ul>\n      <li v-for='post in posts' :key='post.id'>{{ post.title }}</li>\n    </ul>\n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  data() {\n    return {\n      posts: []\n    }\n  },\n  mounted() {\n    axios.get('https://jsonplaceholder.typicode.com/posts')\n      .then(response => {\n        this.posts = response.data;\n      })\n      .catch(error => {\n        console.error('Error fetching data', error);\n      });\n  }\n}\n</script>"
+    },
+    {
+      "title": "Vue.js Authentication with Firebase",
+      "content": "Implement authentication and authorization in Vue.js applications using Firebase Authentication for secure user authentication, OAuth providers, and custom claims.",
+      "code_example": "<template>\n  <div v-if='user'>\n    <p>Welcome, {{ user.displayName }}</p>\n    <button @click='signOut'>Sign out</button>\n  </div>\n  <div v-else>\n    <button @click='signInWithGoogle'>Sign in with Google</button>\n  </div>\n</template>\n\n<script>\nimport firebase from 'firebase';\n\nexport default {\n  data() {\n    return {\n      user: null\n    }\n  },\n  methods: {\n    signInWithGoogle() {\n      // Firebase sign-in with Google provider\n    },\n    signOut() {\n      // Firebase sign-out\n    }\n  }\n}\n</script>"
+    },
+    {
+      "title": "Vue.js Testing with Jest",
+      "content": "Write unit tests for Vue.js components and applications using the Jest testing framework.",
+      "code_example": "<script>\ndescribe('Counter.vue', () => {\n  test('increments counter value when button is clicked', () => {\n    // Test logic\n  });\n});\n</script>"
+    },
+    {
+      "title": "Vue.js Error Handling Strategies",
+      "content": "Implement effective error handling strategies in Vue.js applications to improve reliability and user experience.",
+      "code_example": ""
+    },
+    {
+      "title": "Vue.js Lazy Loading and Code Splitting",
+      "content": "Optimize Vue.js applications by lazy loading components and splitting code to reduce initial bundle size and improve performance.",
+      "code_example": ""
+    }
+  ]

@@ -1,0 +1,285 @@
+ [
+    {
+      "title": "Introduction to Java",
+      "content": "Java is a widely adopted object-oriented programming language known for its platform independence, versatility, and robustness. Initially developed by Sun Microsystems in the mid-1990s, Java has since become one of the most popular programming languages globally. Its 'write once, run anywhere' philosophy allows developers to write code that can run on any device with a Java Virtual Machine (JVM), making it ideal for building cross-platform applications. Java's rich ecosystem of libraries, frameworks, and tools supports a wide range of applications, from enterprise software and mobile apps to web development and scientific computing. With its strong emphasis on security, reliability, and performance, Java remains a cornerstone of modern software development.",
+      "code_examples": [
+        "public class HelloWorld \n{\n public static void main(String[] args) \n{ \nSystem.out.println(\"Hello, World!\"); }}"
+      ]
+    },
+    {
+      "title": "Variables and Data Types",
+      "content": "Understanding Java's data types and how to declare and use variables.",
+      "code_examples": ["int number = 10;", "String name = \"John\";"]
+    },
+    {
+      "title": "Control Statements",
+      "content": "Learn about if-else, switch, and loops in Java.",
+      "code_examples": [
+        "if (condition) \n{ // code }",
+        "\n\nswitch (variable) \n{ case value: // code break; }",
+        "\n\nfor (int i = 0; i < 10; i++) \n{ // code }"
+      ]
+    },
+    {
+      "title": "Object-Oriented Programming (OOP)",
+      "content": "Concepts like classes, objects, inheritance, polymorphism, and encapsulation in Java.",
+      "code_examples": [
+        "class Car \n{\n String color;\n void drive() \n{\n // code \n}\n}"
+      ]
+    },
+    {
+      "title": "Exception Handling",
+      "content": "Handling errors and exceptions gracefully in Java applications.",
+      "code_examples": [
+        "try \n{\n // code \n}\n catch (Exception e) \n{\n // handle exception \n} \nfinally \n{\n // cleanup code \n}"
+      ]
+    },
+    {
+      "title": "Collections Framework",
+      "content": "Using Java's built-in data structures like lists, maps, and sets.",
+      "code_examples": [
+        "List<String> names = new ArrayList<>();\n names.add(\"Alice\");"
+      ]
+    },
+    {
+      "title": "File Handling",
+      "content": "Reading from and writing to files in Java.",
+      "code_examples": [
+        "File file = new File(\"example.txt\");\n FileInputStream fis = new FileInputStream(file);"
+      ]
+    },
+    {
+      "title": "Concurrency",
+      "content": "Managing multiple tasks and threads in Java applications.",
+      "code_examples": [
+        "class MyRunnable implements Runnable \n{\n public void run() \n{\n // code \n}\n}"
+      ]
+    },
+    {
+      "title": "Networking",
+      "content": "Creating networked Java applications using sockets and URLs.",
+      "code_examples": ["Socket socket = new Socket(\"localhost\", 8080);"]
+    },
+    {
+      "title": "Lambda Expressions",
+      "content": "Introduction to functional programming with Java's lambda expressions.",
+      "code_examples": [
+        "List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);\n numbers.forEach(n -> System.out.println(n));"
+      ]
+    },
+    {
+      "title": "JavaFX Basics",
+      "content": "Creating graphical user interfaces (GUIs) with JavaFX.",
+      "code_examples": [
+        "public class HelloWorld extends Application \n{\n public void start(Stage stage) \n{\n // code \n}\n}"
+      ]
+    },
+    {
+      "title": "JUnit Testing",
+      "content": "Writing and executing unit tests in Java using JUnit.",
+      "code_examples": [
+        "@Test public void testMethod() \n{ // assertion code }"
+      ]
+    },
+    {
+      "title": "Java Servlets",
+      "content": "Building web applications with Java Servlets.",
+      "code_examples": [
+        "public class MyServlet extends HttpServlet \n{ \npublic void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { // code }}"
+      ]
+    },
+    {
+      "title": "Java Persistence API (JPA)",
+      "content": "Working with databases using JPA for object-relational mapping (ORM).",
+      "code_examples": [
+        "@Entity public class Product \n{\n @Id @GeneratedValue private Long id; // code }}"
+      ]
+    },
+    {
+      "title": "Java Streams API",
+      "content": "Functional-style operations on streams of elements, introduced in Java 8.",
+      "code_examples": [
+        "List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);\n int sum = numbers.stream().mapToInt(Integer::intValue).sum();"
+      ]
+    },
+    {
+      "title": "Java Security",
+      "content": "Managing security aspects like encryption, authentication, and authorization in Java applications.",
+      "code_examples": [
+        "KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance(\"RSA\");"
+      ]
+    },
+    {
+      "title": "Java Design Patterns",
+      "content": "Common design patterns like Singleton, Factory, Observer, and MVC in Java.",
+      "code_examples": [
+        "public class Singleton \n{\n private static Singleton instance;\n private Singleton() {} \npublic static synchronized Singleton getInstance() \n{\n if (instance == null) \n{\n instance = new Singleton();\n } \nreturn instance; \n}\n}"
+      ]
+    },
+    {
+      "title": "Java 9 Modules",
+      "content": "Working with modules introduced in Java 9 to modularize applications.",
+      "code_examples": [
+        "module com.example.myapp \n{\n requires module1;\n exports com.example.mymodule;\n }"
+      ]
+    },
+    {
+      "title": "Java 11 Features",
+      "content": "New features introduced in Java 11, including HTTP client API and local-variable syntax for lambda parameters.",
+      "code_examples": ["HttpClient client = HttpClient.newHttpClient();"]
+    },
+    {
+      "title": "Java 15 Records",
+      "content": "Introduction to records for concise data carrier classes, introduced in Java 15.",
+      "code_examples": ["public record Point(int x, int y) \n{\n // code \n}"]
+    },
+    {
+      "title": "Java 17 Features",
+      "content": "Features introduced in Java 17, including sealed classes and pattern matching for switch.",
+      "code_examples": [
+        "sealed interface Shape permits Circle, Rectangle { // code }"
+      ]
+    },
+    {
+      "title": "Java WebSockets",
+      "content": "Creating real-time, full-duplex communication channels between a client and a server in Java applications.",
+      "code_examples": ["ServerSocket server = new ServerSocket(8080);"]
+    },
+    {
+      "title": "Java Reflection API",
+      "content": "Dynamically inspecting and modifying Java applications during runtime.",
+      "code_examples": [
+        "Class<?> cls = Class.forName(\"com.example.MyClass\");"
+      ]
+    },
+    {
+      "title": "Java Internationalization (i18n)",
+      "content": "Implementing support for multiple languages and locales in Java applications.",
+      "code_examples": [
+        "ResourceBundle bundle = ResourceBundle.getBundle(\"Messages\", Locale.US);"
+      ]
+    },
+    {
+      "title": "Java Networking with NIO",
+      "content": "Non-blocking I/O operations for scalable network applications in Java.",
+      "code_examples": ["Selector selector = Selector.open();"]
+    },
+    {
+      "title": "Java XML Processing",
+      "content": "Reading, writing, and manipulating XML documents in Java.",
+      "code_examples": [
+        "DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();"
+      ]
+    },
+    {
+      "title": "Java Date and Time API",
+      "content": "Handling date and time values efficiently with Java's modern Date and Time API.",
+      "code_examples": ["LocalDate date = LocalDate.now();"]
+    },
+    {
+      "title": "Java Annotations",
+      "content": "Defining and using annotations to provide metadata information in Java applications.",
+      "code_examples": [
+        "@Retention(RetentionPolicy.RUNTIME) @interface MyAnnotation \n{\n // code \n}"
+      ]
+    },
+    {
+      "title": "Java Regular Expressions",
+      "content": "Pattern matching and manipulating text using regular expressions in Java.",
+      "code_examples": [
+        "Pattern pattern = Pattern.compile(\"\\d+\"); Matcher matcher = pattern.matcher(\"12345\");"
+      ]
+    },
+    {
+      "title": "Java Generics",
+      "content": "Using generics to create reusable classes, interfaces, and methods in Java.",
+      "code_examples": ["public class Box<T> { private T value; // code }"]
+    },
+    {
+      "title": "Java Serialization",
+      "content": "Serializing and deserializing Java objects to and from byte streams.",
+      "code_examples": [
+        "ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(\"data.txt\"));"
+      ]
+    },
+    {
+      "title": "Java JDBC",
+      "content": "Working with databases using Java Database Connectivity (JDBC).",
+      "code_examples": [
+        "Connection conn = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/mydatabase\", \"username\", \"password\");"
+      ]
+    },
+    {
+      "title": "Java Swing GUI",
+      "content": "Creating desktop applications with Java Swing for graphical user interfaces.",
+      "code_examples": ["JFrame frame = new JFrame(\"Hello, Swing!\");"]
+    },
+    {
+      "title": "Java File IO",
+      "content": "Reading and writing files using Java's IO APIs.",
+      "code_examples": [
+        "File file = new File(\"example.txt\"); FileReader reader = new FileReader(file);"
+      ]
+    },
+    {
+      "title": "Java Enums",
+      "content": "Understanding and using enumerated types in Java.",
+      "code_examples": ["public enum Day \n{\n MONDAY, TUESDAY, WEDNESDAY \n}"]
+    },
+    {
+      "title": "Java Design Patterns: Factory Method",
+      "content": "Implementing the Factory Method pattern in Java.",
+      "code_examples": [
+        "interface Shape \n{\n void draw(); \n}\n class Circle implements Shape \n{\n public void draw() \n{ \n// code \n}\n}"
+      ]
+    },
+    {
+      "title": "Java Design Patterns: Singleton",
+      "content": "Implementing the Singleton pattern in Java.",
+      "code_examples": [
+        "public class Singleton \n{\n private static Singleton instance; \nprivate Singleton() \n{} \npublic static synchronized Singleton getInstance() { if (instance == null) \n{ instance = new Singleton();\n } \nreturn instance; \n}\n}"
+      ]
+    },
+    {
+      "title": "Java Design Patterns: Observer",
+      "content": "Implementing the Observer pattern in Java for event handling.",
+      "code_examples": [
+        "interface Observer \n{\n void update(); \n} \nclass Subject \n{ \nprivate List<Observer> observers = new ArrayList<>(); \npublic void addObserver(Observer observer) \n{\n // code \n}\n}"
+      ]
+    },
+    {
+      "title": "Java Design Patterns: Builder",
+      "content": "Using the Builder pattern to create complex objects in Java.",
+      "code_examples": [
+        "public class Car \n{\n private String color; private int wheels; \npublic static class Builder \n{\n private String color;\n private int wheels; \npublic Builder setColor(String color) \n{\n this.color = color; \nreturn this; \n}\n public Builder setWheels(int wheels) \n{\n this.wheels = wheels; return this; \n}\n public Car build() \n{\n return new Car(this); \n}\n}"
+      ]
+    },
+    {
+      "title": "Java Design Patterns: Adapter",
+      "content": "Implementing the Adapter pattern to make incompatible interfaces work together.",
+      "code_examples": [
+        "interface MediaPlayer \n{\n void play(String audioType, String fileName); \n}\n interface AdvancedMediaPlayer \n{\n void playVlc(String fileName);\nvoid playMp4(String fileName);\n }\n class MediaAdapter implements MediaPlayer \n{\n private AdvancedMediaPlayer advancedMusicPlayer;\n public MediaAdapter(String audioType) \n{\n if(audioType.equalsIgnoreCase(\"vlc\")) \n{\n advancedMusicPlayer = new VlcPlayer();\n }\n else if (audioType.equalsIgnoreCase(\"mp4\")) \n{\n advancedMusicPlayer = new Mp4Player(); }}"
+      ]
+    },
+    {
+      "title": "Java Reflection: Accessing Methods",
+      "content": "Using Java Reflection API to access and invoke methods dynamically.",
+      "code_examples": [
+        "class MyClass \n{ public void myMethod(String message) \n{ System.out.println(message); \n}\n } public class Main \n{\n public static void main(String[] args) \nthrows Exception \n{\n Class<?> cls = MyClass.class; \nObject obj = cls.getDeclaredConstructor().newInstance();\n Method method = cls.getDeclaredMethod(\"myMethod\", String.class); \nmethod.invoke(obj, \"Hello, Reflection!\"); }}"
+      ]
+    },
+    {
+      "title": "Java Networking: HTTP Client",
+      "content": "Using Java's HTTP client API for making HTTP requests and processing responses.",
+      "code_examples": [
+        "import java.net.URI;\n import java.net.http.HttpClient;\n import java.net.http.HttpRequest;\n import java.net.http.HttpResponse;\n public class HttpClientExample \n{\n public static void main(String[] args) \n throws Exception \n{ HttpClient client = HttpClient.newHttpClient();\n HttpRequest request = HttpRequest.newBuilder() .uri(URI.create(\"https://api.example.com/data\")) .build(); \n HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());\n System.out.println(response.body()); }}"
+      ]
+    },
+    {
+      "title": "Java Database: Hibernate ORM",
+      "content": "Using Hibernate as an Object-Relational Mapping (ORM) tool in Java applications.",
+      "code_examples": [
+        "@Entity public class Product \n{ @Id @GeneratedValue private Long id; \n nprivate String name;\n private BigDecimal price; \n// getters and setters\n }\n}"
+      ]
+    }
+  ]

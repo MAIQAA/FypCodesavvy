@@ -1,0 +1,107 @@
+ [
+    {
+      "title": "Introduction to Raspberry Pi",
+      "content": "The Raspberry Pi is a series of small, affordable, and powerful single-board computers developed by the Raspberry Pi Foundation. Originally designed to promote the teaching of basic computer science in schools and developing countries, it has since become popular for a wide variety of projects, including home automation, robotics, and even as a desktop replacement. The versatility of the Raspberry Pi, combined with its low cost, makes it an ideal platform for both beginners and experienced developers. It supports various operating systems and can be programmed using multiple languages, making it a flexible and accessible tool for exploring computing and electronics.",
+      "code_example": ""
+    },
+    {
+      "title": "Setting Up Raspberry Pi",
+      "content": "To set up Raspberry Pi, you need an SD card with an operating system installed, a power supply, and peripherals like a keyboard, mouse, and monitor.",
+      "code_example": ""
+    },
+    {
+      "title": "GPIO Programming with Python",
+      "content": "Raspberry Pi's GPIO pins allow for interfacing with electronic components. Python is commonly used to write programs that interact with GPIO.",
+      "code_example": "import RPi.GPIO as GPIO\n\nGPIO.setmode(GPIO.BOARD)\nGPIO.setup(11, GPIO.OUT)\nGPIO.output(11, GPIO.HIGH)\n\n# Example of reading input\n# GPIO.setup(12, GPIO.IN)\n# input_state = GPIO.input(12)\n# print('Input State:', input_state)"
+    },
+    {
+      "title": "Camera Module",
+      "content": "Raspberry Pi supports camera modules for capturing photos and videos. The official camera module connects via the CSI port.",
+      "code_example": "from picamera import PiCamera\nfrom time import sleep\n\ncamera = PiCamera()\ncamera.start_preview()\nsleep(5)\ncamera.capture('/home/pi/image.jpg')\ncamera.stop_preview()"
+    },
+    {
+      "title": "Networking and Internet of Things (IoT)",
+      "content": "Raspberry Pi can be used for networking tasks and IoT applications by connecting to Wi-Fi networks and interfacing with IoT sensors and devices.",
+      "code_example": "// Example of connecting to Wi-Fi network using Python\nimport os\n\nos.system('sudo ifconfig wlan0 up')\nos.system('sudo iwconfig wlan0 essid <Your_WiFi_Name>')\nos.system('sudo dhclient wlan0')"
+    },
+    {
+      "title": "Web Server with Flask",
+      "content": "Flask is a lightweight web framework for Python. You can use it on Raspberry Pi to create web applications and serve web pages.",
+      "code_example": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef hello_world():\n    return 'Hello, Raspberry Pi!'\n\nif __name__ == '__main__':\n    app.run(debug=True, host='0.0.0.0')"
+    },
+    {
+      "title": "Home Automation with Raspberry Pi",
+      "content": "Raspberry Pi can be used to automate home appliances and devices using relays, sensors, and actuators.",
+      "code_example": "// Example of controlling a relay\nimport RPi.GPIO as GPIO\nimport time\n\nrelay_pin = 18\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(relay_pin, GPIO.OUT)\n\n# Turn on the relay\nGPIO.output(relay_pin, GPIO.HIGH)\ntime.sleep(3)\n\n# Turn off the relay\nGPIO.output(relay_pin, GPIO.LOW)"
+    },
+    {
+      "title": "Using Sense HAT",
+      "content": "Sense HAT is an add-on board for Raspberry Pi that provides environmental sensors (temperature, humidity, pressure) and an LED matrix.",
+      "code_example": "// Example of using Sense HAT\nfrom sense_hat import SenseHat\n\nsense = SenseHat()\n\n# Display message on LED matrix\nsense.show_message('Hello, World!')\n\n# Read temperature\ntemperature = sense.get_temperature()\nprint('Temperature:', temperature)"
+    },
+    {
+      "title": "Robotics with Raspberry Pi",
+      "content": "Raspberry Pi is popular in robotics for controlling robots using motors, servos, and sensors.",
+      "code_example": "// Example of controlling a robot with motors\nimport RPi.GPIO as GPIO\nimport time\n\n# Define motor pins\nleft_motor_pin = 17\nright_motor_pin = 18\n\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(left_motor_pin, GPIO.OUT)\nGPIO.setup(right_motor_pin, GPIO.OUT)\n\n# Move forward\nGPIO.output(left_motor_pin, GPIO.HIGH)\nGPIO.output(right_motor_pin, GPIO.HIGH)\ntime.sleep(3)\n\n# Stop motors\nGPIO.output(left_motor_pin, GPIO.LOW)\nGPIO.output(right_motor_pin, GPIO.LOW)"
+    },
+    {
+      "title": "TensorFlow and Machine Learning",
+      "content": "Raspberry Pi can run machine learning models, including TensorFlow, for applications like image recognition and predictive analytics.",
+      "code_example": "// Example of TensorFlow on Raspberry Pi\nimport tensorflow as tf\nfrom tensorflow.keras.datasets import mnist\n\n# Load and preprocess data\n(x_train, y_train), (x_test, y_test) = mnist.load_data()\nx_train, x_test = x_train / 255.0, x_test / 255.0\n\n# Define and train a model\nmodel = tf.keras.models.Sequential([\n    tf.keras.layers.Flatten(input_shape=(28, 28)),\n    tf.keras.layers.Dense(128, activation='relu'),\n    tf.keras.layers.Dropout(0.2),\n    tf.keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])\nmodel.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))"
+    },
+    {
+      "title": "Using I2C with Raspberry Pi",
+      "content": "I2C is a communication protocol used to connect low-speed devices like sensors to the Raspberry Pi.",
+      "code_example": "// Example of I2C communication\nimport smbus\nimport time\n\n# Get I2C bus\nbus = smbus.SMBus(1)\n\n# I2C address of the device\naddress = 0x48\n\n# Read data from the sensor\nwhile True:\n    data = bus.read_byte_data(address, 0)\n    print('Data:', data)\n    time.sleep(1)"
+    },
+    {
+      "title": "SPI Communication",
+      "content": "SPI is another protocol used for communication between the Raspberry Pi and peripheral devices.",
+      "code_example": "// Example of SPI communication\nimport spidev\nimport time\n\n# Open SPI bus\nspi = spidev.SpiDev()\nspi.open(0, 0)\n\n# Read data from SPI device\nwhile True:\n    data = spi.xfer2([0x00])\n    print('Data:', data)\n    time.sleep(1)"
+    },
+    {
+      "title": "Using MQTT for IoT",
+      "content": "MQTT is a lightweight messaging protocol for small sensors and mobile devices, optimized for high-latency or unreliable networks.",
+      "code_example": "// Example of MQTT\nimport paho.mqtt.client as mqtt\n\n# Define the MQTT callback functions\n\ndef on_connect(client, userdata, flags, rc):\n    print('Connected with result code ' + str(rc))\n    client.subscribe('test/topic')\n\n\ndef on_message(client, userdata, msg):\n    print(msg.topic + ' ' + str(msg.payload))\n\n# Set up MQTT client and connect\nclient = mqtt.Client()\nclient.on_connect = on_connect\nclient.on_message = on_message\nclient.connect('mqtt.eclipse.org', 1883, 60)\nclient.loop_start()\n\n# Publish a message\nclient.publish('test/topic', 'Hello, MQTT!')"
+    },
+    {
+      "title": "Creating a Media Server",
+      "content": "Raspberry Pi can be turned into a media server to stream content to different devices.",
+      "code_example": "// Example of setting up a media server using Python\nimport http.server\nimport socketserver\n\nPORT = 8000\nHandler = http.server.SimpleHTTPRequestHandler\n\nwith socketserver.TCPServer(('', PORT), Handler) as httpd:\n    print('Serving at port', PORT)\n    httpd.serve_forever()"
+    },
+    {
+      "title": "Using Bluetooth on Raspberry Pi",
+      "content": "Raspberry Pi supports Bluetooth communication for connecting to devices like speakers, keyboards, and other computers.",
+      "code_example": "// Example of Bluetooth communication\nimport bluetooth\n\n# Find all Bluetooth devices\nprint('Searching for devices...')\ndevices = bluetooth.discover_devices(duration=8, lookup_names=True, flush_cache=True, lookup_class=False)\nprint('Found {} devices.'.format(len(devices)))\n\n# List all devices\nfor addr, name in devices:\n    print('  {} - {}'.format(addr, name))"
+    },
+    {
+      "title": "Voice Recognition with Raspberry Pi",
+      "content": "Raspberry Pi can be used for voice recognition applications using libraries like SpeechRecognition.",
+      "code_example": "// Example of voice recognition\nimport speech_recognition as sr\n\n# Initialize recognizer\nr = sr.Recognizer()\n\n# Use the microphone as source for input\nwith sr.Microphone() as source:\n    print('Say something:')\n    audio = r.listen(source)\n\n# Recognize speech using Google Web Speech API\ntry:\n    print('You said: ' + r.recognize_google(audio))\nexcept sr.UnknownValueError:\n    print('Google Web Speech API could not understand audio')\nexcept sr.RequestError as e:\n    print('Could not request results from Google Web Speech API; {0}'.format(e))"
+    },
+    {
+      "title": "Building a Weather Station",
+      "content": "Raspberry Pi can be used to build a weather station by interfacing with sensors like DHT11 for temperature and humidity.",
+      "code_example": "// Example of weather station\nimport Adafruit_DHT\n\n# Sensor setup\nsensor = Adafruit_DHT.DHT11\npin = 4\n\n# Read temperature and humidity\nhumidity, temperature = Adafruit_DHT.read(sensor, pin)\nif humidity is not None and temperature is not None:\n    print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))\nelse:\n    print('Failed to get reading. Try again!')"
+    },
+    {
+      "title": "Playing Audio with Raspberry Pi",
+      "content": "Raspberry Pi can be used to play audio files using libraries like Pygame.",
+      "code_example": "// Example of playing audio\nimport pygame\n\n# Initialize the mixer\npygame.mixer.init()\n\n# Load and play sound\npygame.mixer.music.load('audio.mp3')\npygame.mixer.music.play()\n\nwhile pygame.mixer.music.get_busy():\n    pygame.time.Clock().tick(10)"
+    },
+    {
+      "title": "Time-Lapse Photography",
+      "content": "Raspberry Pi can be used for time-lapse photography using the camera module.",
+      "code_example": "from picamera import PiCamera\nfrom time import sleep\n\ncamera = PiCamera()\n\nfor i in range(100):\n    camera.capture('/home/pi/image{0:04d}.jpg'.format(i))\n    sleep(10)"
+    },
+    {
+      "title": "Face Detection with OpenCV",
+      "content": "OpenCV can be used on Raspberry Pi for face detection in images or video streams.",
+      "code_example": "// Example of face detection\nimport cv2\n\n# Load the cascade\nface_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')\n\n# Read the input image\nimg = cv2.imread('test.jpg')\n\n# Convert into grayscale\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# Detect faces\nfaces = face_cascade.detectMultiScale(gray, 1.1, 4)\n\n# Draw rectangle around the faces\nfor (x, y, w, h) in faces:\n    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n\n# Display the output\ncv2.imshow('img', img)\ncv2.waitKey()"
+    },
+    {
+      "title": "Building a Smart Mirror",
+      "content": "A smart mirror displays useful information like weather, calendar, and news, and can be built using Raspberry Pi.",
+      "code_example": "// Example of building a smart mirror\n// Requires additional setup and configuration\nimport requests\n\n# Get weather data\nresponse = requests.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=<Your_API_Key>')\ndata = response.json()\nprint('Weather:', data['weather'][0]['description'])"
+    }
+  ]

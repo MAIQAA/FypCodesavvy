@@ -1,0 +1,102 @@
+[
+    {
+      "title": "Introduction to Kotlin",
+      "content": "Kotlin is a modern programming language developed by JetBrains, known for its concise syntax and interoperability with existing Java code. Initially designed as a more expressive alternative to Java, Kotlin has gained popularity for its robust features that enhance productivity and safety in software development. ith Kotlin, developers can build versatile applications for Android, web, server-side, and desktop environments. Its key features include null safety, functional programming capabilities, and seamless integration with Java libraries. Kotlin's concise syntax reduces boilerplate code, making it easier to write and maintain applications. Whether you're a beginner or an experienced developer, Kotlin provides a smooth learning curve and powerful tools to create efficient and scalable software solutions. Its growing community and extensive documentation further support developers in mastering Kotlin for a wide range of projects.",
+      "code_example": "// Hello World in Kotlin\nfun main() {\n    println(\"Hello, Kotlin!\")\n}"
+    },
+    {
+      "title": "Variables and Data Types",
+      "content": "In Kotlin, variables are declared using 'val' (immutable) or 'var' (mutable). Kotlin supports various data types such as Int, Double, Boolean, String, and more.",
+      "code_example": "// Variable Declaration in Kotlin\nval name: String = \"John\"\nvar age: Int = 30"
+    },
+    {
+      "title": "Functions",
+      "content": "Functions in Kotlin are declared using the 'fun' keyword. They can have parameters, return values, and can be called recursively.",
+      "code_example": "// Function Declaration in Kotlin\nfun greet(name: String) {\n    println(\"Hello, $name!\")\n}\n\ngreet(\"Alice\")"
+    },
+    {
+      "title": "Control Flow",
+      "content": "Kotlin supports if-else expressions, when expressions (similar to switch-case in Java), and loops such as 'for' and 'while'.",
+      "code_example": "// Control Flow in Kotlin\nval number = 5\n\nif (number > 0) {\n    println(\"Positive number\")\n} else {\n    println(\"Non-positive number\")\n}"
+    },
+    {
+      "title": "Classes and Objects",
+      "content": "Kotlin is an object-oriented language. Classes are defined using the 'class' keyword, and objects are instances of classes created using constructors.",
+      "code_example": "// Class and Object in Kotlin\n\n// Class Declaration\nclass Person(val name: String, var age: Int) {\n    // Member Function\n    fun greet() {\n        println(\"Hello, my name is $name and I am $age years old.\")\n    }\n}\n\n// Creating Object\nfun main() {\n    val person = Person(\"Alice\", 30)\n    person.greet()\n}"
+    },
+    {
+      "title": "Null Safety",
+      "content": "Kotlin emphasizes null safety to avoid NullPointerExceptions. Nullable types are declared using '?' and safe calls '?.', Elvis operator '? :' handles null values.",
+      "code_example": "// Null Safety in Kotlin\nfun main() {\n    var str: String? = \"Hello\"\n    str = null\n\n    // Safe Call\n    println(\"Length: ${str?.length ?: \"String is null\"}\")\n}"
+    },
+    {
+      "title": "Collections",
+      "content": "Kotlin provides various collection types: List, Set, Map. Immutable collections are declared using 'listOf()', 'setOf()', and 'mapOf()'. Mutable collections use 'mutableListOf()', 'mutableSetOf()', 'mutableMapOf()'.",
+      "code_example": "// Collections in Kotlin\nfun main() {\n    // Immutable List\n    val numbers = listOf(1, 2, 3, 4, 5)\n\n    // Mutable Map\n    val user = mutableMapOf(\"name\" to \"John\", \"age\" to 30)\n    user[\"city\"] = \"New York\"\n}"
+    },
+    {
+      "title": "Lambda Expressions",
+      "content": "Lambda expressions in Kotlin are defined with curly braces '{ }'. They are used for functional programming, event handling, and higher-order functions.",
+      "code_example": "// Lambda Expressions in Kotlin\nfun main() {\n    val numbers = listOf(1, 2, 3, 4, 5)\n\n    // Using Lambda Expression\n    val evenNumbers = numbers.filter { it % 2 == 0 }\n    println(\"Even numbers: $evenNumbers\")\n}"
+    },
+    {
+      "title": "Coroutines",
+      "content": "Coroutines are lightweight threads for asynchronous programming. They are used for non-blocking concurrency, suspending functions using 'suspend' keyword.",
+      "code_example": "// Coroutines in Kotlin\nimport kotlinx.coroutines.*\n\nfun main() {\n    // Launching a Coroutine\n    GlobalScope.launch {\n        delay(1000) // Suspending function\n        println(\"World!\")\n    }\n    println(\"Hello, \")\n    Thread.sleep(2000) // Waiting for coroutine to complete\n}"
+    },
+    {
+      "title": "Extensions Functions",
+      "content": "Kotlin allows extending existing classes with new functionalities without inheriting from them. Extensions are defined using 'fun' keyword with the receiver type.",
+      "code_example": "// Extension Functions in Kotlin\nfun String.addHello(): String {\n    return \"Hello, $this\"\n}\n\nfun main() {\n    val name = \"Alice\"\n    println(name.addHello())\n}"
+    },
+    {
+      "title": "Data Classes",
+      "content": "Data classes in Kotlin are used to hold data. They automatically provide methods like 'toString()', 'equals()', 'hashCode()', and 'copy()'.",
+      "code_example": "// Data Classes in Kotlin\ndata class User(val name: String, val age: Int)\n\nfun main() {\n    val user1 = User(\"John\", 30)\n    val user2 = User(\"John\", 30)\n\n    println(user1 == user2) // true, data classes compare content\n}"
+    },
+    {
+      "title": "Type Aliases",
+      "content": "Type aliases in Kotlin allow defining alternative names for existing types. They simplify complex type definitions.",
+      "code_example": "// Type Aliases in Kotlin\ntypealias EmployeeId = String\n\ndata class Employee(val id: EmployeeId, val name: String)\n\nfun main() {\n    val emp1 = Employee(\"E123\", \"Alice\")\n    println(emp1.id)\n}"
+    },
+    {
+      "title": "Sealed Classes",
+      "content": "Sealed classes are used to represent restricted class hierarchies. They are used with 'when' expressions to cover all possible cases.",
+      "code_example": "// Sealed Classes in Kotlin\nsealed class Result\n\ndata class Success(val message: String) : Result()\ndata class Error(val message: String, val errorCode: Int) : Result()\n\nfun handleResult(result: Result) {\n    when (result) {\n        is Success -> println(\"Success: ${result.message}\")\n        is Error -> println(\"Error: ${result.message}, Code: ${result.errorCode}\")\n    }\n}"
+    },
+    {
+      "title": "Companion Objects",
+      "content": "Companion objects in Kotlin are used to define static members of a class. They are declared using the 'companion' keyword.",
+      "code_example": "// Companion Objects in Kotlin\nclass MyClass {\n    companion object {\n        fun staticMethod() {\n            println(\"Static method called\")\n        }\n    }\n}\n\nfun main() {\n    MyClass.staticMethod()\n}"
+    },
+    {
+      "title": "Inline Functions",
+      "content": "Inline functions in Kotlin are used to optimize higher-order functions. They are declared using the 'inline' keyword.",
+      "code_example": "// Inline Functions in Kotlin\ninline fun measureTimeMillis(block: () -> Unit): Long {\n    val startTime = System.currentTimeMillis()\n    block()\n    return System.currentTimeMillis() - startTime\n}\n\nfun main() {\n    val executionTime = measureTimeMillis {\n        println(\"Executing a block of code\")\n        Thread.sleep(1000)\n    }\n    println(\"Execution time: $executionTime ms\")\n}"
+    },
+    {
+      "title": "Destructuring Declarations",
+      "content": "Destructuring declarations in Kotlin allow extracting multiple components from a data class or a structure into separate variables.",
+      "code_example": "// Destructuring Declarations in Kotlin\ndata class Point(val x: Int, val y: Int)\n\nfun main() {\n    val point = Point(10, 20)\n    val (x, y) = point\n    println(\"x = $x, y = $y\")\n}"
+    },
+    {
+      "title": "Ranges",
+      "content": "Ranges in Kotlin are used to define a range of values. They are created using '..' or 'until' operator.",
+      "code_example": "// Ranges in Kotlin\nfun main() {\n    val numbers = 1..5 // includes 1, 2, 3, 4, 5\n    for (num in numbers) {\n        println(num)\n    }\n\n    val letters = 'a' until 'e' // includes 'a', 'b', 'c', 'd'\n    for (char in letters) {\n        println(char)\n    }\n}"
+    },
+    {
+      "title": "Object Expressions",
+      "content": "Object expressions in Kotlin are used to create anonymous objects that extend a known type or implement interfaces.",
+      "code_example": "// Object Expressions in Kotlin\ninterface Animal {\n    fun makeSound()\n}\n\nfun main() {\n    val dog = object : Animal {\n        override fun makeSound() {\n            println(\"Woof Woof\")\n        }\n    }\n    dog.makeSound()\n}"
+    },
+    {
+      "title": "Property Delegation",
+      "content": "Property delegation in Kotlin allows implementing properties by delegating them to another object. It simplifies code and promotes reusability.",
+      "code_example": "// Property Delegation in Kotlin\nclass Example {\n    var value: String by Delegate()\n}\n\nclass Delegate {\n    operator fun getValue(thisRef: Any?, property: KProperty<*>): String {\n        return \"Delegated value\"\n    }\n}\n\nfun main() {\n    val example = Example()\n    println(example.value)\n}"
+    },
+    {
+      "title": "Late-Initialized Properties",
+      "content": "Late-initialized properties in Kotlin are non-null variables that are initialized after object creation. They are declared using 'lateinit' keyword.",
+      "code_example": "// Late-Initialized Properties in Kotlin\nclass MyClass {\n    lateinit var name: String\n}\n\nfun main() {\n    val obj = MyClass()\n    obj.name = \"John\"\n    println(\"Name: ${obj.name}\")\n}"
+    }
+  ]

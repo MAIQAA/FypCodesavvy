@@ -1,0 +1,187 @@
+ [
+    {
+      "title": "Introduction to Tailwind CSS",
+      "content": "Tailwind CSS is a utility-first CSS framework that enables developers to build custom designs without leaving their HTML. Unlike traditional CSS frameworks that provide pre-designed components, Tailwind CSS offers low-level utility classes for building complex and unique designs with ease. This approach allows for rapid development and a high degree of customization, making it popular among modern web developers who seek to create responsive and maintainable user interfaces. Tailwind CSS's modular and flexible nature, along with its extensive documentation and active community, make it a powerful tool for efficient and scalable front-end development.",
+      "code_example": "/* Tailwind CSS classes example */\n<div class=\"text-center bg-blue-500 text-white p-4\">Hello, Tailwind!</div>"
+    },
+    {
+      "title": "Installing Tailwind CSS",
+      "content": "Tailwind CSS can be installed via npm, yarn, or CDN.",
+      "code_example": "/* Using npm */\nnpm install tailwindcss\n\n/* Using yarn */\nyarn add tailwindcss\n\n/* Using CDN */\n<link href=\"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css\" rel=\"stylesheet\">"
+    },
+    {
+      "title": "Basic Utility Classes",
+      "content": "Tailwind CSS provides utility classes for common CSS properties like margin, padding, and color.",
+      "code_example": "/* Margin and padding example */\n<div class=\"m-4 p-4\">Content with margin and padding</div>"
+    },
+    {
+      "title": "Text Utilities",
+      "content": "Tailwind CSS includes utilities for styling text, such as font size, font weight, and text alignment.",
+      "code_example": "/* Text utilities example */\n<div class=\"text-xl font-bold text-center\">Bold centered text</div>"
+    },
+    {
+      "title": "Background Utilities",
+      "content": "Tailwind CSS provides classes to set background color, background images, and gradients.",
+      "code_example": "/* Background utilities example */\n<div class=\"bg-green-200 p-4\">Light green background</div>"
+    },
+    {
+      "title": "Flexbox Utilities",
+      "content": "Tailwind CSS includes utility classes for flexbox layout, making it easy to create flexible and responsive layouts.",
+      "code_example": "/* Flexbox utilities example */\n<div class=\"flex justify-center items-center h-screen\">\n  <div class=\"p-4 bg-red-500\">Centered box</div>\n</div>"
+    },
+    {
+      "title": "Grid Utilities",
+      "content": "Tailwind CSS provides classes for creating grid layouts with ease.",
+      "code_example": "/* Grid utilities example */\n<div class=\"grid grid-cols-3 gap-4\">\n  <div class=\"bg-blue-500 p-4\">Grid item 1</div>\n  <div class=\"bg-blue-500 p-4\">Grid item 2</div>\n  <div class=\"bg-blue-500 p-4\">Grid item 3</div>\n</div>"
+    },
+    {
+      "title": "Responsive Design",
+      "content": "Tailwind CSS includes responsive design utilities that allow you to apply styles based on the screen size.",
+      "code_example": "/* Responsive design example */\n<div class=\"bg-red-500 sm:bg-green-500 md:bg-blue-500 lg:bg-yellow-500 p-4\">\n  Responsive background color\n</div>"
+    },
+    {
+      "title": "Hover, Focus, and Active States",
+      "content": "Tailwind CSS allows you to apply styles when elements are hovered, focused, or active.",
+      "code_example": "/* Hover, focus, and active states example */\n<button class=\"bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-900 text-white py-2 px-4 rounded\">\n  Interactive button\n</button>"
+    },
+    {
+      "title": "Customizing Tailwind CSS",
+      "content": "Tailwind CSS can be customized to match your design requirements by configuring the tailwind.config.js file.",
+      "code_example": "/* Customizing Tailwind CSS example */\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n        'custom-blue': '#1c92d2',\n        'custom-green': '#f2fcfe',\n      },\n    },\n  },\n  variants: {},\n  plugins: [],\n}"
+    },
+    {
+      "title": "Tailwind CSS Plugins",
+      "content": "Tailwind CSS has a plugin system that allows you to add additional functionalities and custom utilities.",
+      "code_example": "/* Tailwind CSS plugins example */\nconst plugin = require('tailwindcss/plugin')\n\nmodule.exports = {\n  theme: {\n    extend: {},\n  },\n  variants: {},\n  plugins: [\n    plugin(function({ addUtilities }) {\n      const newUtilities = {\n        '.skew-10deg': {\n          transform: 'skewY(-10deg)',\n        },\n        '.skew-15deg': {\n          transform: 'skewY(-15deg)',\n        },\n      }\n      addUtilities(newUtilities)\n    })\n  ],\n}"
+    },
+    {
+      "title": "Typography",
+      "content": "Tailwind CSS includes a typography plugin for styling prose content like articles, blog posts, and documentation.",
+      "code_example": "/* Typography plugin example */\n// Install the plugin\n// npm install @tailwindcss/typography\n\n// Add to tailwind.config.js\nmodule.exports = {\n  plugins: [\n    require('@tailwindcss/typography'),\n  ],\n}\n\n/* Apply the prose class to your content */\n<article class=\"prose lg:prose-xl\">\n  <h1>Typography Example</h1>\n  <p>This is an example of styled text using Tailwind CSS typography plugin.</p>\n</article>"
+    },
+    {
+      "title": "Form Styles",
+      "content": "Tailwind CSS provides basic form styling utilities, and additional form styles can be added using the @tailwindcss/forms plugin.",
+      "code_example": "/* Form styles example */\n// Install the plugin\n// npm install @tailwindcss/forms\n\n// Add to tailwind.config.js\nmodule.exports = {\n  plugins: [\n    require('@tailwindcss/forms'),\n  ],\n}\n\n/* Use the form styles in your HTML */\n<form class=\"space-y-4\">\n  <input type=\"text\" class=\"form-input mt-1 block w-full\" placeholder=\"Enter your name\">\n  <select class=\"form-select mt-1 block w-full\">\n    <option>Option 1</option>\n    <option>Option 2</option>\n  </select>\n  <button type=\"submit\" class=\"bg-blue-500 text-white py-2 px-4 rounded\">Submit</button>\n</form>"
+    },
+    {
+      "title": "Tailwind CSS Layouts",
+      "content": "Creating responsive and flexible layouts using Tailwind CSS utility classes.",
+      "code_example": "/* Layout example using flexbox */\n<div class=\"flex flex-col md:flex-row\">\n  <div class=\"flex-1 bg-blue-500 p-4\">Column 1</div>\n  <div class=\"flex-1 bg-green-500 p-4\">Column 2</div>\n</div>"
+    },
+    {
+      "title": "Animations",
+      "content": "Tailwind CSS provides utilities for adding animations and transitions to elements.",
+      "code_example": "/* Animation example */\n<div class=\"transition duration-500 ease-in-out transform hover:scale-110\">\n  Hover me to scale up\n</div>"
+    },
+    {
+      "title": "Shadow Utilities",
+      "content": "Tailwind CSS includes utilities for adding box shadows to elements.",
+      "code_example": "/* Shadow utilities example */\n<div class=\"shadow-lg p-4 bg-white\">\n  Large shadow\n</div>"
+    },
+    {
+      "title": "Spacing Utilities",
+      "content": "Tailwind CSS provides classes for margin, padding, and space between elements.",
+      "code_example": "/* Spacing utilities example */\n<div class=\"space-y-4\">\n  <div class=\"p-4 bg-gray-200\">Item 1</div>\n  <div class=\"p-4 bg-gray-200\">Item 2</div>\n  <div class=\"p-4 bg-gray-200\">Item 3</div>\n</div>"
+    },
+    {
+      "title": "Border Utilities",
+      "content": "Tailwind CSS includes utilities for adding borders to elements, including border width, color, and radius.",
+      "code_example": "/* Border utilities example */\n<div class=\"border-2 border-blue-500 rounded-lg p-4\">\n  Element with border\n</div>"
+    },
+    {
+      "title": "Container Class",
+      "content": "Tailwind CSS provides a container class to center and constrain content.",
+      "code_example": "/* Container class example */\n<div class=\"container mx-auto p-4\">\n  Centered container\n</div>"
+    },
+    {
+      "title": "Visibility Utilities",
+      "content": "Tailwind CSS includes utilities for controlling the visibility of elements.",
+      "code_example": "/* Visibility utilities example */\n<div class=\"visible p-4 bg-red-500\">Visible</div>\n<div class=\"invisible p-4 bg-green-500\">Invisible</div>"
+    },
+    {
+      "title": "Position Utilities",
+      "content": "Tailwind CSS provides utilities for setting the position of elements.",
+      "code_example": "/* Position utilities example */\n<div class=\"relative\">\n  <div class=\"absolute top-0 left-0 p-4 bg-yellow-500\">\n    Absolute positioned box\n  </div>\n</div>"
+    },
+    {
+      "title": "Width and Height Utilities",
+      "content": "Tailwind CSS includes utilities for setting the width and height of elements.",
+      "code_example": "/* Width and height utilities example */\n<div class=\"w-1/2 h-64 bg-purple-500\">\n  Width 50% and Height 64\n</div>"
+    },
+    {
+      "title": "Z-Index Utilities",
+      "content": "Tailwind CSS provides utilities for controlling the z-index of elements.",
+      "code_example": "/* Z-index utilities example */\n<div class=\"relative z-10 p-4 bg-pink-500\">\n  Higher z-index\n</div>\n<div class=\"relative z-0 p-4 bg-gray-500\">\n  Lower z-index\n</div>"
+    },
+    {
+      "title": "Transform Utilities",
+      "content": "Tailwind CSS includes utilities for applying CSS transforms like scale, rotate, and translate.",
+      "code_example": "/* Transform utilities example */\n<div class=\"transform scale-75 rotate-45 p-4 bg-orange-500\">\n  Transformed element\n</div>"
+    },
+    {
+      "title": "Transition Utilities",
+      "content": "Tailwind CSS provides utilities for adding CSS transitions to elements.",
+      "code_example": "/* Transition utilities example */\n<div class=\"transition duration-300 ease-in-out bg-red-500 hover:bg-red-700 p-4\">\n  Hover to change background color\n</div>"
+    },
+    {
+      "title": "Aspect Ratio",
+      "content": "Tailwind CSS includes an aspect-ratio plugin to control the aspect ratio of elements.",
+      "code_example": "/* Aspect ratio example */\n// Install the plugin\n// npm install @tailwindcss/aspect-ratio\n\n// Add to tailwind.config.js\nmodule.exports = {\n  plugins: [\n    require('@tailwindcss/aspect-ratio'),\n  ],\n}\n\n/* Use the aspect-ratio class */\n<div class=\"aspect-w-16 aspect-h-9\">\n  <iframe src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" frameborder=\"0\" allowfullscreen></iframe>\n</div>"
+    },
+    {
+      "title": "Opacity Utilities",
+      "content": "Tailwind CSS provides utilities for setting the opacity of elements.",
+      "code_example": "/* Opacity utilities example */\n<div class=\"opacity-50 p-4 bg-green-500\">\n  50% opacity\n</div>"
+    },
+    {
+      "title": "Ring Utilities",
+      "content": "Tailwind CSS includes utilities for adding outline rings to elements.",
+      "code_example": "/* Ring utilities example */\n<div class=\"ring-4 ring-blue-500 p-4\">\n  Element with ring\n</div>"
+    },
+    {
+      "title": "Divide Utilities",
+      "content": "Tailwind CSS provides utilities for adding divider lines between child elements.",
+      "code_example": "/* Divide utilities example */\n<div class=\"divide-y divide-gray-500\">\n  <div class=\"p-4\">Item 1</div>\n  <div class=\"p-4\">Item 2</div>\n</div>"
+    },
+    {
+      "title": "Container Queries",
+      "content": "Tailwind CSS includes support for container queries, allowing you to apply styles based on the container's size.",
+      "code_example": "/* Container queries example */\n// Install the plugin\n// npm install @tailwindcss/container-queries\n\n// Add to tailwind.config.js\nmodule.exports = {\n  plugins: [\n    require('@tailwindcss/container-queries'),\n  ],\n}\n\n/* Use container query classes */\n<div class=\"container\">\n  <div class=\"cq-aspect-ratio\">\n    Container query example\n  </div>\n</div>"
+    },
+    {
+      "title": "Typography Utilities",
+      "content": "Tailwind CSS provides a variety of utilities for styling text, such as text color, alignment, and decoration.",
+      "code_example": "/* Typography utilities example */\n<div class=\"text-2xl text-center underline text-gray-700\">\n  Styled text\n</div>"
+    },
+    {
+      "title": "Color Utilities",
+      "content": "Tailwind CSS includes a comprehensive palette of color utilities for background, text, border, and more.",
+      "code_example": "/* Color utilities example */\n<div class=\"bg-blue-500 text-white p-4\">\n  Background and text color\n</div>"
+    },
+    {
+      "title": "Table Layout",
+      "content": "Tailwind CSS provides utilities for styling tables and table elements.",
+      "code_example": "/* Table layout example */\n<table class=\"min-w-full divide-y divide-gray-200\">\n  <thead class=\"bg-gray-50\">\n    <tr>\n      <th class=\"px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider\">Column 1</th>\n      <th class=\"px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider\">Column 2</th>\n    </tr>\n  </thead>\n  <tbody class=\"bg-white divide-y divide-gray-200\">\n    <tr>\n      <td class=\"px-6 py-4\">Row 1, Cell 1</td>\n      <td class=\"px-6 py-4\">Row 1, Cell 2</td>\n    </tr>\n    <tr>\n      <td class=\"px-6 py-4\">Row 2, Cell 1</td>\n      <td class=\"px-6 py-4\">Row 2, Cell 2</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "title": "Background Gradients",
+      "content": "Tailwind CSS provides utilities for creating gradient backgrounds.",
+      "code_example": "/* Background gradient example */\n<div class=\"bg-gradient-to-r from-green-400 to-blue-500 p-4\">\n  Gradient background\n</div>"
+    },
+    {
+      "title": "Responsive Container",
+      "content": "Tailwind CSS includes a responsive container class to constrain and center content with responsive max-widths.",
+      "code_example": "/* Responsive container example */\n<div class=\"container mx-auto p-4\">\n  Responsive container\n</div>"
+    },
+    {
+      "title": "Divide Color Utilities",
+      "content": "Tailwind CSS provides utilities to control the color of divider lines between child elements.",
+      "code_example": "/* Divide color example */\n<div class=\"divide-y divide-red-500\">\n  <div class=\"p-4\">Item 1</div>\n  <div class=\"p-4\">Item 2</div>\n</div>"
+    },
+    {
+      "title": "Interactivity Utilities",
+      "content": "Tailwind CSS includes utilities for managing element interactivity, such as pointer events and user select.",
+      "code_example": "/* Interactivity utilities example */\n<div class=\"pointer-events-none p-4 bg-gray-300\">\n  Non-interactive element\n</div>"
+    }
+  ]

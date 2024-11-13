@@ -1,0 +1,137 @@
+ [
+    {
+      "title": "Introduction to Go",
+      "content": "Go is a statically typed, compiled language designed by Google. It is known for its simplicity and performance. It has garbage collection, limited structural typing, and CSP-style concurrency.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
+    },
+    {
+      "title": "Installing Go",
+      "content": "Go can be installed from the official website. Download the installer for your OS and follow the instructions.",
+      "code_example": "### On macOS\nbrew install go\n\n### On Ubuntu\nsudo apt update\nsudo apt install golang-go\n\n### On Windows\n# Download and run the installer from https://golang.org/dl/"
+    },
+    {
+      "title": "Setting Up a Go Workspace",
+      "content": "Go programs are organized into packages, and packages are stored in a workspace. The workspace directory contains three directories at its root: src, pkg, and bin.",
+      "code_example": "mkdir -p ~/go/{bin,pkg,src}\nexport GOPATH=$HOME/go\nexport PATH=$PATH:$GOPATH/bin\n\n# Add the above export commands to your shell profile (e.g., ~/.bashrc or ~/.zshrc)"
+    },
+    {
+      "title": "Go Modules",
+      "content": "Go modules are used to manage dependencies in Go. A module is a collection of related Go packages stored in a file tree with a go.mod file at its root.",
+      "code_example": "### Initialize a new module\ncd myproject\ngo mod init myproject\n\n### Adding a dependency\n# Add a dependency to the module and update go.mod\n# The following will add the example.com/repo module\n# at the version tagged v1.0.0\n\ngo get example.com/repo@v1.0.0"
+    },
+    {
+      "title": "Variables in Go",
+      "content": "Variables in Go are explicitly declared and used by the compiler to e.g., check type-correctness of function calls.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var a string = \"Hello\"\n    var b, c int = 1, 2\n    fmt.Println(a, b, c)\n\n    // Type inference\n    d := 3\n    fmt.Println(d)\n}"
+    },
+    {
+      "title": "Functions in Go",
+      "content": "Functions are central in Go. They are used for everything from simple calculations to organizing large-scale applications.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc add(a int, b int) int {\n    return a + b\n}\n\nfunc main() {\n    sum := add(1, 2)\n    fmt.Println(\"Sum:\", sum)\n}"
+    },
+    {
+      "title": "Conditional Statements",
+      "content": "Go supports standard conditional statements including if-else and switch statements.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    x := 42\n\n    if x > 50 {\n        fmt.Println(\"x is greater than 50\")\n    } else {\n        fmt.Println(\"x is 50 or less\")\n    }\n\n    switch x {\n    case 40:\n        fmt.Println(\"x is 40\")\n    case 42:\n        fmt.Println(\"x is 42\")\n    default:\n        fmt.Println(\"x is something else\")\n    }\n}"
+    },
+    {
+      "title": "Loops in Go",
+      "content": "Go only has one looping construct: the for loop. However, it has several forms: the traditional for loop, the range loop, and an infinite loop.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // Traditional for loop\n    for i := 0; i < 5; i++ {\n        fmt.Println(i)\n    }\n\n    // Range loop\n    arr := []int{1, 2, 3, 4, 5}\n    for i, v := range arr {\n        fmt.Println(i, v)\n    }\n\n    // Infinite loop\n    sum := 0\n    for {\n        sum++\n        if sum >= 5 {\n            break\n        }\n    }\n    fmt.Println(\"Sum:\", sum)\n}"
+    },
+    {
+      "title": "Arrays and Slices",
+      "content": "Arrays have a fixed size in Go, while slices are dynamically-sized, flexible views into the elements of an array.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // Arrays\n    var arr [5]int\n    arr[0] = 1\n    fmt.Println(arr)\n\n    // Slices\n    slc := []int{1, 2, 3, 4, 5}\n    fmt.Println(slc)\n\n    // Slicing an array\n    subSlc := arr[1:3]\n    fmt.Println(subSlc)\n\n    // Append to a slice\n    slc = append(slc, 6)\n    fmt.Println(slc)\n}"
+    },
+    {
+      "title": "Maps in Go",
+      "content": "Maps are Go's built-in associative data type (sometimes called hashes or dicts in other languages).",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // Declare and initialize a map\n    m := make(map[string]int)\n    m[\"a\"] = 1\n    m[\"b\"] = 2\n    fmt.Println(m)\n\n    // Another way to initialize a map\n    n := map[string]int{\"foo\": 1, \"bar\": 2}\n    fmt.Println(n)\n\n    // Check if a key exists\n    value, exists := m[\"a\"]\n    if exists {\n        fmt.Println(\"Value:\", value)\n    }\n\n    // Delete a key\n    delete(m, \"a\")\n    fmt.Println(m)\n}"
+    },
+    {
+      "title": "Structs in Go",
+      "content": "Structs are custom data types that allow you to group related fields together.",
+      "code_example": "package main\n\nimport \"fmt\"\n\n// Define a struct\ntype Person struct {\n    Name string\n    Age  int\n}\n\nfunc main() {\n    // Create a new struct\n    p := Person{Name: \"John\", Age: 30}\n    fmt.Println(p)\n\n    // Access struct fields\n    fmt.Println(p.Name)\n    fmt.Println(p.Age)\n}"
+    },
+    {
+      "title": "Methods in Go",
+      "content": "Methods are functions that are associated with a particular type. They are defined with a receiver argument.",
+      "code_example": "package main\n\nimport \"fmt\"\n\n// Define a struct\ntype Rectangle struct {\n    Width  float64\n    Height float64\n}\n\n// Define a method for Rectangle\nfunc (r Rectangle) Area() float64 {\n    return r.Width * r.Height\n}\n\nfunc main() {\n    r := Rectangle{Width: 5, Height: 10}\n    fmt.Println(\"Area:\", r.Area())\n}"
+    },
+    {
+      "title": "Interfaces in Go",
+      "content": "Interfaces are a way to define the behavior of an object. If a type implements all the methods of an interface, it is said to implement that interface.",
+      "code_example": "package main\n\nimport \"fmt\"\n\n// Define an interface\ntype Shape interface {\n    Area() float64\n}\n\n// Define a struct\ntype Circle struct {\n    Radius float64\n}\n\n// Implement the Shape interface\nfunc (c Circle) Area() float64 {\n    return 3.14 * c.Radius * c.Radius\n}\n\nfunc main() {\n    var s Shape = Circle{Radius: 5}\n    fmt.Println(\"Area:\", s.Area())\n}"
+    },
+    {
+      "title": "Concurrency in Go",
+      "content": "Go has rich support for concurrency using goroutines and channels. Goroutines are lightweight threads managed by the Go runtime.",
+      "code_example": "package main\n\nimport (\n    \"fmt\"\n    \"time\"\n)\n\nfunc say(s string) {\n    for i := 0; i < 5; i++ {\n        time.Sleep(100 * time.Millisecond)\n        fmt.Println(s)\n    }\n}\n\nfunc main() {\n    go say(\"world\")\n    say(\"hello\")\n}"
+    },
+    {
+      "title": "Channels in Go",
+      "content": "Channels are a way for goroutines to communicate with each other and synchronize their execution.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc sum(s []int, c chan int) {\n    sum := 0\n    for _, v := range s {\n        sum += v\n    }\n    c <- sum // send sum to c\n}\n\nfunc main() {\n    s := []int{7, 2, 8, -9, 4, 0}\n\n    c := make(chan int)\n    go sum(s[:len(s)/2], c)\n    go sum(s[len(s)/2:], c)\n    x, y := <-c, <-c // receive from c\n\n    fmt.Println(x, y, x+y)\n}"
+    },
+    {
+      "title": "Error Handling in Go",
+      "content": "Go uses a simple, explicit error-handling model based on returning error values.",
+      "code_example": "package main\n\nimport (\n    \"errors\"\n    \"fmt\"\n)\n\nfunc divide(a, b float64) (float64, error) {\n    if b == 0 {\n        return 0, errors.New(\"cannot divide by zero\")\n    }\n    return a / b, nil\n}\n\nfunc main() {\n    result, err := divide(4, 0)\n    if err != nil {\n        fmt.Println(\"Error:\", err)\n    } else {\n        fmt.Println(\"Result:\", result)\n    }\n}"
+    },
+    {
+      "title": "Panic and Recover",
+      "content": "Go has a built-in mechanism for handling unexpected errors using panic and recover.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc mayPanic() {\n    defer func() {\n        if r := recover(); r != nil {\n            fmt.Println(\"Recovered from\", r)\n        }\n    }()\n    panic(\"something went wrong\")\n}\n\nfunc main() {\n    mayPanic()\n    fmt.Println(\"After mayPanic\")\n}"
+    },
+    {
+      "title": "File I/O",
+      "content": "Go provides support for file operations through the os and io packages.",
+      "code_example": "package main\n\nimport (\n    \"fmt\"\n    \"io/ioutil\"\n    \"os\"\n)\n\nfunc main() {\n    // Write to a file\n    content := []byte(\"Hello, Gophers!\")\n    err := ioutil.WriteFile(\"example.txt\", content, 0644)\n    if err != nil {\n        fmt.Println(err)\n    }\n\n    // Read from a file\n    data, err := ioutil.ReadFile(\"example.txt\")\n    if err != nil {\n        fmt.Println(err)\n    }\n    fmt.Println(string(data))\n}"
+    },
+    {
+      "title": "HTTP Servers",
+      "content": "Go's net/http package makes it easy to build web servers.",
+      "code_example": "package main\n\nimport (\n    \"fmt\"\n    \"net/http\"\n)\n\nfunc handler(w http.ResponseWriter, r *http.Request) {\n    fmt.Fprintf(w, \"Hello, %s!\", r.URL.Path[1:])\n}\n\nfunc main() {\n    http.HandleFunc(\"/\", handler)\n    http.ListenAndServe(\":8080\", nil)\n}"
+    },
+    {
+      "title": "JSON Handling",
+      "content": "Go's encoding/json package allows you to encode and decode JSON data.",
+      "code_example": "package main\n\nimport (\n    \"encoding/json\"\n    \"fmt\"\n)\n\n// Define a struct\ntype Person struct {\n    Name string `json:\"name\"`\n    Age  int    `json:\"age\"`\n}\n\nfunc main() {\n    // Encode to JSON\n    p := Person{Name: \"John\", Age: 30}\n    jsonData, err := json.Marshal(p)\n    if err != nil {\n        fmt.Println(err)\n    }\n    fmt.Println(string(jsonData))\n\n    // Decode from JSON\n    var p2 Person\n    err = json.Unmarshal(jsonData, &p2)\n    if err != nil {\n        fmt.Println(err)\n    }\n    fmt.Println(p2)\n}"
+    },
+    {
+      "title": "Unit Testing",
+      "content": "Go includes a testing package to support unit tests. Test files end with _test.go, and functions start with Test.",
+      "code_example": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n    if add(1, 2) != 3 {\n        t.Error(\"Expected 1 + 2 to equal 3\")\n    }\n}\n\nfunc add(a, b int) int {\n    return a + b\n}"
+    },
+    {
+      "title": "Benchmark Testing",
+      "content": "Go provides built-in support for benchmarking code using the testing package.",
+      "code_example": "package main\n\nimport (\n    \"testing\"\n)\n\nfunc BenchmarkAdd(b *testing.B) {\n    for i := 0; i < b.N; i++ {\n        add(1, 2)\n    }\n}\n\nfunc add(a, b int) int {\n    return a + b\n}"
+    },
+    {
+      "title": "Templates in Go",
+      "content": "Go's text/template package provides data-driven templates for generating textual output.",
+      "code_example": "package main\n\nimport (\n    \"os\"\n    \"text/template\"\n)\n\nfunc main() {\n    tmpl, err := template.New(\"test\").Parse(\"Hello, {{.}}!\")\n    if err != nil {\n        panic(err)\n    }\n    err = tmpl.Execute(os.Stdout, \"Gopher\")\n    if err != nil {\n        panic(err)\n    }\n}"
+    },
+    {
+      "title": "Working with Databases",
+      "content": "Go's database/sql package provides a generic interface around SQL databases.",
+      "code_example": "package main\n\nimport (\n    \"database/sql\"\n    \"fmt\"\n    _ \"github.com/go-sql-driver/mysql\"\n)\n\nfunc main() {\n    db, err := sql.Open(\"mysql\", \"user:password@/dbname\")\n    if err != nil {\n        panic(err)\n    }\n    defer db.Close()\n\n    var name string\n    err = db.QueryRow(\"SELECT name FROM users WHERE id = ?\", 1).Scan(&name)\n    if err != nil {\n        panic(err)\n    }\n    fmt.Println(name)\n}"
+    },
+    {
+      "title": "Environment Variables",
+      "content": "Go can read environment variables using the os package.",
+      "code_example": "package main\n\nimport (\n    \"fmt\"\n    \"os\"\n)\n\nfunc main() {\n    // Set an environment variable\n    os.Setenv(\"MY_ENV\", \"123\")\n\n    // Get an environment variable\n    value := os.Getenv(\"MY_ENV\")\n    fmt.Println(value)\n}"
+    },
+    {
+      "title": "Reading and Writing Files",
+      "content": "Go provides easy ways to read from and write to files.",
+      "code_example": "package main\n\nimport (\n    \"fmt\"\n    \"io/ioutil\"\n    \"os\"\n)\n\nfunc main() {\n    // Write to a file\n    err := ioutil.WriteFile(\"example.txt\", []byte(\"Hello, World!\"), 0644)\n    if err != nil {\n        fmt.Println(err)\n    }\n\n    // Read from a file\n    data, err := ioutil.ReadFile(\"example.txt\")\n    if err != nil {\n        fmt.Println(err)\n    }\n    fmt.Println(string(data))\n\n    // Remove the file\n    err = os.Remove(\"example.txt\")\n    if err != nil {\n        fmt.Println(err)\n    }\n}"
+    },
+    {
+      "title": "Logging in Go",
+      "content": "Go's log package provides simple logging capabilities.",
+      "code_example": "package main\n\nimport (\n    \"log\"\n    \"os\"\n)\n\nfunc main() {\n    file, err := os.OpenFile(\"app.log\", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)\n    if err != nil {\n        log.Fatal(err)\n    }\n    log.SetOutput(file)\n    log.Println(\"This is a log message\")\n}"
+    }
+  ]

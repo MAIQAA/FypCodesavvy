@@ -1,0 +1,197 @@
+[
+    {
+      "title": "Introduction to Bootstrap 5",
+      "content": "Bootstrap is a popular front-end framework that simplifies the development of responsive and mobile-first websites and web applications. Originally created by developers at Twitter, Bootstrap offers a comprehensive set of tools, including HTML and CSS-based design templates, along with JavaScript extensions, to facilitate efficient and consistent web design. It provides pre-styled components like buttons, forms, navigation bars, and typography, allowing developers to build aesthetically pleasing and functional interfaces with minimal effort. Bootstrap's grid system enables responsive layout design, ensuring seamless adaptation across various screen sizes and devices. Overall, Bootstrap is widely favored for its ease of use, extensive documentation, and robust community support, making it an indispensable tool for both beginners and experienced developers alike.",
+      "code_example": "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css' rel='stylesheet'>"
+    },
+    {
+      "title": "Container",
+      "content": "Containers are the most basic layout element in Bootstrap, used to wrap site contents.",
+      "code_example": "<div class='container'>Your content here</div>"
+    },
+    {
+      "title": "Grid System",
+      "content": "The Bootstrap grid system uses a series of containers, rows, and columns to layout and align content.",
+      "code_example": "<div class='container'><div class='row'><div class='col'>Column</div></div></div>"
+    },
+    {
+      "title": "Typography",
+      "content": "Bootstrap provides basic styling for typography, including headings, paragraphs, and more.",
+      "code_example": "<h1 class='display-1'>Heading 1</h1><p class='lead'>Lead paragraph</p>"
+    },
+    {
+      "title": "Colors",
+      "content": "Bootstrap includes a wide range of color utilities for text, backgrounds, and more.",
+      "code_example": "<div class='text-primary'>Primary text</div><div class='bg-success'>Success background</div>"
+    },
+    {
+      "title": "Buttons",
+      "content": "Buttons in Bootstrap are customizable and come in several predefined styles.",
+      "code_example": "<button class='btn btn-primary'>Primary Button</button>"
+    },
+    {
+      "title": "Forms",
+      "content": "Bootstrap provides a variety of form controls and layout options for creating forms.",
+      "code_example": "<form><div class='mb-3'><label for='exampleInputEmail1' class='form-label'>Email address</label><input type='email' class='form-control' id='exampleInputEmail1'></div></form>"
+    },
+    {
+      "title": "Alerts",
+      "content": "Use Bootstrap alerts to provide contextual feedback messages.",
+      "code_example": "<div class='alert alert-warning' role='alert'>This is a warning alert</div>"
+    },
+    {
+      "title": "Cards",
+      "content": "Cards are a flexible and extensible content container with multiple variants and options.",
+      "code_example": "<div class='card'><div class='card-body'>This is some text within a card body.</div></div>"
+    },
+    {
+      "title": "Images",
+      "content": "Bootstrap includes styles for images to make them responsive and properly aligned.",
+      "code_example": "<img src='...' class='img-fluid' alt='Responsive image'>"
+    },
+    {
+      "title": "Tables",
+      "content": "Bootstrap provides styling options for tables to make them more appealing.",
+      "code_example": "<table class='table'><thead><tr><th scope='col'>#</th><th scope='col'>First</th><th scope='col'>Last</th><th scope='col'>Handle</th></tr></thead><tbody><tr><th scope='row'>1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr></tbody></table>"
+    },
+    {
+      "title": "Navbar",
+      "content": "The navbar is a responsive and flexible navigation bar that can include branding, navigation, and more.",
+      "code_example": "<nav class='navbar navbar-expand-lg navbar-light bg-light'><a class='navbar-brand' href='#'>Navbar</a></nav>"
+    },
+    {
+      "title": "Modal",
+      "content": "Modals are streamlined, but flexible dialog prompts with the minimum required functionality and smart defaults.",
+      "code_example": "<div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><h5 class='modal-title' id='exampleModalLabel'>Modal title</h5><button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button></div><div class='modal-body'>...</div><div class='modal-footer'><button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button><button type='button' class='btn btn-primary'>Save changes</button></div></div></div></div>"
+    },
+    {
+      "title": "Dropdowns",
+      "content": "Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.",
+      "code_example": "<div class='dropdown'><button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>Dropdown button</button><ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'><li><a class='dropdown-item' href='#'>Action</a></li><li><a class='dropdown-item' href='#'>Another action</a></li><li><a class='dropdown-item' href='#'>Something else here</a></li></ul></div>"
+    },
+    {
+      "title": "Pagination",
+      "content": "Bootstrap offers various options to create pagination controls.",
+      "code_example": "<nav aria-label='Page navigation example'><ul class='pagination'><li class='page-item'><a class='page-link' href='#'>Previous</a></li><li class='page-item'><a class='page-link' href='#'>1</a></li><li class='page-item'><a class='page-link' href='#'>2</a></li><li class='page-item'><a class='page-link' href='#'>3</a></li><li class='page-item'><a class='page-link' href='#'>Next</a></li></ul></nav>"
+    },
+    {
+      "title": "Tooltips",
+      "content": "Tooltips provide brief, informative messages that appear when a user interacts with an element.",
+      "code_example": "<button type='button' class='btn btn-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top'>Tooltip on top</button>"
+    },
+    {
+      "title": "Spinners",
+      "content": "Bootstrap spinners can be used to show the loading state in your projects.",
+      "code_example": "<div class='spinner-border' role='status'><span class='visually-hidden'>Loading...</span></div>"
+    },
+    {
+      "title": "Carousel",
+      "content": "Carousels are used to create slideshows for cycling through elements.",
+      "code_example": "<div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'><div class='carousel-indicators'><button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button><button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button><button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button></div><div class='carousel-inner'><div class='carousel-item active'><img src='...' class='d-block w-100' alt='...'></div><div class='carousel-item'><img src='...' class='d-block w-100' alt='...'></div><div class='carousel-item'><img src='...' class='d-block w-100' alt='...'></div></div><button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'><span class='carousel-control-prev-icon' aria-hidden='true'></span><span class='visually-hidden'>Previous</span></button><button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'><span class='carousel-control-next-icon' aria-hidden='true'></span><span class='visually-hidden'>Next</span></button></div>"
+    },
+    {
+      "title": "Collapse",
+      "content": "Collapse is used to toggle the visibility of content.",
+      "code_example": "<p><a class='btn btn-primary' data-bs-toggle='collapse' href='#collapseExample' role='button' aria-expanded='false' aria-controls='collapseExample'>Link with href</a><button class='btn btn-primary' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>Button with data-bs-target</button></p><div class='collapse' id='collapseExample'><div class='card card-body'>Some placeholder content for the collapse component.</div></div>"
+    },
+    {
+      "title": "Accordions",
+      "content": "Accordions are used to toggle between showing and hiding content.",
+      "code_example": "<div class='accordion' id='accordionExample'><div class='accordion-item'><h2 class='accordion-header' id='headingOne'><button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>Accordion Item #1</button></h2><div id='collapseOne' class='accordion-collapse collapse show' aria-labelledby='headingOne' data-bs-parent='#accordionExample'><div class='accordion-body'>Some placeholder content for the first accordion panel.</div></div></div><div class='accordion-item'><h2 class='accordion-header' id='headingTwo'><button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>Accordion Item #2</button></h2><div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'><div class='accordion-body'>Some placeholder content for the second accordion panel.</div></div></div><div class='accordion-item'><h2 class='accordion-header' id='headingThree'><button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree'>Accordion Item #3</button></h2><div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'><div class='accordion-body'>Some placeholder content for the third accordion panel.</div></div></div></div>"
+    },
+    {
+      "title": "Badges",
+      "content": "Badges are small count and labeling components.",
+      "code_example": "<span class='badge bg-primary'>Primary</span><span class='badge bg-secondary'>Secondary</span><span class='badge bg-success'>Success</span>"
+    },
+    {
+      "title": "Breadcrumb",
+      "content": "Breadcrumbs are used to indicate the current page’s location within a navigational hierarchy.",
+      "code_example": "<nav aria-label='breadcrumb'><ol class='breadcrumb'><li class='breadcrumb-item'><a href='#'>Home</a></li><li class='breadcrumb-item'><a href='#'>Library</a></li><li class='breadcrumb-item active' aria-current='page'>Data</li></ol></nav>"
+    },
+    {
+      "title": "List Group",
+      "content": "List groups are flexible and powerful components for displaying a series of content.",
+      "code_example": "<ul class='list-group'><li class='list-group-item'>Cras justo odio</li><li class='list-group-item'>Dapibus ac facilisis in</li><li class='list-group-item'>Morbi leo risus</li></ul>"
+    },
+    {
+      "title": "Media Object",
+      "content": "The media object helps build complex and repetitive components where some media is positioned alongside content.",
+      "code_example": "<div class='media'><img src='...' class='mr-3' alt='...'><div class='media-body'><h5 class='mt-0'>Media heading</h5>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</div></div>"
+    },
+    {
+      "title": "Progress",
+      "content": "Progress bars are used to show the progress of a task.",
+      "code_example": "<div class='progress'><div class='progress-bar' role='progressbar' style='width: 25%;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div></div>"
+    },
+    {
+      "title": "Scrollspy",
+      "content": "Scrollspy allows you to automatically update links in a navigation list based on scroll position.",
+      "code_example": "<nav id='navbar-example2' class='navbar navbar-light bg-light px-3'><a class='navbar-brand' href='#'>Navbar</a><ul class='nav nav-pills'><li class='nav-item'><a class='nav-link' href='#scrollspyHeading1'>First</a></li><li class='nav-item'><a class='nav-link' href='#scrollspyHeading2'>Second</a></li><li class='nav-item'><a class='nav-link' href='#scrollspyHeading3'>Third</a></li></ul></nav><div data-bs-spy='scroll' data-bs-target='#navbar-example2' data-bs-offset='0' class='scrollspy-example' tabindex='0'><h4 id='scrollspyHeading1'>First heading</h4><p>...</p><h4 id='scrollspyHeading2'>Second heading</h4><p>...</p><h4 id='scrollspyHeading3'>Third heading</h4><p>...</p></div>"
+    },
+    {
+      "title": "Toasts",
+      "content": "Toasts are used to show brief alerts or notifications.",
+      "code_example": "<div class='toast' role='alert' aria-live='assertive' aria-atomic='true'><div class='toast-header'><img src='...' class='rounded me-2' alt='...'><strong class='me-auto'>Bootstrap</strong><small>11 mins ago</small><button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button></div><div class='toast-body'>Hello, world! This is a toast message.</div></div>"
+    },
+    {
+      "title": "Utilities",
+      "content": "Bootstrap provides various utility classes for spacing, text alignment, and more.",
+      "code_example": "<div class='text-center'>Centered text</div><div class='mt-5'>Margin top 5</div>"
+    },
+    {
+      "title": "Flexbox",
+      "content": "Bootstrap uses Flexbox for its grid system and various layout utilities.",
+      "code_example": "<div class='d-flex justify-content-center'>Centered content</div>"
+    },
+    {
+      "title": "Sass",
+      "content": "Bootstrap is built with Sass, a CSS preprocessor that adds special features such as variables and nested rules.",
+      "code_example": "$theme-colors: (primary: #007bff, secondary: #6c757d, success: #28a745, info: #17a2b8, warning: #ffc107, danger: #dc3545, light: #f8f9fa, dark: #343a40);"
+    },
+    {
+      "title": "Reboot",
+      "content": "Reboot is a collection of element-specific CSS changes in Bootstrap.",
+      "code_example": "html { line-height: 1.15; -webkit-text-size-adjust: 100%; } body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529; text-align: left; background-color: #fff; }"
+    },
+    {
+      "title": "Icons",
+      "content": "Bootstrap Icons are an extensive library of icons that can be used with Bootstrap projects.",
+      "code_example": "<i class='bi bi-alarm'></i> <i class='bi bi-bag'></i>"
+    },
+    {
+      "title": "RTL Support",
+      "content": "Bootstrap 5 includes built-in support for right-to-left (RTL) languages.",
+      "code_example": "<html dir='rtl'><head><link href='bootstrap-rtl.min.css' rel='stylesheet'></head><body>...</body></html>"
+    },
+    {
+      "title": "Spinner",
+      "content": "Spinners can be used to show the loading state in your projects.",
+      "codeExamples": "<div class='spinner-border text-primary' role='status'><span class='visually-hidden'>Loading...</span></div>"
+    },
+    {
+      "title": "Utilities: Borders",
+      "content": "Bootstrap provides utility classes for adding borders to elements.",
+      "codeExamples": "<div class='border border-primary'>Border utility</div>"
+    },
+    {
+      "title": "Utilities: Shadows",
+      "content": "Utility classes for adding shadows to elements are available in Bootstrap.",
+      "codeExamples": "<div class='shadow-sm'>Shadow utility</div>"
+    },
+    {
+      "title": "Dropdowns: Navbar Dropdowns",
+      "content": "Dropdowns in the navbar can be created using Bootstrap's dropdown component.",
+      "codeExamples": "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Dropdown</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item' href='#'>Action</a></li><li><a class='dropdown-item' href='#'>Another action</a></li><li><hr class='dropdown-divider'></li><li><a class='dropdown-item' href='#'>Something else here</a></li></ul></li>"
+    },
+    {
+      "title": "Forms: Validation",
+      "content": "Bootstrap provides custom styles and JavaScript for form validation.",
+      "codeExamples": "<form class='row g-3 needs-validation' novalidate><div class='col-md-4'><label for='validationCustom01' class='form-label'>First name</label><input type='text' class='form-control' id='validationCustom01' value='Mark' required><div class='valid-feedback'>Looks good!</div></div></form>"
+    },
+    {
+      "title": "Modals: Vertically Centered",
+      "content": "Bootstrap modals can be centered vertically using utility classes.",
+      "codeExamples": "<div class='modal-dialog modal-dialog-centered'><div class='modal-content'>...</div></div>"
+    }
+  ]

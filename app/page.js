@@ -12,16 +12,12 @@ export default function page() {
 
   return (
     <div>
-      <Navbar/>
       <LandingPage/>
       <CodeSavvyMarquee/>
       <Features/>
-      {/* <LessonExercise/> */}
       <Workspace/>
       <Color/>
       <Lectures/>
-      <Footer/>
-
     </div>
   );
 }

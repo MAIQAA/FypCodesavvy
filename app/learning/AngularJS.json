@@ -1,0 +1,152 @@
+ [
+    {
+      "title": "AngularJS",
+      "content": "AngularJS, developed by Google, is a powerful JavaScript framework designed for building dynamic single-page web applications (SPAs). It extends HTML capabilities with additional attributes and directives, facilitating seamless data binding and dependency injection. AngularJS operates on the Model-View-Controller (MVC) architecture, where the model represents application data, the view renders the user interface, and the controller manages logic and behavior. This framework simplifies development by promoting modularization and reusable components through directives, enabling developers to create highly interactive and responsive applications. AngularJS also supports testing and provides tools for unit testing and end-to-end testing, ensuring robustness and maintainability. With features like routing, form validation, and AJAX handling built-in, AngularJS empowers developers to efficiently manage complex application workflows while enhancing user experience through dynamic content updates and smooth interactions.",
+      "code_example": ""
+    },
+    {
+      "title": "Download and Setup AngularJS",
+      "content": "To start with AngularJS, download it from the official website or include it via CDN. Set up a basic AngularJS application with controllers, directives, and modules.",
+      "code_example": "// Download AngularJS via CDN\n<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js\"></script>\n\n// Example of setting up a basic AngularJS app\nvar app = angular.module('myApp', []);\n\napp.controller('myCtrl', function($scope) {\n  $scope.message = 'Hello, AngularJS!';\n});"
+    },
+    {
+      "title": "Controllers in AngularJS",
+      "content": "Controllers in AngularJS are JavaScript functions bound to a specific scope. They are responsible for managing the data for the application and interact with both the model and the view.",
+      "code_example": "// Example of a controller in AngularJS\napp.controller('myCtrl', function($scope) {\n  $scope.message = 'Hello, AngularJS!';\n});"
+    },
+    {
+      "title": "Directives in AngularJS",
+      "content": "Directives in AngularJS extend HTML with new attributes and elements. They are markers on a DOM element that tell AngularJS to attach a specified behavior to that DOM element or even transform the DOM element and its children.",
+      "code_example": "// Example of a directive in AngularJS\napp.directive('myDirective', function() {\n  return {\n    template: '<div>My Directive</div>',\n    restrict: 'E'\n  };\n});"
+    },
+    {
+      "title": "Data Binding in AngularJS",
+      "content": "Data binding in AngularJS is the automatic synchronization of data between the model and the view components. It allows you to treat the model as the single-source-of-truth in your application.",
+      "code_example": "// Example of data binding in AngularJS\n<input type=\"text\" ng-model=\"name\">\n<p>Hello, {{ name }}!</p>"
+    },
+    {
+      "title": "Services and Dependency Injection",
+      "content": "Services in AngularJS are singletons that carry out specific tasks common to web applications. Dependency Injection (DI) in AngularJS is a design pattern in which components are given their dependencies rather than creating them within the component.",
+      "code_example": "// Example of a service and dependency injection in AngularJS\napp.service('myService', function() {\n  this.sayHello = function() {\n    return 'Hello, AngularJS Service!';\n  };\n});\n\napp.controller('myCtrl', function($scope, myService) {\n  $scope.message = myService.sayHello();\n});"
+    },
+    {
+      "title": "Routing in AngularJS",
+      "content": "Routing in AngularJS allows you to create Single Page Applications (SPA) with multiple views. It maps URLs to views and enables navigation between views.",
+      "code_example": "// Example of routing in AngularJS\napp.config(function($routeProvider) {\n  $routeProvider\n    .when('/', {\n      templateUrl: 'home.html',\n      controller: 'homeController'\n    })\n    .when('/about', {\n      templateUrl: 'about.html',\n      controller: 'aboutController'\n    })\n    .otherwise({\n      redirectTo: '/'\n    });\n});"
+    },
+    {
+      "title": "Forms and Validation",
+      "content": "AngularJS provides built-in support for form validation and manipulation. It enhances traditional HTML forms with additional features like data binding and validation.",
+      "code_example": "// Example of form validation in AngularJS\n<form name=\"myForm\" ng-submit=\"submitForm()\" novalidate>\n  <input type=\"text\" name=\"username\" ng-model=\"user.username\" required>\n  <div ng-show=\"myForm.username.$error.required\">Username is required.</div>\n  <button type=\"submit\" ng-disabled=\"myForm.$invalid\">Submit</button>\n</form>"
+    },
+    {
+      "title": "Filters in AngularJS",
+      "content": "Filters in AngularJS allow you to format the value of an expression for display to the user. They can be used in templates, controllers, or services.",
+      "code_example": "// Example of using filters in AngularJS\n<p>{{ message | uppercase }}</p>\n<p>{{ amount | currency }}</p>"
+    },
+    {
+      "title": "HTTP Requests",
+      "content": "AngularJS provides services to make AJAX calls (HTTP requests) to remote servers. It simplifies the process of communicating with APIs and handling server responses.",
+      "code_example": "// Example of making an HTTP request in AngularJS\napp.controller('myCtrl', function($scope, $http) {\n  $http.get('/api/data').then(function(response) {\n    $scope.data = response.data;\n  });\n});"
+    },
+    {
+      "title": "Unit Testing in AngularJS",
+      "content": "AngularJS comes with built-in support for unit testing using tools like Jasmine and Karma. Unit testing ensures that individual units of code (like controllers, services) work correctly.",
+      "code_example": "// Example of unit testing a controller in AngularJS\ndescribe('myCtrl', function() {\n  beforeEach(module('myApp'));\n\n  var $controller;\n  beforeEach(inject(function(_$controller_){\n    $controller = _$controller_;\n  }));\n\n  it('should initialize message correctly', function() {\n    var $scope = {};\n    var controller = $controller('myCtrl', { $scope: $scope });\n    expect($scope.message).toEqual('Hello, AngularJS!');\n  });\n});"
+    },
+    {
+      "title": "AngularJS and SEO",
+      "content": "AngularJS applications are typically single-page applications (SPA) that render content dynamically. To improve SEO, prerendering techniques or server-side rendering (with frameworks like Angular Universal) can be employed.",
+      "code_example": "// Explanation: Implementing server-side rendering with Angular Universal improves SEO by serving pre-rendered HTML content to web crawlers."
+    },
+    {
+      "title": "Deployment Considerations",
+      "content": "When deploying AngularJS applications, consider minimizing JavaScript files, enabling gzip compression, and setting proper caching headers for better performance and user experience.",
+      "code_example": "// Explanation: Optimizing AngularJS applications for deployment involves minimizing file sizes, leveraging browser caching, and implementing performance best practices."
+    },
+    {
+      "title": "Animation in AngularJS",
+      "content": "AngularJS provides built-in support for animations, allowing you to animate HTML elements and create engaging user interfaces.",
+      "code_example": "// Example of animation in AngularJS\napp.animation('.my-animation', function() {\n  return {\n    enter: function(element, done) {\n      element.css({ opacity: 0 });\n      jQuery(element).animate({ opacity: 1 }, done);\n    },\n    leave: function(element, done) {\n      element.css({ opacity: 1 });\n      jQuery(element).animate({ opacity: 0 }, done);\n    }\n  };\n});"
+    },
+    {
+      "title": "Interceptors in AngularJS",
+      "content": "Interceptors in AngularJS allow you to intercept HTTP requests and responses. They are used to modify or handle HTTP requests globally before they are sent to the server or after they are received from the server.",
+      "code_example": "// Example of an interceptor in AngularJS\napp.factory('myInterceptor', function() {\n  return {\n    request: function(config) {\n      // Modify config before sending\n      return config;\n    },\n    response: function(response) {\n      // Handle response\n      return response;\n    }\n  };\n});\n\napp.config(function($httpProvider) {\n  $httpProvider.interceptors.push('myInterceptor');\n});"
+    },
+    {
+      "title": "Internationalization (i18n) in AngularJS",
+      "content": "AngularJS supports internationalization (i18n) with built-in tools for translating your application into different languages and cultures.",
+      "code_example": "// Example of internationalization in AngularJS\napp.config(function($translateProvider) {\n  $translateProvider.translations('en', {\n    'GREETING': 'Hello, World!'\n  });\n\n  $translateProvider.translations('es', {\n    'GREETING': '¡Hola, Mundo!'\n  });\n\n  $translateProvider.preferredLanguage('en');\n});\n\n// Example usage in HTML: {{ 'GREETING' | translate }}"
+    },
+    {
+      "title": "WebSocket Integration",
+      "content": "AngularJS can integrate with WebSocket for real-time communication between the client and server. WebSockets allow bi-directional, full-duplex communication channels over a single TCP connection.",
+      "code_example": "// Example of WebSocket integration in AngularJS\nvar socket = new WebSocket('ws://example.com/socket');\n\nsocket.onopen = function() {\n  console.log('WebSocket connection opened.');\n};\n\nsocket.onmessage = function(event) {\n  console.log('Message from server: ', event.data);\n};\n\nsocket.onclose = function() {\n  console.log('WebSocket connection closed.');\n};"
+    },
+    {
+      "title": "Promise API",
+      "content": "AngularJS uses promises extensively to handle asynchronous operations such as HTTP requests. Promises represent a future value that may be available at some point and allow you to handle success and failure cases asynchronously.",
+      "code_example": "// Example of using promises in AngularJS\napp.controller('myCtrl', function($scope, $http) {\n  $http.get('/api/data').then(function(response) {\n    $scope.data = response.data;\n  }, function(error) {\n    $scope.error = 'Error fetching data.';\n  });\n});"
+    },
+    {
+      "title": "Form Validation with AngularJS",
+      "content": "AngularJS provides powerful tools for form validation, including built-in validation directives and the ability to create custom validators to suit application-specific requirements.",
+      "code_example": "// Example of form validation in AngularJS\n<form name=\"myForm\" ng-submit=\"submitForm()\" novalidate>\n  <input type=\"email\" name=\"email\" ng-model=\"user.email\" required>\n  <div ng-show=\"myForm.email.$error.required\">Email is required.</div>\n  <div ng-show=\"myForm.email.$error.email\">Invalid email address.</div>\n  <button type=\"submit\" ng-disabled=\"myForm.$invalid\">Submit</button>\n</form>"
+    },
+    {
+      "title": "Authentication and Authorization",
+      "content": "Implementing authentication and authorization in AngularJS involves techniques such as JWT (JSON Web Tokens) for securing APIs, managing user sessions, and protecting routes based on user roles.",
+      "code_example": "// Example of authentication with JWT in AngularJS\napp.controller('LoginCtrl', function($scope, $http, $window) {\n  $scope.login = function() {\n    $http.post('/api/login', $scope.user).then(function(response) {\n      $window.localStorage.setItem('token', response.data.token);\n    }, function(error) {\n      $scope.errorMessage = 'Invalid credentials.';\n    });\n  };\n});"
+    },
+    {
+      "title": "Component-based Architecture",
+      "content": "AngularJS supports component-based architecture with directives, enabling the creation of reusable components that encapsulate UI and behavior. Components simplify the development process and promote code reusability.",
+      "code_example": "// Example of a component in AngularJS\napp.component('myComponent', {\n  templateUrl: 'my-component.html',\n  controller: function() {\n    this.message = 'Hello, Component!';\n  }\n});"
+    },
+    {
+      "title": "Error Handling Strategies",
+      "content": "Effective error handling in AngularJS involves logging errors, displaying meaningful error messages to users, and gracefully recovering from errors to maintain application stability and user experience.",
+      "code_example": "// Example of error handling in AngularJS\napp.factory('errorInterceptor', function($q, $log) {\n  return {\n    responseError: function(rejection) {\n      $log.error('HTTP Error: ', rejection);\n      return $q.reject(rejection);\n    }\n  };\n});\n\napp.config(function($httpProvider) {\n  $httpProvider.interceptors.push('errorInterceptor');\n});"
+    },
+    {
+      "title": "Testing Strategies",
+      "content": "AngularJS applications can be tested using unit tests, integration tests, and end-to-end (e2e) tests. Testing strategies include using Jasmine for unit testing, Protractor for e2e testing, and mocking dependencies for isolated testing.",
+      "code_example": "// Example of e2e testing with Protractor in AngularJS\ndescribe('Protractor Demo App', function() {\n  it('should add one and two', function() {\n    browser.get('http://localhost:8000');\n\n    element(by.model('first')).sendKeys(1);\n    element(by.model('second')).sendKeys(2);\n\n    element(by.id('gobutton')).click();\n\n    expect(element(by.binding('latest')).getText()).toEqual('3');\n  });\n});"
+    },
+    {
+      "title": "Optimizing Performance",
+      "content": "Optimizing AngularJS applications for performance involves techniques such as lazy loading modules, minimizing HTTP requests, using production builds, and implementing caching strategies.",
+      "code_example": "// Example of lazy loading in AngularJS\n$stateProvider.state('home', {\n  url: '/home',\n  templateUrl: 'views/home.html',\n  controller: 'HomeController',\n  resolve: {\n    load: function($ocLazyLoad) {\n      return $ocLazyLoad.load('scripts/home.controller.js');\n    }\n  }\n});"
+    },
+    {
+      "title": "Internationalization (i18n) and Localization",
+      "content": "AngularJS supports internationalization (i18n) and localization with tools like Angular-translate or Angular-i18n for translating text and formatting numbers, dates, and currencies based on the user's locale.",
+      "code_example": "// Example of internationalization in AngularJS using Angular-translate\napp.config(function($translateProvider) {\n  $translateProvider.translations('en', {\n    'GREETING': 'Hello, World!'\n  });\n\n  $translateProvider.translations('es', {\n    'GREETING': '¡Hola, Mundo!'\n  });\n\n  $translateProvider.preferredLanguage('en');\n});\n\n// Example usage in HTML: {{ 'GREETING' | translate }}"
+    },
+    {
+      "title": "Real-time Data with WebSockets",
+      "content": "AngularJS can integrate with WebSockets to enable real-time data updates between the client and server, providing a responsive and interactive user experience.",
+      "code_example": "// Example of WebSocket integration in AngularJS\nvar socket = new WebSocket('ws://example.com/socket');\n\nsocket.onopen = function() {\n  console.log('WebSocket connection opened.');\n};\n\nsocket.onmessage = function(event) {\n  console.log('Message from server: ', event.data);\n};\n\nsocket.onclose = function() {\n  console.log('WebSocket connection closed.');\n};"
+    },
+    {
+      "title": "Security Best Practices",
+      "content": "AngularJS applications should implement security best practices such as input validation, HTTPS for secure communication, protection against cross-site scripting (XSS), and safeguarding sensitive data.",
+      "code_example": "// Example of input validation in AngularJS\n<input type=\"text\" ng-model=\"username\" required>\n<div ng-show=\"myForm.username.$error.required\">Username is required.</div>"
+    },
+    {
+      "title": "Data Visualization with Charts",
+      "content": "AngularJS can be integrated with charting libraries like Chart.js or D3.js to create interactive and visually appealing charts and graphs for displaying data.",
+      "code_example": "// Example of using Chart.js with AngularJS\n<canvas id=\"myChart\" width=\"400\" height=\"400\"\n  chartjs chart-data=\"data\" chart-labels=\"labels\" chart-series=\"series\"\n  chart-options=\"options\" chart-dataset-override=\"datasetOverride\"\n  chart-click=\"onClick\">\n</canvas>"
+    },
+    {
+      "title": "Server-side Rendering (Angular Universal)",
+      "content": "Angular Universal allows server-side rendering (SSR) of Angular applications to improve SEO, performance, and initial page load time by rendering HTML on the server before sending it to the client.",
+      "code_example": "// Example of Angular Universal setup\n// Implement server-side rendering to prerender Angular components on the server."
+    },
+    {
+      "title": "Authentication with OAuth",
+      "content": "Implement OAuth authentication in AngularJS applications to enable users to securely log in using third-party authentication providers like Google, Facebook, or GitHub.",
+      "code_example": "// Example of OAuth authentication in AngularJS\napp.controller('LoginCtrl', function($scope, $http, $window) {\n  $scope.login = function() {\n    $http.get('/api/auth/google').then(function(response) {\n      $window.localStorage.setItem('token', response.data.token);\n    }, function(error) {\n      $scope.errorMessage = 'OAuth login failed.';\n    });\n  };\n});"
+    }
+  ]

@@ -1,0 +1,167 @@
+ [
+    {
+      "title": "Introduction to Matlab",
+      "content": "Matlab is a high-performance language for technical computing.",
+      "code_example": "disp('Hello, World!')"
+    },
+    {
+      "title": "Basic Commands",
+      "content": "Learn basic commands like clc, clear, and close all.",
+      "code_example": "clc; clear; close all;"
+    },
+    {
+      "title": "Variables and Data Types",
+      "content": "Understanding variables and different data types in Matlab.",
+      "code_example": "x = 10; y = 5.5; z = 'Hello';"
+    },
+    {
+      "title": "Vectors and Matrices",
+      "content": "How to create and manipulate vectors and matrices.",
+      "code_example": "A = [1 2 3; 4 5 6]; B = [7; 8; 9];"
+    },
+    {
+      "title": "Matrix Operations",
+      "content": "Performing operations on matrices such as addition, subtraction, and multiplication.",
+      "code_example": "C = A + B; D = A * B;"
+    },
+    {
+      "title": "Element-wise Operations",
+      "content": "Using element-wise operations with matrices.",
+      "code_example": "E = A .* B; F = A ./ B;"
+    },
+    {
+      "title": "Control Flow - If Statements",
+      "content": "Using if, else, and elseif statements to control the flow of your program.",
+      "code_example": "if x > y\n  disp('x is greater than y');\nelse\n  disp('x is less than or equal to y');\nend"
+    },
+    {
+      "title": "Loops - For Loop",
+      "content": "Creating for loops to iterate over a set of values.",
+      "code_example": "for i = 1:10\n  disp(i);\nend"
+    },
+    {
+      "title": "Loops - While Loop",
+      "content": "Using while loops to repeat a set of statements until a condition is met.",
+      "code_example": "while x > 0\n  disp(x);\n  x = x - 1;\nend"
+    },
+    {
+      "title": "Functions",
+      "content": "Defining and using functions in Matlab.",
+      "code_example": "function y = square(x)\n  y = x^2;\nend"
+    },
+    {
+      "title": "Plotting Data",
+      "content": "Creating basic plots to visualize data.",
+      "code_example": "x = 0:0.1:10;\ny = sin(x);\nplot(x, y);"
+    },
+    {
+      "title": "Subplots",
+      "content": "Creating subplots to display multiple plots in a single figure.",
+      "code_example": "subplot(2,1,1);\nplot(x, y);\nsubplot(2,1,2);\nplot(x, cos(x));"
+    },
+    {
+      "title": "Advanced Plotting",
+      "content": "Using advanced plotting functions like scatter, bar, and histogram.",
+      "code_example": "scatter(x, y);\nbar(x);\nhistogram(x);"
+    },
+    {
+      "title": "3D Plotting",
+      "content": "Creating 3D plots to visualize data in three dimensions.",
+      "code_example": "z = x.^2 + y.^2;\nmesh(x, y, z);"
+    },
+    {
+      "title": "Handling Strings",
+      "content": "Working with string data in Matlab.",
+      "code_example": "str = 'Hello, Matlab!';\nstrcat(str, ' How are you?');"
+    },
+    {
+      "title": "Cell Arrays",
+      "content": "Using cell arrays to store different types of data in a single container.",
+      "code_example": "C = {1, 2, 3; 'a', 'b', 'c'};"
+    },
+    {
+      "title": "Structures",
+      "content": "Defining and using structures to organize related data.",
+      "code_example": "person.name = 'John';\nperson.age = 30;\nperson.height = 180;"
+    },
+    {
+      "title": "File I/O",
+      "content": "Reading from and writing to files.",
+      "code_example": "data = load('data.txt');\nsave('newdata.txt', 'data');"
+    },
+    {
+      "title": "Image Processing",
+      "content": "Basic image processing tasks in Matlab.",
+      "code_example": "img = imread('image.jpg');\nimshow(img);"
+    },
+    {
+      "title": "Signal Processing",
+      "content": "Basic signal processing tasks in Matlab.",
+      "code_example": "t = 0:0.01:1;\nsignal = sin(2*pi*10*t);\nfft_signal = fft(signal);"
+    },
+    {
+      "title": "Optimization",
+      "content": "Using optimization techniques to solve problems.",
+      "code_example": "f = @(x) x.^2 + 4*x + 4;\n[x, fval] = fminsearch(f, 0);"
+    },
+    {
+      "title": "Simulink Basics",
+      "content": "Introduction to Simulink for modeling and simulation.",
+      "code_example": "sim('model_name');"
+    },
+    {
+      "title": "Differential Equations",
+      "content": "Solving differential equations using Matlab.",
+      "code_example": "[t, y] = ode45(@odefun, [0 5], 1);\nplot(t, y);\nfunction dydt = odefun(t, y)\n  dydt = -2*y;\nend"
+    },
+    {
+      "title": "Statistics and Data Analysis",
+      "content": "Performing statistical analysis on data.",
+      "code_example": "data = randn(100, 1);\nmean(data);\nstd(data);"
+    },
+    {
+      "title": "Machine Learning Basics",
+      "content": "Introduction to machine learning with Matlab.",
+      "code_example": "x = [1 2 3 4 5];\ny = [2 4 6 8 10];\nmdl = fitlm(x, y);\npredict(mdl, 6);"
+    },
+    {
+      "title": "Image Segmentation",
+      "content": "Performing image segmentation to separate objects in an image.",
+      "code_example": "img = imread('image.jpg');\nsegmented_img = imsegkmeans(img, 3);\nimshow(segmented_img);"
+    },
+    {
+      "title": "Histogram Equalization",
+      "content": "Enhancing the contrast of an image using histogram equalization.",
+      "code_example": "img = imread('image.jpg');\nequalized_img = histeq(img);\nimshow(equalized_img);"
+    },
+    {
+      "title": "Edge Detection",
+      "content": "Detecting edges in an image using different edge detection techniques.",
+      "code_example": "img = imread('image.jpg');\nedges = edge(img, 'Canny');\nimshow(edges);"
+    },
+    {
+      "title": "Fourier Transform",
+      "content": "Using Fourier Transform to analyze the frequency components of a signal.",
+      "code_example": "t = 0:0.01:1;\nsignal = sin(2*pi*10*t);\nfft_signal = fft(signal);\nplot(abs(fft_signal));"
+    },
+    {
+      "title": "Curve Fitting",
+      "content": "Fitting a curve to a set of data points.",
+      "code_example": "x = [1 2 3 4 5];\ny = [2 4 6 8 10];\nfit_result = polyfit(x, y, 1);\nplot(x, y, 'o', x, polyval(fit_result, x), '-');"
+    },
+    {
+      "title": "Data Interpolation",
+      "content": "Interpolating data to estimate values between known data points.",
+      "code_example": "x = [1 2 3 4 5];\ny = [2 4 6 8 10];\ninterp_result = interp1(x, y, 3.5);\nplot(x, y, 'o', 3.5, interp_result, 'x');"
+    },
+    {
+      "title": "Polynomial Regression",
+      "content": "Fitting a polynomial to a set of data points.",
+      "code_example": "x = [1 2 3 4 5];\ny = [2 4 6 8 10];\nfit_result = polyfit(x, y, 2);\nplot(x, y, 'o', x, polyval(fit_result, x), '-');"
+    },
+    {
+      "title": "Sparse Matrices",
+      "content": "Working with sparse matrices to save memory and computation time.",
+      "code_example": "A = sparse([1 2 3], [4 5 6], [7 8 9]);"
+    }
+  ]

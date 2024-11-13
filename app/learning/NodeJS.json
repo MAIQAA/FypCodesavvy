@@ -1,0 +1,142 @@
+ [
+    {
+      "title": "Introduction to Node.js",
+      "content": "Node.js is a powerful runtime environment that allows developers to run JavaScript code outside of a web browser. Built on Chrome's V8 JavaScript engine, Node.js enables server-side scripting and facilitates the development of scalable, event-driven applications. Node.js is known for its non-blocking, asynchronous architecture, which allows it to handle multiple requests concurrently without blocking the execution of other tasks. This makes it ideal for building real-time applications like chat apps, streaming platforms, and APIs. With a rich ecosystem of npm (Node Package Manager) modules, Node.js simplifies the integration of various libraries and frameworks, enhancing developer productivity and accelerating the development process. Whether you're building lightweight microservices or complex web applications, Node.js provides the flexibility and efficiency needed to create fast, scalable, and data-intensive applications across different platforms.",
+      "code_example": ""
+    },
+    {
+      "title": "Setting Up Node.js",
+      "content": "Download and install Node.js from the official website. Verify installation using 'node -v' in the command line.",
+      "code_example": ""
+    },
+    {
+      "title": "Hello World in Node.js",
+      "content": "Create a simple 'Hello, World!' server using Node.js.",
+      "code_example": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain' });\n  res.end('Hello, World!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server is running at http://localhost:3000/');\n});"
+    },
+    {
+      "title": "Node.js Modules",
+      "content": "Node.js uses modules to organize code. Modules encapsulate code and expose functionalities using exports.",
+      "code_example": "// Example of a module\n\n// math.js\nconst add = (a, b) => a + b;\nconst subtract = (a, b) => a - b;\n\nmodule.exports = { add, subtract };"
+    },
+    {
+      "title": "Installing Node.js",
+      "content": "You can install Node.js from its official website (nodejs.org) or using a package manager like npm (Node Package Manager).",
+      "code_example": "// Using npm to install a package globally\nnpm install -g <package_name>"
+    },
+    {
+      "title": "Basic HTTP Server with Node.js",
+      "content": "Node.js can be used to create simple HTTP servers. This example demonstrates how to create a server that responds with 'Hello World!' to all requests.",
+      "code_example": "// Example of a basic HTTP server\nconst http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain' });\n  res.end('Hello World!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server is running on http://localhost:3000');\n});"
+    },
+    {
+      "title": "Asynchronous Programming with Callbacks",
+      "content": "Node.js is known for its asynchronous nature, which allows it to handle many connections efficiently. Callbacks are a common pattern for handling asynchronous operations.",
+      "code_example": "// Example of reading a file asynchronously using callbacks\nconst fs = require('fs');\n\nfs.readFile('file.txt', 'utf8', (err, data) => {\n  if (err) throw err;\n  console.log(data);\n});"
+    },
+    {
+      "title": "Using npm Packages",
+      "content": "npm (Node Package Manager) provides access to thousands of reusable packages. You can install and use npm packages to extend the functionality of your Node.js applications.",
+      "code_example": "// Example of using an npm package\nconst _ = require('lodash');\n\nconst array = [1, 2, 3, 4, 5];\nconst sum = _.sum(array);\nconsole.log('Sum:', sum);"
+    },
+    {
+      "title": "Express.js Framework",
+      "content": "Express.js is a popular web framework for Node.js. It simplifies the process of creating robust APIs and web applications.",
+      "code_example": "// Example of creating a basic Express.js server\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello, Express!');\n});\n\napp.listen(3000, () => {\n  console.log('Express server is running on http://localhost:3000');\n});"
+    },
+    {
+      "title": "Handling Forms with Express.js",
+      "content": "Express.js provides middleware to handle form submissions and process data sent from HTML forms.",
+      "code_example": "// Example of handling a form submission with Express.js\nconst express = require('express');\nconst app = express();\n\napp.use(express.urlencoded({ extended: true }));\n\napp.post('/submit', (req, res) => {\n  const { username, password } = req.body;\n  // Process form data\n  res.send(`Received: Username - ${username}, Password - ${password}`);\n});\n\napp.listen(3000, () => {\n  console.log('Express server is running on http://localhost:3000');\n});"
+    },
+    {
+      "title": "MongoDB and Mongoose",
+      "content": "MongoDB is a NoSQL database, and Mongoose is an ODM (Object Data Modeling) library for Node.js. Together, they provide a powerful way to interact with MongoDB databases.",
+      "code_example": "// Example of connecting to MongoDB using Mongoose\nconst mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst db = mongoose.connection;\ndb.on('error', console.error.bind(console, 'MongoDB connection error:'));\n\ndb.once('open', () => {\n  console.log('Connected to MongoDB');\n  // Perform database operations\n});"
+    },
+    {
+      "title": "Handling Errors in Node.js",
+      "content": "Error handling is essential in Node.js applications to manage exceptions and unexpected conditions gracefully.",
+      "code_example": "// Example of error handling in Node.js\nconst fs = require('fs');\n\ntry {\n  const data = fs.readFileSync('file.txt');\n  console.log('File contents:', data.toString());\n} catch (err) {\n  console.error('Error reading file:', err.message);\n}"
+    },
+    {
+      "title": "Using Promises for Asynchronous Operations",
+      "content": "Promises provide a cleaner alternative to callbacks for managing asynchronous operations in Node.js.",
+      "code_example": "// Example of using promises in Node.js\nconst fs = require('fs').promises;\n\nfs.readFile('file.txt', 'utf8')\n  .then(data => {\n    console.log('File contents:', data);\n  })\n  .catch(err => {\n    console.error('Error reading file:', err);\n  });"
+    },
+    {
+      "title": "Working with JSON Data",
+      "content": "JSON (JavaScript Object Notation) is commonly used for data exchange in Node.js applications.",
+      "code_example": "// Example of working with JSON data\nconst data = { name: 'John Doe', age: 30 };\nconst json = JSON.stringify(data);\nconsole.log('JSON data:', json);\n\nconst parsedData = JSON.parse(json);\nconsole.log('Parsed JSON:', parsedData);"
+    },
+    {
+      "title": "Authentication with Passport.js",
+      "content": "Passport.js is an authentication middleware for Node.js. It provides a flexible framework for authenticating requests.",
+      "code_example": "// Example of setting up Passport.js\nconst passport = require('passport');\nconst LocalStrategy = require('passport-local').Strategy;\n\npassport.use(new LocalStrategy(\n  (username, password, done) => {\n    // Verify username and password\n    if (username === 'admin' && password === 'password') {\n      return done(null, { username: 'admin' });\n    }\n    return done(null, false, { message: 'Incorrect username or password.' });\n  }\n));"
+    },
+    {
+      "title": "Real-time Applications with Socket.io",
+      "content": "Socket.io enables real-time bidirectional event-based communication between clients and servers.",
+      "code_example": "// Example of setting up Socket.io server\nconst express = require('express');\nconst http = require('http');\nconst socketIo = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', (socket) => {\n  console.log('A user connected');\n\n  socket.on('disconnect', () => {\n    console.log('User disconnected');\n  });\n});\n\nserver.listen(3000, () => {\n  console.log('Socket.io server is running on http://localhost:3000');\n});"
+    },
+    {
+      "title": "Testing with Jest",
+      "content": "Jest is a popular testing framework for JavaScript and Node.js applications. It provides a simple and powerful way to write and run tests.",
+      "code_example": "// Example of writing a simple Jest test\nconst sum = require('./sum');\n\ntest('adds 1 + 2 to equal 3', () => {\n  expect(sum(1, 2)).toBe(3);\n});"
+    },
+    {
+      "title": "Deployment with Docker",
+      "content": "Docker is a platform for developing, shipping, and running applications in containers. It simplifies the process of deploying Node.js applications.",
+      "code_example": "// Example of Dockerizing a Node.js application\n# Dockerfile\n\n# Use the official Node.js image\nFROM node:12\n\n# Set the working directory\nWORKDIR /usr/src/app\n\n# Copy package.json and package-lock.json\nCOPY package*.json ./\n\n# Install dependencies\nRUN npm install\n\n# Copy application code\nCOPY . .\n\n# Expose the port\nEXPOSE 3000\n\n# Command to run the application\nCMD [ 'node', 'app.js' ]"
+    },
+    {
+      "title": "File Uploads with Multer",
+      "content": "Multer is a middleware for handling multipart/form-data, which is primarily used for file uploads.",
+      "code_example": "// Example of handling file uploads with Multer\nconst multer = require('multer');\nconst upload = multer({ dest: 'uploads/' });\n\napp.post('/upload', upload.single('file'), (req, res) => {\n  res.send('File uploaded successfully.');\n});"
+    },
+    {
+      "title": "CRUD Operations with MongoDB",
+      "content": "MongoDB is a popular NoSQL database. This example demonstrates basic CRUD operations using MongoDB and Node.js.",
+      "code_example": "// Example of CRUD operations with MongoDB and Mongoose\nconst mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\nconst UserSchema = new Schema({\n  name: String,\n  email: String\n});\n\nconst User = mongoose.model('User', UserSchema);\n\n// Create\nconst newUser = new User({ name: 'John Doe', email: 'john@example.com' });\nnewUser.save((err, user) => {\n  if (err) throw err;\n  console.log('User created:', user);\n});\n\n// Read\nUser.find({}, (err, users) => {\n  if (err) throw err;\n  console.log('Users:', users);\n});\n\n// Update\nUser.updateOne({ name: 'John Doe' }, { email: 'john.doe@example.com' }, (err, result) => {\n  if (err) throw err;\n  console.log('User updated:', result);\n});\n\n// Delete\nUser.deleteOne({ name: 'John Doe' }, (err) => {\n  if (err) throw err;\n  console.log('User deleted');\n});"
+    },
+    {
+      "title": "Handling Authentication with JWT",
+      "content": "JSON Web Tokens (JWT) are a popular method for securely transmitting information between parties. They can be used for authentication and data exchange.",
+      "code_example": "// Example of handling authentication with JWT\nconst jwt = require('jsonwebtoken');\n\n// Generate a token\nconst token = jwt.sign({ username: 'admin' }, 'secret_key', { expiresIn: '1h' });\nconsole.log('JWT:', token);\n\n// Verify a token\njwt.verify(token, 'secret_key', (err, decoded) => {\n  if (err) throw err;\n  console.log('Decoded:', decoded);\n});"
+    },
+    {
+      "title": "Using Promises with Async/Await",
+      "content": "Async functions and await expressions provide a cleaner syntax for working with asynchronous operations in Node.js.",
+      "code_example": "// Example of using async/await with promises\nconst fetch = require('node-fetch');\n\nasync function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    const data = await response.json();\n    console.log('Data:', data);\n  } catch (error) {\n    console.error('Error fetching data:', error);\n  }\n}\n\nfetchData();"
+    },
+    {
+      "title": "Using Environment Variables",
+      "content": "Environment variables are a way to pass configuration values to your Node.js applications.",
+      "code_example": "// Example of using environment variables\nconst dotenv = require('dotenv');\ndotenv.config();\n\nconst apiKey = process.env.API_KEY;\nconsole.log('API Key:', apiKey);"
+    },
+    {
+      "title": "WebSocket Communication",
+      "content": "WebSockets provide full-duplex communication channels over a single TCP connection. They are ideal for applications that require real-time data exchange.",
+      "code_example": "// Example of WebSocket communication\nconst WebSocket = require('ws');\n\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', (ws) => {\n  console.log('A client connected');\n\n  ws.on('message', (message) => {\n    console.log(`Received message: ${message}`);\n  });\n\n  ws.send('Hello, client!');\n});"
+    },
+    {
+      "title": "Error Handling Middleware",
+      "content": "Middleware functions in Express.js can handle errors and perform error-related tasks.",
+      "code_example": "// Example of error handling middleware\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).send('Something broke!');\n});"
+    },
+    {
+      "title": "Web Scraping with Cheerio",
+      "content": "Cheerio is a fast, flexible, and lean implementation of core jQuery designed for server-side DOM manipulation, useful for web scraping.",
+      "code_example": "// Example of web scraping with Cheerio\nconst axios = require('axios');\nconst cheerio = require('cheerio');\n\naxios.get('https://example.com')\n  .then(response => {\n    const $ = cheerio.load(response.data);\n    const title = $('title').text();\n    console.log('Title:', title);\n  })\n  .catch(error => {\n    console.error('Error fetching data:', error);\n  });"
+    },
+    {
+      "title": "Securing Express.js Applications",
+      "content": "Security is crucial when developing web applications. Secure your Express.js applications by implementing best practices.",
+      "code_example": "// Example of securing Express.js applications\nconst helmet = require('helmet');\n\napp.use(helmet());\n\napp.get('/', (req, res) => {\n  res.send('Hello, World!');\n});"
+    },
+    {
+      "title": "GraphQL with Apollo Server",
+      "content": "GraphQL is a query language for APIs and a runtime for executing those queries. Apollo Server is a community-maintained open-source GraphQL server.",
+      "code_example": "// Example of setting up Apollo Server with Express.js\nconst { ApolloServer, gql } = require('apollo-server-express');\n\nconst typeDefs = gql`\ntype Query {\n  hello: String\n}\n`;\n\nconst resolvers = {\n  Query: {\n    hello: () => 'Hello, GraphQL!'\n  }\n};\n\nconst server = new ApolloServer({ typeDefs, resolvers });\n\nserver.applyMiddleware({ app });\n\napp.listen({ port: 4000 }, () => {\n  console.log(`Server ready at http://localhost:4000${server.graphqlPath}`);\n});"
+    }
+  ]

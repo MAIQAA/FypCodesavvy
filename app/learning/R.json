@@ -1,0 +1,272 @@
+[
+    {
+      "title": "Introduction to R",
+      "content": "R is a powerful and versatile programming language and environment widely used for statistical computing and graphics. It provides a rich ecosystem of packages that extend its functionality, making it a preferred choice for data analysis, machine learning, and scientific research. With its intuitive syntax and robust tools for visualization and modeling, R empowers users to explore, manipulate, and interpret data effectively. Whether you're a data scientist, researcher, or analyst, R offers comprehensive capabilities to handle complex data tasks and generate insightful visualizations, making it indispensable in today's data-driven world.",
+      "code_example": "print('Hello, World!')"
+    },
+    {
+      "title": "Variables and Data Types",
+      "content": "Understanding variables, data types, and their usage in R.",
+      "code_example": "x <- 10; y <- 'Hello'"
+    },
+    {
+      "title": "Vectors and Arrays",
+      "content": "Working with vectors and arrays in R for data manipulation.",
+      "code_example": "vec <- c(1, 2, 3); matrix <- array(1:6, dim = c(2, 3))"
+    },
+    {
+      "title": "Functions in R",
+      "content": "Creating and using functions to encapsulate reusable code.",
+      "code_example": "square <- function(x) { return(x^2) }; result <- square(5)"
+    },
+    {
+      "title": "Conditional Statements",
+      "content": "Using if-else statements for decision-making in R.",
+      "code_example": "if (x > 0) { print('Positive') } else { print('Negative or zero') }"
+    },
+    {
+      "title": "Loops in R",
+      "content": "Using for and while loops for iterative tasks in R.",
+      "code_example": "for (i in 1:5) { print(i) }; while (x < 10) { x <- x + 1 }"
+    },
+    {
+      "title": "Data Frames",
+      "content": "Introduction to data frames for structured data handling.",
+      "code_example": "df <- data.frame(Name=c('Alice', 'Bob'), Age=c(25, 30))"
+    },
+    {
+      "title": "Data Visualization with ggplot2",
+      "content": "Creating plots and charts using the ggplot2 package.",
+      "code_example": "library(ggplot2); ggplot(data=df, aes(x=Name, y=Age)) + geom_bar(stat='identity')"
+    },
+    {
+      "title": "Importing and Exporting Data",
+      "content": "Loading data into R from external sources and saving R objects.",
+      "code_example": "data <- read.csv('data.csv'); saveRDS(df, 'data.rds')"
+    },
+    {
+      "title": "Statistical Analysis",
+      "content": "Performing basic statistical analysis using built-in functions.",
+      "code_example": "mean_age <- mean(df$Age); sd_age <- sd(df$Age)"
+    },
+    {
+      "title": "Machine Learning with R",
+      "content": "Overview of machine learning techniques and libraries in R.",
+      "code_example": "library(caret); model <- train(Species ~ ., data=iris, method='rf')"
+    },
+    {
+      "title": "Web Scraping with rvest",
+      "content": "Extracting data from websites using the rvest package.",
+      "code_example": "library(rvest); webpage <- read_html('https://example.com'); data <- html_text(html_nodes(webpage, '.class'))"
+    },
+    {
+      "title": "Creating Interactive Web Apps with Shiny",
+      "content": "Introduction to building interactive web applications with Shiny.",
+      "code_example": "library(shiny); ui <- fluidPage(sliderInput('n', 'Number:', 1, 100, 50), plotOutput('plot')); server <- function(input, output) { output$plot <- renderPlot({ hist(rnorm(input$n)) }) }; shinyApp(ui, server)"
+    },
+    {
+      "title": "Working with Dates and Times",
+      "content": "Handling date and time data in R using lubridate package.",
+      "code_example": "library(lubridate); date <- ymd('2023-06-01'); time <- hms('12:30:00')"
+    },
+    {
+      "title": "Text Mining with tm",
+      "content": "Analyzing text data and performing text mining operations.",
+      "code_example": "library(tm); corpus <- Corpus(VectorSource(text_data)); dtm <- DocumentTermMatrix(corpus)"
+    },
+    {
+      "title": "Generating Reports with knitr and R Markdown",
+      "content": "Creating dynamic reports and documents with R Markdown and knitr.",
+      "code_example": "library(knitr); render('report.Rmd', output_format='pdf_document')"
+    },
+    {
+      "title": "Integration with SQL Databases",
+      "content": "Connecting and querying SQL databases from R using DBI package.",
+      "code_example": "library(DBI); con <- dbConnect(RSQLite::SQLite(), 'database.sqlite'); dbGetQuery(con, 'SELECT * FROM table')"
+    },
+    {
+      "title": "Exporting Plots to PDF",
+      "content": "Saving R plots as PDF files for publication and sharing.",
+      "code_example": "pdf('plot.pdf'); plot(x, y); dev.off()"
+    },
+    {
+      "title": "Debugging in R",
+      "content": "Techniques for debugging and troubleshooting R code.",
+      "code_example": "browser(); debug(function_name)"
+    },
+    {
+      "title": "Working with APIs in R",
+      "content": "Interacting with web APIs and processing JSON data in R.",
+      "code_example": "library(jsonlite); data <- fromJSON('https://api.example.com/data')"
+    },
+    {
+      "title": "Creating R Packages",
+      "content": "Steps to create and distribute custom R packages.",
+      "code_example": "devtools::create('mypackage'); R CMD build mypackage; R CMD INSTALL mypackage_1.0.tar.gz"
+    },
+    {
+      "title": "Deploying Shiny Apps with shinyapps.io",
+      "content": "Deploying Shiny applications online using shinyapps.io platform.",
+      "code_example": "library(rsconnect); deployApp(appDir='myshinyapp')"
+    },
+    {
+      "title": "Version Control with Git and GitHub",
+      "content": "Managing R projects with Git version control and GitHub.",
+      "code_example": "git init; git add .; git commit -m 'Initial commit'; git remote add origin https://github.com/username/repository.git; git push -u origin master"
+    },
+    {
+      "title": "Parallel Computing with foreach and doParallel",
+      "content": "Harnessing parallel processing capabilities in R for faster computations.",
+      "code_example": "library(doParallel); cl <- makeCluster(2); registerDoParallel(cl); foreach(i=1:10) %dopar% { heavy_computation(i) }; stopCluster(cl)"
+    },
+    {
+      "title": "Creating Interactive Visualizations with plotly",
+      "content": "Generating interactive plots and graphs using plotly package.",
+      "code_example": "library(plotly); p <- plot_ly(df, x = ~Date, y = ~Value, type = 'scatter', mode = 'lines'); embed_notebook(p)"
+    },
+    {
+      "title": "Time Series Analysis with forecast",
+      "content": "Analyzing and forecasting time series data using forecast package.",
+      "code_example": "library(forecast); fit <- auto.arima(ts_data); forecast <- forecast(fit)"
+    },
+    {
+      "title": "Optimization and Linear Programming in R",
+      "content": "Solving optimization problems and linear programming using R.",
+      "code_example": "library(lpSolve); lprec <- make.lp(0, 4); set.objfn(lprec, c(4, 3, 5)); add.constraint(lprec, c(2, 2, 3), '<=', 5); solve(lprec)"
+    },
+    {
+      "title": "Advanced Data Visualization with ggplot2",
+      "content": "Advanced techniques for creating sophisticated plots with ggplot2.",
+      "code_example": "ggplot(data=mtcars, aes(x=mpg, y=disp, color=cyl)) + geom_point() + facet_wrap(~cyl)"
+    },
+    {
+      "title": "Creating Dashboards with flexdashboard",
+      "content": "Designing interactive dashboards using flexdashboard package.",
+      "code_example": "library(flexdashboard); dashboard <- flex_dashboard(); shinyApp(ui=dashboard, server=dashboard_server)"
+    },
+    {
+      "title": "Big Data Analysis with SparkR",
+      "content": "Performing data analysis on large datasets using SparkR.",
+      "code_example": "library(SparkR); sparkR.session(); df <- as.DataFrame(spark_data); df_filtered <- filter(df, df$age > 30)"
+    },
+    {
+      "title": "Geospatial Data Visualization with leaflet",
+      "content": "Creating interactive maps and visualizing geospatial data with leaflet package.",
+      "code_example": "library(leaflet); m <- leaflet() %>% addTiles() %>% addMarkers(lng=174.768, lat=-36.852, popup='The birthplace of R')"
+    },
+    {
+      "title": "Creating Custom Reports with RMarkdown",
+      "content": "Developing customized reports and documents using RMarkdown.",
+      "code_example": "library(rmarkdown); render('report.Rmd', output_format='html_document')"
+    },
+    {
+      "title": "Text Analysis with quanteda",
+      "content": "Performing text analysis and corpus linguistics with quanteda package.",
+      "code_example": "library(quanteda); corpus <- corpus(c('text1', 'text2')); dfm <- dfm(corpus)"
+    },
+    {
+      "title": "Spatial Data Analysis with sp",
+      "content": "Analyzing spatial data and maps using sp package.",
+      "code_example": "library(sp); data(meuse); coordinates(meuse) <- ~x+y; spplot(meuse, 'zinc')"
+    },
+    {
+      "title": "Bayesian Statistics with rstan",
+      "content": "Applying Bayesian statistical modeling with rstan package.",
+      "code_example": "library(rstan); stan_model <- stan_model('model.stan'); fit <- sampling(stan_model)"
+    },
+    {
+      "title": "Reproducible Research with R",
+      "content": "Best practices for reproducible research using R.",
+      "code_example": "library(knitr); knit('analysis.Rmd')"
+    },
+    {
+      "title": "Creating Interactive Dashboards with shinydashboard",
+      "content": "Developing interactive dashboards with shinydashboard package.",
+      "code_example": "library(shinydashboard); dashboard <- dashboardPage(dashboardHeader(), dashboardSidebar(), dashboardBody()); shinyApp(ui=dashboard, server=function(input, output) {})"
+    },
+    {
+      "title": "Time Series Forecasting with forecast",
+      "content": "Forecasting time series data using forecast package.",
+      "code_example": "library(forecast); fit <- auto.arima(ts_data); forecast <- forecast(fit)"
+    },
+    {
+      "title": "Cluster Analysis with cluster",
+      "content": "Performing cluster analysis and clustering algorithms in R.",
+      "code_example": "library(cluster); kmeans_result <- kmeans(data, centers=3)"
+    },
+    {
+      "title": "Network Analysis with igraph",
+      "content": "Analyzing and visualizing networks and graphs with igraph package.",
+      "code_example": "library(igraph); g <- graph(edges=c(1,2, 2,3, 3,1)); plot(g)"
+    },
+    {
+      "title": "Deep Learning with Keras and TensorFlow",
+      "content": "Building deep learning models using Keras and TensorFlow in R.",
+      "code_example": "library(keras); model <- keras_model_sequential(); model %>% layer_dense(units=10, activation='relu', input_shape=c(784,)) %>% layer_dense(units=10, activation='softmax')"
+    },
+    {
+      "title": "Market Basket Analysis with arules",
+      "content": "Performing market basket analysis using arules package.",
+      "code_example": "library(arules); transactions <- read.transactions('transactions.csv', format='single'); rules <- apriori(transactions, parameter=list(support=0.1, confidence=0.5))"
+    },
+    {
+      "title": "Web Scraping with rvest",
+      "content": "Extracting data from websites using rvest package.",
+      "code_example": "library(rvest); webpage <- read_html('https://example.com'); data <- html_text(html_nodes(webpage, '.class'))"
+    },
+    {
+      "title": "Multivariate Analysis with FactoMineR",
+      "content": "Conducting multivariate data analysis with FactoMineR package.",
+      "code_example": "library(FactoMineR); res <- PCA(data, graph=FALSE)"
+    },
+    {
+      "title": "Interactive Plotting with plotly",
+      "content": "Creating interactive plots using plotly package.",
+      "code_example": "library(plotly); plot_ly(data=df, x=~x, y=~y, z=~z, type='scatter3d')"
+    },
+    {
+      "title": "Geospatial Visualization with leaflet",
+      "content": "Visualizing geospatial data and creating interactive maps with leaflet package.",
+      "code_example": "library(leaflet); m <- leaflet() %>% addTiles() %>% addMarkers(lng=174.768, lat=-36.852, popup='The birthplace of R')"
+    },
+    {
+      "title": "Data Mining with caret",
+      "content": "Performing data mining and machine learning tasks with caret package.",
+      "code_example": "library(caret); train_control <- trainControl(method='cv', number=10); model <- train(Species ~ ., data=iris, method='rf', trControl=train_control)"
+    },
+    {
+      "title": "Database Integration with DBI",
+      "content": "Connecting and querying SQL databases using DBI package.",
+      "code_example": "library(DBI); con <- dbConnect(RSQLite::SQLite(), 'database.sqlite'); dbGetQuery(con, 'SELECT * FROM table')"
+    },
+    {
+      "title": "Creating Reports with RMarkdown",
+      "content": "Generating reports and documents using RMarkdown.",
+      "code_example": "library(rmarkdown); render('report.Rmd', output_format='pdf_document')"
+    },
+    {
+      "title": "Survival Analysis with survival",
+      "content": "Conducting survival analysis using survival package.",
+      "code_example": "library(survival); fit <- survfit(Surv(time, status) ~ group, data=df)"
+    },
+    {
+      "title": "Package Development with devtools",
+      "content": "Developing and maintaining R packages using devtools.",
+      "code_example": "library(devtools); create('mypackage'); document('mypackage'); check('mypackage'); install('mypackage')"
+    },
+    {
+      "title": "Differential Expression Analysis with DESeq2",
+      "content": "Analyzing RNA-seq data for differential gene expression using DESeq2 package.",
+      "code_example": "library(DESeq2); dds <- DESeqDataSetFromMatrix(countData, colData, design=~group); dds <- DESeq(dds)"
+    },
+    {
+      "title": "Natural Language Processing with tm",
+      "content": "Processing and analyzing text data using tm package.",
+      "code_example": "library(tm); corpus <- Corpus(VectorSource(text_data)); dtm <- DocumentTermMatrix(corpus)"
+    },
+    {
+      "title": "Dynamic Dashboards with flexdashboard",
+      "content": "Building dynamic dashboards using flexdashboard package.",
+      "code_example": "library(flexdashboard); dashboard <- flex_dashboard(); shinyApp(ui=dashboard, server=dashboard_server)"
+    }
+  ]

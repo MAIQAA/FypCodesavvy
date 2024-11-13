@@ -17,22 +17,19 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Codesavvy",
-  description: "A code learning Plaform to learn and practice code and collaborate with outstanding millions of users",
+  description: "A code learning platform to learn, practice, and collaborate with millions of users.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <AuthProvider>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Navbar/>
-        {children}
-        <Footer/>
-      </body>
-        </AuthProvider>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <Navbar /> {/* Navbar is placed here for all pages */}
+          <main>{children}</main> {/* Page-specific content */}
+          <Footer /> {/* Footer is placed here for all pages */}
+        </body>
+      </AuthProvider>
     </html>
   );
 }

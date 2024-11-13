@@ -1,0 +1,167 @@
+[
+    {
+      "title": "Introduction to React",
+      "content": "React is a powerful JavaScript library used for building user interfaces (UIs). Developed by Facebook, it enables developers to create interactive and responsive web applications with ease. React operates on the principle of components, which are reusable and independent building blocks for UI elements. It uses a declarative approach, where developers describe how the UI should look based on the application's state. React efficiently manages UI updates through its virtual DOM, which enhances performance by minimizing unnecessary re-renders. With React, developers can build modern web applications that are scalable, maintainable, and optimized for performance.",
+      "code_example": ""
+    },
+    {
+      "title": "Installing React",
+      "content": "React can be installed using npm (Node Package Manager), which comes bundled with Node.js. Use the following command in your terminal to create a new React application:",
+      "code_example": "npx create-react-app my-react-app\n\ncd my-react-app\n\nnpm start"
+    },
+    {
+      "title": "Components in React",
+      "content": "Components are the building blocks of a React application. They are reusable UI elements that can be composed together to build complex UIs.",
+      "code_example": "// Example of a functional component\nfunction Welcome(props) {\n  return <h1>Hello, {props.name}</h1>;\n}\n\n// Example of a class component\nclass Welcome extends React.Component {\n  render() {\n    return <h1>Hello, {this.props.name}</h1>;\n  }\n}"
+    },
+    {
+      "title": "Props and State",
+      "content": "Props (short for properties) are used to pass data from parent to child components in React. State is used for mutable data that affects a component's rendering.",
+      "code_example": "// Example of using props and state\nclass Counter extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { count: 0 };\n  }\n\n  render() {\n    return (\n      <div>\n        <p>Count: {this.state.count}</p>\n        <button onClick={() => this.setState({ count: this.state.count + 1 })}>Increment</button>\n      </div>\n    );\n  }\n}"
+    },
+    {
+      "title": "Handling Events",
+      "content": "React events are similar to DOM events but are normalized to work consistently across different browsers. Event handlers are specified in camelCase.",
+      "code_example": "// Example of handling events in React\nfunction handleClick() {\n  console.log('Button clicked');\n}\n\nfunction App() {\n  return (\n    <button onClick={handleClick}>Click me</button>\n  );\n}"
+    },
+    {
+      "title": "Conditional Rendering",
+      "content": "Conditional rendering in React allows you to render different components or elements based on a condition.",
+      "code_example": "// Example of conditional rendering in React\nfunction Greeting(props) {\n  const isLoggedIn = props.isLoggedIn;\n  if (isLoggedIn) {\n    return <UserGreeting />;\n  }\n  return <GuestGreeting />;\n}"
+    },
+    {
+      "title": "Lists and Keys",
+      "content": "Lists in React are rendered using the map() method to iterate over an array of data and generate a list of elements. Keys help React identify which items have changed, are added, or are removed.",
+      "code_example": "// Example of rendering a list in React\nfunction NumberList(props) {\n  const numbers = props.numbers;\n  return (\n    <ul>\n      {numbers.map((number) => (\n        <li key={number.toString()}>{number}</li>\n      ))}\n    </ul>\n  );\n}"
+    },
+    {
+      "title": "Forms in React",
+      "content": "Forms in React are similar to HTML forms but with React's controlled components approach where form data is handled by the component rather than the DOM.",
+      "code_example": "// Example of handling form input in React\nclass NameForm extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { value: '' };\n  }\n\n  handleChange = (event) => {\n    this.setState({ value: event.target.value });\n  }\n\n  handleSubmit = (event) => {\n    alert('A name was submitted: ' + this.state.value);\n    event.preventDefault();\n  }\n\n  render() {\n    return (\n      <form onSubmit={this.handleSubmit}>\n        <label>\n          Name:\n          <input type=\"text\" value={this.state.value} onChange={this.handleChange} />\n        </label>\n        <input type=\"submit\" value=\"Submit\" />\n      </form>\n    );\n  }\n}"
+    },
+    {
+      "title": "React Hooks",
+      "content": "Hooks are a new addition in React 16.8 that allow you to use state and other React features without writing a class.",
+      "code_example": "// Example of using React Hooks\nimport React, { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>Increment</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Router",
+      "content": "React Router is a popular library for implementing routing and navigation in React applications. It enables navigation between different views/components.",
+      "code_example": "// Example of using React Router\nimport { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\n\nfunction App() {\n  return (\n    <Router>\n      <div>\n        <Switch>\n          <Route exact path=\"/\">\n            <Home />\n          </Route>\n          <Route path=\"/about\">\n            <About />\n          </Route>\n          <Route path=\"/topics\">\n            <Topics />\n          </Route>\n        </Switch>\n      </div>\n    </Router>\n  );\n}"
+    },
+    {
+      "title": "Context API",
+      "content": "The Context API provides a way to pass data through the component tree without having to pass props down manually at every level.",
+      "code_example": "// Example of using Context API in React\nimport React, { createContext, useContext } from 'react';\n\nconst ThemeContext = createContext('light');\n\nfunction App() {\n  return (\n    <ThemeContext.Provider value=\"dark\">\n      <Toolbar />\n    </ThemeContext.Provider>\n  );\n}\n\nfunction Toolbar() {\n  const theme = useContext(ThemeContext);\n  return <div>Current theme: {theme}</div>;\n}"
+    },
+    {
+      "title": "Error Boundaries",
+      "content": "Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire app.",
+      "code_example": "// Example of using Error Boundaries in React\nclass ErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, errorInfo) {\n    logErrorToMyService(error, errorInfo);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h1>Something went wrong.</h1>;\n    }\n    return this.props.children;\n  }\n}"
+    },
+    {
+      "title": "Lifecycle Methods",
+      "content": "Lifecycle methods are special methods that execute at various phases of a component's lifecycle. They allow you to perform actions at specific points during a component's existence.",
+      "code_example": "// Example of using lifecycle methods in React\nimport React, { Component } from 'react';\n\nclass Clock extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { date: new Date() };\n  }\n\n  componentDidMount() {\n    this.timerID = setInterval(\n      () => this.tick(),\n      1000\n    );\n  }\n\n  componentWillUnmount() {\n    clearInterval(this.timerID);\n  }\n\n  tick() {\n    this.setState({\n      date: new Date()\n    });\n  }\n\n  render() {\n    return (\n      <div>\n        <h1>Hello, world!</h1>\n        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>\n      </div>\n    );\n  }\n}"
+    },
+    {
+      "title": "Higher-Order Components (HOC)",
+      "content": "Higher-order components are functions that take a component and return a new component with enhanced functionality. They are used for code reuse, logic abstraction, and state manipulation in React.",
+      "code_example": "// Example of a Higher-Order Component (HOC) in React\nfunction withSubscription(WrappedComponent, selectData) {\n  return class extends React.Component {\n    constructor(props) {\n      super(props);\n      this.state = {\n        data: selectData(props.dataSource)\n      };\n    }\n\n    render() {\n      return <WrappedComponent data={this.state.data} {...this.props} />;\n    }\n  };\n}\n\nconst CommentListWithSubscription = withSubscription(\n  CommentList,\n  (dataSource) => dataSource.getComments()\n);"
+    },
+    {
+      "title": "React Hooks - useEffect",
+      "content": "The useEffect hook in React allows you to perform side effects in function components. It replaces lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in function components.",
+      "code_example": "// Example of using useEffect hook in Reactimport React, { useState, useEffect } from 'react';\n\nfunction Example() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    document.title = `You clicked ${count} times`;\n  });\n\n  return (\n    <div>\n      <p>You clicked {count} times</p>\n      <button onClick={() => setCount(count + 1)}>\n        Click me\n      </button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Fragments",
+      "content": "React Fragments allow you to group multiple children elements without adding extra nodes to the DOM. They improve component structure and performance.",
+      "code_example": "// Example of using React Fragments\nimport React from 'react';\n\nfunction App() {\n  return (\n    <React.Fragment>\n      <ChildA />\n      <ChildB />\n    </React.Fragment>\n  );\n}"
+    },
+    {
+      "title": "Error Handling with Error Boundary",
+      "content": "Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire app.",
+      "code_example": "// Example of Error Boundary in React\nimport React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, errorInfo) {\n    console.error('Error caught by Error Boundary:', error, errorInfo);\n    // You can log the error to an error reporting service\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h1>Something went wrong.</h1>;\n    }\n    return this.props.children;\n  }\n}"
+    },
+    {
+      "title": "React Context and useContext Hook",
+      "content": "React Context provides a way to pass data through the component tree without having to pass props manually at every level. useContext is a hook that enables consuming context values.",
+      "code_example": "// Example of using React Context and useContext hook\nimport React, { useContext } from 'react';\n\nconst ThemeContext = React.createContext('light');\n\nfunction ThemeButton() {\n  const theme = useContext(ThemeContext);\n  return <button style={{ backgroundColor: theme }}>Toggle Theme</button>;\n}\n\nfunction App() {\n  return (\n    <ThemeContext.Provider value='dark'>\n      <ThemeButton />\n    </ThemeContext.Provider>\n  );\n}"
+    },
+    {
+      "title": "React Lazy and Suspense",
+      "content": "React Lazy and Suspense are features that allow you to load components lazily and display fallback content while waiting for components to load.",
+      "code_example": "// Example of using React Lazy and Suspense\nimport React, { Suspense, lazy } from 'react';\n\nconst LazyComponent = lazy(() => import('./LazyComponent'));\n\nfunction App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <LazyComponent />\n    </Suspense>\n  );\n}"
+    },
+    {
+      "title": "React Router - Nested Routes",
+      "content": "React Router supports nested routes, allowing you to nest routes inside other routes to create complex navigation structures in your application.",
+      "code_example": "// Example of using nested routes with React Router\nimport { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\n\nfunction App() {\n  return (\n    <Router>\n      <div>\n        <Switch>\n          <Route exact path='/'>\n            <Home />\n          </Route>\n          <Route path='/about'>\n            <About />\n          </Route>\n          <Route path='/dashboard'>\n            <Dashboard />\n          </Route>\n        </Switch>\n      </div>\n    </Router>\n  );\n}"
+    },
+    {
+      "title": "React Testing Library",
+      "content": "React Testing Library is a testing utility for React that encourages writing tests that simulate user interactions and assert on the results.",
+      "code_example": "// Example of testing a React component using React Testing Library\nimport React from 'react';\nimport { render, screen } from '@testing-library/react';\nimport App from './App';\n\ntest('renders learn react link', () => {\n  render(<App />);\n  const linkElement = screen.getByText(/learn react/i);\n  expect(linkElement).toBeInTheDocument();\n});"
+    },
+    {
+      "title": "React Performance Optimization",
+      "content": "Optimizing React application performance involves techniques like minimizing re-renders, using shouldComponentUpdate (for class components), memoizing components with React.memo, and lazy loading components.",
+      "code_example": "// Example of using React.memo for component memoization\nimport React from 'react';\n\nconst MemoizedComponent = React.memo(function MyComponent(props) {\n  /* render using props */\n});"
+    },
+    {
+      "title": "Server-Side Rendering (SSR) with React",
+      "content": "Server-Side Rendering (SSR) in React involves rendering React components on the server side and sending a fully-rendered page to the client.",
+      "code_example": "// Example of implementing Server-Side Rendering (SSR) with React and Node.js\nimport React from 'react';\nimport ReactDOMServer from 'react-dom/server';\nimport App from './App';\nimport express from 'express';\n\nconst server = express();\n\nserver.get('*', (req, res) => {\n  const appString = ReactDOMServer.renderToString(<App />);\n  res.send(`<!DOCTYPE html><html><head><title>React SSR Example</title></head><body><div id='app'>${appString}</div><script src='/bundle.js'></script></body></html>`);\n});"
+    },
+    {
+      "title": "React Forms",
+      "content": "React provides a way to manage form data using controlled components and handling form submissions with synthetic events.",
+      "code_example": "// Example of handling forms in React\nimport React, { useState } from 'react';\n\nfunction FormExample() {\n  const [formData, setFormData] = useState({ username: '', password: '' });\n\n  const handleChange = (event) => {\n    const { name, value } = event.target;\n    setFormData({ ...formData, [name]: value });\n  };\n\n  const handleSubmit = (event) => {\n    event.preventDefault();\n    // Handle form submission logic\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type='text' name='username' value={formData.username} onChange={handleChange} />\n      <input type='password' name='password' value={formData.password} onChange={handleChange} />\n      <button type='submit'>Submit</button>\n    </form>\n  );\n}"
+    },
+    {
+      "title": "React Hooks - useState",
+      "content": "The useState hook in React allows functional components to manage state. It replaces this.state and this.setState in class components.",
+      "code_example": "// Example of using useState hook in React\nimport React, { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>You clicked {count} times</p>\n      <button onClick={() => setCount(count + 1)}>Click me</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Context - useContext Hook",
+      "content": "React useContext hook allows functional components to consume context values without nesting.",
+      "code_example": "// Example of using useContext hook with React Context\nimport React, { useContext } from 'react';\n\nconst ThemeContext = React.createContext('light');\n\nfunction ThemeButton() {\n  const theme = useContext(ThemeContext);\n\n  return (\n    <button style={{ backgroundColor: theme }}>Toggle Theme</button>\n  );\n}"
+    },
+    {
+      "title": "React Router - Programmatic Navigation",
+      "content": "React Router provides a way to navigate programmatically using the useHistory hook or withRouter HOC.",
+      "code_example": "// Example of programmatic navigation with React Router\nimport React from 'react';\nimport { useHistory } from 'react-router-dom';\n\nfunction Home() {\n  const history = useHistory();\n\n  const handleClick = () => {\n    history.push('/about');\n  };\n\n  return (\n    <div>\n      <h1>Home Page</h1>\n      <button onClick={handleClick}>Go to About Page</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React PropTypes",
+      "content": "React PropTypes are used to type-check props passed to components. They help in catching bugs early by defining expected prop types.",
+      "code_example": "// Example of using PropTypes in React\nimport React from 'react';\nimport PropTypes from 'prop-types';\n\nfunction Greeting(props) {\n  return <h1>Hello, {props.name}</h1>;\n}\n\nGreeting.propTypes = {\n  name: PropTypes.string.isRequired,\n};"
+    },
+    {
+      "title": "React Hooks - useCallback and useMemo",
+      "content": "React useCallback and useMemo hooks optimize performance by memoizing functions and values, respectively, to prevent unnecessary re-renders.",
+      "code_example": "// Example of using useCallback and useMemo hooks in React\nimport React, { useState, useCallback, useMemo } from 'react';\n\nfunction MemoizedComponent() {\n  const [count, setCount] = useState(0);\n\n  const memoizedFunction = useCallback(\n    () => {\n      // Function logic\n    },\n    [count]\n  );\n\n  const memoizedValue = useMemo(\n    () => {\n      // Value calculation\n      return count * 2;\n    },\n    [count]\n  );\n\n  return (\n    <div>\n      <p>Memoized value: {memoizedValue}</p>\n      <button onClick={() => setCount(count + 1)}>Update Count</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Portals",
+      "content": "React Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.",
+      "code_example": "// Example of using React Portals\nimport React from 'react';\nimport ReactDOM from 'react-dom';\n\nconst modalRoot = document.getElementById('modal-root');\n\nclass Modal extends React.Component {\n  constructor(props) {\n    super(props);\n    this.el = document.createElement('div');\n  }\n\n  componentDidMount() {\n    modalRoot.appendChild(this.el);\n  }\n\n  componentWillUnmount() {\n    modalRoot.removeChild(this.el);\n  }\n\n  render() {\n    return ReactDOM.createPortal(\n      this.props.children,\n      this.el\n    );\n  }\n}"
+    },
+    {
+      "title": "React Hooks - useRef",
+      "content": "The useRef hook in React provides a way to reference DOM nodes or values that persist between renders without causing re-renders.",
+      "code_example": "// Example of using useRef hook in React\nimport React, { useRef } from 'react';\n\nfunction TextInputWithFocusButton() {\n  const inputEl = useRef(null);\n\n  const handleClick = () => {\n    inputEl.current.focus();\n  };\n\n  return (\n    <div>\n      <input ref={inputEl} type='text' />\n      <button onClick={handleClick}>Focus Input</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Hooks - useReducer",
+      "content": "The useReducer hook in React is an alternative to useState for managing complex state logic. It accepts a reducer function with the current state and an action to compute the next state.",
+      "code_example": "// Example of using useReducer hook in React\nimport React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      throw new Error();\n  }\n}\n\nfunction Counter() {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  return (\n    <div>\n      Count: {state.count}\n      <button onClick={() => dispatch({ type: 'increment' })}>+</button>\n      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "React Hooks - useLayoutEffect",
+      "content": "The useLayoutEffect hook in React is similar to useEffect, but it fires synchronously after all DOM mutations. It can be used for operations that require the DOM to be updated.",
+      "code_example": "// Example of using useLayoutEffect hook in React\nimport React, { useLayoutEffect, useRef } from 'react';\n\nfunction useEnhancedEffect(callback, deps) {\n  const isFirstRun = useRef(true);\n\n  useLayoutEffect(() => {\n    if (isFirstRun.current) {\n      isFirstRun.current = false;\n    } else {\n      callback();\n    }\n  }, deps);\n}\n\nfunction LayoutEffectComponent() {\n  useEnhancedEffect(() => {\n    // Update DOM or perform side effects\n  }, []);\n\n  return <div>Component with useLayoutEffect</div>;\n}"
+    }
+  ]

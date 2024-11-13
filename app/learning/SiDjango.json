@@ -1,0 +1,227 @@
+[
+    {
+      "title": "Introduction to Django",
+      "content": "Overview of Django framework and its features.",
+      "code_example": "from django.shortcuts import render\n\n# Define a view\n\ndef index(request):\n    return render(request, 'index.html', {})"
+    },
+    {
+      "title": "Setting Up a Django Project",
+      "content": "Steps to create a new Django project and configure settings.",
+      "code_example": "django-admin startproject myproject\npython manage.py runserver"
+    },
+    {
+      "title": "Models and Database Configuration",
+      "content": "Defining models and setting up database connections in Django.",
+      "code_example": "from django.db import models\n\nclass MyModel(models.Model):\n    field1 = models.CharField(max_length=100)\n    field2 = models.IntegerField()"
+    },
+    {
+      "title": "Views and URL Routing",
+      "content": "Creating views and mapping URLs to view functions.",
+      "code_example": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]"
+    },
+    {
+      "title": "Templates and Template Language",
+      "content": "Using Django's template system and template language.",
+      "code_example": "<html>\n<head>\n    <title>{{ title }}</title>\n</head>\n<body>\n    <h1>Hello, {{ username }}!</h1>\n</body>\n</html>"
+    },
+    {
+      "title": "Forms Handling",
+      "content": "Creating and processing forms in Django applications.",
+      "code_example": "from django import forms\n\nclass MyForm(forms.Form):\n    field1 = forms.CharField(max_length=100)\n    field2 = forms.IntegerField()"
+    },
+    {
+      "title": "Admin Interface",
+      "content": "Using Django's built-in admin interface for CRUD operations.",
+      "code_example": "from django.contrib import admin\nfrom .models import MyModel\n\nadmin.site.register(MyModel)"
+    },
+    {
+      "title": "User Authentication",
+      "content": "Implementing user authentication and authorization.",
+      "code_example": "# Example of user login\nfrom django.contrib.auth import authenticate, login\n\nuser = authenticate(username='myusername', password='mypassword')\nif user is not None:\n    login(request, user)"
+    },
+    {
+      "title": "Middleware",
+      "content": "Understanding and using middleware in Django applications.",
+      "code_example": "class MyMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n\n    def __call__(self, request):\n        # Code to execute before the view\n        response = self.get_response(request)\n        # Code to execute after the view\n        return response"
+    },
+    {
+      "title": "Static Files Management",
+      "content": "Handling static files (CSS, JavaScript) in Django projects.",
+      "code_example": "{% load static %}\n<link rel='stylesheet' href='{% static 'css/styles.css' %}'>"
+    },
+    {
+      "title": "Django REST Framework",
+      "content": "Introduction to building APIs with Django REST Framework.",
+      "code_example": "# Example of a simple API view\nfrom rest_framework.views import APIView\nfrom rest_framework.response import Response\n\nclass HelloAPI(APIView):\n    def get(self, request):\n        return Response({'message': 'Hello, world!'})"
+    },
+    {
+      "title": "Testing Django Applications",
+      "content": "Writing and running tests for Django applications.",
+      "code_example": "from django.test import TestCase\nfrom .models import MyModel\n\nclass MyModelTestCase(TestCase):\n    def setUp(self):\n        MyModel.objects.create(field1='Test', field2=1)\n\n    def test_model_fields(self):\n        obj = MyModel.objects.get(field1='Test')\n        self.assertEqual(obj.field2, 1)"
+    },
+    {
+      "title": "Deployment Strategies",
+      "content": "Options and best practices for deploying Django applications.",
+      "code_example": "# Example of using Gunicorn for deployment\n$ gunicorn myproject.wsgi"
+    },
+    {
+      "title": "Internationalization and Localization",
+      "content": "Supporting multiple languages and cultures in Django projects.",
+      "code_example": "{% trans 'Welcome' %}"
+    },
+    {
+      "title": "Handling File Uploads",
+      "content": "Uploading and processing files in Django applications.",
+      "code_example": "# Example of file upload form\n<form enctype='multipart/form-data' method='post' action='/upload/'>\n    {% csrf_token %}\n    <input type='file' name='file'>\n    <input type='submit' value='Upload'>\n</form>"
+    },
+    {
+      "title": "Caching Techniques",
+      "content": "Implementing caching to improve performance in Django.",
+      "code_example": "from django.core.cache import cache\n\ncache.set('my_key', 'my_value', timeout=60)\nvalue = cache.get('my_key')"
+    },
+    {
+      "title": "Using Django Signals",
+      "content": "Using signals to trigger actions based on events in Django models.",
+      "code_example": "# Example of post-save signal\nfrom django.db.models.signals import post_save\nfrom django.dispatch import receiver\nfrom .models import MyModel\n\n@receiver(post_save, sender=MyModel)\ndef mymodel_post_save(sender, instance, **kwargs):\n    # Code to execute after MyModel is saved\n    pass"
+    },
+    {
+      "title": "Background Tasks with Celery",
+      "content": "Setting up asynchronous background tasks using Celery with Django.",
+      "code_example": "# Example of task definition\nfrom celery import shared_task\n\n@shared_task\ndef send_email_task(email):\n    # Code to send email\n    pass"
+    },
+    {
+      "title": "Using Django with Docker",
+      "content": "Running Django applications in Docker containers.",
+      "code_example": "# Example Dockerfile\nFROM python:3.9\n\n# Set environment variables\nENV PYTHONUNBUFFERED 1\n\n# Copy project files and install dependencies\nCOPY . /app\nWORKDIR /app\nRUN pip install -r requirements.txt\n\n# Run the application\nCMD python manage.py runserver 0.0.0.0:8000"
+    },
+    {
+      "title": "WebSockets with Django Channels",
+      "content": "Implementing real-time communication using WebSockets with Django Channels.",
+      "code_example": "# Example consumer\nfrom channels.generic.websocket import AsyncWebsocketConsumer\n\nclass ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        # Code to connect client\n        pass"
+    },
+    {
+      "title": "Customizing Django Admin Interface",
+      "content": "Adding custom functionality and styling to Django admin interface.",
+      "code_example": "# Example of custom admin interface\nfrom django.contrib import admin\nfrom .models import MyModel\n\n@admin.register(MyModel)\nclass MyModelAdmin(admin.ModelAdmin):\n    list_display = ('field1', 'field2')"
+    },
+    {
+      "title": "Handling JSON Requests and Responses",
+      "content": "Processing JSON data in views and returning JSON responses.",
+      "code_example": "# Example of JSON response\nfrom django.http import JsonResponse\n\ndef get_data(request):\n    data = {'key': 'value'}\n    return JsonResponse(data)"
+    },
+    {
+      "title": "Django Security Best Practices",
+      "content": "Guidelines and practices for securing Django applications.",
+      "code_example": "# Example of protecting views with login required\nfrom django.contrib.auth.decorators import login_required\nfrom django.shortcuts import render\n\n@login_required\ndef protected_view(request):\n    return render(request, 'protected.html')"
+    },
+    {
+      "title": "Using Django with GraphQL",
+      "content": "Integrating GraphQL with Django applications for API querying.",
+      "code_example": "# Example of GraphQL query\nquery {\n  viewer {\n    login\n  }\n}"
+    },
+    {
+      "title": "Handling Dates and Times in Django",
+      "content": "Working with dates, times, and time zones in Django.",
+      "code_example": "# Example of date field in model\nfrom django.db import models\n\nclass MyModel(models.Model):\n    date_field = models.DateField()"
+    },
+    {
+      "title": "Using Django Forms with Bootstrap",
+      "content": "Integrating Django forms with Bootstrap for improved styling and functionality.",
+      "code_example": "{% load crispy_forms_tags %}\n\n<form method='post'>\n    {% csrf_token %}\n    {{ form|crispy }}\n    <button type='submit'>Submit</button>\n</form>"
+    },
+    {
+      "title": "Handling Pagination in Django Views",
+      "content": "Implementing pagination for large datasets in Django views.",
+      "code_example": "# Example of paginated view\nfrom django.core.paginator import Paginator\nfrom django.shortcuts import render\nfrom .models import MyModel\n\ndef my_view(request):\n    objects_list = MyModel.objects.all()\n    paginator = Paginator(objects_list, 10)\n    page_number = request.GET.get('page')\n    page_obj = paginator.get_page(page_number)\n    return render(request, 'my_template.html', {'page_obj': page_obj})"
+    },
+    {
+      "title": "Custom Model Methods in Django",
+      "content": "Adding custom methods to Django models for business logic.",
+      "code_example": "from django.db import models\n\nclass MyModel(models.Model):\n    field = models.CharField(max_length=100)\n\n    def custom_method(self):\n        # Custom logic here\n        return self.field.upper()"
+    },
+    {
+      "title": "Using Django Signals for Asynchronous Tasks",
+      "content": "Using Django signals to trigger asynchronous tasks.",
+      "code_example": "# Example of using signals for task execution\nfrom django.db.models.signals import post_save\nfrom django.dispatch import receiver\nfrom .models import MyModel\nfrom .tasks import my_task\n\n@receiver(post_save, sender=MyModel)\ndef run_task(sender, instance, **kwargs):\n    my_task.delay(instance.id)"
+    },
+    {
+      "title": "Working with Many-to-Many Relationships in Django",
+      "content": "Defining and managing many-to-many relationships between Django models.",
+      "code_example": "from django.db import models\n\nclass Author(models.Model):\n    name = models.CharField(max_length=100)\n\nclass Book(models.Model):\n    title = models.CharField(max_length=100)\n    authors = models.ManyToManyField(Author)"
+    },
+    {
+      "title": "Using Django Middleware for Request and Response Processing",
+      "content": "Creating and using middleware in Django for processing requests and responses.",
+      "code_example": "class MyMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n\n    def __call__(self, request):\n        # Code to process request\n        response = self.get_response(request)\n        # Code to process response\n        return response"
+    },
+    {
+      "title": "Handling Sessions in Django",
+      "content": "Using sessions to store user-specific data in Django applications.",
+      "code_example": "# Example of setting and getting session data\ndef my_view(request):\n    request.session['my_key'] = 'my_value'\n    value = request.session.get('my_key')"
+    },
+    {
+      "title": "Customizing Django Admin Actions",
+      "content": "Adding custom actions to Django admin interface for bulk operations.",
+      "code_example": "# Example of custom admin action\nfrom django.contrib import admin\nfrom .models import MyModel\n\n@admin.register(MyModel)\nclass MyModelAdmin(admin.ModelAdmin):\n    actions = ['make_published']\n\n    def make_published(self, request, queryset):\n        rows_updated = queryset.update(status='published')\n        self.message_user(request, f'{rows_updated} rows were updated.')"
+    },
+    {
+      "title": "Using Django with PostgreSQL Database",
+      "content": "Configuring Django projects to use PostgreSQL as the backend database.",
+      "code_example": "# Example database configuration in settings.py\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': 'mydatabase',\n        'USER': 'myuser',\n        'PASSWORD': 'mypassword',\n        'HOST': 'localhost',\n        'PORT': '5432',\n    }\n}"
+    },
+    {
+      "title": "Using Django with MySQL Database",
+      "content": "Configuring Django projects to use MySQL as the backend database.",
+      "code_example": "# Example database configuration in settings.py\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'mydatabase',\n        'USER': 'myuser',\n        'PASSWORD': 'mypassword',\n        'HOST': 'localhost',\n        'PORT': '3306',\n    }\n}"
+    },
+    {
+      "title": "Using Django with SQLite Database",
+      "content": "Configuring Django projects to use SQLite as the backend database.",
+      "code_example": "# Example database configuration in settings.py\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}"
+    },
+    {
+      "title": "Using Django with MongoDB Database (via Django Non-Rel)",
+      "content": "Integrating MongoDB with Django using Django Non-Rel.",
+      "code_example": "# Example settings for Django Non-Rel with MongoDB\nDATABASES = {\n    'default': {\n        'ENGINE': 'django_mongodb_engine',\n        'NAME': 'mydatabase',\n        'HOST': 'localhost',\n        'PORT': 27017,\n    }\n}"
+    },
+    {
+      "title": "Using Django with Redis for Caching",
+      "content": "Setting up Redis as a caching backend in Django applications.",
+      "code_example": "# Example caching backend configuration\nCACHES = {\n    'default': {\n        'BACKEND': 'django_redis.cache.RedisCache',\n        'LOCATION': 'redis://localhost:6379/1',\n        'OPTIONS': {\n            'CLIENT_CLASS': 'django_redis.client.DefaultClient',\n        }\n    }\n}"
+    },
+    {
+      "title": "Handling Webhooks in Django",
+      "content": "Implementing webhook handlers in Django applications.",
+      "code_example": "# Example webhook handler\nfrom django.http import HttpResponse\nfrom django.views.decorators.csrf import csrf_exempt\n\n@csrf_exempt\ndef webhook_receiver(request):\n    if request.method == 'POST':\n        # Handle webhook data\n        return HttpResponse(status=200)\n    return HttpResponse(status=405)"
+    },
+    {
+      "title": "Implementing Full-Text Search with Django",
+      "content": "Setting up and using full-text search capabilities in Django projects.",
+      "code_example": "# Example of full-text search using PostgreSQL\nfrom django.contrib.postgres.search import SearchVector\nfrom .models import MyModel\n\ndef search(request):\n    query = request.GET.get('q')\n    results = MyModel.objects.annotate(search=SearchVector('field1', 'field2')).filter(search=query)\n    return render(request, 'search_results.html', {'results': results})"
+    },
+    {
+      "title": "Using Django Formsets",
+      "content": "Working with formsets to handle multiple instances of a form in Django views.",
+      "code_example": "from django import forms\nfrom django.forms import formset_factory\nfrom .models import MyModel\n\nMyFormSet = formset_factory(MyForm, extra=2)\n\ndef my_view(request):\n    formset = MyFormSet()\n    return render(request, 'formset_example.html', {'formset': formset})"
+    },
+    {
+      "title": "Using Django with AWS S3 for File Storage",
+      "content": "Configuring Django to use AWS S3 for storing static and media files.",
+      "code_example": "# Example storage backend configuration\nAWS_ACCESS_KEY_ID = 'your-access-key'\nAWS_SECRET_ACCESS_KEY = 'your-secret-key'\nAWS_STORAGE_BUCKET_NAME = 'your-bucket-name'\nAWS_S3_REGION_NAME = 'your-region-name'\n\nDEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'"
+    },
+    {
+      "title": "Using Django with Google Cloud Storage",
+      "content": "Setting up Django to use Google Cloud Storage for file storage.",
+      "code_example": "# Example storage backend configuration\nGS_BUCKET_NAME = 'your-bucket-name'\nGS_PROJECT_ID = 'your-project-id'\nGS_LOCATION = 'your-location'\n\nDEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'"
+    },
+    {
+      "title": "Implementing Multi-Tenancy in Django",
+      "content": "Creating multi-tenant applications using Django.",
+      "code_example": "# Example of tenant model\nfrom django.db import models\n\nclass Tenant(models.Model):\n    name = models.CharField(max_length=100)\n\nclass MyModel(models.Model):\n    tenant = models.ForeignKey(Tenant, on_delete=models.CASCADE)"
+    },
+    {
+      "title": "Django Middleware for CSRF Protection",
+      "content": "Enabling Cross-Site Request Forgery (CSRF) protection using Django middleware.",
+      "code_example": "# Example middleware configuration\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]"
+    }
+  ]

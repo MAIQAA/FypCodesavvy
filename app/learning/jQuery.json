@@ -1,0 +1,212 @@
+ [
+    {
+      "title": "Introduction to jQuery",
+      "content": "jQuery is a powerful JavaScript library designed to simplify the process of client-side scripting in web development. Introduced in 2006 by John Resig, it quickly gained popularity for its ease of use and cross-browser compatibility. jQuery simplifies many common tasks such as DOM manipulation, event handling, AJAX interactions, and animation. It provides a concise and expressive API that abstracts away complexities and inconsistencies across different browsers, allowing developers to write less code and achieve more functionality.",
+      "code": "$('document').ready(function() { // jQuery code });"
+    },
+    {
+      "title": "Selectors in jQuery",
+      "content": "Selectors are used to select and manipulate HTML elements using jQuery.",
+      "code": "$('p').css('color', 'red');"
+    },
+    {
+      "title": "Events Handling with jQuery",
+      "content": "jQuery simplifies the process of handling events such as click, hover, submit, etc., on HTML elements.",
+      "code": "$('button').click(function() { // Event handling code });"
+    },
+    {
+      "title": "jQuery Effects",
+      "content": "jQuery provides built-in methods for creating animations and effects on HTML elements.",
+      "code": "$('div').hide();"
+    },
+    {
+      "title": "Ajax with jQuery",
+      "content": "jQuery allows asynchronous HTTP requests (Ajax) to update parts of a web page without reloading the entire page.",
+      "code": "$.ajax({\n  url: 'data.json',\n  success: function(data) { // Handle data } });"
+    },
+    {
+      "title": "jQuery DOM Manipulation",
+      "content": "jQuery facilitates manipulating the HTML DOM tree, enabling dynamic changes to web pages.",
+      "code": "$('ul').append('<li>New Item</li>');"
+    },
+    {
+      "title": "jQuery Traversing",
+      "content": "Traversing allows moving through and selecting HTML elements based on their relation to other elements.",
+      "code": "$('p').parent();"
+    },
+    {
+      "title": "jQuery CSS Manipulation",
+      "content": "jQuery simplifies adding, removing, or changing CSS properties of HTML elements.",
+      "code": "$('div').css('background-color', 'yellow');"
+    },
+    {
+      "title": "jQuery Form Validation",
+      "content": "jQuery facilitates client-side form validation to ensure data input meets specified criteria before submission.",
+      "code": "$('#myForm').submit(function() { // Form validation code });"
+    },
+    {
+      "title": "jQuery Plugins",
+      "content": "Plugins extend jQuery's functionality by adding custom methods and features to enhance web development.",
+      "code": "$('#myElement').pluginMethod();"
+    },
+    {
+      "title": "jQuery UI Widgets",
+      "content": "jQuery UI provides a set of interactive widgets and effects for building rich user interfaces.",
+      "code": "$('#datepicker').datepicker();"
+    },
+    {
+      "title": "jQuery Event Delegation",
+      "content": "Event delegation allows handling events on dynamically added elements or a large number of elements efficiently.",
+      "code": "$('ul').on('click', 'li', function() { // Event delegation code });"
+    },
+    {
+      "title": "jQuery AJAX Methods",
+      "content": "jQuery offers various AJAX methods such as $.get(), $.post(), and $.ajax() for sending and receiving data from a server asynchronously.",
+      "code": "$.get('data.php', function(data) { // AJAX request });"
+    },
+    {
+      "title": "jQuery Animation Methods",
+      "content": "Animation methods in jQuery enable creating custom animations and effects on HTML elements.",
+      "code": "$('div').animate({\n  opacity: '0.5',\n  left: '250px',\n  height: 'toggle'\n}, 'slow');"
+    },
+    {
+      "title": "jQuery Event Methods",
+      "content": "jQuery provides methods like .on(), .off(), .trigger(), etc., for managing events and event handling.",
+      "code": "$('button').on('click', function() { // Event method });"
+    },
+    {
+      "title": "jQuery Utility Functions",
+      "content": "Utility functions in jQuery offer helper methods for tasks like iterating over objects, checking data types, etc.",
+      "code": "jQuery.each(myArray, function(index, value) { // Utility function });"
+    },
+    {
+      "title": "jQuery Deferred Object",
+      "content": "Deferred objects manage asynchronous tasks and handle their completion states using methods like .done(), .fail(), .always(), etc.",
+      "code": "var deferred = $.ajax({\n  url: 'data.json',\n  dataType: 'json'\n});\ndeferred.done(function(data) { // Handle success });"
+    },
+    {
+      "title": "jQuery .ready() Method",
+      "content": "The .ready() method specifies a function to execute when the DOM is fully loaded.",
+      "code": "$(document).ready(function() { // Document ready code });"
+    },
+    {
+      "title": "jQuery .each() Method",
+      "content": "The .each() method iterates over a jQuery object, executing a function for each matched element.",
+      "code": "$('li').each(function(index) { // Each method code });"
+    },
+    {
+      "title": "jQuery .attr() Method",
+      "content": "The .attr() method gets or sets attributes and values of selected elements.",
+      "code": "$('img').attr('src', 'newimage.jpg');"
+    },
+    {
+      "title": "jQuery .addClass() Method",
+      "content": "The .addClass() method adds one or more classes to selected elements.",
+      "code": "$('div').addClass('highlight');"
+    },
+    {
+      "title": "jQuery .removeClass() Method",
+      "content": "The .removeClass() method removes one or more classes from selected elements.",
+      "code": "$('div').removeClass('highlight');"
+    },
+    {
+      "title": "jQuery .toggleClass() Method",
+      "content": "The .toggleClass() method toggles between adding/removing classes from selected elements.",
+      "code": "$('div').toggleClass('highlight');"
+    },
+    {
+      "title": "jQuery .show() and .hide() Methods",
+      "content": "The .show() and .hide() methods display or hide selected elements with optional animation.",
+      "code": "$('div').hide();"
+    },
+    {
+      "title": "jQuery .fadeIn() and .fadeOut() Methods",
+      "content": "The .fadeIn() and .fadeOut() methods fade elements in and out with optional animation.",
+      "code": "$('div').fadeOut('slow');"
+    },
+    {
+      "title": "jQuery .slideDown() and .slideUp() Methods",
+      "content": "The .slideDown() and .slideUp() methods slide elements up and down with optional animation.",
+      "code": "$('div').slideUp('fast');"
+    },
+    {
+      "title": "jQuery .siblings() Method",
+      "content": "The .siblings() method returns all sibling elements of the selected element.",
+      "code": "$('li').siblings();"
+    },
+    {
+      "title": "jQuery .find() Method",
+      "content": "The .find() method returns descendant elements of selected elements.",
+      "code": "$('ul').find('li');"
+    },
+    {
+      "title": "jQuery .children() Method",
+      "content": "The .children() method returns direct child elements of selected elements.",
+      "code": "$('ul').children('li');"
+    },
+    {
+      "title": "jQuery .parent() Method",
+      "content": "The .parent() method returns the direct parent element of selected elements.",
+      "code": "$('li').parent();"
+    },
+    {
+      "title": "jQuery .first() and .last() Methods",
+      "content": "The .first() and .last() methods return the first and last element(s) of the selected elements.",
+      "code": "$('li').first();"
+    },
+    {
+      "title": "jQuery .eq() Method",
+      "content": "The .eq() method returns an element with a specific index number from selected elements.",
+      "code": "$('li').eq(2);"
+    },
+    {
+      "title": "jQuery .serialize() Method",
+      "content": "The .serialize() method creates a text string in standard URL-encoded notation representing form values for use in AJAX requests.",
+      "code": "$('#myForm').serialize();"
+    },
+    {
+      "title": "jQuery .val() Method",
+      "content": "The .val() method gets or sets the value of form elements.",
+      "code": "$('input[type=text]').val();"
+    },
+    {
+      "title": "jQuery .text() Method",
+      "content": "The .text() method sets or returns the text content of selected elements.",
+      "code": "$('p').text();"
+    },
+    {
+      "title": "jQuery .html() Method",
+      "content": "The .html() method sets or returns the HTML content of selected elements.",
+      "code": "$('div').html();"
+    },
+    {
+      "title": "jQuery .ajaxSetup() Method",
+      "content": "The .ajaxSetup() method sets default values for future AJAX requests.",
+      "code": "$.ajaxSetup({\n  cache: false\n});"
+    },
+    {
+      "title": "jQuery .delay() Method",
+      "content": "The .delay() method sets a timer to delay execution of subsequent items in the queue.",
+      "code": "$('div').slideUp().delay(800).fadeIn();"
+    },
+    {
+      "title": "jQuery .one() Method",
+      "content": "The .one() method attaches a handler to an event for elements that executes at most once.",
+      "code": "$('button').one('click', function() { // Handler code });"
+    },
+    {
+      "title": "jQuery .empty() Method",
+      "content": "The .empty() method removes all child elements from selected elements.",
+      "code": "$('ul').empty();"
+    },
+    {
+      "title": "jQuery .remove() Method",
+      "content": "The .remove() method removes selected elements (including all text and child nodes).",
+      "code": "$('div').remove();"
+    },
+    {
+      "title": "jQuery .closest() Method",
+      "content": "The .closest() method returns the first ancestor of the selected elements that matches the selector, traversing up through its ancestors.",
+      "code": "$('span').closest('div');"
+    }
+  ]

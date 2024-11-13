@@ -1,0 +1,162 @@
+ [
+    {
+      "title": "Introduction to Python",
+      "content": "Python is a versatile and high-level programming language known for its simplicity and readability. Guido van Rossum developed Python in the late 1980s, focusing on code readability and reducing the complexity often found in other languages. Python's syntax emphasizes code readability with its use of significant whitespace, making it ideal for beginners and experienced programmers alike. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming styles, offering flexibility in application development. Python's extensive standard library provides modules and packages for tasks ranging from web development, data analysis, and scientific computing to automation, artificial intelligence, and machine learning. Its community-driven development model ensures continuous improvement and innovation, making Python a preferred choice for building applications across diverse domains.",
+      "code_example": "print('Hello, World!')"
+    },
+    {
+      "title": "Variables and Data Types",
+      "content": "Python supports several data types including integers, floats, strings, lists, tuples, dictionaries, and sets. Variables are dynamically typed and do not require explicit declaration.",
+      "code_example": "age = 25\nname = 'John Doe'\n"
+    },
+    {
+      "title": "Control Flow Statements",
+      "content": "Python uses if, elif, and else statements for conditional logic. Loops such as for and while are used for iteration.",
+      "code_example": "if condition:\n    print('Condition is true')\nelse:\n    print('Condition is false')\n"
+    },
+    {
+      "title": "Functions",
+      "content": "Functions in Python are defined using the 'def' keyword. They can accept parameters and return values. Python also supports lambda functions for one-line expressions.",
+      "code_example": "def add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(5, 3)\nprint(result)\n"
+    },
+    {
+      "title": "Lists and List Comprehensions",
+      "content": "Lists are ordered collections in Python that can store elements of different types. List comprehensions provide a concise way to create lists based on existing lists.",
+      "code_example": "numbers = [1, 2, 3, 4, 5]\ndoubled = [num * 2 for num in numbers]\nprint(doubled)\n"
+    },
+    {
+      "title": "Object-Oriented Programming (OOP)",
+      "content": "Python supports object-oriented programming principles such as classes, inheritance, and polymorphism. It encourages the use of objects and methods to structure code.",
+      "code_example": "class Car:\n    def __init__(self, make, model):\n        self.make = make\n        self.model = model\n\nmy_car = Car('Toyota', 'Camry')\nprint(my_car.make)\n"
+    },
+    {
+      "title": "File Handling",
+      "content": "Python provides built-in functions and modules to work with files. It supports reading from and writing to files, as well as managing file operations.",
+      "code_example": "with open('file.txt', 'r') as file:\n    content = file.read()\n\nprint(content)\n"
+    },
+    {
+      "title": "Exception Handling",
+      "content": "Exception handling in Python allows developers to handle runtime errors gracefully. It uses try, except, else, and finally blocks to manage exceptions.",
+      "code_example": "try:\n    result = 10 / 0\nexcept ZeroDivisionError as e:\n    print('Error:', e)\n"
+    },
+    {
+      "title": "Modules and Packages",
+      "content": "Python modules are reusable code units that can be imported into other modules or scripts. Packages are directories of modules that provide additional functionality.",
+      "code_example": "import math\n\ncircle_area = math.pi * (radius ** 2)\nprint(circle_area)\n"
+    },
+    {
+      "title": "Working with Databases",
+      "content": "Python supports various libraries for database connectivity and manipulation. Popular choices include SQLite, MySQL, PostgreSQL, and MongoDB.",
+      "code_example": "import sqlite3\n\nconn = sqlite3.connect('database.db')\ncursor = conn.cursor()\n\n# Execute SQL queries\n"
+    },
+    {
+      "title": "Working with JSON",
+      "content": "Python provides built-in support for working with JSON data through the json module. It allows encoding Python objects into JSON strings and decoding JSON strings into Python objects.",
+      "code_example": "import json\n\n# Convert Python object to JSON\ndata = {'name': 'John', 'age': 30}\njson_data = json.dumps(data)\n\n# Convert JSON to Python object\npython_obj = json.loads(json_data)\n"
+    },
+    {
+      "title": "Regular Expressions (Regex)",
+      "content": "Python's re module allows developers to work with regular expressions for pattern matching and text manipulation. Regex patterns can be used to search, match, and manipulate strings.",
+      "code_example": "import re\n\n# Search for a pattern\ntext = 'Python is fun!'\npattern = 'Python'\nmatch = re.search(pattern, text)\nif match:\n    print('Pattern found')\n"
+    },
+    {
+      "title": "Generators and Iterators",
+      "content": "Generators and iterators are used in Python to efficiently generate and iterate over sequences of data. Generators yield values one at a time, while iterators provide an interface for iterating over elements.",
+      "code_example": "def my_generator(n):\n    for i in range(n):\n        yield i\n\n# Create a generator object\ngen = my_generator(5)\nfor value in gen:\n    print(value)\n"
+    },
+    {
+      "title": "Decorators",
+      "content": "Decorators in Python allow functions or methods to be modified or extended at compile-time. They are often used to add additional functionality to existing functions without modifying their code.",
+      "code_example": "def my_decorator(func):\n    def wrapper(*args, **kwargs):\n        print('Before function execution')\n        result = func(*args, **kwargs)\n        print('After function execution')\n        return result\n    return wrapper\n\n@my_decorator\ndef greet(name):\n    return f'Hello, {name}'\n\nprint(greet('John'))\n"
+    },
+    {
+      "title": "Concurrency with Threading",
+      "content": "Python supports threading for concurrent execution of tasks. Threads are lightweight processes that run concurrently within the same process space, allowing programs to perform multiple tasks simultaneously.",
+      "code_example": "import threading\n\n# Define a function for the thread\ndef print_numbers():\n    for i in range(1, 6):\n        print(i)\n\n# Create and start a thread\nthread = threading.Thread(target=print_numbers)\nthread.start()\n"
+    },
+    {
+      "title": "Asynchronous Programming with Asyncio",
+      "content": "Asyncio is a library in Python for writing concurrent code using the async and await keywords. It allows developers to write asynchronous code that can handle multiple tasks efficiently.",
+      "code_example": "import asyncio\n\n# Define an asynchronous function\nasync def print_numbers():\n    for i in range(1, 6):\n        print(i)\n        await asyncio.sleep(1)\n\n# Run the event loop\nasyncio.run(print_numbers())\n"
+    },
+    {
+      "title": "Web Scraping with Beautiful Soup",
+      "content": "Beautiful Soup is a Python library used for web scraping and parsing HTML/XML documents. It provides convenient methods and structures to extract data from web pages by navigating the parse tree.",
+      "code_example": "from bs4 import BeautifulSoup\nimport requests\n\n# Send a GET request to the URL\nurl = 'https://example.com'\nresponse = requests.get(url)\n\n# Parse the HTML content\nsoup = BeautifulSoup(response.text, 'html.parser')\n\n# Extract data\n"
+    },
+    {
+      "title": "GUI Programming with Tkinter",
+      "content": "Tkinter is Python's standard GUI (Graphical User Interface) toolkit. It provides widgets and functions to create desktop applications with graphical interfaces using a simple and intuitive approach.",
+      "code_example": "import tkinter as tk\n\n# Create a main window\nroot = tk.Tk()\nroot.title('Hello Tkinter')\n\n# Create a label widget\nlabel = tk.Label(root, text='Hello, Tkinter!')\nlabel.pack()\n\n# Start the main event loop\nroot.mainloop()\n"
+    },
+    {
+      "title": "Data Visualization with Matplotlib",
+      "content": "Matplotlib is a popular Python library used for creating static, animated, and interactive visualizations. It provides a wide range of plotting functions to visualize data in various formats.",
+      "code_example": "import matplotlib.pyplot as plt\n\n# Plotting a simple line graph\nx = [1, 2, 3, 4, 5]\ny = [1, 4, 9, 16, 25]\n\nplt.plot(x, y)\nplt.xlabel('X-axis')\nplt.ylabel('Y-axis')\nplt.title('Simple Line Graph')\nplt.show()\n"
+    },
+    {
+      "title": "Working with APIs",
+      "content": "Python facilitates working with APIs (Application Programming Interfaces) for accessing and interacting with external services or data sources. Libraries like requests simplify making HTTP requests and processing responses.",
+      "code_example": "import requests\n\n# Make a GET request to the API\nurl = 'https://api.example.com/data'\nresponse = requests.get(url)\n\n# Process the API response\nif response.status_code == 200:\n    data = response.json()\n    print(data)\n"
+    },
+    {
+      "title": "Machine Learning with Scikit-Learn",
+      "content": "Scikit-Learn is a Python library used for machine learning tasks such as classification, regression, clustering, and dimensionality reduction. It provides simple and efficient tools for predictive data analysis.",
+      "code_example": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\n\n# Load dataset\niris = load_iris()\n\n# Split dataset into training and test sets\nX_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)\n\n# Create a KNN classifier\nclassifier = KNeighborsClassifier(n_neighbors=3)\n\n# Train the classifier\nclassifier.fit(X_train, y_train)\n"
+    },
+    {
+      "title": "File Handling",
+      "content": "Python provides robust support for file handling operations, allowing developers to read from and write to files, manipulate file contents, and manage file access permissions.",
+      "code_example": "file_path = 'example.txt'\n\n# Writing to a file\nwith open(file_path, 'w') as f:\n    f.write('Hello, World!')\n\n# Reading from a file\nwith open(file_path, 'r') as f:\n    content = f.read()\n    print(content)\n"
+    },
+    {
+      "title": "Database Connectivity with SQLite",
+      "content": "SQLite is a lightweight, serverless database engine included with Python. It allows developers to create, connect to, and manipulate SQLite databases using SQL queries.",
+      "code_example": "import sqlite3\n\n# Connect to SQLite database\nconn = sqlite3.connect('example.db')\n\ncursor = conn.cursor()\n\n# Execute SQL query\ncursor.execute('''\nCREATE TABLE IF NOT EXISTS users (\n    id INTEGER PRIMARY KEY,\n    name TEXT NOT NULL,\n    age INTEGER\n);\n''')\n\n# Insert data\ncursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', ('John Doe', 30))\n\n# Commit changes\nconn.commit()\n\n# Close connection\nconn.close()\n"
+    },
+    {
+      "title": "Error Handling with try-except",
+      "content": "Python uses try-except blocks for handling exceptions and errors that may occur during program execution. It allows developers to gracefully manage and recover from unexpected errors.",
+      "code_example": "try:\n    result = 10 / 0\nexcept ZeroDivisionError as e:\n    print('Error:', e)\n"
+    },
+    {
+      "title": "Working with Dates and Times",
+      "content": "Python's datetime module provides functionalities to manipulate dates, times, and time intervals. It allows developers to perform operations like date arithmetic, formatting, and timezone conversions.",
+      "code_example": "from datetime import datetime, timedelta\n\n# Get current date and time\nnow = datetime.now()\n\n# Format date/time\nformatted_date = now.strftime('%Y-%m-%d %H:%M:%S')\n\n# Perform date arithmetic\nfuture_date = now + timedelta(days=7)\n"
+    },
+    {
+      "title": "Concurrency with Multiprocessing",
+      "content": "Python's multiprocessing module enables concurrent execution using multiple processes. It allows developers to leverage multiple CPU cores for parallel processing and performance optimization.",
+      "code_example": "import multiprocessing\n\n# Define a function for multiprocessing\ndef worker(num):\n    print('Worker:', num)\n\n# Create multiple processes\nprocesses = []\nfor i in range(5):\n    p = multiprocessing.Process(target=worker, args=(i,))\n    processes.append(p)\n    p.start()\n\n# Join processes\nfor p in processes:\n    p.join()\n"
+    },
+    {
+      "title": "Python Packaging with setuptools",
+      "content": "Setuptools is a package development and distribution library for Python. It provides utilities to create Python packages, manage dependencies, and distribute packages through PyPI (Python Package Index).",
+      "code_example": "from setuptools import setup, find_packages\n\nsetup(\n    name='my_package',\n    version='1.0.0',\n    packages=find_packages(),\n    install_requires=['requests'],\n    entry_points={\n        'console_scripts': [\n            'my_command = my_package.module:main',\n        ],\n    },\n)"
+    },
+    {
+      "title": "Python and Excel",
+      "content": "Python offers libraries like openpyxl and xlrd for working with Excel files. Developers can read, write, and manipulate Excel spreadsheets, perform data analysis, and automate tasks involving Excel.",
+      "code_example": "import openpyxl\n\n# Open an Excel workbook\nworkbook = openpyxl.load_workbook('example.xlsx')\n\n# Access a specific worksheet\nworksheet = workbook['Sheet1']\n\n# Read data from cells\nvalue = worksheet['A1'].value\n\n# Write data to cells\nworksheet['B1'] = 'Hello, World!'\n\n# Save changes\nworkbook.save('example.xlsx')\n"
+    },
+    {
+      "title": "Python and APIs (RESTful)",
+      "content": "Python is widely used for interacting with APIs (Application Programming Interfaces) to consume and manipulate data from web services. Libraries like requests simplify making HTTP requests and handling API responses.",
+      "code_example": "import requests\n\n# Make a GET request to the API\nurl = 'https://api.example.com/data'\nresponse = requests.get(url)\n\n# Process the API response\nif response.status_code == 200:\n    data = response.json()\n    print(data)\n"
+    },
+    {
+      "title": "Object-Oriented Programming (OOP)",
+      "content": "Python supports object-oriented programming paradigms, allowing developers to create classes, objects, and methods to model real-world entities. It facilitates encapsulation, inheritance, and polymorphism.",
+      "code_example": "class Car:\n    def __init__(self, make, model):\n        self.make = make\n        self.model = model\n\n    def display_info(self):\n        print(f'Car: {self.make} {self.model}')\n\n# Create an instance of the Car class\nmy_car = Car('Toyota', 'Camry')\nmy_car.display_info()\n"
+    },
+    {
+      "title": "Python and Data Analysis with Pandas",
+      "content": "Pandas is a powerful Python library for data analysis and manipulation. It provides data structures like DataFrame and Series, along with functions for cleaning, transforming, and analyzing data.",
+      "code_example": "import pandas as pd\n\n# Create a DataFrame\ndata = {\n    'Name': ['John', 'Jane', 'Doe'],\n    'Age': [30, 25, 35],\n    'City': ['New York', 'San Francisco', 'Chicago']\n}\ndf = pd.DataFrame(data)\n\n# Perform data analysis\nmean_age = df['Age'].mean()\nprint('Mean Age:', mean_age)\n"
+    },
+    {
+      "title": "Web Development with Flask",
+      "content": "Flask is a lightweight web framework for Python, ideal for building web applications and APIs. It provides features like routing, templating, and session management, enabling rapid development of web projects.",
+      "code_example": "from flask import Flask, render_template\n\napp = Flask(__name__)\n\n# Define a route\n@app.route('/')\ndef home():\n    return render_template('index.html')\n\n# Run the Flask application\nif __name__ == '__main__':\n    app.run(debug=True)\n"
+    }
+  ]

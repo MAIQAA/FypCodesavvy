@@ -1,0 +1,343 @@
+ [
+    {
+      "title": "Introduction to PostgreSQL",
+      "content": "PostgreSQL is a powerful, open-source relational database system known for its robustness, reliability, and advanced features.",
+      "code_example": ""
+    },
+    {
+      "title": "Installing PostgreSQL on Ubuntu",
+      "content": "",
+      "code_example": "sudo apt update\nsudo apt install postgresql postgresql-contrib"
+    },
+    {
+      "title": "Installing PostgreSQL on macOS",
+      "content": "",
+      "code_example": "brew install postgresql\nbrew services start postgresql"
+    },
+    {
+      "title": "Installing PostgreSQL on Windows",
+      "content": "",
+      "code_example": "Download the installer from https://www.postgresql.org/download/\nRun the installer with default settings\nOpen pgAdmin to manage PostgreSQL"
+    },
+    {
+      "title": "Connecting to PostgreSQL Server",
+      "content": "Connecting a client application to PostgreSQL server.",
+      "code_example": "const { Pool, Client } = require('pg');\n\nconst pool = new Pool({\n  user: 'your_user',\n  host: 'localhost',\n  database: 'your_database',\n  password: 'your_password',\n  port: 5432,\n});\n\npool.query('SELECT NOW()', (err, res) => {\n  console.log(err, res);\n  pool.end();\n});"
+    },
+    {
+      "title": "Creating a Database in PostgreSQL",
+      "content": "",
+      "code_example": "CREATE DATABASE mydatabase;"
+    },
+    {
+      "title": "Creating Tables in PostgreSQL",
+      "content": "Creating tables to store structured data in PostgreSQL.",
+      "code_example": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  username VARCHAR(50) UNIQUE NOT NULL,\n  email VARCHAR(100) UNIQUE NOT NULL,\n  created_at TIMESTAMP DEFAULT NOW()\n);"
+    },
+    {
+      "title": "Inserting Data into PostgreSQL Tables",
+      "content": "Inserting records (data rows) into PostgreSQL tables.",
+      "code_example": "INSERT INTO users (username, email) VALUES ('john_doe', 'john.doe@example.com');"
+    },
+    {
+      "title": "Querying Data from PostgreSQL Tables",
+      "content": "Retrieving data from PostgreSQL tables using SELECT statements.",
+      "code_example": "SELECT * FROM users WHERE username = 'john_doe';"
+    },
+    {
+      "title": "Updating Data in PostgreSQL Tables",
+      "content": "Modifying existing data in PostgreSQL tables.",
+      "code_example": "UPDATE users SET email = 'jane.doe@example.com' WHERE username = 'john_doe';"
+    },
+    {
+      "title": "Deleting Data from PostgreSQL Tables",
+      "content": "Removing records from PostgreSQL tables.",
+      "code_example": "DELETE FROM users WHERE username = 'john_doe';"
+    },
+    {
+      "title": "PostgreSQL Data Types",
+      "content": "Understanding different data types supported by PostgreSQL for columns.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Constraints",
+      "content": "Applying constraints to enforce rules and relationships in PostgreSQL tables.",
+      "code_example": ""
+    },
+    {
+      "title": "Indexes in PostgreSQL",
+      "content": "Creating and managing indexes for efficient querying in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "Transactions in PostgreSQL",
+      "content": "Using transactions to ensure data integrity and consistency in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Views",
+      "content": "Creating virtual tables (views) based on the result set of a SELECT query in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Functions",
+      "content": "Defining and executing user-defined functions (UDFs) in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Triggers",
+      "content": "Implementing triggers to automatically perform actions based on events in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Foreign Keys",
+      "content": "Establishing relationships between tables using foreign keys in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Backup and Restore",
+      "content": "Performing backups and restoring data in PostgreSQL databases.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Extensions",
+      "content": "Adding and managing extensions to extend PostgreSQL's functionality.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Full Text Search",
+      "content": "Performing full-text search queries in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL JSONB Data Type",
+      "content": "Storing and querying JSON data using the JSONB data type in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Performance Tuning",
+      "content": "Optimizing PostgreSQL database and query performance.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL High Availability",
+      "content": "Setting up PostgreSQL for high availability and fault tolerance.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Replication",
+      "content": "Configuring replication to maintain duplicate copies of PostgreSQL databases.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Security Best Practices",
+      "content": "Implementing security measures to protect PostgreSQL databases.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Monitoring and Logging",
+      "content": "Monitoring PostgreSQL performance metrics and logging database activities.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Partitioning",
+      "content": "Partitioning large tables into smaller, more manageable pieces in PostgreSQL.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Vacuum",
+      "content": "Understanding and managing PostgreSQL's vacuuming process for maintaining database health.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Docker Containerization",
+      "content": "Running PostgreSQL in Docker containers for easier deployment and scalability.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL with Node.js",
+      "content": "Integrating PostgreSQL with Node.js applications using pg module.",
+      "code_example": "const { Pool, Client } = require('pg');\n\nconst pool = new Pool({\n  user: 'your_user',\n  host: 'localhost',\n  database: 'your_database',\n  password: 'your_password',\n  port: 5432,\n});\n\npool.query('SELECT NOW()', (err, res) => {\n  console.log(err, res);\n  pool.end();\n});"
+    },
+    {
+      "title": "PostgreSQL with Python",
+      "content": "Integrating PostgreSQL with Python applications using psycopg2 library.",
+      "code_example": "import psycopg2\n\nconn = psycopg2.connect(\n    host='localhost',\n    database='mydatabase',\n    user='myuser',\n    password='mypassword'\n)\ncur = conn.cursor()\ncur.execute('SELECT * FROM mytable')\nrows = cur.fetchall()\nfor row in rows:\n    print(row)\ncur.close()\nconn.close()"
+    },
+    {
+      "title": "PostgreSQL with Java",
+      "content": "Integrating PostgreSQL with Java applications using JDBC.",
+      "code_example": "import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\nimport java.sql.Statement;\n\npublic class PostgreSQLJDBC {\n\n    public static void main(String[] args) {\n        Connection connection = null;\n        try {\n            connection = DriverManager.getConnection(\n                    \"jdbc:postgresql://localhost:5432/mydatabase\", \"myuser\", \"mypassword\");\n            Statement statement = connection.createStatement();\n            statement.execute(\"SELECT * FROM mytable\");\n        } catch (SQLException e) {\n            e.printStackTrace();\n        } finally {\n            if (connection != null) {\n                try {\n                    connection.close();\n                } catch (SQLException e) {\n                    e.printStackTrace();\n                }\n            }\n        }\n    }\n}"
+    },
+    {
+      "title": "PostgreSQL with Ruby",
+      "content": "Integrating PostgreSQL with Ruby applications using pg gem.",
+      "code_example": "require 'pg'\n\nconn = PG.connect(\n    dbname: 'mydatabase',\n    user: 'myuser',\n    password: 'mypassword',\n    host: 'localhost',\n    port: 5432\n)\n\nconn.exec('SELECT * FROM mytable') do |result|\n    result.each do |row|\n        puts row\n    end\nend\nconn.close"
+    },
+    {
+      "title": "PostgreSQL with PHP",
+      "content": "Integrating PostgreSQL with PHP applications using PDO (PHP Data Objects).",
+      "code_example": "<?php\n + $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydatabase;user=myuser;password=mypassword');\n  + $statement = $pdo->query('SELECT * FROM mytable');\n + while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {\n +     echo $row['column_name'];\n + }\n + ?>"
+    },
+    {
+      "title": "PostgreSQL Stored Procedures",
+      "content": "Creating and executing stored procedures (functions) in PostgreSQL.",
+      "code_example": "CREATE OR REPLACE FUNCTION get_user_by_id(user_id INT)\n  + RETURNS SETOF users AS\n      + $$\n + BEGIN\n +    RETURN QUERY SELECT * FROM users WHERE id = user_id;\n  + END;\n + $$\n + LANGUAGE plpgsql;"
+    },
+    {
+      "title": "PostgreSQL JSON Functions",
+      "content": "Using JSON functions and operators to query and manipulate JSON data in PostgreSQL.",
+      "code_example": "SELECT data->>'name' AS name\n + FROM json_data\n + WHERE data->>'age' > '30';"
+    },
+    {
+      "title": "PostgreSQL Arrays",
+      "content": "Working with arrays in PostgreSQL for storing and querying array data.",
+      "code_example": "SELECT * FROM users WHERE tags @> ARRAY['admin'];"
+    },
+    {
+      "title": "PostgreSQL Window Functions",
+      "content": "Using window functions to perform calculations across a set of table rows in PostgreSQL.",
+      "code_example": "SELECT empno, deptno, salary, avg(salary) OVER (PARTITION BY deptno) AS dept_avg_salary\n  + FROM emp;"
+    },
+    {
+      "title": "PostgreSQL Materialized Views",
+      "content": "Creating materialized views to store the result of a query and update it periodically.",
+      "code_example": "CREATE MATERIALIZED VIEW mv_users AS\n + SELECT * FROM users;"
+    },
+    {
+      "title": "PostgreSQL Full Text Search",
+      "content": "Performing full-text search queries in PostgreSQL for efficient text-based searching.",
+      "code_example": "SELECT * FROM documents\n + WHERE to_tsvector('english', document_content) @@ to_tsquery('search term');"
+    },
+    {
+      "title": "PostgreSQL Extensions",
+      "content": "Adding and using extensions to extend PostgreSQL's functionality (e.g., PostGIS for geospatial data).",
+      "code_example": "CREATE EXTENSION postgis;"
+    },
+    {
+      "title": "PostgreSQL High Availability with Replication",
+      "content": "Configuring PostgreSQL for high availability using replication (master-slave setup).",
+      "code_example": "CREATE USER replication_user REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD 'your_password';\n  + ALTER SYSTEM SET wal_level = 'replica';\n + SELECT pg_reload_conf();"
+    },
+    {
+      "title": "PostgreSQL Logical Replication",
+      "content": "Implementing logical replication in PostgreSQL to replicate only specified tables or columns.",
+      "code_example": "CREATE PUBLICATION mypublication FOR TABLE mytable;\n + CREATE SUBSCRIPTION mysubscription CONNECTION 'dbname=mydatabase host=myhost user=myuser password=mypassword' PUBLICATION mypublication;"
+    },
+    {
+      "title": "PostgreSQL Foreign Data Wrappers",
+      "content": "Using foreign data wrappers (FDWs) in PostgreSQL to access data stored in external data sources.",
+      "code_example": "CREATE EXTENSION postgres_fdw;\n + CREATE SERVER foreign_server FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'external_host', dbname 'external_db', port '5432');"
+    },
+    {
+      "title": "PostgreSQL Monitoring with pg_stat_statements",
+      "content": "Monitoring and analyzing SQL query performance using pg_stat_statements extension in PostgreSQL.",
+      "code_example": "CREATE EXTENSION pg_stat_statements;\n + SELECT * FROM pg_stat_statements ORDER BY total_time DESC LIMIT 10;"
+    },
+    {
+      "title": "PostgreSQL Vacuum",
+      "content": "Understanding and managing PostgreSQL's autovacuum process for optimizing database performance.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Backup and Restore Strategies",
+      "content": "Implementing backup and restore strategies for PostgreSQL databases (e.g., using pg_dump and pg_restore).",
+      "code_example": "pg_dump -U myuser -d mydatabase -f backup.sql\n + psql -U myuser -d mydatabase -f backup.sql"
+    },
+    {
+      "title": "PostgreSQL Security Best Practices",
+      "content": "Implementing security measures to protect PostgreSQL databases (e.g., using SSL/TLS, strong passwords).",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Performance Tuning",
+      "content": "Optimizing PostgreSQL database and query performance through configuration tuning and index optimization.",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Backup and Restore with pg_basebackup",
+      "content": "Using pg_basebackup utility for taking physical backups of PostgreSQL clusters.",
+      "code_example": "pg_basebackup -U postgres -D /path/to/backup/directory -Ft -Xs -P"
+    },
+    {
+      "title": "PostgreSQL pg_dumpall",
+      "content": "Backing up all PostgreSQL databases and roles at once using pg_dumpall utility.",
+      "code_example": "pg_dumpall -U postgres > /path/to/backup/dump_file.sql"
+    },
+    {
+      "title": "PostgreSQL pg_restore",
+      "content": "Restoring a PostgreSQL database from a custom-format dump file using pg_restore utility.",
+      "code_example": "pg_restore -U postgres -d mydatabase /path/to/backup/dump_file.backup"
+    },
+    {
+      "title": "PostgreSQL Roles and Privileges",
+      "content": "Managing roles (users) and their privileges (permissions) in PostgreSQL.",
+      "code_example": "CREATE ROLE myuser WITH LOGIN PASSWORD 'mypassword';\n + GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO myuser;"
+    },
+    {
+      "title": "PostgreSQL pg_hba.conf File",
+      "content": "Configuring client authentication settings in PostgreSQL using pg_hba.conf file.",
+      "code_example": "# TYPE  DATABASE        USER            ADDRESS                 METHOD\n + host    all             all             0.0.0.0/0               md5"
+    },
+    {
+      "title": "PostgreSQL Data Integrity Constraints",
+      "content": "Implementing data integrity constraints such as UNIQUE, NOT NULL, CHECK in PostgreSQL tables.",
+      "code_example": "CREATE TABLE products (\n    +     id SERIAL PRIMARY KEY,\n  +     name VARCHAR(100) NOT NULL,\n +    price DECIMAL(10, 2) CHECK (price > 0),\n +     UNIQUE (name)\n + );"
+    },
+    {
+      "title": "PostgreSQL EXPLAIN ANALYZE",
+      "content": "Analyzing query execution plans using EXPLAIN ANALYZE to optimize PostgreSQL queries.",
+      "code_example": "EXPLAIN ANALYZE SELECT * FROM users WHERE id = 1;"
+    },
+    {
+      "title": "PostgreSQL Vacuum Full",
+      "content": "Performing full vacuuming of PostgreSQL tables to reclaim disk space and improve performance.",
+      "code_example": "VACUUM FULL mytable;"
+    },
+    {
+      "title": "PostgreSQL Performance Monitoring with pg_stat_activity",
+      "content": "Monitoring active sessions and queries using pg_stat_activity view in PostgreSQL.",
+      "code_example": "SELECT * FROM pg_stat_activity WHERE state = 'active';"
+    },
+    {
+      "title": "PostgreSQL Logical Replication Slots",
+      "content": "Using replication slots to ensure that PostgreSQL retains WAL (Write-Ahead Log) segments required by the replica.",
+      "code_example": "SELECT * FROM pg_create_logical_replication_slot('slot_name', 'test_decoding');"
+    },
+    {
+      "title": "PostgreSQL Concurrency Control",
+      "content": "Managing concurrent access and ensuring data consistency in PostgreSQL using MVCC (Multi-Version Concurrency Control).",
+      "code_example": ""
+    },
+    {
+      "title": "PostgreSQL Extension Uninstall",
+      "content": "Uninstalling extensions from PostgreSQL database.",
+      "code_example": "DROP EXTENSION IF EXISTS extension_name;"
+    },
+    {
+      "title": "PostgreSQL Connection Pooling",
+      "content": "Configuring connection pooling to optimize performance and resource utilization in PostgreSQL.",
+      "code_example": "pgBouncer, pgbpool"
+    },
+    {
+      "title": "PostgreSQL Array Functions",
+      "content": "Using array functions and operators to manipulate array data in PostgreSQL.",
+      "code_example": "SELECT unnest(array_column) FROM mytable;"
+    },
+    {
+      "title": "PostgreSQL Materialized View Refresh",
+      "content": "Refreshing materialized views to update their data based on the underlying query.",
+      "code_example": "REFRESH MATERIALIZED VIEW my_materialized_view;"
+    },
+    {
+      "title": "PostgreSQL Group By and Having Clause",
+      "content": "Using GROUP BY and HAVING clauses to aggregate and filter data in PostgreSQL queries.",
+      "code_example": "SELECT department, COUNT(*)\n  + FROM employees\n + GROUP BY department\n + HAVING COUNT(*) > 5;"
+    },
+    {
+      "title": "PostgreSQL CTE (Common Table Expressions)",
+      "content": "Using Common Table Expressions (CTEs) to write readable and efficient queries in PostgreSQL.",
+      "code_example": "WITH dept_sales AS (\n   +   SELECT department, SUM(sales) AS total_sales\n  +     FROM sales\n  +     GROUP BY department\n  + )\n+ SELECT * FROM dept_sales WHERE total_sales > 100000;"
+    }
+  ]
+

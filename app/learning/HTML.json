@@ -1,0 +1,323 @@
+ [
+    {
+      "title": "Introduction to HTML",
+      "content": "HTML (HyperText Markup Language) is the standard markup language used to create and design web pages. It forms the basic building blocks of web development and provides the structure for web content. Here's a more detailed explanation:\n\n\n What is HTML?\n\n\nMarkup Language:\n\n HTML is not a programming language; it's a markup language. This means it is used to annotate text and define elements within a document.\n\n\n\n HyperText:\n\n The 'hypertext' part refers to the way HTML can link to other documents and resources, creating a web of content interconnected through hyperlinks.\n\n\n\n Standard for Web Pages:\n\n HTML is the standard used for creating and structuring content on the web, ensuring that web pages are displayed correctly across different browsers and devices.",
+      "code_example": ""
+    },
+
+    {
+      "title": "Basic Structure",
+      "content": "An HTML document has a defined structure, including a doctype declaration, html, head, and body elements.",
+      "code_example": "<!DOCTYPE html>\n<html>\n<head>\n<title>Page Title</title>\n</head>\n<body>\n\n<h1>This is a Heading</h1>\n<p>This is a paragraph.</p>\n\n</body>\n</html>"
+    },
+    {
+      "title": "Headings",
+      "content": "HTML headings are defined with the <h1> to <h6> tags.",
+      "code_example": "<h1>This is an h1 heading</h1>\n<h2>This is an h2 heading</h2>\n<h3>This is an h3 heading</h3>"
+    },
+    {
+      "title": "Paragraphs",
+      "content": "HTML paragraphs are defined with the <p> tag.",
+      "code_example": "<p>This is a paragraph.</p>\n<p>This is another paragraph.</p>"
+    },
+    {
+      "title": "Links",
+      "content": "HTML links are defined with the <a> tag.",
+      "code_example": "<a href=\"https://www.example.com\">This is a link</a>"
+    },
+    {
+      "title": "Images",
+      "content": "HTML images are defined with the <img> tag.",
+      "code_example": "<img src=\"image.jpg\" alt=\"Description of image\">"
+    },
+    {
+      "title": "Lists",
+      "content": "HTML lists can be ordered (using <ol>) or unordered (using <ul>). List items are defined with the <li> tag.",
+      "code_example": "<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</ul>\n\n<ol>\n  <li>First item</li>\n  <li>Second item</li>\n  <li>Third item</li>\n</ol>"
+    },
+    {
+      "title": "Tables",
+      "content": "HTML tables are defined with the <table> tag. A table is divided into rows (<tr>), and each row is divided into cells (<td> or <th> for header cells).",
+      "code_example": "<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>"
+    },
+    {
+      "title": "Forms",
+      "content": "HTML forms are used to collect user input. Form elements include <form>, <input>, <textarea>, <button>, <select>, and <option>.",
+      "code_example": "<form>\n  <label for=\"fname\">First name:</label><br>\n  <input type=\"text\" id=\"fname\" name=\"fname\"><br>\n  <label for=\"lname\">Last name:</label><br>\n  <input type=\"text\" id=\"lname\" name=\"lname\"><br><br>\n  <input type=\"submit\" value=\"Submit\">\n</form>"
+    },
+    {
+      "title": "Input Types",
+      "content": "HTML supports various input types like text, password, number, email, date, etc.",
+      "code_example": "<form>\n  <label for=\"email\">Email:</label><br>\n  <input type=\"email\" id=\"email\" name=\"email\"><br>\n  <label for=\"password\">Password:</label><br>\n  <input type=\"password\" id=\"password\" name=\"password\"><br><br>\n  <input type=\"submit\" value=\"Submit\">\n</form>"
+    },
+    {
+      "title": "Text Formatting",
+      "content": "HTML provides several elements for text formatting, such as <b>, <i>, <u>, <strong>, <em>, and <mark>.",
+      "code_example": "<p>This is <b>bold</b> text.</p>\n<p>This is <i>italic</i> text.</p>\n<p>This is <u>underlined</u> text.</p>\n<p>This is <strong>important</strong> text.</p>\n<p>This is <em>emphasized</em> text.</p>\n<p>This is <mark>highlighted</mark> text.</p>"
+    },
+    {
+      "title": "Block and Inline Elements",
+      "content": "Block-level elements start on a new line and take up the full width. Inline elements do not start on a new line and only take up as much width as necessary.",
+      "code_example": "<div>This is a block-level element.</div>\n<span>This is an inline element.</span>"
+    },
+    {
+      "title": "Div and Span",
+      "content": "The <div> tag is used as a container for other HTML elements and is styled using CSS. The <span> tag is used to style inline text.",
+      "code_example": "<div style=\"background-color: lightblue;\">This is a div.</div>\n<span style=\"color: red;\">This is a span.</span>"
+    },
+    {
+      "title": "Iframes",
+      "content": "The <iframe> tag is used to embed another HTML page within the current page.",
+      "code_example": "<iframe src=\"https://www.example.com\" title=\"Example iframe\"></iframe>"
+    },
+    {
+      "title": "Entities",
+      "content": "HTML entities are used to display reserved characters, such as &lt;, &gt;, &amp;, &quot;, and &apos;.",
+      "code_example": "&lt;div&gt;This is an example of an HTML entity.&lt;/div&gt;"
+    },
+    {
+      "title": "Comments",
+      "content": "HTML comments are added using <!-- and -->. They are not displayed in the browser.",
+      "code_example": "<!-- This is a comment -->"
+    },
+    {
+      "title": "Meta Tags",
+      "content": "Meta tags provide metadata about the HTML document. They are used inside the <head> element.",
+      "code_example": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"description\" content=\"Free Web tutorials\">\n<meta name=\"keywords\" content=\"HTML, CSS, JavaScript\">\n<meta name=\"author\" content=\"John Doe\">\n<title>Meta Tags Example</title>\n</head>\n<body>\n<h1>This is a Heading</h1>\n<p>This is a paragraph.</p>\n</body>\n</html>"
+    },
+    {
+      "title": "HTML5 Semantics",
+      "content": "HTML5 introduced new semantic elements such as <article>, <section>, <nav>, <aside>, and <header> to define different parts of a webpage.",
+      "code_example": "<article>\n  <header>\n    <h2>Article Title</h2>\n    <p>Written by John Doe</p>\n  </header>\n  <section>\n    <h3>Section Title</h3>\n    <p>Section content goes here.</p>\n  </section>\n  <footer>\n    <p>Footer content goes here.</p>\n  </footer>\n</article>"
+    },
+    {
+      "title": "Audio",
+      "content": "The <audio> tag is used to embed sound content in a document.",
+      "code_example": "<audio controls>\n  <source src=\"audiofile.mp3\" type=\"audio/mpeg\">\n  Your browser does not support the audio element.\n</audio>"
+    },
+    {
+      "title": "Video",
+      "content": "The <video> tag is used to embed video content in a document.",
+      "code_example": "<video width=\"320\" height=\"240\" controls>\n  <source src=\"movie.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>"
+    },
+    {
+      "title": "Canvas",
+      "content": "The <canvas> element is used to draw graphics on the fly via scripting (usually JavaScript).",
+      "code_example": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\" style=\"border:1px solid #000000;\">\nYour browser does not support the HTML5 canvas tag.</canvas>"
+    },
+    {
+      "title": "SVG",
+      "content": "SVG (Scalable Vector Graphics) is used to define vector-based graphics for the web.",
+      "code_example": "<svg width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>"
+    },
+    {
+      "title": "Responsive Design",
+      "content": "Responsive web design ensures that web pages look good on all devices by using CSS media queries and a fluid grid layout.",
+      "code_example": "@media only screen and (max-width: 600px) {\n  body {\n    background-color: lightblue;\n  }\n}"
+    },
+    {
+      "title": "Geolocation",
+      "content": "The Geolocation API allows the user's position to be determined and is used to locate the user’s position.",
+      "code_example": "<button onclick=\"getLocation()\">Try It</button>\n<p id=\"demo\"></p>\n<script>\nvar x = document.getElementById(\"demo\");\nfunction getLocation() {\n  if (navigator.geolocation) {\n    navigator.geolocation.getCurrentPosition(showPosition);\n  } else { \n    x.innerHTML = \"Geolocation is not supported by this browser.\";\n  }\n}\nfunction showPosition(position) {\n  x.innerHTML = \"Latitude: \" + position.coords.latitude + \n  \"<br>Longitude: \" + position.coords.longitude;}\n</script>"
+    },
+    {
+      "title": "Drag and Drop",
+      "content": "The Drag and Drop API is part of HTML5 and is used to enable drag and drop functionality in web applications.",
+      "code_example": "<div id=\"div1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" \nstyle=\"width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;\"></div><br>\n<img id=\"drag1\" src=\"img_logo.gif\" draggable=\"true\" ondragstart=\"drag(event)\" width=\"336\" height=\"69\">\n<script>\nfunction allowDrop(ev) {\n  ev.preventDefault();\n}\nfunction drag(ev) {\n  ev.dataTransfer.setData(\"text\", ev.target.id);\n}\nfunction drop(ev) {\n  ev.preventDefault();\n  var data = ev.dataTransfer.getData(\"text\");\n  ev.target.appendChild(document.getElementById(data));}\n</script>"
+    },
+    {
+      "title": "Web Storage",
+      "content": "HTML5 includes the Web Storage API which provides two mechanisms: localStorage and sessionStorage. These are used to store data in the user's browser.",
+      "code_example": "<button onclick=\"setItem()\">Set Item</button>\n<button onclick=\"getItem()\">Get Item</button>\n\n<script>\nfunction setItem() {\n  localStorage.setItem(\"name\", \"John Doe\");\n}\n\nfunction getItem() {\n  alert(localStorage.getItem(\"name\"));\n}\n</script>"
+    },
+    {
+      "title": "Web Workers",
+      "content": "Web Workers allow you to run scripts in background threads. This helps to perform tasks without interfering with the user interface.",
+      "code_example": "if (window.Worker) {\n  var myWorker = new Worker(\"worker.js\");\n  myWorker.onmessage = function(e) {\n    document.getElementById(\"result\").innerHTML = e.data;\n  };\n  myWorker.postMessage(\"Hello, Worker!\");\n}"
+    },
+    {
+      "title": "Server-Sent Events",
+      "content": "Server-Sent Events (SSE) allow a web page to get updates from a server via HTTP.",
+      "code_example": "if(typeof(EventSource) !== \"undefined\") {\n  var source = new EventSource(\"demo_sse.php\");\n  source.onmessage = function(event) {\n    document.getElementById(\"result\").innerHTML += event.data + \"<br>\";\n  };\n} else {\n  document.getElementById(\"result\").innerHTML = \"Sorry, your browser does not support server-sent events...\";\n}"
+    },
+    {
+      "title": "Progressive Web Apps (PWA)",
+      "content": "Progressive Web Apps (PWA) are web applications that use modern web capabilities to deliver an app-like experience to users.",
+      "code_example": "window.addEventListener('beforeinstallprompt', (e) => {\n  e.preventDefault();\n  // Show your custom install prompt\n});"
+    },
+    {
+      "title": "Custom Elements",
+      "content": "Custom elements are a feature of the Web Components specification that allows you to define your own custom HTML tags.",
+      "code_example": "class MyElement extends HTMLElement {\n  constructor() {\n    super();\n    this.innerHTML = '<p>This is a custom element</p>';\n  }\n}\ncustomElements.define('my-element', MyElement);"
+    },
+    {
+      "title": "Shadow DOM",
+      "content": "The Shadow DOM is a part of the Web Components specification that allows you to create isolated and encapsulated DOM trees.",
+      "code_example": "class MyElement extends HTMLElement {\n  constructor() {\n    super();\n    this.attachShadow({ mode: 'open' }).innerHTML = '<p>Shadow DOM content</p>';\n  }\n}\ncustomElements.define('my-element', MyElement);"
+    },
+    {
+      "title": "Template Element",
+      "content": "The <template> element is used to declare fragments of HTML that can be cloned and inserted into the document by script.",
+      "code_example": "<template id=\"my-template\">\n  <p>This is a template content.</p>\n</template>\n\n<script>\nvar template = document.getElementById('my-template');\nvar clone = document.importNode(template.content, true);\ndocument.body.appendChild(clone);\n</script>"
+    },
+    {
+      "title": "Content Editable",
+      "content": "The contenteditable attribute can be used to make an element editable by the user.",
+      "code_example": "<div contenteditable=\"true\">This is an editable div.</div>"
+    },
+    {
+      "title": "Spellcheck",
+      "content": "The spellcheck attribute specifies whether the element is to have its spelling and grammar checked.",
+      "code_example": "<textarea spellcheck=\"true\">This text area will be checked for spelling.</textarea>"
+    },
+    {
+      "title": "Data Attributes",
+      "content": "The data-* attributes allow you to store extra information on standard, semantic HTML elements.",
+      "code_example": "<div data-info=\"some information\">This div contains data attributes.</div>\n\n<script>\nvar info = document.querySelector('div').dataset.info;\nconsole.log(info); // Output: some information\n</script>"
+    },
+    {
+      "title": "ARIA",
+      "content": "ARIA (Accessible Rich Internet Applications) defines a way to make web content and web applications more accessible to people with disabilities.",
+      "code_example": "<button aria-label=\"Close\">X</button>"
+    },
+    {
+      "title": "Dialog Element",
+      "content": "The <dialog> element represents a dialog box or other interactive component, such as an inspector or window.",
+      "code_example": "<dialog open>This is an open dialog.</dialog>"
+    },
+    {
+      "title": "Picture Element",
+      "content": "The <picture> element is used to display different images for different devices or screen sizes.",
+      "code_example": "<picture>\n  <source media=\"(min-width: 650px)\" srcset=\"img_large.jpg\">\n  <source media=\"(min-width: 465px)\" srcset=\"img_medium.jpg\">\n  <img src=\"img_small.jpg\" alt=\"Sample Image\">\n</picture>"
+    },
+    {
+      "title": "Source Element",
+      "content": "The <source> element specifies multiple media resources for <audio>, <video>, or <picture> elements.",
+      "code_example": "<video controls>\n  <source src=\"movie.mp4\" type=\"video/mp4\">\n  <source src=\"movie.ogg\" type=\"video/ogg\">\n  Your browser does not support the video tag.\n</video>"
+    },
+    {
+      "title": "Track Element",
+      "content": "The <track> element specifies text tracks for <video> and <audio> elements.",
+      "code_example": "<video controls>\n  <source src=\"movie.mp4\" type=\"video/mp4\">\n  <track src=\"subtitles_en.vtt\" kind=\"subtitles\" srclang=\"en\" label=\"English\">\n  Your browser does not support the video tag.\n</video>"
+    },
+    {
+      "title": "Fieldset and Legend",
+      "content": "The <fieldset> element is used to group related elements in a form. The <legend> element represents a caption for the <fieldset>.",
+      "code_example": "<fieldset>\n  <legend>Personal Information</legend>\n  <label for=\"fname\">First name:</label>\n  <input type=\"text\" id=\"fname\" name=\"fname\"><br><br>\n  <label for=\"lname\">Last name:</label>\n  <input type=\"text\" id=\"lname\" name=\"lname\"><br><br>\n  <input type=\"submit\" value=\"Submit\">\n</fieldset>"
+    },
+    {
+      "title": "Details and Summary",
+      "content": "The <details> element is used to create an interactive widget that users can open and close. The <summary> element is used to specify a summary, caption, or legend for the <details> element.",
+      "code_example": "<details>\n  <summary>More Info</summary>\n  <p>This is additional information that is initially hidden.</p>\n</details>"
+    },
+    {
+      "title": "Meter Element",
+      "content": "The <meter> element represents a scalar measurement within a known range, or a fractional value.",
+      "code_example": "<label for=\"disk\">Disk Usage:</label>\n<meter id=\"disk\" min=\"0\" max=\"100\" value=\"70\">70%</meter>"
+    },
+    {
+      "title": "Progress Element",
+      "content": "The <progress> element represents the completion progress of a task.",
+      "code_example": "<label for=\"file\">File progress:</label>\n<progress id=\"file\" value=\"32\" max=\"100\">32%</progress>"
+    },
+    {
+      "title": "Time Element",
+      "content": "The <time> element represents a specific period in time.",
+      "code_example": "<p>The concert starts at <time>20:00</time> and ends at <time>23:00</time>.</p>"
+    },
+    {
+      "title": "Mark Element",
+      "content": "The <mark> element represents highlighted text.",
+      "code_example": "<p>This is a <mark>highlighted</mark> text.</p>"
+    },
+    {
+      "title": "Output Element",
+      "content": "The <output> element represents the result of a calculation or user action.",
+      "code_example": "<form oninput=\"result.value=parseInt(a.value)+parseInt(b.value)\">\n  <input type=\"range\" id=\"a\" value=\"50\"> + \n  <input type=\"number\" id=\"b\" value=\"50\"> = \n  <output name=\"result\" for=\"a b\">100</output>\n</form>"
+    },
+    {
+      "title": "Template and Slot",
+      "content": "The <template> element is used to declare fragments of HTML that can be instantiated later. The <slot> element is a placeholder inside a web component that you can fill with your own markup.",
+      "code_example": "<template id=\"my-template\">\n  <p>This is a template content.</p>\n</template>\n\n<my-element>\n  <span slot=\"my-slot\">This is slotted content.</span>\n</my-element>"
+    },
+    {
+      "title": "Data Lists",
+      "content": "The <datalist> element contains a set of <option> elements that represent the permissible or suggested options available to users in other controls.",
+      "code_example": "<label for=\"browser\">Choose your browser from the list:</label>\n<input list=\"browsers\" id=\"browser\" name=\"browser\">\n<datalist id=\"browsers\">\n  <option value=\"Chrome\">\n  <option value=\"Firefox\">\n  <option value=\"Safari\">\n  <option value=\"Edge\">\n</datalist>"
+    },
+    {
+      "title": "Global Attributes",
+      "content": "Global attributes are attributes that can be applied to any HTML element. These include class, id, style, title, lang, and data-*.",
+      "code_example": "<div id=\"myDiv\" class=\"myClass\" style=\"color: red;\" title=\"This is a tooltip.\" lang=\"en\">This is a div.</div>"
+    },
+    {
+      "title": "Accessible Rich Internet Applications (ARIA)",
+      "content": "ARIA provides a set of attributes that define ways to make web content and web applications more accessible to people with disabilities.",
+      "code_example": "<button aria-label=\"Close\">X</button>"
+    },
+    {
+      "title": "Web Components",
+      "content": "Web Components is a suite of different technologies allowing you to create reusable custom elements with their functionality encapsulated away from the rest of your code.",
+      "code_example": "class MyComponent extends HTMLElement {\n  constructor() {\n    super();\n    const shadow = this.attachShadow({ mode: 'open' });\n    shadow.innerHTML = `<style>p { color: red; }</style><p>My custom component</p>`;\n  }\n}\ncustomElements.define('my-component', MyComponent);"
+    },
+    {
+      "title": "Microdata",
+      "content": "Microdata is a way to embed structured data within HTML content to help search engines and other applications better understand the information on a web page.",
+      "code_example": "<div itemscope itemtype=\"http://schema.org/Person\">\n  <span itemprop=\"name\">John Doe</span>\n  <img itemprop=\"image\" src=\"john_doe.jpg\" alt=\"John Doe\">\n</div>"
+    },
+    {
+      "title": "HTML vs XHTML",
+      "content": "XHTML (Extensible Hypertext Markup Language) is a stricter, XML-based variant of HTML.",
+      "code_example": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<title>XHTML Example</title>\n</head>\n<body>\n<h1>This is a Heading</h1>\n<p>This is a paragraph.</p>\n</body>\n</html>"
+    },
+    {
+      "title": "HTML5 Application Cache",
+      "content": "HTML5 Application Cache allows a web application to be cached and accessible without an internet connection.",
+      "code_example": "CACHE MANIFEST\n# 2022-06-20:v1\nindex.html\nstyle.css\napp.js\n\nNETWORK:\n*\n\nFALLBACK:\n/ /offline.html"
+    },
+    {
+      "title": "HTML5 WebSockets",
+      "content": "WebSockets provide a full-duplex communication channel over a single TCP connection.",
+      "code_example": "var socket = new WebSocket('ws://www.example.com/socketserver');\nsocket.onmessage = function(event) {\n  console.log('Message from server:', event.data);\n};\nsocket.send('Hello Server');"
+    },
+    {
+      "title": "HTML5 Notifications",
+      "content": "The Notifications API allows web pages to send notifications that are displayed outside the page's viewport.",
+      "code_example": "if (Notification.permission === 'granted') {\n  new Notification('Hello World!');\n} else if (Notification.permission !== 'denied') {\n  Notification.requestPermission().then(permission => {\n    if (permission === 'granted') {\n      new Notification('Hello World!');\n    }\n  });\n}"
+    },
+    {
+      "title": "HTML5 History API",
+      "content": "The History API allows you to modify the browser history, which includes the URL displayed in the address bar.",
+      "code_example": "history.pushState({ page: 1 }, 'title 1', '?page=1');\nhistory.replaceState({ page: 2 }, 'title 2', '?page=2');"
+    },
+    {
+      "title": "HTML5 Web Workers",
+      "content": "Web Workers allow you to run scripts in background threads, helping to perform tasks without interfering with the user interface.",
+      "code_example": "if (window.Worker) {\n  var myWorker = new Worker('worker.js');\n  myWorker.onmessage = function(e) {\n    document.getElementById('result').innerHTML = e.data;\n  };\n  myWorker.postMessage('Hello, Worker!');\n}"
+    },
+    {
+      "title": "HTML5 WebRTC",
+      "content": "WebRTC (Web Real-Time Communication) enables audio, video, and data sharing between browsers without requiring an intermediary server.",
+      "code_example": "navigator.mediaDevices.getUserMedia({ video: true, audio: true })\n.then(function(stream) {\n  var video = document.querySelector('video');\n  video.srcObject = stream;\n  video.onloadedmetadata = function(e) {\n    video.play();\n  };\n})\n.catch(function(err) {\n  console.log('The following error occurred: ' + err.name);\n});"
+    },
+    {
+      "title": "HTML5 Geolocation API",
+      "content": "The Geolocation API allows the user's position to be determined, enabling location-based services.",
+      "code_example": "navigator.geolocation.getCurrentPosition(function(position) {\n  console.log('Latitude: ' + position.coords.latitude);\n  console.log('Longitude: ' + position.coords.longitude);\n});"
+    },
+    {
+      "title": "HTML5 Drag and Drop API",
+      "content": "The Drag and Drop API allows you to drag and drop elements within and between web pages.",
+      "code_example": "<div id=\"div1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" \nstyle=\"width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;\">\n</div><br>\n<img id=\"drag1\" src=\"img_logo.gif\" draggable=\"true\" ondragstart=\"drag(event)\" width=\"336\" height=\"69\">\n<script>\nfunction allowDrop(ev) {\n  ev.preventDefault();\n}\nfunction drag(ev) {\n  ev.dataTransfer.setData(\"text\", ev.target.id);\n}\nfunction drop(ev) {\n  ev.preventDefault();\n  var data = ev.dataTransfer.getData(\"text\");\n  ev.target.appendChild(document.getElementById(data));\n}\n</script>"
+    },
+    {
+      "title": "HTML5 IndexedDB",
+      "content": "IndexedDB is a low-level API for storing large amounts of structured data in the browser.",
+      "code_example": "var request = indexedDB.open('MyTestDatabase');\n\nrequest.onupgradeneeded = function(event) {\n  var db = event.target.result;\n  var objectStore = db.createObjectStore('name', { keyPath: 'id' });\n};\n\nrequest.onsuccess = function(event) {\n  var db = event.target.result;\n};"
+    },
+    {
+      "title": "HTML5 File API",
+      "content": "The File API provides the ability to interact with local file system, allowing you to read, write, and process files.",
+      "code_example": "var input = document.createElement('input');\ninput.type = 'file';\ninput.onchange = function(event) {\n  var file = event.target.files[0];\n  var reader = new FileReader();\n  reader.onload = function(e) {\n    console.log(e.target.result);\n  };\n  reader.readAsText(file);\n};\ndocument.body.appendChild(input);"
+    }
+  ]

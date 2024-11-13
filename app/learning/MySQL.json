@@ -1,0 +1,262 @@
+[
+    {
+      "title": "Introduction to MySQL",
+      "content": "MySQL is a robust and widely-used relational database management system renowned for its scalability, SQL compatibility, and high performance. Developed by Oracle Corporation, MySQL is favored for its security features, replication capabilities, and seamless integration with various platforms. It supports efficient data management through SQL commands, making it suitable for applications ranging from small-scale projects to large enterprise solutions. MySQL's open-source nature, extensive documentation, and strong community support further contribute to its popularity among developers and organizations seeking reliable database solutions.",
+      "code_example": ""
+    },
+    {
+      "title": "Creating a Database",
+      "content": "Create a new database in MySQL using the CREATE DATABASE statement.",
+      "code_example": "CREATE DATABASE mydatabase;"
+    },
+    {
+      "title": "Dropping a Database",
+      "content": "Delete an existing database in MySQL using the DROP DATABASE statement.",
+      "code_example": "DROP DATABASE mydatabase;"
+    },
+    {
+      "title": "Creating Tables",
+      "content": "Create tables in MySQL to store structured data using the CREATE TABLE statement.",
+      "code_example": "CREATE TABLE users (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  username VARCHAR(50) NOT NULL,\n  email VARCHAR(100) NOT NULL\n);"
+    },
+    {
+      "title": "Inserting Data",
+      "content": "Insert new records into a MySQL table using the INSERT INTO statement.",
+      "code_example": "INSERT INTO users (username, email) VALUES ('john_doe', 'john.doe@example.com');"
+    },
+    {
+      "title": "Selecting Data",
+      "content": "Retrieve data from a MySQL table using the SELECT statement.",
+      "code_example": "SELECT * FROM users;"
+    },
+    {
+      "title": "Updating Data",
+      "content": "Update existing records in a MySQL table using the UPDATE statement.",
+      "code_example": "UPDATE users SET email = 'updated_email@example.com' WHERE id = 1;"
+    },
+    {
+      "title": "Deleting Data",
+      "content": "Remove records from a MySQL table using the DELETE statement.",
+      "code_example": "DELETE FROM users WHERE id = 1;"
+    },
+    {
+      "title": "MySQL Data Types",
+      "content": "Understand different data types supported by MySQL, including numeric, string, date/time, and spatial types.",
+      "code_example": ""
+    },
+    {
+      "title": "Primary Keys",
+      "content": "Define primary keys in MySQL tables to uniquely identify each record.",
+      "code_example": "CREATE TABLE products (\n  id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  price DECIMAL(10, 2) NOT NULL\n);"
+    },
+    {
+      "title": "Foreign Keys",
+      "content": "Establish relationships between tables using foreign keys in MySQL.",
+      "code_example": "CREATE TABLE orders (\n  id INT PRIMARY KEY,\n  product_id INT,\n  quantity INT,\n  FOREIGN KEY (product_id) REFERENCES products(id)\n);"
+    },
+    {
+      "title": "Indexing in MySQL",
+      "content": "Improve query performance by creating indexes on columns in MySQL tables.",
+      "code_example": "CREATE INDEX idx_username ON users (username);"
+    },
+    {
+      "title": "Joins in MySQL",
+      "content": "Combine data from multiple tables using different types of JOIN operations in MySQL (INNER, LEFT, RIGHT, FULL).",
+      "code_example": "SELECT users.username, orders.quantity\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;"
+    },
+    {
+      "title": "Aggregate Functions",
+      "content": "Perform calculations on grouped data using aggregate functions like SUM, COUNT, AVG, MIN, and MAX in MySQL.",
+      "code_example": "SELECT COUNT(*) AS total_users FROM users;"
+    },
+    {
+      "title": "Subqueries",
+      "content": "Use subqueries in MySQL to nest queries within SELECT, INSERT, UPDATE, or DELETE statements.",
+      "code_example": "SELECT * FROM users WHERE id IN (SELECT user_id FROM orders);"
+    },
+    {
+      "title": "Transactions",
+      "content": "Manage transactions in MySQL to ensure data integrity and consistency using START TRANSACTION, COMMIT, and ROLLBACK statements.",
+      "code_example": "START TRANSACTION;\nINSERT INTO users (username, email) VALUES ('jane_doe', 'jane.doe@example.com');\nCOMMIT;"
+    },
+    {
+      "title": "Views in MySQL",
+      "content": "Create virtual tables (views) based on the result set of SELECT queries in MySQL.",
+      "code_example": "CREATE VIEW user_emails AS\nSELECT id, email FROM users;"
+    },
+    {
+      "title": "Stored Procedures",
+      "content": "Write reusable SQL procedures in MySQL that can be invoked with a single CALL statement.",
+      "code_example": "DELIMITER //\nCREATE PROCEDURE get_user(IN user_id INT)\nBEGIN\n  SELECT * FROM users WHERE id = user_id;\nEND //\nDELIMITER ;"
+    },
+    {
+      "title": "User Privileges and Permissions",
+      "content": "Manage user privileges and access control in MySQL using GRANT and REVOKE statements.",
+      "code_example": "GRANT SELECT, INSERT ON database.* TO 'user'@'localhost' IDENTIFIED BY 'password';"
+    },
+    {
+      "title": "Backups and Recovery",
+      "content": "Perform backups and restore operations in MySQL to safeguard data and recover from failures.",
+      "code_example": "mysqldump -u root -p mydatabase > backup.sql\nmysql -u root -p mydatabase < backup.sql;"
+    },
+    {
+      "title": "MySQL Performance Tuning",
+      "content": "Optimize MySQL server performance by configuring parameters such as query cache, buffer pool size, and thread cache size.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Security Best Practices",
+      "content": "Implement security measures to protect MySQL databases from unauthorized access and SQL injection attacks.",
+      "code_example": ""
+    },
+    {
+      "title": "Working with JSON Data",
+      "content": "Store, retrieve, and manipulate JSON data in MySQL using functions like JSON_OBJECT, JSON_ARRAY, and JSON_EXTRACT.",
+      "code_example": "SELECT JSON_OBJECT('id', id, 'name', name) AS user_json FROM users WHERE id = 1;"
+    },
+    {
+      "title": "MySQL Partitioning",
+      "content": "Improve manageability and performance of large MySQL tables by partitioning them based on specific criteria.",
+      "code_example": "CREATE TABLE logs (\n  id INT AUTO_INCREMENT,\n  log_date DATE,\n  message TEXT,\n  PRIMARY KEY (id, log_date)\n) PARTITION BY RANGE (YEAR(log_date)) (\n  PARTITION p1 VALUES LESS THAN (2020),\n  PARTITION p2 VALUES LESS THAN (2021),\n  PARTITION p3 VALUES LESS THAN MAXVALUE\n);"
+    },
+    {
+      "title": "MySQL Replication",
+      "content": "Set up master-slave replication in MySQL to replicate data from one database server (master) to another (slave) for high availability and load balancing.",
+      "code_example": ""
+    },
+    {
+      "title": "Full-Text Search",
+      "content": "Perform full-text searches on text data stored in MySQL tables using the MATCH AGAINST syntax.",
+      "code_example": "SELECT * FROM articles WHERE MATCH (title, content) AGAINST ('search keyword');"
+    },
+    {
+      "title": "MySQL Command-Line Tools",
+      "content": "Use command-line tools like mysql, mysqldump, and mysqladmin to manage MySQL databases, import/export data, and administer server operations.",
+      "code_example": "mysql -u root -p\nSHOW DATABASES;\nUSE mydatabase;\nSHOW TABLES;"
+    },
+    {
+      "title": "MySQL Workbench",
+      "content": "Utilize MySQL Workbench, a graphical tool, for database design, SQL development, and administration tasks.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Stored Functions",
+      "content": "Create and use stored functions in MySQL for reusable logic that can be called within SQL statements.",
+      "code_example": "DELIMITER //\nCREATE FUNCTION calculate_discount(price DECIMAL(10, 2), discount_rate DECIMAL(4, 2))\nRETURNS DECIMAL(10, 2) DETERMINISTIC\nBEGIN\n  DECLARE discounted_price DECIMAL(10, 2);\n  SET discounted_price = price - (price * (discount_rate / 100));\n  RETURN discounted_price;\nEND //\nDELIMITER ;\n\nSELECT calculate_discount(100, 10) AS discounted_price;"
+    },
+    {
+      "title": "MySQL Triggers",
+      "content": "Create triggers in MySQL to automatically perform actions (such as inserting, updating, or deleting data) when specified events occur on a table.",
+      "code_example": "DELIMITER //\nCREATE TRIGGER after_insert_trigger\nAFTER INSERT ON orders\nFOR EACH ROW\nBEGIN\n  INSERT INTO order_logs (order_id, action) VALUES (NEW.id, 'inserted');\nEND //\nDELIMITER ;"
+    },
+    {
+      "title": "MySQL Views vs Tables",
+      "content": "Understand the differences between MySQL views and tables, and when to use each.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Error Handling",
+      "content": "Implement error handling mechanisms in MySQL to manage exceptions and errors.",
+      "code_example": "DECLARE CONTINUE HANDLER FOR SQLEXCEPTION BEGIN\n  -- Error handling logic\nEND;"
+    },
+    {
+      "title": "MySQL Locking",
+      "content": "Understand and utilize locking mechanisms in MySQL to control access to data and ensure consistency.",
+      "code_example": "LOCK TABLES users WRITE;\n-- Perform operations\nUNLOCK TABLES;"
+    },
+    {
+      "title": "MySQL User-defined Variables",
+      "content": "Declare and use user-defined variables in MySQL for storing intermediate results or values.",
+      "code_example": "SET @total_users = (SELECT COUNT(*) FROM users);\nSELECT @total_users AS total_users;"
+    },
+    {
+      "title": "MySQL String Functions",
+      "content": "Use built-in string functions in MySQL to manipulate string data, such as CONCAT, SUBSTRING, REPLACE, and CHAR_LENGTH.",
+      "code_example": "SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users;"
+    },
+    {
+      "title": "MySQL Date and Time Functions",
+      "content": "Manipulate date and time values in MySQL using functions like DATE_FORMAT, DATE_ADD, DATE_SUB, and TIMESTAMPDIFF.",
+      "code_example": "SELECT DATE_FORMAT(created_at, '%Y-%m-%d') AS formatted_date FROM orders;"
+    },
+    {
+      "title": "MySQL Regular Expressions",
+      "content": "Perform pattern matching using regular expressions in MySQL with functions like REGEXP, REGEXP_REPLACE, and REGEXP_INSTR.",
+      "code_example": "SELECT * FROM users WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$';"
+    },
+    {
+      "title": "MySQL Event Scheduler",
+      "content": "Schedule and automate recurring tasks in MySQL using the Event Scheduler.",
+      "code_example": "CREATE EVENT daily_backup\n  ON SCHEDULE EVERY 1 DAY\n  DO\n    -- Backup operations\n  END;"
+    },
+    {
+      "title": "MySQL Spatial Data Types",
+      "content": "Store and query spatial data (geographic data) in MySQL using spatial data types like POINT, LINESTRING, and POLYGON.",
+      "code_example": "CREATE TABLE locations (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  location GEOMETRY\n);"
+    },
+    {
+      "title": "MySQL High Availability",
+      "content": "Ensure high availability of MySQL databases using techniques like replication, clustering, and failover mechanisms.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Scalability",
+      "content": "Scale MySQL databases vertically and horizontally to handle increasing data loads and traffic.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Backup Strategies",
+      "content": "Implement backup strategies for MySQL databases, including full backups, incremental backups, and point-in-time recovery.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Index Optimization",
+      "content": "Optimize database performance by choosing appropriate indexes and understanding how MySQL uses indexes.",
+      "code_example": "CREATE INDEX idx_email ON users (email);"
+    },
+    {
+      "title": "MySQL Query Optimization",
+      "content": "Improve query performance in MySQL by analyzing query execution plans, optimizing SQL queries, and using EXPLAIN statement.",
+      "code_example": "EXPLAIN SELECT * FROM users WHERE status = 'active';"
+    },
+    {
+      "title": "MySQL Views vs Materialized Views",
+      "content": "Understand the difference between MySQL views and materialized views, and their use cases.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL InnoDB vs MyISAM",
+      "content": "Compare InnoDB and MyISAM storage engines in MySQL, including their features, advantages, and limitations.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL NoSQL Features",
+      "content": "Explore MySQL's support for NoSQL features with the MySQL Document Store and JSON data type.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Performance Schema",
+      "content": "Monitor and troubleshoot MySQL server performance using the Performance Schema.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Security Best Practices",
+      "content": "Implement security best practices in MySQL to protect against unauthorized access, SQL injection attacks, and data breaches.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Authentication Methods",
+      "content": "Configure and manage authentication methods in MySQL, including password authentication and secure connections (SSL/TLS).",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Replication",
+      "content": "Set up and manage MySQL replication for data redundancy, load balancing, and failover.",
+      "code_example": ""
+    },
+    {
+      "title": "MySQL Partitioning Strategies",
+      "content": "Implement partitioning strategies in MySQL to improve manageability and performance of large tables.",
+      "code_example": ""
+    }
+  ]

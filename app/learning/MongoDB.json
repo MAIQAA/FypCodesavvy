@@ -1,0 +1,187 @@
+ [
+    {
+      "title": "Installing MongoDB on Ubuntu",
+      "content": "Steps to install MongoDB on Ubuntu Linux using apt package manager.",
+      "code_example": "sudo apt update\nsudo apt install -y mongodb\nsudo systemctl start mongodb\nsudo systemctl enable mongodb"
+    },
+    {
+      "title": "Installing MongoDB on macOS",
+      "content": "Steps to install MongoDB on macOS using Homebrew.",
+      "code_example": "brew tap mongodb/brew\nbrew install mongodb/brew/mongodb-community\nbrew services start mongodb/brew/mongodb-community"
+    },
+    {
+      "title": "Installing MongoDB on Windows",
+      "content": "Steps to install MongoDB on Windows using the MSI installer.",
+      "code_example": "Download the MongoDB installer from https://www.mongodb.com/try/download/community\nRun the installer with default settings\nAdd MongoDB to system PATH during installation\nOpen Command Prompt and run 'mongod' to start MongoDB server"
+    },
+    {
+      "title": "Connecting to MongoDB Server",
+      "content": "Connecting a client application to MongoDB server.",
+      "code_example": "const MongoClient = require('mongodb').MongoClient;\nconst url = 'mongodb://localhost:27017';\n\nMongoClient.connect(url, function(err, client) {\n  if (err) throw err;\n  console.log('Connected successfully to server');\n  const db = client.db('mydatabase');\n  client.close();\n});"
+    },
+    {
+      "title": "Creating a Database",
+      "content": "Creating a new database in MongoDB.",
+      "code_example": "use mydatabase;"
+    },
+    {
+      "title": "Creating a Collection",
+      "content": "Creating a collection (similar to a table in relational databases) in MongoDB.",
+      "code_example": "db.createCollection('mycollection');"
+    },
+    {
+      "title": "Inserting Documents",
+      "content": "Inserting documents (data records) into a MongoDB collection.",
+      "code_example": "db.mycollection.insertOne({ name: 'John Doe', age: 30 });"
+    },
+    {
+      "title": "Querying Documents",
+      "content": "Querying documents from a MongoDB collection.",
+      "code_example": "db.mycollection.find({ name: 'John Doe' });"
+    },
+    {
+      "title": "Updating Documents",
+      "content": "Updating documents in a MongoDB collection.",
+      "code_example": "db.mycollection.updateOne(\n  { name: 'John Doe' },\n  { $set: { age: 31 } }\n);"
+    },
+    {
+      "title": "Deleting Documents",
+      "content": "Deleting documents from a MongoDB collection.",
+      "code_example": "db.mycollection.deleteOne({ name: 'John Doe' });"
+    },
+    {
+      "title": "Indexes in MongoDB",
+      "content": "Creating and managing indexes for efficient querying.",
+      "code_example": "db.mycollection.createIndex({ name: 1 });"
+    },
+    {
+      "title": "Aggregation Framework",
+      "content": "Using MongoDB's aggregation pipeline for complex queries.",
+      "code_example": "db.mycollection.aggregate([\n  { $match: { status: 'A' } },\n  { $group: { _id: '$name', total: { $sum: '$quantity' } } }\n]);"
+    },
+    {
+      "title": "Transactions in MongoDB",
+      "content": "Handling transactions for multiple document operations.",
+      "code_example": "const session = client.startSession();\nsession.startTransaction();\ntry {\n  // Perform operations\n  await db.collection('mycollection').insertOne({ name: 'Jane Doe' });\n  await db.collection('mycollection').updateOne(\n    { name: 'John Doe' },\n    { $set: { age: 32 } }\n  );\n  await session.commitTransaction();\n} catch (error) {\n  await session.abortTransaction();\n} finally {\n  session.endSession();\n}"
+    },
+    {
+      "title": "Schema Design in MongoDB",
+      "content": "Designing schemas for MongoDB collections.",
+      "code_example": ""
+    },
+    {
+      "title": "Backup and Restore",
+      "content": "Backing up and restoring MongoDB databases.",
+      "code_example": "mongodump --db mydatabase\nmongorestore --db mydatabase dump/mydatabase"
+    },
+    {
+      "title": "Sharding",
+      "content": "Scaling MongoDB horizontally using sharding.",
+      "code_example": "sh.enableSharding('mydatabase')\nsh.shardCollection('mydatabase.mycollection', { _id: 'hashed' });"
+    },
+    {
+      "title": "Replication",
+      "content": "Setting up replica sets for high availability.",
+      "code_example": "rs.initiate()\nrs.add('mongodb1.example.net')\nrs.add('mongodb2.example.net')\nrs.addArb('mongodb3.example.net')"
+    },
+    {
+      "title": "MongoDB Atlas",
+      "content": "MongoDB Atlas is MongoDB's fully managed cloud database service. It provides all the features of MongoDB, such as high availability, automatic scaling, and security, without the operational overhead of managing MongoDB yourself. Here's how to set it up:",
+      "code_example": "step_number: 1, \n description : Navigate to the MongoDB Atlas website at https://www.mongodb.com/cloud/atlas and sign in or create an account. \n\nstep_number : 2, \n description : Click on 'Get started free' or 'Start free' depending on the current offer, and select a plan suitable for your needs (e.g., shared clusters for development or dedicated clusters for production). \n\nstep_number : 3, \n description : Choose your preferred cloud provider (AWS, Google Cloud, or Azure), region, and other configuration options. \n\n step_number: 4, \n description : Set up security options such as IP whitelisting, database user credentials, and encryption settings. \n\n step_number : 5, \n description : Click 'Create Cluster' to deploy your MongoDB cluster on MongoDB Atlas. Once deployed, you can manage and monitor your cluster through the MongoDB Atlas dashboard."
+    },
+    {
+      "title": "MongoDB Compass",
+      "content": "MongoDB Compass is MongoDB's official graphical user interface (GUI) for exploring and interacting with MongoDB databases. It provides a visual representation of your data and allows you to perform CRUD operations, query optimization, and more. Here's how to set it up:",
+      "code_example": "step_number : 1, \n description : Download MongoDB Compass from the official MongoDB website at https://www.mongodb.com/try/download/compass. \n\n step_number : 2, \n description : Run the installer and follow the installation wizard instructions. MongoDB Compass is available for Windows, macOS, and Linux. \n\n step_number: 3, \n description : Once installed, open MongoDB Compass. You can connect to your MongoDB Atlas cluster by entering the connection string provided in the MongoDB Atlas dashboard. \n\n step_number : 4, \n description : Explore your databases, collections, and documents using MongoDB Compass's intuitive graphical interface. Perform operations such as inserting, updating, querying, and analyzing your data."
+    },
+    {
+      "title": "Geospatial Queries",
+      "content": "Performing geospatial queries in MongoDB.",
+      "code_example": "db.places.createIndex({ location: '2dsphere' });\ndb.places.find({\n  location: {\n    $near: {\n      $geometry: {\n        type: 'Point',\n        coordinates: [ -73.9667, 40.78 ]\n      },\n      $maxDistance: 1000\n    }\n  }\n});"
+    },
+    {
+      "title": "Text Search",
+      "content": "Performing text search queries in MongoDB.",
+      "code_example": "db.articles.createIndex({ title: 'text', content: 'text' });\ndb.articles.find({ $text: { $search: 'mongodb' } });"
+    },
+    {
+      "title": "Change Streams",
+      "content": "Monitoring changes in MongoDB collections in real-time.",
+      "code_example": "const changeStream = db.collection('mycollection').watch();\nchangeStream.on('change', change => {\n  console.log('Change occurred:', change);\n});"
+    },
+    {
+      "title": "GridFS",
+      "content": "Storing and retrieving large files (e.g., images) in MongoDB.",
+      "code_example": "const bucket = new mongodb.GridFSBucket(db);\nconst uploadStream = bucket.openUploadStream('example.jpg');\nfs.createReadStream('example.jpg').pipe(uploadStream);\nuploadStream.on('finish', () => {\n  console.log('File uploaded');\n});"
+    },
+    {
+      "title": "Working with Dates and Times",
+      "content": "Handling dates and times in MongoDB.",
+      "code_example": "db.mycollection.insertOne({\n  createdAt: new Date(),\n  updatedAt: ISODate('2024-06-12T12:00:00Z')\n});"
+    },
+    {
+      "title": "Full-Text Search with MongoDB Atlas Search",
+      "content": "Performing full-text search using MongoDB Atlas Search service.",
+      "code_example": ""
+    },
+    {
+      "title": "Using MongoDB with Node.js",
+      "content": "Integrating MongoDB with Node.js applications.",
+      "code_example": "const MongoClient = require('mongodb').MongoClient;\nconst url = 'mongodb://localhost:27017';\n\nMongoClient.connect(url, function(err, client) {\n  if (err) throw err;\n  const db = client.db('mydatabase');\n  // Perform operations\n  client.close();\n});"
+    },
+    {
+      "title": "Using MongoDB with Python",
+      "content": "Integrating MongoDB with Python applications using pymongo.",
+      "code_example": "from pymongo import MongoClient\n\nclient = MongoClient('mongodb://localhost:27017/')\ndb = client['mydatabase']\nmycollection = db['mycollection']\n\nresult = mycollection.find({ 'name': 'John Doe' })\nfor document in result:\n    print(document)"
+    },
+    {
+      "title": "Using MongoDB with Ruby (continued)",
+      "content": "Defining MongoDB models and performing CRUD operations in Ruby using Mongoid.",
+      "code_example": "require 'mongoid'\n\nMongoid.configure do |config|\n  config.connect_to('mydatabase')\nend\n\nclass MyModel\n  include Mongoid::Document\n  field :name, type: String\nend\n\n# Insert document\nMyModel.create(name: 'John Doe')\n\n# Query document\nresult = MyModel.where(name: 'John Doe').first\n\n# Update document\nresult.update(name: 'Jane Doe')\n\n# Delete document\nresult.destroy"
+    },
+    {
+      "title": "Using MongoDB with PHP",
+      "content": "Integrating MongoDB with PHP applications using MongoDB PHP Library (mongodb).",
+      "code_example": "<?php\n$manager = new MongoDB\\Driver\\Manager('mongodb://localhost:27017');\n$query = new MongoDB\\Driver\\Query(['name' => 'John Doe']);\n$cursor = $manager->executeQuery('mydatabase.mycollection', $query);\nforeach ($cursor as $document) {\n  var_dump($document);\n}\n?>"
+    },
+    {
+      "title": "Using MongoDB with Node.js and Mongoose",
+      "content": "Integrating MongoDB with Node.js applications using Mongoose ODM.",
+      "code_example": "const mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\nconst mySchema = new Schema({\n  name: String,\n  age: Number\n});\n\nconst MyModel = mongoose.model('MyModel', mySchema);\n\nconst doc = new MyModel({ name: 'John Doe', age: 30 });\ndoc.save();"
+    },
+    {
+      "title": "MongoDB with Express.js (MEAN Stack)",
+      "content": "Integrating MongoDB with Express.js for building MEAN stack applications.",
+      "code_example": "const express = require('express');\nconst mongoose = require('mongoose');\nconst app = express();\n\nmongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\nconst mySchema = new Schema({\n  name: String,\n  age: Number\n});\n\nconst MyModel = mongoose.model('MyModel', mySchema);\n\napp.get('/', async (req, res) => {\n  const documents = await MyModel.find();\n  res.json(documents);\n});\n\napp.listen(3000, () => console.log('Server running on port 3000'));"
+    },
+    {
+      "title": "Using MongoDB with Flask (MongoEngine)",
+      "content": "Integrating MongoDB with Python Flask applications using MongoEngine.",
+      "code_example": "from flask import Flask\nfrom flask_mongoengine import MongoEngine\n\napp = Flask(__name__)\napp.config['MONGODB_SETTINGS'] = {\n    'db': 'mydatabase',\n    'host': 'localhost',\n    'port': 27017\n}\ndb = MongoEngine(app)\n\nclass MyModel(db.Document):\n    name = db.StringField()\n    age = db.IntField()\n\n# Insert document\nMyModel(name='John Doe', age=30).save()\n\n# Query document\nresult = MyModel.objects(name='John Doe').first()\n\n# Update document\nresult.name = 'Jane Doe'\nresult.save()\n\n# Delete document\nresult.delete()"
+    },
+    {
+      "title": "Using MongoDB with Django (Django MongoDB Engine)",
+      "content": "Integrating MongoDB with Django using Django MongoDB Engine.",
+      "code_example": "# Example database configuration in settings.py\nDATABASES = {\n    'default': {\n        'ENGINE': 'django_mongodb_engine',\n        'NAME': 'mydatabase',\n        'HOST': 'localhost',\n        'PORT': 27017,\n    }\n}"
+    },
+    {
+      "title": "GridFS for Large File Storage",
+      "content": "Using MongoDB's GridFS to store and retrieve files larger than the BSON document size limit.",
+      "code_example": "# Uploading a file to GridFS\nfrom pymongo import MongoClient\n\nclient = MongoClient()\ndb = client['mydatabase']\ncollection = db['myfiles']\n\nwith open('/path/to/largefile.pdf', 'rb') as f:\n    collection.fs.put(f, filename='largefile.pdf')\n\n# Downloading a file from GridFS\nfile_id = collection.fs.files.find_one({'filename': 'largefile.pdf'})['_id']\noutput_filename = '/path/to/downloaded_file.pdf'\nwith open(output_filename, 'wb') as f:\n    collection.fs.download_to_stream(file_id, f)"
+    },
+    {
+      "title": "MongoDB with .NET Core",
+      "content": "Integrating MongoDB with .NET Core applications using MongoDB.Driver.",
+      "code_example": "using MongoDB.Driver;\nusing System;\nusing System.Threading.Tasks;\n\npublic class Program\n{\n    public static async Task Main(string[] args)\n    {\n        var client = new MongoClient(\"mongodb://localhost:27017\");\n        var database = client.GetDatabase(\"mydatabase\");\n        var collection = database.GetCollection<BsonDocument>(\"mycollection\");\n\n        var document = new BsonDocument()\n        {\n            { \"name\", \"John Doe\" },\n            { \"age\", 30 }\n        };\n\n        await collection.InsertOneAsync(document);\n    }\n}"
+    },
+    {
+      "title": "Using MongoDB with Spring Boot (Spring Data MongoDB)",
+      "content": "Integrating MongoDB with Spring Boot applications using Spring Data MongoDB.",
+      "code_example": "import org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.CommandLineRunner;\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.data.mongodb.core.MongoTemplate;\n\n@SpringBootApplication\npublic class Application implements CommandLineRunner {\n\n    @Autowired\n    private MongoTemplate mongoTemplate;\n\n    public static void main(String[] args) {\n        SpringApplication.run(Application.class, args);\n    }\n\n    @Override\n    public void run(String... args) throws Exception {\n        mongoTemplate.save(new MyModel(\"John Doe\", 30));\n    }\n}"
+    },
+    {
+      "title": "Using MongoDB with ASP.NET Core",
+      "content": "Integrating MongoDB with ASP.NET Core applications using MongoDB.Driver.",
+      "code_example": "using MongoDB.Driver;\nusing System;\nusing System.Threading.Tasks;\n\npublic class MyModel\n{\n    public Guid Id { get; set; }\n    public string Name { get; set; }\n    public int Age { get; set; }\n}\n\npublic class MyService\n{\n    private readonly IMongoCollection<MyModel> _collection;\n\n    public MyService(IMongoClient client)\n    {\n        var database = client.GetDatabase(\"mydatabase\");\n        _collection = database.GetCollection<MyModel>(\"mycollection\");\n    }\n\n    public async Task Insert(MyModel model)\n    {\n        await _collection.InsertOneAsync(model);\n    }\n}"
+    }
+  ]

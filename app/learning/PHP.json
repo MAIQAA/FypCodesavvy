@@ -1,0 +1,247 @@
+ [
+    {
+      "title": "Introduction to PHP",
+      "content": "PHP, which stands for Hypertext Preprocessor, is a widely-used open-source scripting language that is particularly suited for web development. Originally designed for creating dynamic web pages, PHP has evolved into a robust server-side scripting language that powers millions of websites and applications worldwide. Known for its simplicity, flexibility, and extensive community support, PHP enables developers to build everything from simple websites to complex enterprise-level applications. Its integration with various databases, including MySQL, and compatibility with different operating systems make it a versatile tool for developers aiming to create dynamic and interactive web experiences.",
+      "examples": ""
+    },
+    {
+      "title": "Variables",
+      "content": "Variables hold data values that can change during execution.",
+      "examples": "$name = 'John'; \n\n $age = 30;"
+    },
+    {
+      "title": "Strings",
+      "content": "Strings are sequences of characters, enclosed in single or double quotes.",
+      "examples": "$str1 = 'Hello, world!'; \n\n $str2 = \"PHP is great!\";"
+    },
+    {
+      "title": "Arrays",
+      "content": "Arrays store multiple values in a single variable.",
+      "examples": "$fruits = array('apple', 'banana', 'cherry');\n\n $numbers = [1, 2, 3, 4, 5];"
+    },
+    {
+      "title": "Functions",
+      "content": "Functions are blocks of code that can be reused.",
+      "examples": "function greet($name) { return 'Hello, ' . $name . '!'; } \n\n echo greet('Alice');"
+    },
+    {
+      "title": "Loops",
+      "content": "Loops execute a block of code multiple times.",
+      "examples": "for ($i = 0; $i < 5; $i++) { echo $i; } \n\n $colors = ['red', 'green', 'blue']; foreach ($colors as $color) { echo $color; }"
+    },
+    {
+      "title": "Classes",
+      "content": "Classes are blueprints for objects.",
+      "examples": "class Car { public $brand; function __construct($brand) { $this->brand = $brand; } } \n\n $myCar = new Car('Toyota'); echo $myCar->brand;"
+    },
+    {
+      "title": "Exception Handling",
+      "content": "Exception handling deals with errors and exceptions in PHP.",
+      "examples": "try { throw new Exception('An error occurred.'); } \n catch (Exception $e) \n{ echo 'Error: ' . $e->getMessage(); }"
+    },
+    {
+      "title": "File Handling",
+      "content": "File handling enables reading and writing files.",
+      "examples": "$file = fopen('example.txt', 'r'); \n$content = fread($file, filesize('example.txt')); \nfclose($file);"
+    },
+    {
+      "title": "Regular Expressions",
+      "content": "Regular expressions are patterns used to match character combinations.",
+      "examples": "$str = 'Hello, world!'; \nif (preg_match('/world/', $str)) \n{ echo 'Match found!'; }"
+    },
+    {
+      "title": "Constants",
+      "content": "Constants are identifiers whose value remains the same throughout the execution of the script.",
+      "examples": "define('PI', 3.14);\n\n echo PI;"
+    },
+    {
+      "title": "Date and Time",
+      "content": "Date and time functions allow manipulation and formatting of date/time values.",
+      "examples": "$date = date('Y-m-d H:i:s');\n\n $timestamp = strtotime('next Thursday');"
+    },
+    {
+      "title": "Error Handling",
+      "content": "Error handling functions manage PHP errors and warnings.",
+      "examples": "set_error_handler(function($errno, $errstr, $errfile, $errline) \n{ echo \"Error: [$errno] $errstr in $errfile on line $errline<br>\"; });\n trigger_error('This is a custom error.', E_USER_ERROR);"
+    },
+    {
+      "title": "GET and POST Methods",
+      "content": "GET and POST methods handle form data in PHP.",
+      "examples": "echo $_GET['name']; \n// Assuming form input with name attribute 'name'\n\n echo $_POST['username']; \n// Assuming form input with name attribute 'username'"
+    },
+    {
+      "title": "PHP and MySQL",
+      "content": "PHP integrates with MySQL for database operations.",
+      "examples": "$conn = mysqli_connect('localhost', 'username', 'password', 'database');\n\n $result = mysqli_query($conn, 'SELECT * FROM users');"
+    },
+    {
+      "title": "JSON Handling",
+      "content": "Functions for encoding and decoding JSON data in PHP.",
+      "examples": "$data = ['name' => 'John', 'age' => 30]; $json = json_encode($data);\n\n $decoded = json_decode($json, true);"
+    },
+    {
+      "title": "Sessions and Cookies",
+      "content": "Sessions and cookies manage user-specific data on the server and client sides.",
+      "examples": "session_start(); $_SESSION['username'] = 'Alice';\n\n setcookie('username', 'Bob', time() + 3600);"
+    },
+    {
+      "title": "Include and Require",
+      "content": "Include and require statements import PHP code from other files.",
+      "examples": "include 'header.php';\n\n require_once 'functions.php';"
+    },
+    {
+      "title": "Object-Oriented Programming (OOP)",
+      "content": "OOP principles in PHP: encapsulation, inheritance, polymorphism, abstraction.",
+      "examples": "class Animal { protected $name; public function __construct($name) \n{ $this->name = $name; } } \n\n class Dog extends Animal { public function bark() \n{ return 'Woof!'; } }"
+    },
+    {
+      "title": "GD Library",
+      "content": "The GD library enables image manipulation in PHP.",
+      "examples": "$image = imagecreatetruecolor(200, 200);\n\n header('Content-Type: image/png'); \nimagepng($image); \nimagedestroy($image);"
+    },
+    {
+      "title": "CURL",
+      "content": "CURL functions enable PHP to interact with remote servers.",
+      "examples": "$ch = curl_init(); \ncurl_setopt($ch, CURLOPT_URL, 'https://api.example.com');\n curl_exec($ch); \ncurl_close($ch);"
+    },
+    {
+      "title": "Magic Methods",
+      "content": "Magic methods provide functionality in response to certain PHP events.",
+      "examples": "class MyClass { public function __toString() \n{ return 'Instance of MyClass'; } } \n\n $obj = new MyClass();\n echo $obj;"
+    },
+    {
+      "title": "Namespaces",
+      "content": "Namespaces organize classes, functions, and constants.",
+      "examples": "namespace MyNamespace; \nclass MyClass { public function __construct() \n{ echo 'Hello from MyClass!'; } } \n\n $obj = new MyNamespace\\MyClass();"
+    },
+    {
+      "title": "PHPMailer",
+      "content": "PHPMailer facilitates email sending via PHP scripts.",
+      "examples": "use PHPMailer\\PHPMailer\\PHPMailer; use PHPMailer\\PHPMailer\\Exception; \nrequire 'vendor/autoload.php';\n\n $mail = new PHPMailer(true);"
+    },
+    {
+      "title": "Composer",
+      "content": "Composer manages PHP dependencies and autoloads classes.",
+      "examples": "composer require vendor/package;\n\n require_once 'vendor/autoload.php';"
+    },
+    {
+      "title": "Traits",
+      "content": "Traits enable code reuse in multiple classes.",
+      "examples": "trait Message { public function welcome() \n{ echo 'Hello, welcome!'; } }\n\n class MyClass { use Message;\n } \n$obj = new MyClass();\n $obj->welcome();"
+    },
+    {
+      "title": "PHP Data Objects (PDO)",
+      "content": "PDO provides a unified interface to access databases in PHP.",
+      "examples": "$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'username', 'password');\n\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');"
+    },
+    {
+      "title": "PHP Sessions",
+      "content": "Sessions store user data on the server for later use.",
+      "examples": "session_start();\n $_SESSION['username'] = 'Alice';\n\n echo 'Welcome, ' . $_SESSION['username'];"
+    },
+    {
+      "title": "WordPress Development",
+      "content": "Developing websites and plugins using WordPress and PHP.",
+      "examples": "function my_custom_function() \n{\n // WordPress custom function code } add_action('init', 'my_custom_function');\n\n // Example of adding a shortcode in WordPress: function my_shortcode_function() \n{\n return 'This is a shortcode'; } \nadd_shortcode('myshortcode', 'my_shortcode_function');"
+    },
+    {
+      "title": "WordPress Shortcodes",
+      "content": "Shortcodes provide a way to embed dynamic content in WordPress posts and pages.",
+      "examples": "// Define a shortcode: function my_shortcode_function() \n{ \nreturn 'This is a shortcode'; \n} \nadd_shortcode('myshortcode', 'my_shortcode_function');\n\n// Use the shortcode in a post or page: [myshortcode]"
+    },
+    {
+      "title": "RESTful APIs with PHP",
+      "content": "Build RESTful APIs using PHP to facilitate communication between different systems.",
+      "examples": "// Example of handling HTTP GET request: if ($_SERVER['REQUEST_METHOD'] === 'GET') \n{ \necho json_encode(['message' => 'GET request received']); }\n\n // Example of handling HTTP POST request: if ($_SERVER['REQUEST_METHOD'] === 'POST') \n{ $data = json_decode(file_get_contents('php://input'), true); \necho json_encode(['message' => 'POST request received']); }"
+    },
+    {
+      "title": "XML and PHP",
+      "content": "Manipulate XML data using PHP's built-in XML handling functions.",
+      "examples": "// Load XML from a file: $xml = simplexml_load_file('data.xml');\n\n// Parse XML string: $xmlString = '<book><title>PHP Cookbook</title></book>'; \n$xml = simplexml_load_string($xmlString);"
+    },
+    {
+      "title": "Database Transactions",
+      "content": "Transactions ensure the integrity of database operations in PHP applications.",
+      "examples": "$pdo->beginTransaction();\ntry { $pdo->exec('INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com')'); \n$pdo->commit(); \n} \ncatch (PDOException $e) \n{\n $pdo->rollBack(); echo 'Error: ' . $e->getMessage(); }"
+    },
+    {
+      "title": "Working with JSON in PHP",
+      "content": "Encode and decode JSON data using PHP functions.",
+      "examples": "// Encode array to JSON: $data = ['name' => 'John', 'age' => 30];\n $json = json_encode($data);\n\n// Decode JSON to array: $jsonString = '{\"name\":\"John\",\"age\":30}';\n $decoded = json_decode($jsonString, true);"
+    },
+    {
+      "title": "PHP Security Best Practices",
+      "content": "Implement security measures to protect PHP applications from vulnerabilities.",
+      "examples": "// Sanitize input data: $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);\n\n// Prevent SQL injection: $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username');\n $stmt->bindParam(':username', $username); \n$stmt->execute();"
+    },
+    {
+      "title": "Handling File Uploads in PHP",
+      "content": "Process file uploads securely and efficiently in PHP applications.",
+      "examples": "// Upload file example: move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);\n\n// Check file type and size: \n if ($_FILES['file']['type'] === 'image/jpeg' && $_FILES['file']['size'] < 500000) \n{\n /* Process file */ \n}"
+    },
+    {
+      "title": "Generating PDFs with PHP",
+      "content": "Create PDF documents dynamically using PHP libraries and extensions.",
+      "examples": "// Example using TCPDF library: require_once('tcpdf/tcpdf.php');\n $pdf = new TCPDF(); \n$pdf->AddPage(); \n$pdf->SetFont('Arial', 'B', 16);\n $pdf->Cell(40, 10, 'Hello, world!');\n $pdf->Output('example.pdf', 'D');"
+    },
+    {
+      "title": "Working with Sessions in PHP",
+      "content": "Manage user sessions to maintain state across multiple pages.",
+      "examples": "// Start a session: session_start();\n\n// Store data in session: $_SESSION['username'] = 'Alice';\n\n// Retrieve data from session: echo 'Welcome, ' . $_SESSION['username'];"
+    },
+    {
+      "title": "Sending Email with PHP",
+      "content": "Send emails programmatically using PHP's mail function or third-party libraries.",
+      "examples": "// Basic example using mail function: $to = 'recipient@example.com'; \n$subject = 'Test Email';\n $message = 'This is a test email.';\n $headers = 'From: sender@example.com'; \nmail($to, $subject, $message, $headers);"
+    },
+    {
+      "title": "Handling Form Submissions in PHP",
+      "content": "Process HTML form submissions and validate input data.",
+      "examples": "// Example handling POST request: if ($_SERVER['REQUEST_METHOD'] === 'POST') \n{ \n$username = $_POST['username'];\n $password = $_POST['password']; \n/* Validate and process data */ }"
+    },
+    {
+      "title": "Session Security in PHP",
+      "content": "Secure PHP sessions against common security threats and vulnerabilities.",
+      "examples": "// Use session cookies with HttpOnly and Secure flags: ini_set('session.cookie_httponly', 1);\n ini_set('session.cookie_secure', 1); \nsession_start();"
+    },
+    {
+      "title": "Caching Techniques in PHP",
+      "content": "Implement caching strategies to improve performance in PHP applications.",
+      "examples": "// Example using Memcached: $memcached = new Memcached();\n $memcached->addServer('localhost', 11211);\n $result = $memcached->get('key'); \nif (!$result) \n{ \n/* Retrieve data from database and store in cache */ \n}"
+    },
+    {
+      "title": "Using Composer for Dependency Management",
+      "content": "Manage PHP dependencies and autoload classes using Composer.",
+      "examples": "// Install package via Composer: composer require vendor/package;\n\n // Autoload classes: require_once 'vendor/autoload.php';"
+    },
+    {
+      "title": "Creating REST APIs with Laravel (PHP Framework)",
+      "content": "Develop RESTful APIs using the Laravel framework's built-in features and tools.",
+      "examples": "// Define a route for an API endpoint: Route::get('/api/users', 'UserController@index');\n\n// Implement CRUD operations: /* Example controllers and models */"
+    },
+    {
+      "title": "Creating Websockets with PHP",
+      "content": "Implement real-time communication using Websockets in PHP applications.",
+      "examples": "// Example using Ratchet library: require 'vendor/autoload.php';\nuse Ratchet\\Server\\IoServer; use MyApp\\Chat; \n$server = IoServer::factory(new Chat(), 8080);\n $server->run();"
+    },
+    {
+      "title": "Using Guzzle HTTP Client in PHP",
+      "content": "Send HTTP requests using the Guzzle HTTP client library in PHP.",
+      "examples": "// Example GET request: use GuzzleHttp\\Client; $client = new Client();\n $response = $client->request('GET', 'https://api.example.com'); \n$statusCode = $response->getStatusCode();\n $body = $response->getBody();"
+    },
+    {
+      "title": "Implementing Authentication and Authorization in PHP",
+      "content": "Secure access to PHP applications by implementing authentication and authorization mechanisms.",
+      "examples": "// Example using sessions for authentication: session_start();\n if (!isset($_SESSION['authenticated'])) \n{ \n/* Redirect to login page */ \n}"
+    },
+    {
+      "title": "Unit Testing in PHP with PHPUnit",
+      "content": "Write and execute unit tests for PHP code using the PHPUnit testing framework.",
+      "examples": "// Example test case: use PHPUnit\\Framework\\TestCase;\nclass MyTest extends TestCase \n{\n public function testAddition() \n{\n $this->assertEquals(4, 2 + 2); \n}\n }"
+    },
+    {
+      "title": "Server-Side Rendering with PHP",
+      "content": "Render HTML content on the server side using PHP templates and frameworks.",
+      "examples": "// Example using PHP template engine: require_once 'vendor/autoload.php';\n $loader = new TwigLoaderFilesystemLoader('/path/to/templates');\n $twig = new TwigEnvironment($loader);\n echo $twig->render('index.html.twig', ['name' => 'John']);"
+    }
+  ]

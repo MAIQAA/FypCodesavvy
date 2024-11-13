@@ -1,0 +1,357 @@
+ [
+        {
+            "title":"Introduction to C++",
+            "content" : "C++ is a powerful, high-performance programming language widely used for developing system software, game engines, desktop applications, and real-time simulations. Created by Bjarne Stroustrup as an extension of the C language, C++ supports both procedural and object-oriented programming paradigms, making it versatile and efficient for various complex software projects. With its rich standard library, robust performance capabilities, and extensive community support, C++ remains a fundamental language for many developers in the software engineering and scientific computing fields.",
+            "code_examples":""
+        },
+      {
+        "title": "Hello World",
+        "content": "Basic program to print Hello World.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Variables",
+        "content": "Declaring and initializing variables in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 5;\n    double b = 3.14;\n    char c = 'A';\n    std::cout << \"a: \" << a << \", b: \" << b << \", c: \" << c << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Data Types",
+        "content": "Different data types in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int integer = 10;\n    float floatingPoint = 10.5;\n    double doublePrecision = 20.99;\n    char character = 'A';\n    bool boolean = true;\n    std::cout << \"Integer: \" << integer << std::endl;\n    std::cout << \"Float: \" << floatingPoint << std::endl;\n    std::cout << \"Double: \" << doublePrecision << std::endl;\n    std::cout << \"Character: \" << character << std::endl;\n    std::cout << \"Boolean: \" << boolean << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Operators",
+        "content": "Using arithmetic operators in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 10, b = 20;\n    std::cout << \"a + b = \" << (a + b) << std::endl;\n    std::cout << \"a - b = \" << (a - b) << std::endl;\n    std::cout << \"a * b = \" << (a * b) << std::endl;\n    std::cout << \"a / b = \" << (a / b) << std::endl;\n    std::cout << \"a % b = \" << (a % b) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Control Structures",
+        "content": "Using if-else statements in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 10;\n    if (a > 0) {\n        std::cout << \"a is positive\" << std::endl;\n    } else if (a < 0) {\n        std::cout << \"a is negative\" << std::endl;\n    } else {\n        std::cout << \"a is zero\" << std::endl;\n    }\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Loops",
+        "content": "Using for loop in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    for (int i = 0; i < 5; ++i) {\n        std::cout << \"i: \" << i << std::endl;\n    }\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "While Loop",
+        "content": "Using while loop in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int i = 0;\n    while (i < 5) {\n        std::cout << \"i: \" << i << std::endl;\n        ++i;\n    }\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Do-While Loop",
+        "content": "Using do-while loop in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int i = 0;\n    do {\n        std::cout << \"i: \" << i << std::endl;\n        ++i;\n    } while (i < 5);\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Functions",
+        "content": "Defining and calling functions in C++.",
+        "code_examples": [
+          "#include <iostream>\nvoid greet() {\n    std::cout << \"Hello, World!\" << std::endl;\n}\nint main() {\n    greet();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Function Parameters",
+        "content": "Using parameters in functions.",
+        "code_examples": [
+          "#include <iostream>\nvoid printSum(int a, int b) {\n    std::cout << \"Sum: \" << (a + b) << std::endl;\n}\nint main() {\n    printSum(5, 10);\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Return Values",
+        "content": "Returning values from functions.",
+        "code_examples": [
+          "#include <iostream>\nint add(int a, int b) {\n    return a + b;\n}\nint main() {\n    int sum = add(5, 10);\n    std::cout << \"Sum: \" << sum << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Recursion",
+        "content": "Using recursive functions.",
+        "code_examples": [
+          "#include <iostream>\nint factorial(int n) {\n    if (n <= 1) return 1;\n    else return n * factorial(n - 1);\n}\nint main() {\n    std::cout << \"Factorial of 5: \" << factorial(5) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Arrays",
+        "content": "Declaring and using arrays in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int arr[5] = {1, 2, 3, 4, 5};\n    for (int i = 0; i < 5; ++i) {\n        std::cout << arr[i] << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Multidimensional Arrays",
+        "content": "Using multidimensional arrays in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};\n    for (int i = 0; i < 2; ++i) {\n        for (int j = 0; j < 3; ++j) {\n            std::cout << arr[i][j] << \" \";\n        }\n        std::cout << std::endl;\n    }\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Pointers",
+        "content": "Understanding pointers in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 10;\n    int *p = &a;\n    std::cout << \"Value: \" << *p << std::endl;\n    std::cout << \"Address: \" << p << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Pointer Arithmetic",
+        "content": "Performing arithmetic operations on pointers.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int arr[5] = {1, 2, 3, 4, 5};\n    int *p = arr;\n    for (int i = 0; i < 5; ++i) {\n        std::cout << *(p + i) << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "References",
+        "content": "Using references in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 10;\n    int &ref = a;\n    ref = 20;\n    std::cout << \"a: \" << a << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Classes and Objects",
+        "content": "Defining classes and creating objects in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass MyClass {\npublic:\n    int myNumber;\n    void printNumber() {\n        std::cout << \"Number: \" << myNumber << std::endl;\n    }\n};\nint main() {\n    MyClass obj;\n    obj.myNumber = 10;\n    obj.printNumber();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Constructors",
+        "content": "Using constructors in C++ classes.",
+        "code_examples": [
+          "#include <iostream>\nclass MyClass {\npublic:\n    int myNumber;\n    MyClass(int num) {\n        myNumber = num;\n    }\n    void printNumber() {\n        std::cout << \"Number: \" << myNumber << std::endl;\n    }\n};\nint main() {\n    MyClass obj(10);\n    obj.printNumber();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Destructors",
+        "content": "Using destructors in C++ classes.",
+        "code_examples": [
+          "#include <iostream>\nclass MyClass {\npublic:\n    MyClass() {\n        std::cout << \"Constructor called\" << std::endl;\n    }\n    ~MyClass() {\n        std::cout << \"Destructor called\" << std::endl;\n    }\n};\nint main() {\n    MyClass obj;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Inheritance",
+        "content": "Using inheritance in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Base {\npublic:\n    void baseMethod() {\n        std::cout << \"Base method\" << std::endl;\n    }\n};\nclass Derived : public Base {\npublic:\n    void derivedMethod() {\n        std::cout << \"Derived method\" << std::endl;\n    }\n};\nint main() {\n    Derived obj;\n    obj.baseMethod();\n    obj.derivedMethod();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Polymorphism",
+        "content": "Using polymorphism in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Base {\npublic:\n    virtual void display() {\n        std::cout << \"Base display\" << std::endl;\n    }\n};\nclass Derived : public Base {\npublic:\n    void display() override {\n        std::cout << \"Derived display\" << std::endl;\n    }\n};\nint main() {\n    Base *basePtr;\n    Derived derivedObj;\n    basePtr = &derivedObj;\n    basePtr->display();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Abstract Classes",
+        "content": "Using abstract classes in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass AbstractClass {\npublic:\n    virtual void pureVirtualFunction() = 0;\n};\nclass DerivedClass : public AbstractClass {\npublic:\n    void pureVirtualFunction() override {\n        std::cout << \"Pure virtual function implemented\" << std::endl;\n    }\n};\nint main() {\n    DerivedClass obj;\n    obj.pureVirtualFunction();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Templates",
+        "content": "Using templates in C++.",
+        "code_examples": [
+          "#include <iostream>\ntemplate <typename T>\nT add(T a, T b) {\n    return a + b;\n}\nint main() {\n    std::cout << \"Sum: \" << add(5, 10) << std::endl;\n    std::cout << \"Sum: \" << add(5.5, 10.5) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Exception Handling",
+        "content": "Using try, catch, and throw for exception handling.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    try {\n        int a = 10;\n        int b = 0;\n        if (b == 0) {\n            throw \"Division by zero!\";\n        }\n        std::cout << \"Result: \" << (a / b) << std::endl;\n    } catch (const char *msg) {\n        std::cout << \"Error: \" << msg << std::endl;\n    }\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Standard Template Library (STL)",
+        "content": "Using the Standard Template Library (STL) in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {1, 2, 3, 4, 5};\n    for (int i : vec) {\n        std::cout << i << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "STL Algorithms",
+        "content": "Using STL algorithms in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <vector>\n#include <algorithm>\nint main() {\n    std::vector<int> vec = {5, 1, 4, 2, 3};\n    std::sort(vec.begin(), vec.end());\n    for (int i : vec) {\n        std::cout << i << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "File Handling",
+        "content": "Reading from and writing to files in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <fstream>\nint main() {\n    std::ofstream outFile(\"example.txt\");\n    outFile << \"Hello, file!\" << std::endl;\n    outFile.close();\n    std::ifstream inFile(\"example.txt\");\n    std::string content;\n    std::getline(inFile, content);\n    std::cout << \"File content: \" << content << std::endl;\n    inFile.close();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Dynamic Memory Allocation",
+        "content": "Allocating and deallocating memory dynamically using new and delete.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int *ptr = new int;\n    *ptr = 10;\n    std::cout << \"Value: \" << *ptr << std::endl;\n    delete ptr;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Smart Pointers",
+        "content": "Using smart pointers for automatic memory management.",
+        "code_examples": [
+          "#include <iostream>\n#include <memory>\nint main() {\n    std::unique_ptr<int> ptr = std::make_unique<int>(10);\n    std::cout << \"Value: \" << *ptr << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Lambda Expressions",
+        "content": "Using lambda expressions for inline function definitions.",
+        "code_examples": [
+          "#include <iostream>\n#include <vector>\n#include <algorithm>\nint main() {\n    std::vector<int> vec = {1, 2, 3, 4, 5};\n    std::for_each(vec.begin(), vec.end(), [](int x) { std::cout << x << \" \"; });\n    std::cout << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Threads",
+        "content": "Creating and using threads in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <thread>\nvoid threadFunction() {\n    std::cout << \"Thread function\" << std::endl;\n}\nint main() {\n    std::thread t(threadFunction);\n    t.join();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Mutex",
+        "content": "Using mutex for thread synchronization.",
+        "code_examples": [
+          "#include <iostream>\n#include <thread>\n#include <mutex>\nstd::mutex mtx;\nvoid print(int n) {\n    mtx.lock();\n    std::cout << \"Thread \" << n << std::endl;\n    mtx.unlock();\n}\nint main() {\n    std::thread t1(print, 1);\n    std::thread t2(print, 2);\n    t1.join();\n    t2.join();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Condition Variables",
+        "content": "Using condition variables for thread synchronization.",
+        "code_examples": [
+          "#include <iostream>\n#include <thread>\n#include <mutex>\n#include <condition_variable>\nbool ready = false;\nstd::mutex mtx;\nstd::condition_variable cv;\nvoid print() {\n    std::unique_lock<std::mutex> lck(mtx);\n    cv.wait(lck, []{ return ready; });\n    std::cout << \"Thread function\" << std::endl;\n}\nint main() {\n    std::thread t(print);\n    std::this_thread::sleep_for(std::chrono::seconds(1));\n    {\n        std::lock_guard<std::mutex> lck(mtx);\n        ready = true;\n    }\n    cv.notify_one();\n    t.join();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Namespaces",
+        "content": "Using namespaces in C++.",
+        "code_examples": [
+          "#include <iostream>\nnamespace first {\n    int x = 5;\n}\nnamespace second {\n    int x = 10;\n}\nint main() {\n    std::cout << \"first::x = \" << first::x << std::endl;\n    std::cout << \"second::x = \" << second::x << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Type Casting",
+        "content": "Using different types of type casting in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    double a = 10.5;\n    int b = static_cast<int>(a);\n    std::cout << \"b: \" << b << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "content": "Using enumerations in C++.",
+        "code_examples": [
+          "#include <iostream>\nenum Color { RED, GREEN, BLUE };\nint main() {\n    Color c = RED;\n    std::cout << \"Color: \" << c << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Preprocessor Directives",
+        "content": "Using preprocessor directives in C++.",
+        "code_examples": [
+          "#include <iostream>\n#define PI 3.14\nint main() {\n    std::cout << \"PI: \" << PI << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Inline Functions",
+        "content": "Using inline functions in C++.",
+        "code_examples": [
+          "#include <iostream>\ninline int add(int a, int b) {\n    return a + b;\n}\nint main() {\n    std::cout << \"Sum: \" << add(5, 10) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Function Overloading",
+        "content": "Using function overloading in C++.",
+        "code_examples": [
+          "#include <iostream>\nint add(int a, int b) {\n    return a + b;\n}\ndouble add(double a, double b) {\n    return a + b;\n}\nint main() {\n    std::cout << \"Sum (int): \" << add(5, 10) << std::endl;\n    std::cout << \"Sum (double): \" << add(5.5, 10.5) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Operator Overloading",
+        "content": "Using operator overloading in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Complex {\npublic:\n    int real, imag;\n    Complex(int r = 0, int i = 0) : real(r), imag(i) {}\n    Complex operator + (const Complex &obj) {\n        Complex temp;\n        temp.real = real + obj.real;\n        temp.imag = imag + obj.imag;\n        return temp;\n    }\n};\nint main() {\n    Complex c1(3, 4), c2(1, 2);\n    Complex c3 = c1 + c2;\n    std::cout << \"Sum: \" << c3.real << \"+i\" << c3.imag << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Friend Functions",
+        "content": "Using friend functions in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Box {\nprivate:\n    int width;\npublic:\n    Box() : width(0) {}\n    friend void printWidth(Box box);\n};\nvoid printWidth(Box box) {\n    std::cout << \"Width: \" << box.width << std::endl;\n}\nint main() {\n    Box box;\n    printWidth(box);\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Virtual Functions",
+        "content": "Using virtual functions in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Base {\npublic:\n    virtual void show() {\n        std::cout << \"Base show()\" << std::endl;\n    }\n};\nclass Derived : public Base {\npublic:\n    void show() override {\n        std::cout << \"Derived show()\" << std::endl;\n    }\n};\nint main() {\n    Base *bptr;\n    Derived d;\n    bptr = &d;\n    bptr->show();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Pure Virtual Functions",
+        "content": "Using pure virtual functions in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass Base {\npublic:\n    virtual void show() = 0;\n};\nclass Derived : public Base {\npublic:\n    void show() override {\n        std::cout << \"Derived show()\" << std::endl;\n    }\n};\nint main() {\n    Derived d;\n    d.show();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "File Streams",
+        "content": "Using file streams in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <fstream>\nint main() {\n    std::ofstream ofs(\"test.txt\");\n    ofs << \"Hello, file!\" << std::endl;\n    ofs.close();\n    std::ifstream ifs(\"test.txt\");\n    std::string content;\n    std::getline(ifs, content);\n    std::cout << content << std::endl;\n    ifs.close();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Bitwise Operators",
+        "content": "Using bitwise operators in C++.",
+        "code_examples": [
+          "#include <iostream>\nint main() {\n    int a = 5, b = 9;\n    std::cout << \"a & b: \" << (a & b) << std::endl;\n    std::cout << \"a | b: \" << (a | b) << std::endl;\n    std::cout << \"a ^ b: \" << (a ^ b) << std::endl;\n    std::cout << \"~a: \" << (~a) << std::endl;\n    std::cout << \"b << 1: \" << (b << 1) << std::endl;\n    std::cout << \"b >> 1: \" << (b >> 1) << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Macros",
+        "content": "Using macros in C++.",
+        "code_examples": [
+          "#include <iostream>\n#define PI 3.14\nint main() {\n    std::cout << \"PI: \" << PI << std::endl;\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Multithreading",
+        "content": "Using multithreading in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <thread>\nvoid print() {\n    std::cout << \"Thread function\" << std::endl;\n}\nint main() {\n    std::thread t(print);\n    t.join();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Synchronization",
+        "content": "Using synchronization mechanisms in C++.",
+        "code_examples": [
+          "#include <iostream>\n#include <thread>\n#include <mutex>\nstd::mutex mtx;\nvoid print(int n) {\n    mtx.lock();\n    std::cout << \"Thread \" << n << std::endl;\n    mtx.unlock();\n}\nint main() {\n    std::thread t1(print, 1);\n    std::thread t2(print, 2);\n    t1.join();\n    t2.join();\n    return 0;\n}"
+        ]
+      },
+      {
+        "title": "Move Semantics",
+        "content": "Understanding move semantics in C++.",
+        "code_examples": [
+          "#include <iostream>\nclass A {\npublic:\n    A() {}\n    A(const A&) {\n        std::cout << \"Copy constructor\" << std::endl;\n    }\n    A(A&&) noexcept {\n        std::cout << \"Move constructor\" << std::endl;\n    }\n};\nint main() {\n    A a;\n    A b = std::move(a);\n    return 0;\n}"
+        ]
+      }
+    ]

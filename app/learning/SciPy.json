@@ -1,0 +1,152 @@
+[
+    {
+      "title": "Introduction to SciPy",
+      "content": "Scipy is a powerful Python library used for scientific and technical computing. It builds upon NumPy and provides additional functionality for optimization, integration, interpolation, signal processing, linear algebra, and more. Scipy's comprehensive set of tools enables researchers, engineers, and data scientists to solve complex mathematical problems efficiently in fields like physics, biology, engineering, and finance. Whether you need to solve differential equations, perform statistical analysis, or work with sparse matrices, Scipy offers robust solutions with a clear focus on performance and ease of use.",
+      "code_example": ""
+    },
+    {
+      "title": "Integration (quad)",
+      "content": "Compute a definite integral using quad function.",
+      "code_example": "from scipy.integrate import quad\n\n# Define integrand function\ndef integrand(x):\n    return x**2\n\n# Compute integral from 0 to 1\nresult, error = quad(integrand, 0, 1)\nprint('Integral value:', result)"
+    },
+    {
+      "title": "Optimization (minimize)",
+      "content": "Find the minimum of a scalar function using minimize function.",
+      "code_example": "from scipy.optimize import minimize\n\n# Define objective function\ndef objective(x):\n    return (x - 2)**2 + 3\n\n# Find minimum starting from initial guess x=0\nresult = minimize(objective, 0)\nprint('Minimum value:', result.x)"
+    },
+    {
+      "title": "Linear Algebra (solve)",
+      "content": "Solve a linear system of equations using solve function.",
+      "code_example": "import numpy as np\nfrom scipy.linalg import solve\n\n# Define coefficient matrix A and right-hand side vector b\nA = np.array([[3, 1], [1, 2]])\nb = np.array([9, 8])\n\n# Solve Ax = b\nx = solve(A, b)\nprint('Solution x:', x)"
+    },
+    {
+      "title": "Interpolation (interp1d)",
+      "content": "Perform 1-dimensional linear interpolation using interp1d function.",
+      "code_example": "import numpy as np\nfrom scipy.interpolate import interp1d\n\n# Define data points\nx = np.array([1, 2, 3, 4, 5])\ny = np.array([10, 5, 2, 6, 8])\n\n# Create linear interpolation function\nf = interp1d(x, y)\n\n# Evaluate interpolation at x=3.5\ny_interp = f(3.5)\nprint('Interpolated value at x=3.5:', y_interp)"
+    },
+    {
+      "title": "Signal Processing (fft)",
+      "content": "Compute the Discrete Fourier Transform (DFT) using fft function.",
+      "code_example": "import numpy as np\nfrom scipy.fft import fft\n\n# Define signal data\nx = np.array([1.0, 2.0, 1.0, -1.0, 1.5])\n\n# Compute FFT\nX = fft(x)\n\n# Print FFT coefficients\nprint('FFT coefficients:', X)"
+    },
+    {
+      "title": "Statistics (norm)",
+      "content": "Generate a sample from the normal distribution using norm function.",
+      "code_example": "from scipy.stats import norm\n\n# Generate 1000 samples from normal distribution with mean=0, std=1\nsamples = norm.rvs(size=1000)\nprint('Sample mean:', samples.mean())"
+    },
+    {
+      "title": "Curve Fitting (curve_fit)",
+      "content": "Fit a function to data points using curve_fit function.",
+      "code_example": "import numpy as np\nfrom scipy.optimize import curve_fit\n\n# Define function to fit (e.g., linear function)\ndef linear_func(x, m, c):\n    return m * x + c\n\n# Generate synthetic data points\nx = np.linspace(0, 10, 50)\ny = 2.5 * x + np.random.normal(size=x.size)\n\n# Fit the data using curve_fit\nparams, covariance = curve_fit(linear_func, x, y)\nprint('Fitted parameters (m, c):', params)"
+    },
+    {
+      "title": "Sparse Matrices (csr_matrix)",
+      "content": "Create a Compressed Sparse Row (CSR) matrix using csr_matrix function.",
+      "code_example": "import numpy as np\nfrom scipy.sparse import csr_matrix\n\n# Define dense matrix (e.g., identity matrix)\ndense_matrix = np.eye(3)\n\n# Convert dense matrix to CSR format\nsparse_matrix = csr_matrix(dense_matrix)\nprint('CSR matrix representation:', sparse_matrix)"
+    },
+    {
+      "title": "Image Processing (ndimage)",
+      "content": "Apply a Gaussian filter to an image using ndimage module.",
+      "code_example": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import ndimage\n\n# Create synthetic image (e.g., Gaussian noise)\nimage = np.random.random((512, 512))\n\n# Apply Gaussian filter with sigma=5\nfiltered_image = ndimage.gaussian_filter(image, sigma=5)\n\n# Display original and filtered images\nplt.figure(figsize=(8, 4))\nplt.subplot(121)\nplt.imshow(image, cmap='gray')\nplt.title('Original Image')\nplt.subplot(122)\nplt.imshow(filtered_image, cmap='gray')\nplt.title('Filtered Image')\nplt.show()"
+    },
+    {
+      "title": "Spatial Distance (distance)",
+      "content": "Compute the Euclidean distance between two points using distance module.",
+      "code_example": "from scipy.spatial import distance\n\n# Define two points in 3D space\npoint1 = (1, 2, 3)\npoint2 = (4, 5, 6)\n\n# Compute Euclidean distance between points\ndist = distance.euclidean(point1, point2)\nprint('Euclidean distance:', dist)"
+    },
+    {
+      "title": "Signal Processing (signal)",
+      "content": "Generate a chirp signal using chirp function from signal module.",
+      "code_example": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import signal\n\n# Generate a chirp signal\nt = np.linspace(0, 10, 1000)\nsignal_chirp = signal.chirp(t, f0=1, f1=10, t1=10, method='linear')\n\n# Plot the chirp signal\nplt.figure(figsize=(8, 4))\nplt.plot(t, signal_chirp)\nplt.title('Chirp Signal')\nplt.xlabel('Time (s)')\nplt.ylabel('Amplitude')\nplt.grid(True)\nplt.show()"
+    },
+    {
+      "title": "Special Functions (special)",
+      "content": "Evaluate the gamma function using gamma function from special module.",
+      "code_example": "from scipy.special import gamma\n\n# Compute gamma function for x=5\nresult = gamma(5)\nprint('Gamma function value:', result)"
+    },
+    {
+      "title": "Sparse Linear Algebra (sparse.linalg)",
+      "content": "Solve a sparse linear system of equations using gmres function from sparse.linalg module.",
+      "code_example": "import numpy as np\nfrom scipy.sparse.linalg import gmres\n\n# Define sparse matrix (e.g., tridiagonal matrix)\nA = np.array([[2, -1, 0], [-1, 2, -1], [0, -1, 2]])\nb = np.array([1, 0, -1])\n\n# Solve Ax = b using GMRES method\nx, info = gmres(A, b)\nprint('Solution x:', x)"
+    },
+    {
+      "title": "Distributions (stats)",
+      "content": "Compute the probability density function (PDF) of a distribution using pdf function from stats module.",
+      "code_example": "from scipy.stats import norm\n\n# Compute PDF of normal distribution at x=0\npdf_value = norm.pdf(0)\nprint('PDF at x=0:', pdf_value)"
+    },
+    {
+      "title": "Integration (dblquad)",
+      "content": "Compute a double integral using dblquad function.",
+      "code_example": "from scipy.integrate import dblquad\n\n# Define integrand function for double integral\ndef integrand(x, y):\n    return x * y\n\n# Compute double integral over [0, 1] x [0, 2]\nresult, error = dblquad(integrand, 0, 1, lambda x: 0, lambda x: 2)\nprint('Double integral value:', result)"
+    },
+    {
+      "title": "Linear Algebra (eig)",
+      "content": "Compute eigenvalues and eigenvectors of a square matrix using eig function.",
+      "code_example": "import numpy as np\nfrom scipy.linalg import eig\n\n# Define square matrix (e.g., 2x2 matrix)\nA = np.array([[1, 2], [3, 4]])\n\n# Compute eigenvalues and eigenvectors\neigenvalues, eigenvectors = eig(A)\nprint('Eigenvalues:', eigenvalues)\nprint('Eigenvectors:', eigenvectors)"
+    },
+    {
+      "title": "Optimization (linprog)",
+      "content": "Solve linear programming problems using linprog function.",
+      "code_example": "from scipy.optimize import linprog\n\n# Define objective function coefficients and constraints\nc = [-1, 4]  # Minimize -x + 4y\nA = [[-3, 1], [1, 2]]\nb = [6, 4]\n\n# Solve linear programming problem\nresult = linprog(c, A_ub=A, b_ub=b)\nprint('Optimal value:', result.fun)"
+    },
+    {
+      "title": "Interpolation (RectBivariateSpline)",
+      "content": "Perform 2D interpolation using RectBivariateSpline class from interpolate module.",
+      "code_example": "import numpy as np\nfrom scipy.interpolate import RectBivariateSpline\n\n# Define 2D grid and values\nx = np.arange(0, 5)\ny = np.arange(0, 5)\nz = np.random.random((5, 5))\n\n# Create 2D interpolation function\ninterp_func = RectBivariateSpline(x, y, z)\n\n# Evaluate interpolation at x=2.5, y=3.5\nvalue = interp_func(2.5, 3.5)\nprint('Interpolated value:', value)"
+    },
+    {
+      "title": "Image Filtering (ndimage.filters)",
+      "content": "Apply a median filter to an image using median_filter function from filters module.",
+      "code_example": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import ndimage\n\n# Create synthetic image (e.g., Gaussian noise)\nimage = np.random.random((512, 512))\n\n# Apply median filter with size=5x5\nfiltered_image = ndimage.median_filter(image, size=5)\n\n# Display original and filtered images\nplt.figure(figsize=(8, 4))\nplt.subplot(121)\nplt.imshow(image, cmap='gray')\nplt.title('Original Image')\nplt.subplot(122)\nplt.imshow(filtered_image, cmap='gray')\nplt.title('Filtered Image')\nplt.show()"
+    },
+    {
+      "title": "Statistics (norm)",
+      "content": "Generate random numbers from the normal distribution using norm function.",
+      "code_example": "from scipy.stats import norm\n\n# Generate 10 random numbers from N(0, 1)\nrandom_numbers = norm.rvs(size=10)\nprint('Random numbers from normal distribution:', random_numbers)"
+    },
+    {
+      "title": "Sparse Matrices (csr_matrix)",
+      "content": "Create and manipulate sparse matrices using csr_matrix function.",
+      "code_example": "import numpy as np\nfrom scipy.sparse import csr_matrix\n\n# Create a sparse matrix\ndata = np.array([1, 2, 3])\nrow_indices = np.array([0, 1, 2])\ncol_indices = np.array([0, 1, 2])\nsparse_matrix = csr_matrix((data, (row_indices, col_indices)))\nprint('Sparse matrix:', sparse_matrix)"
+    },
+    {
+      "title": "Image Processing (ndimage)",
+      "content": "Perform basic operations on images using ndimage module.",
+      "code_example": "import numpy as np\nfrom scipy import ndimage\nfrom scipy import misc\n\n# Load an image\nimage = misc.face(gray=True)\n\n# Rotate the image by 45 degrees\nrotated_image = ndimage.rotate(image, 45)\n\n# Blur the image\nblurred_image = ndimage.gaussian_filter(image, sigma=3)\n"
+    },
+    {
+      "title": "Integration (dblquad)",
+      "content": "Compute a double integral using dblquad function.",
+      "code_example": "from scipy.integrate import dblquad\n\n# Define integrand function\nfunc = lambda y, x: x*y**2\n\n# Compute double integral over [0, 1]x[0, 1]\nresult, error = dblquad(func, 0, 1, lambda x: 0, lambda x: 1)\nprint('Double integral value:', result)"
+    },
+    {
+      "title": "Sparse Linear Algebra (spsolve)",
+      "content": "Solve a sparse linear system of equations using spsolve function.",
+      "code_example": "import numpy as np\nfrom scipy.sparse.linalg import spsolve\nfrom scipy.sparse import csr_matrix\n\n# Define coefficient matrix A and right-hand side vector b\nA = csr_matrix([[3, 0], [0, 2]])\nb = np.array([9, 8])\n\n# Solve Ax = b for sparse matrix A\nx = spsolve(A, b)\nprint('Solution x:', x)"
+    },
+    {
+      "title": "Numerical Integration (quad_vec)",
+      "content": "Perform vectorized numerical integration using quad_vec function.",
+      "code_example": "import numpy as np\nfrom scipy.integrate import quad_vec\n\n# Define integrand function\nintegrand = lambda x: x**2\n\n# Compute integral over [0, 1]\nresult, error = quad_vec(integrand, 0, 1)\nprint('Integral value:', result)"
+    },
+    {
+      "title": "Ordinary Differential Equations (odeint)",
+      "content": "Solve a system of ordinary differential equations using odeint function.",
+      "code_example": "import numpy as np\nfrom scipy.integrate import odeint\n\n# Define differential equation function\ndef model(y, t):\n    k = 0.3\n    dydt = -k * y\n    return dydt\n\n# Initial condition\ny0 = 5\n\n# Time points\nt = np.linspace(0, 20)\n\n# Solve ODE\ny = odeint(model, y0, t)\nprint('Solution:', y)"
+    },
+    {
+      "title": "Signal Processing (periodogram)",
+      "content": "Compute the power spectral density estimate using periodogram function.",
+      "code_example": "import numpy as np\nfrom scipy.signal import periodogram\n\n# Generate a random signal\nnp.random.seed(0)\nsignal = np.random.randn(1000)\n\n# Compute periodogram\nfreq, psd = periodogram(signal)\nprint('Frequency:', freq)\nprint('Power spectral density:', psd)"
+    },
+    {
+      "title": "Interpolation (griddata)",
+      "content": "Interpolate scattered data onto a regular grid using griddata function.",
+      "code_example": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.interpolate import griddata\n\n# Define scattered data\nx = np.random.rand(100)\ny = np.random.rand(100)\nz = np.sin(2 * np.pi * x) * np.cos(2 * np.pi * y)\n\n# Define grid\nxi, yi = np.linspace(0, 1, 100), np.linspace(0, 1, 100)\n\n# Perform interpolation\nzi = griddata((x, y), z, (xi[None,:], yi[:,None]), method='cubic')\n\n# Plot interpolated data\nplt.contourf(xi, yi, zi)\nplt.colorbar()\nplt.show()"
+    },
+    {
+      "title": "Curve Fitting (curve_fit)",
+      "content": "Fit a function to data points using curve_fit function.",
+      "code_example": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.optimize import curve_fit\n\n# Define model function\ndef model(x, a, b, c):\n    return a * np.exp(-b * x) + c\n\n# Generate noisy data\nxdata = np.linspace(0, 4, 50)\nydata = model(xdata, 2.5, 1.3, 0.5) + 0.2 * np.random.normal(size=len(xdata))\n\n# Fit the model to the data\npopt, pcov = curve_fit(model, xdata, ydata)\nprint('Fitted parameters:', popt)\n\n# Plot the data and fitted curve\nplt.scatter(xdata, ydata, label='Data')\nplt.plot(xdata, model(xdata, *popt), 'r-', label='Fitted curve')\nplt.legend()\nplt.show()"
+    }
+  ]
