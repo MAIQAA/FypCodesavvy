@@ -24,10 +24,13 @@
     "mongoose": "^8.8.1",
     "next": "15.0.3",
     "next-auth": "^4.24.7",
+    "polished": "^4.3.1",
     "react": "19.0.0-rc-66855b96-20241106",
+    "react-best-gradient-color-picker": "^3.0.11",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.3.0",
+    "tinycolor2": "^1.6.0",
     "uuid": "^11.0.3"
   },
   "devDependencies": {

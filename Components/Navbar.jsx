@@ -29,6 +29,9 @@ const Navbar = () => {
     router.push("/exercises");
   };
 
+  const handleColorPicker = () => {
+    router.push("/colorpicker");
+  };
   const handleLogout = () => {
     signOut();
   };
@@ -56,6 +59,7 @@ const Navbar = () => {
           <li onClick={handleLearn}>Learning</li>
           <li onClick={handleExercises}>Exercises</li>
           <li onClick={handleWorkspace}>Workspace</li>
+          <li onClick={handleColorPicker}>Color Picker</li>
         </ul>
 
         <div>

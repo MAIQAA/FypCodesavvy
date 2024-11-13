@@ -1,30 +1,29 @@
 "use client";
 import { useState } from "react";
-import {
-  IoIosGitBranch,
-  IoIosGitPullRequest,
-  IoIosGitCommit,
-} from "react-icons/io";
+import { IoIosDesktop } from "react-icons/io";
+import { IoExtensionPuzzleOutline } from "react-icons/io5";
+import { IoBookOutline } from "react-icons/io5";
+
 
 // Feature details array
 const features = [
   {
     id: 1,
-    title: "Flexible",
-    description: `Connect your marketing tools with built-in integrations`,
-    image: <IoIosGitBranch size={40} />,
+    title: "Learning",
+    description: `Access a wide range of learning materials to enhance your skills.`,
+    image: <IoBookOutline size={40}/>,
   },
   {
     id: 2,
-    title: "Easy Access",
-    description: `Connect your marketing tools with built-in integrations`,
-    image: <IoIosGitPullRequest size={40} />,
+    title: "Exercises",
+    description: `Practice with interactive exercises and challenges to improve your understanding.`,
+    image: <IoExtensionPuzzleOutline size={40} />,
   },
   {
     id: 3,
-    title: "Best Tutors",
-    description: `Bring your design vision to life in clean, semantic HTML5`,
-    image: <IoIosGitCommit size={40} />,
+    title: "Workspace",
+    description: `Collaborate and work on projects in a flexible, interactive workspace.`,
+    image: <IoIosDesktop size={40} />,
   },
 ];
 
@@ -32,9 +31,9 @@ const features = [
 function FeatureCard({ id, title, description, image, isActive }) {
   return (
     <div
-      className={`flex flex-col gap-5 items-start justify-center p-5 h-72 text-2xl rounded-xl font-bold transition-transform duration-300 ${
+      className={`flex flex-col gap-5 items-start justify-center p-5 w-72 h-72 text-2xl rounded-xl font-bold transition-transform duration-300 ${
         isActive
-          ? "transform scale-110 shadow-lg bg-[#DDF345] text-white"
+          ? "transform scale-110 shadow-md shadow-[#DDF345] bg-white border-2 text-gray-600 border-[#DDF345]"
           : "opacity-70 bg-white filter grayscale text-gray-600"
       }`}
     >

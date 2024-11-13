@@ -18,26 +18,6 @@ const files = {
     language: "javascript",
     value: "",
   },
-  "script.py": {
-    name: "script.py",
-    language: "python",
-    value: "",
-  },
-  "script.ts": {
-    name: "script.ts",
-    language: "typescript",
-    value: "",
-  },
-  "program.cpp": {
-    name: "program.cpp",
-    language: "cpp",
-    value: "",
-  },
-  "program.cs": {
-    name: "program.cs",
-    language: "csharp",
-    value: "",
-  },
 };
 
 export default function Home() {
@@ -45,10 +25,6 @@ export default function Home() {
   const [htmlCode, setHtmlCode] = useState("");
   const [cssCode, setCssCode] = useState("");
   const [jsCode, setJsCode] = useState("");
-  const [pythonCode, setPythonCode] = useState("");
-  const [typescriptCode, setTypescriptCode] = useState("");
-  const [cppCode, setCppCode] = useState("");
-  const [csharpCode, setCsharpCode] = useState("");
 
   const [selectedLanguage, setSelectedLanguage] = useState("html");
 
@@ -68,10 +44,6 @@ export default function Home() {
       setHtmlCode(files["index.html"].value);
       setCssCode(files["style.css"].value);
       setJsCode(files["script.js"].value);
-      setPythonCode(files["script.py"].value);
-      setTypescriptCode(files["script.ts"].value);
-      setCppCode(files["program.cpp"].value);
-      setCsharpCode(files["program.cs"].value);
     });
 
     clsBtn?.addEventListener("click", () => {
@@ -83,7 +55,7 @@ export default function Home() {
     <div className="relative px-16 flex h-screen justify-between">
       <div className="relative w-[45vw] h-[65vh] grid self-center gap-0">
         {/* Language selection dropdown */}
-        <div className="flex bg-gray-800 flex-row-reverse justify-between p-2">
+        <div className="flex bg-gray-800 flex-row-reverse justify-between p-2 h-fit">
           <button
             className="bg-green-500 text-white px-4 py-2 rounded-md"
             id="runCode"
@@ -101,10 +73,6 @@ export default function Home() {
             <option value="html">HTML</option>
             <option value="css">CSS</option>
             <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="typescript">TypeScript</option>
-            <option value="cpp">C++</option>
-            <option value="csharp">C#</option>
           </select>
         </div>
 
@@ -128,7 +96,7 @@ export default function Home() {
         </div>
         <iframe
           title="output"
-          srcDoc={`<html><body>${htmlCode}</body><style>${cssCode}</style><script>${jsCode}</script><script>${pythonCode}</script><script>${typescriptCode}</script><script>${cppCode}</script><script>${csharpCode}</script></html>`}
+          srcDoc={`<html><body>${htmlCode}</body><style>${cssCode}</style><script>${jsCode}</script></html>`}
           className="w-full shadow-lg h-[60vh]"
         />
       </div>

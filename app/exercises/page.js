@@ -108,7 +108,7 @@ const Page = () => {
             key={fileName}
             onClick={() => handleFileSelection(fileName)}
             className={`px-4 py-1 rounded  ${
-              fileName === selectedFile ? "bg-blue-500" : "bg-gray-500"
+              fileName === selectedFile ? "bg-[#DDF345] text-black" : "bg-gray-500"
             }`}
           >
             {fileName}
@@ -138,7 +138,7 @@ const Page = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 p-8 overflow-auto">
+        <div className="flex-1 p-8 overflow-scroll h-screen">
           <h2 className="text-3xl font-bold mb-4">
             {selectedTopic.question || "No Question Selected"}
           </h2>
