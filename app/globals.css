@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Aeonik TRIAL", sans-serif;
+  background-color: #f4f4f4;
+}
+
+p {
+  color: #4b5563;
+}
+
+#color {
+  font-family: "Pacifico" , cursive;
+}
+
+
