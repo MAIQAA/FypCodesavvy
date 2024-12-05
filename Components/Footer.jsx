@@ -8,16 +8,16 @@ const Footer = () => {
         id="btng"
         className="container-fluid flex flex-wrap justify-center p-4"
       >
-        <button className="text-center bg-[#DDF345] mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
+        <button className="text-center bg-gray-900 hover:bg-black text-white mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
           Spaces
         </button>
-        <button className="text-center bg-[#DDF345] mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
+        <button className="text-center bg-gray-900 hover:bg-black text-white mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
           Workspace
         </button>
-        <button className="text-center bg-[#DDF345] mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
+        <button className="text-center bg-gray-900 hover:bg-black text-white mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
           Get Certified
         </button>
-        <button className="text-center bg-[#DDF345] mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
+        <button className="text-center bg-gray-900 hover:bg-black text-white mt-4 mx-2 flex-1 bg-dark py-2 px-4 rounded-md font-sans">
           Report Error
         </button>
       </div>

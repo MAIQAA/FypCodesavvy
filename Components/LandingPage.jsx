@@ -4,8 +4,8 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 const LandingPage = () => {
   return (
-    <div className="relative flex justify-between">
-      <div className="flex flex-col gap-10 w-[35%] justify-center px-16 h-screen">
+    <div className="relative flex justify-between h-[calc(100vh-6rem)]">
+      <div className="flex flex-col gap-10 w-[35%] justify-center px-16 ">
         <h1 className="text-5xl">Improve your skills by study with coding </h1>
         <p className="text-lg">
           Create, launch, and iterate on new marketing campaigns without
@@ -18,9 +18,9 @@ const LandingPage = () => {
         </button>
       </div>
 
-      <div className="grid justify-center w-1/2 bg-black">
+      <div className="flex flex-col items-center justify-center w-1/2">
         <Image
-          src={"/Frame 1.png"}
+          src={"/hero.png"}
           width={0}
           height={0}
           sizes="500px"
@@ -29,7 +29,7 @@ const LandingPage = () => {
         />
 
         <Image
-          className="absolute bg-white rounded-md shadow-2xl right-[30vw] top-[40vh]"
+          className="absolute bg-white rounded-md shadow-2xl right-[30vw] top-[25vh]"
           src={"/Frame 3.png"}
           width={450}
           height={450}

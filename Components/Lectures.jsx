@@ -30,10 +30,10 @@ const Lectures = () => {
 
       <div className="flex justify-center w-[40%]">
         <Image
-          className="shadow-2xl"
-          src={"/Frame 40.png"}
-          width={350}
-          height={450}
+          className=""
+          src={"/Programming-amico.png"}
+          width={400}
+          height={400}
           alt="logo"
         />
       </div>

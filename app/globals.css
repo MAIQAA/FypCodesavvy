@@ -16,7 +16,7 @@ p {
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 .LearnSidebar::-webkit-scrollbar {
   width: 4px;
